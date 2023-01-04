@@ -1,7 +1,7 @@
 button {
-    color: magenta;
+    color: #92dce5;
     /*Change the text color, not the button color*/
-    background-color: cyan;
+    background-color: rgb(89, 151, 0);
 }
 
 h2 {
