@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Table</title>
+</head>
+
+<body>
+    <!--How to include a table-->
+    <!--
+The <table> keyword is basic, and encloses everything
+The <td> (table data) is for one cell in our work
+You can choose to do the data first:
+in the prototype example, we decided to have name+snapshot across the page
+Then name+country+Teaching Style+other languages
+The teaching style will be selected from:
+Lecturer, Fun and Open, or Hybrid
+More autobiographical info can be added later
+Then we surround these td elements with <tr>, to separate rows
+We then look at adding in our table headers <th>:the snaps of the teachers was chosen
+We then looked at the <thead> and <tbody> elements, which are 
+part of the BEST PRACTICES!
+-->
+    <h1>Highlighted Teachers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Huimin's Pic</th>
+                <th>Bobby's Fizzog</th>
+                <th>Hiromi's Snap</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Huimin Lai</td>
+                <td>Robert Bogan</td>
+                <td>Hiromi Ogawa</td>
+            </tr>
+            <tr>
+                <td>USA</td>
+                <td>UK</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Fun and open</td>
+                <td>Lecturer</td>
+                <td>Hybrid</td>
+            </tr>
+            <tr>
+                <td>None</td>
+                <td>Japanese</td>
+                <td>Japanese</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1>Teacher Profile</h1>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Name</th>
+                <th rowspan="2">Country</th>
+                <th colspan="3">Teaching Background</th>
+            </tr>
+            <tr>
+                <!--This is where our double-up header comes in,
+                with these three making up the teachin background-->
+                <th>Languages</th>
+                <th>Experience</th>
+                <th>Qualifications</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Huimin Lai</td>
+                <td>USA</td>
+                <td>English</td>
+                <td>14 Years</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Robert Bogan</td>
+                <td>UK</td>
+                <td>English</td>
+                <td>10 Years</td>
+                <td>CELTA</td>
+            </tr>
+            <tr>
+                <td>Hiromi Ogawa</td>
+                <td>Japan</td>
+                <td>English</td>
+                <td>42 Years</td>
+                <td>N/A</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
