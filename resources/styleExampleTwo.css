@@ -22,9 +22,22 @@ footer a {
     color: #e63946;
 }
 
+footer>a {
+    color: #457b9d;
+}
+
 h1,
 h2 {
     color: darkslateblue;
+}
+
+h2 button {
+    background-color: magenta;
+    font-size: 20px;
+}
+
+input button {
+    background-color: magenta;
 }
 
 /*Purely used as an example of a selector list*/
