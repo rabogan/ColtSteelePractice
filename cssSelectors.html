@@ -39,6 +39,16 @@
         <li>Class itself can be applied across a variety of different elements - and is used FAR MORE often than ID
             selectors</li>
     </ul>
+    <h2>The Descendent Selector</h2>
+    <ul>
+        <li>For example, we can choose to select all &lt;a&gt;s that are nested inside an &lt;li&gt;. To do so, we can
+            use li a{ ... }</li>
+        <li>So, no li tags would be styled in this...ONLY anchor tags &lt;a&gt; that are inside an &lt;li&gt; tag</li>
+        <li>What happened with this example, is that each section below had a class 'post' appended to it. All anchor
+            tags within that class post were then changed according to the attributes defined within the class</li>
+        <li>Finally, a footer a (generic element selector+element selector descendent selecting) was used in CSS to
+            changed the color of those particular links</li>
+    </ul>
     <nav>
         <label for="search" id="search">Search</label>
         <input type="text" placeholder="search">
@@ -47,19 +57,19 @@
     </nav>
     <main>
         <h1>Popular Posts</h1>
-        <section>
+        <section class="post">
             <span class="tag">Posted by <a href="#213adas">/u/not_funny</a></span>
             <h2>Lol look at this hilarious meme <span>funny</span></h2>
             <button>+Vote</button>
             <hr>
         </section>
-        <section>
+        <section class="post">
             <span class="tag">Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
             <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span>gunners</span></h2>
             <button>+Vote</button>
             <hr>
         </section>
-        <section>
+        <section class="post">
             <span class="tag">Posted by <a href="#981adas">/u/dogfan</a></span>
             <h2>This Corgi got some good stuff from the vet. <span>dogs</span></h2>
             <button>+Vote</button>
