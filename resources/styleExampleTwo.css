@@ -21,6 +21,14 @@ h2 {
 
 /*Purely used as an example of a selector list*/
 
+/*Class Selectors*/
+.tag {
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+
+}
+
 /*ID Selectors*/
 #signup {
     background-color: #1d3557;
