@@ -1,0 +1,15 @@
+button {
+    color: magenta;
+    /*Change the text color, not the button color*/
+    background-color: cyan;
+}
+
+h2 {
+    color: teal;
+    background-color: plum;
+}
+
+p {
+    color: olive;
+    /*Background does a lot more than just change the color (also does images and is more powerful*/
+}
