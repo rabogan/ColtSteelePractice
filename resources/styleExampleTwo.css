@@ -1,0 +1,28 @@
+/*
+* {
+    background-color: cyan;
+}
+Example ONLY!
+*/
+
+button {
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+body {
+    background-color: #f1faee;
+}
+
+h1,
+h2 {
+    color: darkslateblue;
+}
+
+/*Purely used as an example of a selector list*/
+
+/*ID Selectors*/
+#signup {
+    background-color: #1d3557;
+    color: #f1faee;
+}

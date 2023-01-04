@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/styleExampleTwo.css">
+    <title>CSS Selectors</title>
+</head>
+
+<body>
+    <p>This page will use styleExampleTwo.css, and is geared towards Section 7 of the course</p>
+    <h2>Basic Selectors: Universal and Element Selectors</h2>
+    <ul>
+        <li>First covered: the <strong>universal</strong> selector (*) is shown, but its use is not recommended. It
+            basically tries to
+            change all elements on the page, so doesn't really meet our needs very often</li>
+        <li>The <strong>element selector</strong> (e.g. button/h1 etc...) will changes all elements</li>
+        <li>**NEW** The <strong>selector list</strong>, which uses a format like h1,h2{ ... } allows us to style both h1
+            and h2</li>
+    </ul>
+    <h2>ID Selectors</h2>
+    <ul>
+        <li>We can use the # id to single in on individual elements (and not just blanket). Before this, I changed the
+            body background-color to #f1faee. The button background-color and font-size were adjusted as well!</li>
+        <li>We wanted ONE specific button, the signup button to have a different color scheme. To do so, I changed the
+            css associated with the id of that signup id</li>
+        <li>One HUGELY important thing: an ID should only be used ONCE on a single HTML page. We shouldn't overuse IDs,
+            but there's no need to avoid using them. A handful on a single page seems to be optimum, but class selectors
+            are much more common</li>
+    </ul>
+    <h2>Class Selectors (Lecture 71)</h2>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <nav>
+        <label for="search" id="search">Search</label>
+        <input type="text" placeholder="search">
+        <button>Log In</button>
+        <button id="signup">Sign Up</button>
+    </nav>
+    <main>
+        <h1>Popular Posts</h1>
+        <section>
+            <span>Posted by <a href="#213adas">/u/not_funny</a></span>
+            <h2>Lol look at this hilarious meme <span>funny</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section>
+            <span>Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
+            <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span>gunners</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section>
+            <span>Posted by <a href="#981adas">/u/dogfan</a></span>
+            <h2>This Corgi got some good stuff from the vet. <span>dogs</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+    </main>
+</body>
+<footer>
+    <nav>
+        <ul>
+            <li><a href="./cssExamples.html">Back to CSS launching page</a></li>
+            <li><a href="./index.html">Back Home</a></li>
+        </ul>
+    </nav>
+</footer>
+
+</html>
