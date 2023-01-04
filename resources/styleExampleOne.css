@@ -1,7 +1,18 @@
+a {
+    text-decoration: none;
+}
+
 button {
     color: #92dce5;
     /*Change the text color, not the button color*/
     background-color: rgb(89, 151, 0);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+    text-decoration: red underline wavy;
+    letter-spacing: 15px;
 }
 
 h2 {
@@ -11,5 +22,6 @@ h2 {
 
 p {
     color: olive;
+    line-height: 2;
     /*Background does a lot more than just change the color (also does images and is more powerful*/
 }
