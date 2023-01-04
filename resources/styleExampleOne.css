@@ -2,6 +2,10 @@ a {
     text-decoration: none;
 }
 
+body {
+    color: papayawhip;
+}
+
 button {
     color: #92dce5;
     /*Change the text color, not the button color*/
