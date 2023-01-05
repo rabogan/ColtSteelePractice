@@ -10,8 +10,49 @@
 </head>
 
 <body>
+    <h1>The Box, The Box!</h1>
     <p>This section will elaborate on the CSS <strong>Box Model</strong>, and will help to review section 8 of the Udemy
         course by Colt Steele</p>
+    <h2>An overview (expanded as topics are completed):</h2>
+    <li>In the box model, each <strong>element</strong> on our page can be thought of as comprising a <em>box</em> of
+        content, made up of a specific <strong>height</strong> and <strong>width</strong>. The content box is enclosed
+        within a layer of <strong>padding</strong> which is itself surrounded by a <strong>border</strong>, and this
+        border is separated from other elements by a <strong>margin</strong></li>
+    <li>We can manipulate any aspect of a content box/tag in css, but this section focuses on the spatial dimensions.
+        The simplest ones to learn are to manipulate <em>height</em> and <em>width</em>, like so:
+        <em>div</em>{<strong>height:200px;</strong>}
+    </li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <h3>Width and Height</h3>
+    <li>The most basic to manipulate! The lorum ipsum in the three divs below (I'm going to deviate from the lecture by
+        using a class) will have 200px dimensions, and be differentiated from the h3 element by assigning different
+        color attributes to both</li>
+    <div class="dimension">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam harum ratione corrupti
+            quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</p>
+    </div>
+    <div class="dimension">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam harum ratione corrupti
+            quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</p>
+    </div>
+    <div class="dimension2">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam harum ratione corrupti
+            quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</p>
+    </div>
+    <li>If you inspect the boxes above, you'll quickly see why they space out the way they do! In my dimension class, I
+        changed the default settings of the box-model using CSS</li>
+    <li>Finally, there's a very important attribute/property called <strong>box-sizing</strong>. If
+        <strong>box-sizing</strong> has been changed to <strong>border-box</strong>, then changing the width or height
+        will set the width of the <em>border area</em>. The 3rd div above has a special extra <em>dimension2</em> class
+        to highlight the different. Inspect the page to check it!
+    </li>
 </body>
 <footer>
     <nav>

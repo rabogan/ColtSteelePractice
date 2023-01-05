@@ -1,0 +1,23 @@
+/*IDS*/
+
+/*CLASSES*/
+/*Is this the correct way to avoid duplicate code in CSS?
+Anyway, I downloaded the DupChecker extension
+Use CTRL+SHIFT+P and searched with "check duplicates with regex match" using the following:
+^.[\w-\s.>:,[]*=]+{
+*/
+.dimension,
+.dimension2 {
+    height: 200px;
+    width: 200px;
+    background-color: peachpuff;
+}
+
+.dimension2 {
+    box-sizing: border-box;
+}
+
+/*ELEMENTS*/
+h3 {
+    background-color: pink;
+}
