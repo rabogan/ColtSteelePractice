@@ -55,7 +55,7 @@
             Windows...
         </li>
         <li>I named the class <em>.tag</em>. It was given a different <em>background-color</em>, <em>font-size</em>, and
-            <em>color<em>
+            <em>color</em>
         </li>
         <li>Class itself can be applied across a variety of different elements - and is used FAR MORE often than ID
             selectors</li>
@@ -87,15 +87,17 @@
                 </strong><em>h1</em> will have attributes adjusted</li>
             <li>h1<strong>+</strong>h2{...}: the <strong>+</strong> sign means any <em>h2</em> <strong>immediately
                     preceded by</strong> <em>h1</em> will have its attributes adjusted</li>
-            <li>h1<strong>&gt;</strong>h2{...} the <strong>&gt;</strong> sign denotes that any h2 element that is a
-                DIRECT CHILD (as opposed to a non-direct descendant nested deeply inside of) a h1 element will have its
+            <li>h1<strong>&gt;</strong>h2{...} the <strong>&gt;</strong> sign denotes that any <em>h2</em> element that
+                is a
+                DIRECT CHILD (as opposed to a non-direct descendant nested deeply inside of) a <em>h1</em> element will
+                have its
                 attributes adjusted</li>
         </ul>
         <li>The h1+p {...} in the lecture's example is known as a COMBINATOR. It will <strong>ONLY</strong> change
             paragraphs immediately preceded by h1</em></li>
-        <li>In our page's example, any button that follows input, as well as any <em>button</em> following a <em>h2<em>e
-                    have been changed
-                    to slightly more garish colors</li>
+        <li>In our page's example, any button that follows input, as well as any <em>button</em> following a <em>h2</em>
+            has been changed
+            to slightly more garish colors</li>
         <li><strong>Child/Direct Descendant</strong> Selectors are quite easy. They make use of the &gt; sign, as in
             footer &gt; a, in my CSS file! Essentially, it demands that ONLY direct descendants of a specific selector
             are looked at. In this page, <em>footer a</em> should yield red links, while <em>footer &gt; a</em> should
@@ -164,6 +166,28 @@
     <li>In addition, the <strong>::selection</strong>{...} standalone code in my CSS file made it so that most selected
         text is red and gold</li>
     <li>The parts that differ are for any text selected with a <em>h2</em>: inspect to see why!</li>
+    <h2>Specificity</h2>
+    <li>This is quite an easy concept. Basically:</li>
+    <ul>
+        <li>ID > Class > Element > Universal (Class includes pseudo-classes, Element includes pseudo-elements)</li>
+        <li>The common tiebreaker is to count the number of each type, with precedence given the highest leftmost type
+        </li>
+        <li>If there are an identical number of classes/ids/pseudo-things/etc..., then the LAST one read as input (i.e.
+            the last one entered in the stylesheet, or the last one of the last-entered stylesheet in the head section)
+            will take precedence!</li>
+    </ul>
+    <li>One thing to note is that <strong>inline styles</strong> have higher specificity than ids! For example,
+        something like &lt;<em>button</em>&gt; <strong>style="color:coral"</strong>&gt; will trump any number of ids,
+        classes or elements associated with a button in the CSS stylesheet. They're avoided because they can cause
+        serious confusion</li>
+    <li>On the topic of confusion, the <strong>!important</strong> exception is an example of <em>bad practice</em>.
+        When the <strong>!important</strong> rule is used on a style declaration, it signals to the browser that the
+        specific declaration should override ANY other declarations. Why is it bad practice? Simply, it makes things
+        difficult to debug, as it <strong>breaks the cascading between stylesheets!</strong></li>
+    <li>Finally, this link which helps to compare specificity might be very useful: <a
+            href="specificity.keegan.st">Compare Specificities Here</a></li>
+    <h2>Inheritance</h2>
+    <li>This should be an intuitive concept for you!</li>
     <nav>
         <label for="search" id="search">Search</label>
         <input type="text" placeholder="search">
