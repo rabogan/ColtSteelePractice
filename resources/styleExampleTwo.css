@@ -4,6 +4,15 @@
 }
 Example ONLY!
 */
+::selection {
+    color: gold;
+    background-color: red;
+}
+
+p::selection {
+    color: white;
+    background-color: blue;
+}
 
 a {
     color: #457b9d;
@@ -12,6 +21,11 @@ a {
 button {
     font-size: 30px;
     background-color: #a8dadc;
+}
+
+button:hover {
+    background-color: #e63946;
+    color: #f1faee;
 }
 
 body {

@@ -34,8 +34,8 @@
     <ul>
         <li>We can use the # id to single in on individual elements which use them <strong>inline</strong>. In my
             example, I changed the
-            page <em>body</em>'s <em>background-color</em> to #f1faee. Both of the <em>button<em>'s
-                    <em>background-color</em> and <em>font-size</em> were adjusted as well!</li>
+            page <em>body</em>'s <em>background-color</em> to #f1faee. Both of the <em>button</li>'s
+        <em>background-color</em> and <em>font-size</em> were adjusted as well!</li>
         <li>We wanted ONE specific button (the Sign Up button) to have a different color scheme. To do so, I added an id
             called 'signup' to that specific button element, and then changed the
             attributes associated with that id name. So, something like <em>#signup{...}</em> is used in the css file
@@ -63,11 +63,11 @@
     <h2>The Descendant Selector</h2>
     <ul>
         <li>The SPACE between elements in the css file is very important!</li>
-        <ol>
+        <ul>
             <li>h1<strong>,</strong>h2 {...} : the comma means h1 AND h2</li>
             <li>h1 h2{...}: the <strong>space</strong> means any <strong>descendant <em>h2</em> INSIDE OF
                 </strong><em>h1</em> will have attributes adjusted</li>
-        </ol>
+        </ul>
         <li>As another example, we can choose to select all &lt;a&gt;s elements that are nested inside an &lt;li&gt;
             element. To do so, we can
             use li a{ ... }</li>
@@ -81,16 +81,16 @@
     </ul>
     <h2>The Combinator (Adjacent Selector/Adjacent Sibling Selected) and Direct Child/Direct Descendant Selector</h2>
     <ul>
-        <ol>
+        <ul>
             <li>h1<strong>,</strong>h2 {...} : the comma means h1 AND h2</li>
             <li>h1 h2{...}: the <strong>space</strong> means any <strong>descendant <em>h2</em> INSIDE OF
                 </strong><em>h1</em> will have attributes adjusted</li>
             <li>h1<strong>+</strong>h2{...}: the <strong>+</strong> sign means any <em>h2</em> <strong>immediately
-                    preceded by</strong><em> h1</em> will have its attributes adjusted</li>
+                    preceded by</strong> <em>h1</em> will have its attributes adjusted</li>
             <li>h1<strong>&gt;</strong>h2{...} the <strong>&gt;</strong> sign denotes that any h2 element that is a
                 DIRECT CHILD (as opposed to a non-direct descendant nested deeply inside of) a h1 element will have its
                 attributes adjusted</li>
-        </ol>
+        </ul>
         <li>The h1+p {...} in the lecture's example is known as a COMBINATOR. It will <strong>ONLY</strong> change
             paragraphs immediately preceded by h1</em></li>
         <li>In our page's example, any button that follows input, as well as any <em>button</em> following a <em>h2<em>e
@@ -132,6 +132,37 @@
         </ul>
     </ul>
     <h2>PSEUDO CLASSES</h2>
+    <li>A <strong>pseudo-class</strong> in CSS is a <em>keyword</em> added to a <em>selector</em> that specifies a
+        special state of the selected element</li>
+    <li>Common examples include <strong>:hover</strong>, <strong>:visited</strong>, <strong>:nth-child()</strong>, and
+        <strong>:active</strong>
+    </li>
+    <li>A common example is to <strong>change the color of a button</strong> when the mouse is <strong>hovering</strong>
+        over it! To do this, we need to use a <strong>pseudo-class</strong> in our CSS file. In my example, I used
+        <em>button:<strong>hover</strong></em>{...}, and changed the <em>background-color</em> and <em>color</em> of all
+        buttons that don't have their <strong>specificity</strong> overridden!</em>
+    </li>
+    <li>So, to change all <em>buttons</em> so that when the mouse is over them, the <em>background-color</em> changes to
+        red and text to white, we use <em>button<strong>:hover</strong>{...}</em>, where ... is the color changes </li>
+    <li>Another example is this: <em>input</em>[<em>type="radio"</em>]<strong>:checked</strong>{...} In this, all inputs
+        of type radio that have been checked will have specific attributes adjusted (usually some kind of
+        <em>box-shadow</em>)
+    </li>
+    <li>Finally, <strong>:nth-of-type()</strong> is very useful. Plugging in a number, e.g.
+        <em>p</em><strong>:nth-of-type(2)</strong>{...} will simply changed the 2nd p-element among siblings of type p.
+        However, <em>p</em><strong>:nth-of-type(2n)</strong>{...} will change <strong>every 2nd</strong> element among
+        siblings of type p
+    </li>
+    <h2>Briefly, pseudo-elements</h2>
+    <li>A <strong>pseudo-element</strong> in CSS is a keyword added to a selector that allows you to style a specific
+        part of the selected element(s)</li>
+    <li>Common examples include <strong>::before</strong>, <strong>::after</strong>, <strong>::selection</strong>,
+        <strong>::first-line</strong>, and <strong>::first-letter</strong></li>
+    <li>Within this page, my example involves having the <em>first letter</em> of <strong>every</strong> <em>h2</em> tag
+        on the page be resized to 36px: <em>h2</em><strong>::first-letter</strong>{...}</li>
+    <li>In addition, the <strong>::selection</strong>{...} standalone code in my CSS file made it so that most selected
+        text is red and gold</li>
+    <li>The parts that differ are for any text selected with a <em>h2</em>: inspect to see why!</li>
     <nav>
         <label for="search" id="search">Search</label>
         <input type="text" placeholder="search">
