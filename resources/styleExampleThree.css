@@ -1,4 +1,31 @@
 /*IDS*/
+#one {
+    background-color: #e5989b;
+    border-width: 5px;
+    /*Widening the border by 5px increases the width of the content (including border) by 10px*/
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box;
+    /*The width of the element will go from border to border!  So, we specified that it's 200px wide?  That means the whole thing will be 200px, and the context box is 190px*/
+}
+
+#two {
+    /*
+    We're giving this a different color, a border width of 3px, and a new style
+    In addition, the left side of the border is shown.  However, what about border shorthand???
+    See the 3rd box! 
+    */
+    background-color: #b5838d;
+    border-color: peachpuff;
+    border-width: 3px;
+    border-style: dashed;
+    border-left-color: blueviolet;
+}
+
+#three {
+    background-color: #6d6875;
+    border: 4px solid black;
+}
 
 /*CLASSES*/
 /*Is this the correct way to avoid duplicate code in CSS?
@@ -6,15 +33,9 @@ Anyway, I downloaded the DupChecker extension
 Use CTRL+SHIFT+P and searched with "check duplicates with regex match" using the following:
 ^.[\w-\s.>:,[]*=]+{
 */
-.dimension,
-.dimension2 {
+div {
     height: 200px;
     width: 200px;
-    background-color: peachpuff;
-}
-
-.dimension2 {
-    box-sizing: border-box;
 }
 
 /*ELEMENTS*/

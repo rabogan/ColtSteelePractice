@@ -13,7 +13,7 @@
     <h1>The Box, The Box!</h1>
     <p>This section will elaborate on the CSS <strong>Box Model</strong>, and will help to review section 8 of the Udemy
         course by Colt Steele</p>
-    <h2>An overview (expanded as topics are completed):</h2>
+    <h2>Overview</h2>
     <li>In the box model, each <strong>element</strong> on our page can be thought of as comprising a <em>box</em> of
         content, made up of a specific <strong>height</strong> and <strong>width</strong>. The content box is enclosed
         within a layer of <strong>padding</strong> which is itself surrounded by a <strong>border</strong>, and this
@@ -31,28 +31,79 @@
     <li></li>
     <li></li>
     <h3>Width and Height</h3>
-    <li>The most basic to manipulate! The lorum ipsum in the three divs below (I'm going to deviate from the lecture by
-        using a class) will have 200px dimensions, and be differentiated from the h3 element by assigning different
+    <li>The most basic to manipulate! The lorum ipsum in the three divs below will have 200px <strong>height</strong>
+        and <strong>width</strong> dimensions, and be
+        differentiated from the <em>h3</em> element by assigning different
         color attributes to both</li>
-    <div class="dimension">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam harum ratione corrupti
-            quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</p>
-    </div>
-    <div class="dimension">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam harum ratione corrupti
-            quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</p>
-    </div>
-    <div class="dimension2">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam harum ratione corrupti
-            quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</p>
-    </div>
-    <li>If you inspect the boxes above, you'll quickly see why they space out the way they do! In my dimension class, I
-        changed the default settings of the box-model using CSS</li>
+    <li>If you inspect the boxes above, you'll quickly see why they space out the way they do!</li>
+    <h3>Border And Border Radius</h3>
     <li>Finally, there's a very important attribute/property called <strong>box-sizing</strong>. If
         <strong>box-sizing</strong> has been changed to <strong>border-box</strong>, then changing the width or height
-        will set the width of the <em>border area</em>. The 3rd div above has a special extra <em>dimension2</em> class
-        to highlight the different. Inspect the page to check it!
+        will set the width of the <em>border area</em>
     </li>
+    <li>As mentioned above, the width of the element will go from border to border! So, we specified that it's
+        200px wide? That means the width of the whole thing will be 200px, and the context box is 190px</li>
+    <li>In the 3 boxes below, look at the way <strong>shorthand</strong> is used!</li>
+    <li>Note how border radii can be manipulated to create circular borders too!</li>
+    <figure>
+        <figcaption>Box 1's CSS</figcaption>
+        <pre>
+              <code>
+                #one {
+                    background-color: #e5989b;
+                    border-width: 5px;
+                    /*Widening the border by 5px increases the width of the content (including border) by 10px*/
+                    border-color: black;
+                    border-style: solid;
+                    box-sizing: border-box;
+                    /*The width of the element will go from border to border!  So, we specified that it's 200px wide?  That means the whole thing will be 200px, and the context box is 190px*/
+                }
+              </code>
+            </pre>
+    </figure>
+    <figure>
+        <figcaption>Box 2's CSS</figcaption>
+        <pre>
+              <code>
+                #two {
+                    /*
+                    We're giving this a different color, a border width of 3px, and a new style
+                    In addition, the left side of the border is shown.  However, what about border shorthand???
+                    See the 3rd box! 
+                    */
+                    background-color: #b5838d;
+                    border-color: peachpuff;
+                    border-width: 3px;
+                    border-style: dashed;
+                    border-left-color: blueviolet;
+                }
+              </code>
+            </pre>
+    </figure>
+    <figure>
+        <figcaption>Box 3's CSS</figcaption>
+        <pre>
+              <code>
+                #three {
+                    background-color: #6d6875;
+                    border: 4px solid black;
+                    border-radius:50%   /*Using a percentage is an extremely common way to make circles!*/
+                }
+              </code>
+            </pre>
+    </figure>
+    <div id="one">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam
+        harum
+        ratione corrupti
+        quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</div>
+    <div id="two">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam
+        harum
+        ratione corrupti
+        quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</div>
+    <div id="three">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos
+        quam harum
+        ratione corrupti
+        quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</div>
 </body>
 <footer>
     <nav>
