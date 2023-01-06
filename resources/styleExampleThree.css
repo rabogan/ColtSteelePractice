@@ -1,4 +1,8 @@
 /*ELEMENTS*/
+button {
+    padding: 10px;
+}
+
 div {
     background-color: #e5989b;
     height: 200px;
@@ -16,10 +20,6 @@ Anyway, I downloaded the DupChecker extension
 Use CTRL+SHIFT+P and searched with "check duplicates with regex match" using the following:
 ^.[\w-\s.>:,[]*=]+{
 */
-.padOne {
-    padding: 10px;
-}
-
 .padTwo {
     padding: 5px 10px;
 }
