@@ -47,8 +47,7 @@
                     /*Widening the border by 5px increases the width of the content (including border) by 10px*/
                     border-color: black;
                     border-style: solid;
-                    box-sizing: border-box;
-                    /*The width of the element will go from border to border!  So, we specified that it's 200px wide?  That means the whole thing will be 200px, and the context box is 190px*/
+                    /*box-sizing: border-box;*/ This is left out...but leaving it in would give the boxes a consistent size
                 }
               </code>
             </pre>
@@ -58,11 +57,6 @@
         <pre>
               <code>
                 #two {
-                    /*
-                    We're giving this a different color, a border width of 3px, and a new style
-                    In addition, the left side of the border is shown.  However, what about border shorthand???
-                    See the 3rd box! 
-                    */
                     background-color: #b5838d;
                     border-color: peachpuff;
                     border-width: 3px;
@@ -84,18 +78,15 @@
               </code>
             </pre>
     </figure>
-    <div id="one">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam
-        harum
-        ratione corrupti
-        quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</div>
-    <div id="two">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos quam
-        harum
-        ratione corrupti
-        quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</div>
-    <div id="three">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus dignissimos
-        quam harum
-        ratione corrupti
-        quasi consequuntur sequi eius nemo nam, aut tempora labore, quo quidem a qui architecto quae aliquid?</div>
+    <div id="one">Wait, we specified that a div be 200px wide? However, after adding border width of 5px, the whole
+        thing will be 210px wide! To make this box 'fit' 200px of width, you need to include <strong>box-sizing:
+            border-box;</strong></div>
+    <div id="two">We're giving this a different color, a border width of 3px, and a new style
+        In addition, the left side of the border is shown. However, what about border shorthand???
+        See the 3rd box! </div>
+    <div id="three">This uses some shorthand. You can reference the documentation on MDN to ensure your order is
+        accurate! In the case of borders, we need to make sure that the thickness goes before style, and that before
+        color. The border-radius at 50% accounts for the circle!!!</div>
 </body>
 <footer>
     <nav>
