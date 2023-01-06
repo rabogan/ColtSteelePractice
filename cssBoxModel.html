@@ -22,6 +22,14 @@
         The simplest ones to learn are to manipulate <em>height</em> and <em>width</em>, like so:
         <em>div</em>{<strong>height:200px;</strong>}
     </li>
+    <li>One of the easiest ways to make a circular border is to use the <em>border-radius</em> property, set it to 50%.
+        It's always useful to remember the shorthand for <em>border</em> adjustment: <em>border</em>:<strong>size style
+            color</strong>, e.g. <em>border:10px dotted green;</em>
+    </li>
+    <li>Adding padding is pretty easy to do, and it's easy to measure the results visually using <a
+            href="https://www.codepen.io">Codepen</a>. The shorthand for padding is not too tough: 1 number changes all
+        sides, 2 changes the vertical then horizontal, 3 values change top horizontal and bottom, and 4 changes top
+        right bottom left (clockwise). We the buttons below more information</li>
     <h3>Width and Height</h3>
     <li>The most basic to manipulate! The lorum ipsum in the three divs below will have 200px <strong>height</strong>
         and <strong>width</strong> dimensions, and be
@@ -87,6 +95,38 @@
     <div id="three">This uses some shorthand. You can reference the documentation on MDN to ensure your order is
         accurate! In the case of borders, we need to make sure that the thickness goes before style, and that before
         color. The border-radius at 50% accounts for the circle!!!</div>
+
+    <h3>Padding</h3>
+    <li>We're demonstrating <em>padding</em> using 4 buttons below: 'Pad Me'</li>
+    <figure>
+        <figcaption>Four Kinds Of Padding (using shorthand)</figcaption>
+        <pre>
+              <code>
+                #padOne {
+                    padding: 10px;
+                }
+                #padTwo {
+                    padding: 5px 10px;
+                }
+                #padThree {
+                    padding: 1px 2px 2px;
+                }
+                #padFour {
+                    padding: 5px 1px 0 2px;
+                }
+              </code>
+            </pre>
+    </figure>
+    <li>So, using 1 figure applies the value to each side</li>
+    <li>Using 2 figures applies the values to the vertical and horizontal</li>
+    <li>3 Figures applies the values to the top, horizontal, then bottom</li>
+    <li>Finally, 4 figures goes clockwise: top right bottom left</li>
+    <button id="padOne">Pad Me One</button>
+    <button id="padTwo">Pad Me Two</button>
+    <button id="padThree">Pad Me Three</button>
+    <button id="padFour">Pad Me Four</button>
+
+    <h3>Margin</h3>
 </body>
 <footer>
     <nav>
