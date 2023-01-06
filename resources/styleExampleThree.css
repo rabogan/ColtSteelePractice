@@ -1,13 +1,26 @@
 /*ELEMENTS*/
+body {
+    margin: 0;
+}
+
 div {
     background-color: #e5989b;
     height: 200px;
     width: 200px;
 }
 
+h1 {
+    margin: 0;
+}
+
 h3 {
     background-color: pink;
     width: 250px;
+}
+
+span {
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
 /*CLASSES*/
@@ -26,6 +39,9 @@ Use CTRL+SHIFT+P and searched with "check duplicates with regex match" using the
     border-style: solid;
     box-sizing: border-box;
     /*The width of the element will go from border to border!  So, we specified that it's 200px wide?  That means the whole thing will be 200px, and the context box is 190px*/
+
+    margin-left: 50px;
+    margin-bottom: 100px;
 }
 
 #two {
@@ -39,6 +55,9 @@ Use CTRL+SHIFT+P and searched with "check duplicates with regex match" using the
     border-width: 3px;
     border-style: dashed;
     border-left-color: blueviolet;
+
+    padding-right: 200px;
+    margin: 200px;
 }
 
 #three {

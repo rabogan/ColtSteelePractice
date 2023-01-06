@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>The Box, The Box!</h1>
+    <h1>The Box, <span>The Box!</span></h1>
     <p>This section will elaborate on the CSS <strong>Box Model</strong>, and will help to review section 8 of the Udemy
         course by Colt Steele</p>
     <h2>Overview</h2>
@@ -56,6 +56,9 @@
                     border-color: black;
                     border-style: solid;
                     /*box-sizing: border-box;*/ This is left out...but leaving it in would give the boxes a consistent size
+
+                    margin-left:50px;
+                    margin-bottom: 100px;
                 }
               </code>
             </pre>
@@ -70,6 +73,9 @@
                     border-width: 3px;
                     border-style: dashed;
                     border-left-color: blueviolet;
+
+                    padding-right: 200px;
+                    margin: 200px;
                 }
               </code>
             </pre>
@@ -127,6 +133,20 @@
     <button id="padFour">Pad Me Four</button>
 
     <h3>Margin</h3>
+    <li>Margin is the space on the outside of th <em>border</em></li>
+    <li>The shorthand for margin is exactly the same as that for padding!</li>
+    <li>Certain elements, such as <em>h1</em>, get default margin. You can change this by resetting the margins to what
+        you want</li>
+    <li>Many people <strong>remove the margin when creating a new webpage!</strong>. To do so, use
+        <em>body</em>{<strong>margin:0;</strong>}
+    </li>
+    <li>Look at the boxes/code above to see how margin changes affect things</li>
+    <li>Also, in the h1 header at the top, we styled the second 'the box' to have a margin. However, when we try to
+        include a <em>margin-top</em> of <em>30px</em>, nothing happens, due to a very important property known as
+        <strong>display</strong>
+    </li>
+
+    <h3>Display</h3>
 </body>
 <footer>
     <nav>
