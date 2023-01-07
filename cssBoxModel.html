@@ -26,23 +26,45 @@
         It's always useful to remember the shorthand for <em>border</em> adjustment: <em>border</em>:<strong>size style
             color</strong>, e.g. <em>border:10px dotted green;</em>
     </li>
-    <li>Adding padding is pretty easy to do, and it's easy to measure the results visually using <a
-            href="https://www.codepen.io">Codepen</a>. The shorthand for padding is not too tough: 1 number changes all
+    <li>Adding <em>padding</em> is pretty easy to do, and it's easy to measure the results visually using <a
+            href="https://www.codepen.io">Codepen</a>. The shorthand for <em>padding</em> is not too tough: 1 number
+        changes all
         sides, 2 changes the vertical then horizontal, 3 values change top horizontal and bottom, and 4 changes top
         right bottom left (clockwise). We the buttons below more information</li>
+    <li><em>Margin</em> has the same shorthand as <em>padding</em>. Simply, it is the space between one element and
+        other elements, top/right/below/left of the original element. The inline-span in the heading of this page
+        demonstrates margin...although note the lack of padding on top!</li>
+    <li>The <em>display</em> property decides whether an element is treated as a <strong>block, inline or
+            inline-block</strong> element, along with the layout used for the children: <em>flow layout</em>,
+        <em>grid</em>, or <em>flex</em>.
+    </li>
+    <li>Remember:
+        <ol>
+            <li>Block elements break the flow of a document. Width, height, margin and padding are
+                <strong>respected</strong>
+            </li>
+            <li>With inline elements, width and height are <strong>ignored</strong>. However, margin and padding push
+                elements aways horizontally but NOT vertically!</li>
+            <li>Inline-Block elements behave much like an inline elements, although (like a block element) width,
+                height,
+                margin, and padding are <strong>respected</strong></li>
+        </ol>
+    </li>
     <h3>Width and Height</h3>
-    <li>The most basic to manipulate! The lorum ipsum in the three divs below will have 200px <strong>height</strong>
+    <li>The most basic to manipulate! The lorum ipsum in the three <em>div</em>s below will have 200px
+        <strong>height</strong>
         and <strong>width</strong> dimensions, and be
         differentiated from the <em>h3</em> element by assigning different
-        color attributes to both</li>
+        color attributes to both
+    </li>
     <li>If you inspect the boxes above, you'll quickly see why they space out the way they do!</li>
     <h3>Border And Border Radius</h3>
     <li>Finally, there's a very important attribute/property called <strong>box-sizing</strong>. If
         <strong>box-sizing</strong> has been changed to <strong>border-box</strong>, then changing the width or height
-        will set the width of the <em>border area</em>
+        will set the width of the <em>border</em> area</em>
     </li>
-    <li>As mentioned above, the width of the element will go from border to border! So, we specified that it's
-        200px wide? That means the width of the whole thing will be 200px, and the context box is 190px</li>
+    <li>As mentioned above, the <em>width</em> of the element will go from border to border! So, we specified that it's
+        200px wide? That means the <em>width</em> of the whole thing will be 200px, and the context box is 190px</li>
     <li>In the 3 boxes below, look at the way <strong>shorthand</strong> is used!</li>
     <li>Note how border radii can be manipulated to create circular borders too!</li>
     <figure>
@@ -147,6 +169,34 @@
     </li>
 
     <h3>Display</h3>
+    <li>These <em>h2</em> elements will show what we're doing:</li>
+    <h2>I am h2</h2>
+    <h2>I'm another h2!</h2>
+    <li>Without changing things, the h2's color would initially go all the way across the page. Note how the h2 above is
+        <strong>block</strong>, and the span below is <strong>include</strong>
+    </li>
+    <span id="spanOne">I am a span</span>
+    <span id="spanOne">I'm another span!</span>
+    <li>These h2s, however, have their <strong>display</strong> set to <strong>inline</strong>, and the spans their
+        <strong>display</strong> set to <strong>block!</strong>
+    </li>
+    <h2 id="exampleOne">I am h2</h2>
+    <h2 id="exampleOne">I'm another h2!</h2>
+    <span id="spanTwo">I am a span</span>
+    <span id="spanTwo">I'm another span!</span>
+    <li>The section below shows 3 sets of <em>block</em> vs <em>inline</em> vs <em>block-inline</em> elements</li>
+    <div id="blockExample">Block</div>
+    <div id="blockExample">Block</div>
+    <div id="blockExample">Block</div>
+    <div id="inlineExample">Inline</div>
+    <div id="inlineExample">Inline</div>
+    <div id="inlineExample">Inline</div>
+    <div id="blockInline">Block-inline</div>
+    <div id="blockInline">Block-inline</div>
+    <div id="blockInline">Block-inline</div>
+    <li><em>display:none;</em> would also have use (especially with Javascript)</li>
+
+    <h3>CSS Units</h3>
 </body>
 <footer>
     <nav>
