@@ -117,6 +117,14 @@ span.spanTwo {
     display: block;
 }
 
+ul {
+    font-size: 1.25rem;
+}
+
+ul.bad {
+    font-size: 1.25em;
+}
+
 /*CLASSES*/
 /*Is this the correct way to avoid duplicate code in CSS?
 Anyway, I downloaded the DupChecker extension

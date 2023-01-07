@@ -62,6 +62,10 @@
         pixels), ems will 'scale up' with the page if things are changed. With absolute units, we'd need to adjust
         nearly everything on the page, changing pixel values incalculable times! Keeping things relative with em is
         hugely beneficial!</li>
+    <li><strong>rems</strong> are also very useful! They are measured relative to the <em>root HTML element's
+            font-size</em>. While <strong>ems</strong> change based on the parent element's font-size, rems do NOT! If
+        dealing with nested uls as an example, ems will cause a weird snowballing effect. REMS will keep things looking
+        good consistent to the rest of the document</li>
     <hr>
     <h3>Width and Height</h3>
     <li>The most basic to manipulate! The lorum ipsum in the three <em>div</em>s below will have 200px
@@ -249,6 +253,32 @@
         <p>The button above was initially 30px, but this wouldn't <em>scale up</em> if need be. Therefore, I used
             <strong>em</strong>s instead, keeping it all relative!
         </p>
+        <ul class="bad">
+            <p>This uses EMS :)</p>
+            <li>Pasta</li>
+            <ul>
+                <li>Maraconi</li>
+                <li>Penne</li>
+            </ul>
+            <li>Gelato</li>
+            <ul>
+                <li>Vanilla</li>
+                <li>Nutella</li>
+            </ul>
+        </ul>
+        <ul>
+            <p>This one uses REMS</p>
+            <li>Pasta</li>
+            <ul>
+                <li>Maraconi</li>
+                <li>Penne</li>
+            </ul>
+            <li>Gelato</li>
+            <ul>
+                <li>Vanilla</li>
+                <li>Nutella</li>
+            </ul>
+        </ul>
     </article>
     <button class="emz">Click Me!</button>
 </body>
@@ -257,6 +287,7 @@
         <ul>
             <li><a href="./cssExamples.html">Back to the basic CSS Example page (Section 6)</a></li>
             <li><a href="./cssSelectors.html">Back to the CSS Selectors Page (Section 7)</a></li>
+            <li><a href="./cssMiscellaneous.html">Go forth to the CSS Miscellaneous Page (Section 9)</a></li>
         </ul>
     </nav>
     <a href="./index.html">Home</a>
