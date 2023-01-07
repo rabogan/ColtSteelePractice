@@ -50,7 +50,15 @@
                 margin, and padding are <strong>respected</strong></li>
         </ol>
     </li>
-    <h3>Width and Height</h3>
+    <li>Remember that we have <strong>relative values</strong> (em, rem, %age, VH, VW etc...) and <strong>absolute
+            values</strong> (mm, px, in, cm, pt etc...)</li>
+    <li>A %age will either be:
+        <ul>
+            <li>Relative to the value of the PARENT element (e.g. <em>width</em></li>
+            <li>Relative to the value of the element itself (e.g. <em>line-height</em>)</li>
+        </ul>
+        <hr>
+        <h3>Width and Height</h3>
     <li>The most basic to manipulate! The lorum ipsum in the three <em>div</em>s below will have 200px
         <strong>height</strong>
         and <strong>width</strong> dimensions, and be
@@ -197,6 +205,30 @@
     <li><em>display:none;</em> would also have use (especially with Javascript)</li>
 
     <h3>CSS Units</h3>
+    <li>In %ages, we must remember that any given %age is given <strong>relative</strong> to some other value. For
+        example, <em>width</em> is 50% of the <strong>parent element</strong>. <em>line-width</em> is 50% of the width
+        of the element itself! Whether the unit is relative to the PARENT or relative to the ELEMENT iself changes. Use
+        MDN if in doubt!</li>
+    <section>
+        <div class="unitEx">Within this div, I adjusted the width to 70% and height to 20% of whatever the parent
+            element is. This pink div is the child of the grey section! Inspect it!</div>
+        <h4>This is a h4 example!</h4>
+        <li>In this case, I wanted to show how %age can be relative to the element itself! Here, font-size was set by me
+            to be 40px. The <em>line-height</em> was adjusted to 200%, giving us the 80px line height!</li>
+        <code>
+                div.unitEx {
+                    background-color: #e5989b;
+                    width: 50%;
+                    height: 50%;
+                }
+
+                h4 {
+                    font-size: 40px;
+                    border: 1px solid black;
+                    line-height:200%;  /*The line-height would be 80px*/
+                }
+            </code>
+    </section>
 </body>
 <footer>
     <nav>
