@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/styleExampleTwo.css">
+    <title>CSS Selectors</title>
+</head>
+
+<body>
+    <p>This page will use styleExampleTwo.css, and is geared towards Section 7 of the course</p>
+    <h2>Basic Selectors: Universal and Element Selectors</h2>
+    <ul>
+        <li>First covered: the <strong>universal</strong> selector <strong>*</strong> is shown, but its use is not
+            recommended. It
+            basically tries to
+            change all elements on the page, so doesn't really meet our needs very often</li>
+        <li>The <strong>element selector</strong> (e.g. <em>button</em>/<em>h1</em> etc...) will changes all elements of
+            that type</li>
+        <li>The obvious example is something like a <em>h1</em>{ ... } - all <em>h1</em> elements will have the ...
+            attributes adjusted
+        </li>
+        <li>However, using a <strong>,</strong><em>(comma)</em> to separate elements is also acceptable. For example,
+            h1+h2{...} means <em>h1</em> <strong>AND</strong> <em>h2</em> will have their attributes adjusted. Later on
+            in
+            this section,
+            you'll see that ID-types and class-types can be represented in the same way. Using a class "complete" or
+            id
+            "example", the following could also work: .complete+h1{...} #id+h1{...}</li>
+    </ul>
+    <h2>ID Selectors</h2>
+    <ul>
+        <li>We can use the # id to single in on individual elements which use them <strong>inline</strong>. In my
+            example, I changed the
+            page <em>body</em>'s <em>background-color</em> to #f1faee. Both of the <em>button</em></li>'s
+        <em>background-color</em> and <em>font-size</em> were adjusted as well!</li>
+        <li>We wanted ONE specific button (the Sign Up button) to have a different color scheme. To do so, I added an id
+            called 'signup' to that specific button element, and then changed the
+            attributes associated with that id name. So, something like <em>#signup{...}</em> is used in the css file
+        </li>
+        <li>One HUGELY important thing: an id of a <strong>specific name</strong> should only be used
+            <strong>once</strong> on a single HTML page. We shouldn't overuse id selectors,
+            but there's no need to avoid using them. A handful on a single page seems to be optimum, but class selectors
+            are much more common
+        </li>
+    </ul>
+    <h2>Class Selectors (Lecture 71)</h2>
+    <ul>
+        <li>The first thing that is changed from the original document, is to change the <em>span</em>. (A reminder that
+            <em>span</em> is
+            a generic inline element). To select ALL spans in the document, use <strong>ALT and CLICK</strong> on it.
+            ALT+CLICK is for
+            Windows...
+        </li>
+        <li>I named the class <em>.tag</em>. It was given a different <em>background-color</em>, <em>font-size</em>, and
+            <em>color</em>
+        </li>
+        <li>Class itself can be applied across a variety of different elements - and is used FAR MORE often than ID
+            selectors</li>
+    </ul>
+    <h2>The Descendant Selector</h2>
+    <ul>
+        <li>The SPACE between elements in the css file is very important!</li>
+        <ul>
+            <li>h1<strong>,</strong>h2 {...} : the comma means h1 AND h2</li>
+            <li>h1 h2{...}: the <strong>space</strong> means any <strong>descendant <em>h2</em> INSIDE OF
+                </strong><em>h1</em> will have attributes adjusted</li>
+        </ul>
+        <li>As another example, we can choose to select all &lt;a&gt;s elements that are nested inside an &lt;li&gt;
+            element. To do so, we can
+            use li a{ ... }</li>
+        <li>So, no li tags would be styled in this...ONLY anchor tags &lt;a&gt; that are inside an &lt;li&gt; tag</li>
+        <li>In the code of this page, one section below has a class 'post' appended to it. All anchor
+            tags within that class post were then changed according to the attributes defined within the class. This
+            uses <em>.post a</em>{...} in the CSS file</li>
+        <li>Finally, a <em>footer a</em> (any <em>a</em> found INSIDE OF (or descending from) <em>footer</em>) was used
+            in
+            CSS to change the color of those particular links</li>
+    </ul>
+    <h2>The Combinator (Adjacent Selector/Adjacent Sibling Selected) and Direct Child/Direct Descendant Selector</h2>
+    <ul>
+        <ul>
+            <li>h1<strong>,</strong>h2 {...} : the comma means h1 AND h2</li>
+            <li>h1 h2{...}: the <strong>space</strong> means any <strong>descendant <em>h2</em> INSIDE OF
+                </strong><em>h1</em> will have attributes adjusted</li>
+            <li>h1<strong>+</strong>h2{...}: the <strong>+</strong> sign means any <em>h2</em> <strong>immediately
+                    preceded by</strong> <em>h1</em> will have its attributes adjusted</li>
+            <li>h1<strong>&gt;</strong>h2{...} the <strong>&gt;</strong> sign denotes that any <em>h2</em> element that
+                is a
+                DIRECT CHILD (as opposed to a non-direct descendant nested deeply inside of) a <em>h1</em> element will
+                have its
+                attributes adjusted</li>
+        </ul>
+        <li>The h1+p {...} in the lecture's example is known as a COMBINATOR. It will <strong>ONLY</strong> change
+            paragraphs immediately preceded by h1</em></li>
+        <li>In our page's example, any button that follows input, as well as any <em>button</em> following a <em>h2</em>
+            has been changed
+            to slightly more garish colors</li>
+        <li><strong>Child/Direct Descendant</strong> Selectors are quite easy. They make use of the &gt; sign, as in
+            footer &gt; a, in my CSS file! Essentially, it demands that ONLY direct descendants of a specific selector
+            are looked at. In this page, <em>footer a</em> should yield red links, while <em>footer &gt; a</em> should
+            yield blue ones</li>
+    </ul>
+    <h2>The Attribute Selector</h2>
+    <h4><em>Examples</em></h4>
+    <ol>
+        <li>input[type="text"]{...}: This selects all &lt;<em>input</em>&gt; elements where the <strong>type
+                attribute</strong>
+            is set to <em>text</em></li>
+        <li>input[type="password]{...}: This selects all &lt;<em>input</em>&gt; elements where the <strong>type
+                attribute</strong> is set to <em>password</em></li>
+        <li>section[class="post"]{...}: This selects all &lt;<em>input</em>&gt; elements where the <strong>class
+                attribute</strong> is set to <em>post</em></li>
+        <li>a[href="https://www.rabogan.github.io"]{...}: This selects all &lt;<em>a</em>&gt; elements where the
+            <strong>href attribute</strong> matches the www.rabogan.github.io website
+        </li>
+    </ol>
+    <ul>
+        <li>A little uncommon, the above allows us to select all elements that contain a <strong>SPECIFIC
+                ATTRIBUTE</strong>, such as all inputs of type 'password' (let's say you want to change the text color
+            of the password input)</li>
+        <li>There are multiple attribute selectors (most rarely used), such as:</li>
+        <ul>
+            <li>element1<em>=</em>[attribute="example"] <em>=</em> used in this way denotes a DIRECT match</li>
+            <li>element1<em>*=</em>[attribute="example"] <em>*=</em> denotes a 'fuzzy' match. So, if a href contains
+                even the word 'goo', that could take you to google, goodbar, gooner4lyfe etc...</li>
+            <li>element1<em>$=</em>[attribute="example"] <em>$=</em> used likes this means that the match for an element
+                <em>element1</em> must end with example. Most used in websites!
+            </li>
+            <li>...<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">and many many
+                    more!!!</a></li>
+        </ul>
+    </ul>
+    <h2>PSEUDO CLASSES</h2>
+    <li>A <strong>pseudo-class</strong> in CSS is a <em>keyword</em> added to a <em>selector</em> that specifies a
+        special state of the selected element</li>
+    <li>Common examples include <strong>:hover</strong>, <strong>:visited</strong>, <strong>:nth-child()</strong>, and
+        <strong>:active</strong>
+    </li>
+    <li>A common example is to <strong>change the color of a button</strong> when the mouse is <strong>hovering</strong>
+        over it! To do this, we need to use a <strong>pseudo-class</strong> in our CSS file. In my example, I used
+        <em>button:<strong>hover</strong></em>{...}, and changed the <em>background-color</em> and <em>color</em> of all
+        buttons that don't have their <strong>specificity</strong> overridden!</em>
+    </li>
+    <li>So, to change all <em>buttons</em> so that when the mouse is over them, the <em>background-color</em> changes to
+        red and text to white, we use <em>button<strong>:hover</strong>{...}</em>, where ... is the color changes </li>
+    <li>Another example is this: <em>input</em>[<em>type="radio"</em>]<strong>:checked</strong>{...} In this, all inputs
+        of type radio that have been checked will have specific attributes adjusted (usually some kind of
+        <em>box-shadow</em>)
+    </li>
+    <li>Finally, <strong>:nth-of-type()</strong> is very useful. Plugging in a number, e.g.
+        <em>p</em><strong>:nth-of-type(2)</strong>{...} will simply changed the 2nd p-element among siblings of type p.
+        However, <em>p</em><strong>:nth-of-type(2n)</strong>{...} will change <strong>every 2nd</strong> element among
+        siblings of type p
+    </li>
+    <h2>Briefly, pseudo-elements</h2>
+    <li>A <strong>pseudo-element</strong> in CSS is a keyword added to a selector that allows you to style a specific
+        part of the selected element(s)</li>
+    <li>Common examples include <strong>::before</strong>, <strong>::after</strong>, <strong>::selection</strong>,
+        <strong>::first-line</strong>, and <strong>::first-letter</strong>
+    </li>
+    <li>Within this page, my example involves having the <em>first letter</em> of <strong>every</strong> <em>h2</em> tag
+        on the page be resized to 36px: <em>h2</em><strong>::first-letter</strong>{...}</li>
+    <li>In addition, the <strong>::selection</strong>{...} standalone code in my CSS file made it so that most selected
+        text is red and gold</li>
+    <li>The parts that differ are for any text selected with a <em>h2</em>: inspect to see why!</li>
+    <h2>Specificity</h2>
+    <li>This is quite an easy concept. Basically:</li>
+    <ul>
+        <li>ID > Class > Element > Universal (Class includes pseudo-classes, Element includes pseudo-elements)</li>
+        <li>The common tiebreaker is to count the number of each type, with precedence given the highest leftmost type
+        </li>
+        <li>If there are an identical number of classes/ids/pseudo-things/etc..., then the LAST one read as input (i.e.
+            the last one entered in the stylesheet, or the last one of the last-entered stylesheet in the head section)
+            will take precedence!</li>
+    </ul>
+    <li>One thing to note is that <strong>inline styles</strong> have higher specificity than ids! For example,
+        something like &lt;<em>button</em>&gt; <strong>style="color:coral"</strong>&gt; will trump any number of ids,
+        classes or elements associated with a button in the CSS stylesheet. They're avoided because they can cause
+        serious confusion</li>
+    <li>On the topic of confusion, the <strong>!important</strong> exception is an example of <em>bad practice</em>.
+        When the <strong>!important</strong> rule is used on a style declaration, it signals to the browser that the
+        specific declaration should override ANY other declarations. Why is it bad practice? Simply, it makes things
+        difficult to debug, as it <strong>breaks the cascading between stylesheets!</strong></li>
+    <li>Finally, this link which helps to compare specificity might be very useful: <a
+            href="specificity.keegan.st">Compare Specificities Here</a></li>
+    <h2>Inheritance</h2>
+    <li>This should be an intuitive concept for you!</li>
+    <nav>
+        <label for="search" id="search">Search</label>
+        <input type="text" placeholder="search">
+        <button>Log In</button>
+        <button id="signup">Sign Up</button>
+    </nav>
+    <main>
+        <h1>Popular Posts</h1>
+        <section class="post">
+            <span class="tag">Posted by <a href="#213adas">/u/not_funny</a></span>
+            <h2>Lol look at this hilarious meme <span>funny</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section class="post">
+            <span class="tag">Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
+            <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span>gunners</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section class="post">
+            <span class="tag">Posted by <a href="#981adas">/u/dogfan</a></span>
+            <h2>This Corgi got some good stuff from the vet. <span>dogs</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+    </main>
+</body>
+<footer>
+    <nav>
+        <ul>
+            <li><a href="./cssExamples.html">Back to the opening CSS Examples page (Section 6)</a></li>
+            <li><a href="./cssBoxModel.html">Alternatively, you could go on to explore the CSS Box Model! (Section
+                    8)</a></li>
+            <li><a href="./cssMiscellaneous.html">Go forth to the CSS Miscellaneous Page (Section 9)</a></li>
+        </ul>
+    </nav>
+    <a href="./index.html">Home</a>
+</footer>
+
+</html>

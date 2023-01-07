@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/styleExampleFour.css">
+    <title>CSS Miscellaneous</title>
+</head>
+
+<body>
+    <li>At this point, I'm try to tidy up a hideous website, and see what designs work, and what don't. I'll try to
+        apply all lessons learned to reformat this at a later date :)</li>
+    <h2>Opacity and alpha channels</h2>
+    <li>Transparency is more commonly controlled by the <em>rgb</em> color setter rather than the hex setter.
+        <em>rgb</em> becomes <strong>rgba</strong>, where the <em>a</em> means alpha, and can be set at a value between
+        0 and 1 to govern an element's transparency
+    </li>
+    <li>To demonstrate this, I have created a magenta <em>section</em> below, with a 50%*50% div inside it</li>
+    <li>To avoid confusion, I avoided using the term <em>opaque</em> for now. However, remember that rgba(x,y,z,0.0) =
+        full transparency, while rgba(x,y,z,1.0) = fully opaque!
+        <section>
+            <div id="rgba">This little div is set to a height/width 50% of the size of the original square. However, the
+                background-color has been altered to white using rgba! That's <strong>rgba(255,255,255,0.7)</strong>. If
+                we use lgba(255,255,255,1.0), then our transparency will be 0! lgba(255,255,255,0.0) would give FULL
+                transparency. As it is, this <em>white</em> square is 30% transparent
+            </div>
+        </section>
+    <li>Opacity is defined as the degree to which content behind an element is hidden, and is the opposite of
+        transparency. Opacity applies to an element as a whole (including ALL contents), even though the value is not
+        inherited by child elements. So, the element and its children all have the same opacity relative to the
+        element's background, even if they have different opacities relative to one another. If you don't want to apply
+        opacity to child elements, use <strong>background</strong> instead</li>
+    <li>In the example below, the property <strong>opacity</strong> is changed! Thus, as well. The background-color is
+        set to YELLOW, with an opacity of 0.5. The color doesn't look very yellow, right? It's simply yellow that is 50%
+        opaque, allowing the magenta below to seep through </li>
+    <li>To change the opacity of a background only, use the background property with a color value that allows for an
+        alpha channel.</li>
+    <section>
+        <div id="opacity">This 0.5 opacity applies to this ENTIRE ELEMENT (this text is originally a custom eggplant
+            color, but is now looking quite magenta-y, right? That's because the 0.5 opacity in this div <strong>also
+                applies to the text!</strong> In the example above, the text color isn't impacted at!</div>
+    </section>
+</body>
+
+<footer>
+    <nav>
+        <ul>
+            <li><a href="./cssExamples.html">Back to the basic CSS Example page (Section 6)</a></li>
+            <li><a href="./cssSelectors.html">Back to the CSS Selectors Page (Section 7)</a></li>
+            <li><a href="./cssBoxModel.html">Back to the complicated CSS Box Model page (Section 8)</a></li>
+        </ul>
+    </nav>
+    <a href="./index.html">Home</a>
+</footer>
+
+</html>

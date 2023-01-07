@@ -1,0 +1,78 @@
+/*
+* {
+    background-color: cyan;
+}
+Example ONLY!
+*/
+::selection {
+    color: gold;
+    background-color: red;
+}
+
+h2::selection {
+    color: white;
+    background-color: blue;
+}
+
+h2::first-letter {
+    font-size: 36px;
+}
+
+a {
+    color: #457b9d;
+}
+
+button {
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+button:hover {
+    background-color: #e63946;
+    color: #f1faee;
+}
+
+body {
+    background-color: #f1faee;
+}
+
+footer a {
+    color: #e63946;
+}
+
+footer>a {
+    color: #457b9d;
+}
+
+h1,
+h2 {
+    color: darkslateblue;
+}
+
+h2 button {
+    background-color: magenta;
+    font-size: 20px;
+}
+
+input button {
+    background-color: magenta;
+}
+
+/*Purely used as an example of a selector list*/
+
+/*Class Selectors*/
+.post a {
+    color: #457b9d;
+}
+
+.tag {
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+}
+
+/*ID Selectors*/
+#signup {
+    background-color: #1d3557;
+    color: #f1faee;
+}
