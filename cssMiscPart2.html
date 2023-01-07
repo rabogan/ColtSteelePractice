@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/styleExampleFourB.css">
+    <title>CSS Miscellaneous Part 2</title>
+</head>
+
+<body>
+    <h1>CSS Miscellaneous Part 2 (Section 9)</h1>
+    <h2>Position</h2>
+    <li>The CSS property <strong>position</strong> sets how an element is positioned within a document. It establishes
+        how <em>top, right, bottom and left</em> will work</li>
+    <li>To demonstrate this, I've set up another div using the id <em>pos</em></li>
+    <section id="static">
+        <h2>Static</h2>
+        <li>Here, the middle div has <strong>position:static;</strong></li>
+        <div></div>
+        <div id="middle"></div>
+        <div></div>
+    </section>
+    <section id="relative">
+        <h2>Relative</h2>
+        <li>Here, the middle div has <strong>position:relative;</strong></li>
+        <li>In addition, the <em>top</em> and <em>left</em> attributes have been changed to 50px each, which pushes the
+            element DOWN 50px and to the right (from the left) 50 px too!</li>
+        <div></div>
+        <div id="middle"></div>
+        <div></div>
+    </section>
+    <section id="absolute">
+        <h2>Absolute</h2>
+        <li>Here, the middle div has <strong>position:absolute;</strong></li>
+        <li>In addition, the <em>top</em> and <em>left</em> attributes have AGAIN been changed to 50px each</li>
+        <li>However, <strong>absolute</strong> will remove an element from normal document flow, and position it
+            <strong>closest to its closest positioned ancestor</strong>, or <strong>relative to the initial containing
+                block</strong>
+        </li>
+        <li>Thus, if something is <strong>absolute, but</strong> <em>not nested inside a POSITIONED (i.e. with a
+                position set to something other than static) element</em>, it will be positioned relative to the
+            containing block, which is usually &lt;body&gt;</li>
+        <div></div>
+        <div id="middle"></div>
+        <div></div>
+    </section>
+    <section id="fixed">
+        <h2>Fixed</h2>
+        <li>Here, the middle div has <strong>position:fixed;</strong></li>
+        <li>In addition, the <em>top</em> and <em>left</em> attributes have been changed to 0 and 400px</li>
+        <li>This is the reason that BLOCK is hanging over in this page!!!</li>
+        <li>Basically, if something is positioned as <strong>fixed</strong>, then <strong>it will always be positioned
+                relative to the overall containing block</strong>! <em>(Unless an ancestor has a transform, perspective
+                or filter property contributing to the containing block info)</em></li>
+        <div></div>
+        <div id="middle"></div>
+        <div></div>
+    </section>
+</body>
+
+<footer>
+    <nav>
+        <ul>
+            <li><a href="./cssExamples.html">Back to the basic CSS Example page (Section 6)</a></li>
+            <li><a href="./cssSelectors.html">Back to the CSS Selectors Page (Section 7)</a></li>
+            <li><a href="./cssBoxModel.html">Back to the complicated CSS Box Model page (Section 8)</a></li>
+            <li><a href="./cssMiscellaneous.html">Back to part 1 of Section 9</a></li>
+        </ul>
+    </nav>
+    <a href="./index.html">Home</a>
+</footer>
+
+</html>
