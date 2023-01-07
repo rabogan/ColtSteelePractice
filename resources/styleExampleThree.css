@@ -43,6 +43,12 @@ div.blockInline {
     display: inline-block;
 }
 
+div.unitEx {
+    background-color: #e5989b;
+    width: 50%;
+    height: 50%;
+}
+
 h1 {
     background-color: #e5989b;
 }
@@ -61,6 +67,19 @@ h2.exampleOne {
 h3 {
     background-color: pink;
     width: 250px;
+}
+
+h4 {
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%;
+    /*The line-height would be 80px*/
+}
+
+section {
+    background-color: #6d6875;
+    width: 800px;
+    height: 800px;
 }
 
 span {
