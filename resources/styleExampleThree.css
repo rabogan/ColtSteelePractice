@@ -1,4 +1,8 @@
 /*ELEMENTS*/
+article {
+    font-size: 30px;
+}
+
 body {
     margin: 0;
 }
@@ -17,6 +21,13 @@ button#padThree {
 
 button#padFour {
     padding: 5px 1px 0 2px;
+}
+
+button.emz {
+    background-color: #2a9d8f;
+    font-size: 30px;
+    padding: 0 30px;
+    border-radius: 15px;
 }
 
 div {
@@ -74,6 +85,14 @@ h4 {
     border: 1px solid black;
     line-height: 200%;
     /*The line-height would be 80px*/
+}
+
+h5 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 0.6em;
 }
 
 section {

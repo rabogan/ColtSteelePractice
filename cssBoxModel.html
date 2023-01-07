@@ -57,8 +57,13 @@
             <li>Relative to the value of the PARENT element (e.g. <em>width</em></li>
             <li>Relative to the value of the element itself (e.g. <em>line-height</em>)</li>
         </ul>
-        <hr>
-        <h3>Width and Height</h3>
+    </li>
+    <li><strong>ems</strong> are excellent units to use when building! As opposed to <em>absolute units</em> (such as
+        pixels), ems will 'scale up' with the page if things are changed. With absolute units, we'd need to adjust
+        nearly everything on the page, changing pixel values incalculable times! Keeping things relative with em is
+        hugely beneficial!</li>
+    <hr>
+    <h3>Width and Height</h3>
     <li>The most basic to manipulate! The lorum ipsum in the three <em>div</em>s below will have 200px
         <strong>height</strong>
         and <strong>width</strong> dimensions, and be
@@ -229,6 +234,23 @@
                 }
             </code>
     </section>
+    <li>To demonstrate <strong>em</strong>. Remember that with font-size, 1em equals the font-size of the parent. 2em =
+        twice the parent's font-size etc...</li>
+    <li>With other properties, 1em equals the computed font-size of the element itself</li>
+    <li>Why are the three buttons on the page different sizes? Well, they all utilize em, and the dimensions stay
+        consistent relative to the size of the parent element!</li>
+    <article>
+        <h5>I am h5! <button class="emz">Click Me!</button></h5>
+        <p>In this example, the font-size of the &lt;article&gt; tag was given as 30px, while the font-size of the
+            &lt;h5&gt; tag was <strong>2em</strong>. Thus, because <em>article</em> is the parent element of h5 (and
+            font-size in em is dependent on the parent element), the font size here will be 60px! I made the p 0.6ems!
+            (18px)</p>
+        <button class="emz">Click Me!</button>
+        <p>The button above was initially 30px, but this wouldn't <em>scale up</em> if need be. Therefore, I used
+            <strong>em</strong>s instead, keeping it all relative!
+        </p>
+    </article>
+    <button class="emz">Click Me!</button>
 </body>
 <footer>
     <nav>
