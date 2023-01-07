@@ -25,19 +25,19 @@ div {
     width: 200px;
 }
 
-div#blockExample {
+div.blockExample {
     background-color: olivedrab;
     border: 5px solid black;
     display: block;
 }
 
-div#inlineExample {
+div.inlineExample {
     background-color: olivedrab;
     border: 5px solid black;
     display: inline;
 }
 
-div#blockInline {
+div.blockInline {
     background-color: olivedrab;
     border: 5px solid black;
     display: inline-block;
@@ -53,7 +53,7 @@ h2 {
     border: 1px solid black;
 }
 
-h2#exampleOne {
+h2.exampleOne {
     background-color: palegoldenrod;
     border: 1px solid black;
     display: inline;
@@ -69,12 +69,12 @@ span {
     margin-top: 30px;
 }
 
-span#spanOne {
+span.spanOne {
     background-color: paleturquoise;
     border: 1px solid black;
 }
 
-span#spanTwo {
+span.spanTwo {
     background-color: paleturquoise;
     border: 1px solid black;
     display: block;
