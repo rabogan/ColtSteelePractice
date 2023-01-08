@@ -11,6 +11,7 @@
     <link rel="icon" href="../images/beauty_kanji.ico">
     <meta name="author" content="Robert Bogan">
     <meta name="keywords" content="CSS, Colt Steele, web development">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <title>Miscellaneous Part 5</title>
 </head>
 
@@ -19,7 +20,85 @@
         <h1>Fancy Hover Button</h1>
     </header>
     <main>
-
+        <li>Just as a quick aside, this was the first instance where we used a Google font (it is the head of this
+            document)
+            <pre>
+            <code>
+                <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+            </code>
+        </pre>
+        </li>
+        <li>A little different from the lecture itself, I've arranged Colt's non-explanation and incorporation of the
+            FlexBox things (like viewport height, display:flex etc...) as below. The hover button on this page currently
+            exists in its own section, so as not to destroy the current presentation of the page
+            <pre>
+                <code>
+                    section {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height:100vh;
+                        background-color:#1f1b29;
+                    }
+                </code>
+            </pre>
+        </li>
+        <li>The basic button also needs a little explanation. The custom Google font from above is incorporated. As well
+            as that, the background of the button is set to none (so it's basically transparent now!)
+            The color and border properties are self-explanatory! To space out the button in a way that allows it to
+            scale up or down, padding of 1em and 2em has been added (vertical horizontal). Speaking of scaling, the
+            font-size is set to 1em, rather than an absolute value
+            <pre>
+                <code>
+                    button {
+                        font-family: 'Roboto', sans-serif;
+                        background: none;
+                        color: #ffa260;
+                        border: 2px solid;
+                        padding: 1em 2em; /*1em top and bottom, 2em left and right*/
+                        font-size: 1em; /*Allows the button's font to scale up or down as necessary*/
+                    }
+                </code>
+            </pre>
+        </li>
+        <li>Can you work out what effects have been done to the button below? Just focus on the button itself, none of
+            the rest!</li>
+        <section>
+            <button>Hover Me</button>
+        </section>
+        <li>The first and least difficult to identify change is the use of the pseudo-class <strong>:hover</strong>. The
+            border-color and internal text color have been changed (light inside of darker gives it the appearance of
+            glowing from within). More complex is the <strong>box-shadow</strong> property, which is new! The CSS
+            shorthand shows the x-offset, y-offset, blur-radius, spread-radius, and color. It gives quite the effect
+            when you <strong>hover!</strong>
+            <pre>
+                <code>
+                    button:hover {
+                        border-color: #f1ff5c;
+                        color: white;
+                        box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+                    }
+                </code>
+            </pre>
+        </li>
+        <li>The performance-effective way of moving the button is to use transform! Since we want the button to jump up
+            a little, we could use transform:translate(0,-0.25em); I opted for the alternative (because the teacher
+            did!). Finally, to avoid an instantaneous change, we can use <strong>transition()</strong>. It's bad
+            practice to just use <strong>transform:all 0.25s;</strong>, so the properties are listed! The
+            <strong>cursor:pointer;</strong> option makes it REALLY obvious that we can interact with this button!
+            <pre>
+                <code>
+                    button:hover {
+                        border-color: #f1ff5c;
+                        color: white;
+                        box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+                        transform:translateY(-0.25em);
+                        transition:color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+                        cursor:pointer;
+                    }
+                </code>
+            </pre>
+        </li>
     </main>
     <footer>
         <nav>

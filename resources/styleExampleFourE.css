@@ -2,3 +2,31 @@ body {
     background-color: #FFE5D4;
     color: #694F5D;
 }
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #151b29;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+    background: none;
+    color: #ffa260;
+    border: 2px solid;
+    padding: 1em 2em;
+    /*1em top and bottom, 2em left and right*/
+    font-size: 1em;
+    /*Allows the button's font to scale up or down as necessary*/
+}
+
+button:hover {
+    border-color: #f1ff5c;
+    color: white;
+    box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+    transform: translateY(-0.25em);
+    transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+    cursor: pointer;
+}
