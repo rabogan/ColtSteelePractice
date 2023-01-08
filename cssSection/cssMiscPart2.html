@@ -32,6 +32,8 @@
         <li>Here, the middle div has <strong>position:relative;</strong></li>
         <li>In addition, the <em>top</em> and <em>left</em> attributes have been changed to 50px each, which pushes the
             element DOWN 50px and to the right (from the left) 50 px too!</li>
+        <li>In essence, the block is positioned where <em>it would be </em><strong>relative to</strong> its own position
+        </li>
         <div></div>
         <div id="middle"></div>
         <div></div>
@@ -47,6 +49,9 @@
         <li>Thus, if something is <strong>absolute, but</strong> <em>not nested inside a POSITIONED (i.e. with a
                 position set to something other than static) element</em>, it will be positioned relative to the
             containing block, which is usually &lt;body&gt;</li>
+        <li>In my example, the section the blocks are contained in is a <strong>positioned</strong> element, with the
+            position changed to <em>relative</em>. In addition, I've made it so the middle block has had its position
+            changed significantly. Inspect to check!</li>
         <div></div>
         <div id="middle"></div>
         <div></div>
@@ -65,6 +70,7 @@
     </section>
     <footer>
         <nav>
+            <h3>Other CSS Links</h3>
             <ul>
                 <li><a href="./cssExamples.html">CSS Examples (Section 6)</a></li>
                 <li><a href="./cssSelectors.html">CSS Selectors (Section 7)</a></li>

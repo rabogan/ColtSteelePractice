@@ -32,8 +32,8 @@ div {
 
 #absolute #middle {
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 150px;
+    left: 400px;
 }
 
 #fixed #middle {
