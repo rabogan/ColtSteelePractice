@@ -4,7 +4,8 @@ article {
 }
 
 body {
-    margin: 0;
+    background-color: #FFE5D4;
+    color: #694F5D;
 }
 
 button#padOne {
