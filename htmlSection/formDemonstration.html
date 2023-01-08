@@ -15,94 +15,98 @@
 </head>
 
 <body>
-    <h1>Form Demo</h1>
-    <p>This covers:
-    <ul>
-        <li>The use of 'label' and 'input' in detail</li>
-        <li>How to create ways for users to enter name/password/email/checkboxes</li>
-        <li>How to 'hijack' Google and Reddit searches</li>
-        <li>How allow for users to choose one from a number of options (RADIO)</li>
-        <li>Dropdown menus (label, select, option)</li>
-        <li>Volume Bar, or ranges in general</li>
-        <li>Adding a textbox using textarea</li>
-    </ul>
-    </p>
-    <!--The action attribute outlines WHERE THE
+    <header>
+        <h1>Form Demo</h1>
+    </header>
+    <main>
+        <p>This covers:
+        <ul>
+            <li>The use of 'label' and 'input' in detail</li>
+            <li>How to create ways for users to enter name/password/email/checkboxes</li>
+            <li>How to 'hijack' Google and Reddit searches</li>
+            <li>How allow for users to choose one from a number of options (RADIO)</li>
+            <li>Dropdown menus (label, select, option)</li>
+            <li>Volume Bar, or ranges in general</li>
+            <li>Adding a textbox using textarea</li>
+        </ul>
+        </p>
+        <!--The action attribute outlines WHERE THE
     info should be sent when form data is transmitted-->
-    <form action="/tacos">
-        <p>
-            <label for="username">Enter a username:</label>
-            <input id="username" type="text" placeholder="username" name="username">
-        </p>
-        <p>
-            <label for="password">Enter a password:</label>
-            <input id="password" type="password" placeholder="password" name="password">
-        </p>
-        <p>
-            <label for="peas">Do you like peas?</label>
-            <input type="checkbox" name="peas" id="peas" name="peas">
-        </p>
-        <p>
-            <label for="number">Enter a number</label>
-            <input type="number" placeholder="Number">
-        </p>
-    </form>
-    <h2>Hijacking Searches</h2>
-    <h3>Google Search</h3>
-    <form action="https://www.google.com/search">
-        <input type="text" placeholder="search" name="q">
-        <button>Search Google!</button>
-    </form>
-    <h3>Reddit Search</h3>
-    <form action="https://www.reddit.com/search">
-        <input type="text" placeholder="search" name="q">
-        <button>Search Reddit!</button>
-    </form>
-    <h3>YouTube Search</h3>
-    <form action="https://www.youtube.com/results">
-        <input type="text" placeholder="search" name="search_query">
-        <button>Search YouTube</button>
-    </form>
-    <h2>Other Inputs</h2>
-    <h3>The 'agree' checkbox</h3>
-    <form action="/example">
-        <!--Note how input's id and label's for match!
+        <form action="/tacos">
+            <p>
+                <label for="username">Enter a username:</label>
+                <input id="username" type="text" placeholder="username" name="username">
+            </p>
+            <p>
+                <label for="password">Enter a password:</label>
+                <input id="password" type="password" placeholder="password" name="password">
+            </p>
+            <p>
+                <label for="peas">Do you like peas?</label>
+                <input type="checkbox" name="peas" id="peas" name="peas">
+            </p>
+            <p>
+                <label for="number">Enter a number</label>
+                <input type="number" placeholder="Number">
+            </p>
+        </form>
+        <h2>Hijacking Searches</h2>
+        <h3>Google Search</h3>
+        <form action="https://www.google.com/search">
+            <input type="text" placeholder="search" name="q">
+            <button>Search Google!</button>
+        </form>
+        <h3>Reddit Search</h3>
+        <form action="https://www.reddit.com/search">
+            <input type="text" placeholder="search" name="q">
+            <button>Search Reddit!</button>
+        </form>
+        <h3>YouTube Search</h3>
+        <form action="https://www.youtube.com/results">
+            <input type="text" placeholder="search" name="search_query">
+            <button>Search YouTube</button>
+        </form>
+        <h2>Other Inputs</h2>
+        <h3>The 'agree' checkbox</h3>
+        <form action="/example">
+            <!--Note how input's id and label's for match!
         If you want it to start of as checked, add 'checked' to the input!-->
-        <input type="checkbox" name="agree_tos" id="agree">
-        <label for="agree">I agree to everything</label>
-    </form>
-    <h3>Selecting only ONE of a number of options</h3>
-    <form action="/another_example">
-        <label for="agree">Agree</label>
-        <input type="radio" name="choice" id="agree" value="agree">
-        <br>
-        <label for="neutral">Neutral</label>
-        <input type="radio" name="choice" id="neutral" value="neutral">
-        <br>
-        <label for="disagree">Disagree</label>
-        <input type="radio" name="choice" id="disagree" value="disagree">
-    </form>
-    <h3>Dropdown Menu Example</h3>
-    <!--To pre-select one of these, just use 'selected' inside the option tag-->
-    <form action="/dropdown_example">
-        <label for="meal">Please select your main</label>
-        <select name="meal" id="meal">
-            <option value=""><--Please select an option--></option>
-            <option value="fish">Fish</option>
-            <option value="veg">Vegetarian</option>
-            <option value="steak">Steak</option>
-        </select>
-    </form>
-    <h3>Volume Bar Example</h3>
-    <form action="volume_bar_example">
-        <label for="volume">Volume Level:</label>
-        <input type="range" id="volume" min="1" max="10" name="volume" value="5">
-    </form>
-    <h3>Adding a text area for writing</h3>
-    <form action="textbox_example">
-        <label for="requests">Any requests?</label>
-        <textarea id="requests" rows="33" cols="33" placeholder="Add text here..." name="requests"></textarea>
-    </form>
+            <input type="checkbox" name="agree_tos" id="agree">
+            <label for="agree">I agree to everything</label>
+        </form>
+        <h3>Selecting only ONE of a number of options</h3>
+        <form action="/another_example">
+            <label for="agree">Agree</label>
+            <input type="radio" name="choice" id="agree" value="agree">
+            <br>
+            <label for="neutral">Neutral</label>
+            <input type="radio" name="choice" id="neutral" value="neutral">
+            <br>
+            <label for="disagree">Disagree</label>
+            <input type="radio" name="choice" id="disagree" value="disagree">
+        </form>
+        <h3>Dropdown Menu Example</h3>
+        <!--To pre-select one of these, just use 'selected' inside the option tag-->
+        <form action="/dropdown_example">
+            <label for="meal">Please select your main</label>
+            <select name="meal" id="meal">
+                <option value=""><--Please select an option--></option>
+                <option value="fish">Fish</option>
+                <option value="veg">Vegetarian</option>
+                <option value="steak">Steak</option>
+            </select>
+        </form>
+        <h3>Volume Bar Example</h3>
+        <form action="volume_bar_example">
+            <label for="volume">Volume Level:</label>
+            <input type="range" id="volume" min="1" max="10" name="volume" value="5">
+        </form>
+        <h3>Adding a text area for writing</h3>
+        <form action="textbox_example">
+            <label for="requests">Any requests?</label>
+            <textarea id="requests" rows="33" cols="33" placeholder="Add text here..." name="requests"></textarea>
+        </form>
+    </main>
     <footer>
         <nav>
             <h3>Other HTML Links</h3>

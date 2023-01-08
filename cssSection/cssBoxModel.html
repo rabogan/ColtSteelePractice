@@ -15,88 +15,106 @@
 </head>
 
 <body>
-    <h1>CSS Box Model</h1>
-    <h1>The Box, <span>The Box!</span></h1>
-    <p>This section will elaborate on the CSS <strong>Box Model</strong>, and will help to review section 8 of the Udemy
-        course by Colt Steele</p>
-    <h2>Overview</h2>
-    <li>In the box model, each <strong>element</strong> on our page can be thought of as comprising a <em>box</em> of
-        content, made up of a specific <strong>height</strong> and <strong>width</strong>. The content box is enclosed
-        within a layer of <strong>padding</strong> which is itself surrounded by a <strong>border</strong>, and this
-        border is separated from other elements by a <strong>margin</strong></li>
-    <li>We can manipulate any aspect of a content box/tag in css, but this section focuses on the spatial dimensions.
-        The simplest ones to learn are to manipulate <em>height</em> and <em>width</em>, like so:
-        <em>div</em>{<strong>height:200px;</strong>}
-    </li>
-    <li>One of the easiest ways to make a circular border is to use the <em>border-radius</em> property, set it to 50%.
-        It's always useful to remember the shorthand for <em>border</em> adjustment: <em>border</em>:<strong>size style
-            color</strong>, e.g. <em>border:10px dotted green;</em>
-    </li>
-    <li>Adding <em>padding</em> is pretty easy to do, and it's easy to measure the results visually using <a
-            href="https://www.codepen.io">Codepen</a>. The shorthand for <em>padding</em> is not too tough: 1 number
-        changes all
-        sides, 2 changes the vertical then horizontal, 3 values change top horizontal and bottom, and 4 changes top
-        right bottom left (clockwise). We the buttons below more information</li>
-    <li><em>Margin</em> has the same shorthand as <em>padding</em>. Simply, it is the space between one element and
-        other elements, top/right/below/left of the original element. The inline-span in the heading of this page
-        demonstrates margin...although note the lack of padding on top!</li>
-    <li>The <em>display</em> property decides whether an element is treated as a <strong>block, inline or
-            inline-block</strong> element, along with the layout used for the children: <em>flow layout</em>,
-        <em>grid</em>, or <em>flex</em>.
-    </li>
-    <li>Remember:
-        <ol>
-            <li>Block elements break the flow of a document. Width, height, margin and padding are
-                <strong>respected</strong>
-            </li>
-            <li>With inline elements, width and height are <strong>ignored</strong>. However, margin and padding push
-                elements aways horizontally but NOT vertically!</li>
-            <li>Inline-Block elements behave much like an inline elements, although (like a block element) width,
-                height,
-                margin, and padding are <strong>respected</strong></li>
-        </ol>
-    </li>
-    <li>Remember that we have <strong>relative values</strong> (em, rem, %age, VH, VW etc...) and <strong>absolute
-            values</strong> (mm, px, in, cm, pt etc...)</li>
-    <li>A %age will either be:
-        <ul>
-            <li>Relative to the value of the PARENT element (e.g. <em>width</em></li>
-            <li>Relative to the value of the element itself (e.g. <em>line-height</em>)</li>
-        </ul>
-    </li>
-    <li><strong>ems</strong> are excellent units to use when building! As opposed to <em>absolute units</em> (such as
-        pixels), ems will 'scale up' with the page if things are changed. With absolute units, we'd need to adjust
-        nearly everything on the page, changing pixel values incalculable times! Keeping things relative with em is
-        hugely beneficial!</li>
-    <li><strong>rems</strong> are also very useful! They are measured relative to the <em>root HTML element's
-            font-size</em>. While <strong>ems</strong> change based on the parent element's font-size, rems do NOT! If
-        dealing with nested uls as an example, ems will cause a weird snowballing effect. REMS will keep things looking
-        good consistent to the rest of the document</li>
-    <li>It's usually a bad idea to set a font-size in pixels anyway! It overrides the default settings of the browser.
-        Finally, check out this link for more on ems and rems: <a
-            href="https://webdesign.tutsplus.com/tutorials/comprehensive-guide-when-to-use-em-vs-rem--cms-23984">Ems and
-            Rems tutorial</a></li>
-    <hr>
-    <h3>Width and Height</h3>
-    <li>The most basic to manipulate! The lorum ipsum in the three <em>div</em>s below will have 200px
-        <strong>height</strong>
-        and <strong>width</strong> dimensions, and be
-        differentiated from the <em>h3</em> element by assigning different
-        color attributes to both
-    </li>
-    <li>If you inspect the boxes above, you'll quickly see why they space out the way they do!</li>
-    <h3>Border And Border Radius</h3>
-    <li>Finally, there's a very important attribute/property called <strong>box-sizing</strong>. If
-        <strong>box-sizing</strong> has been changed to <strong>border-box</strong>, then changing the width or height
-        will set the width of the <em>border</em> area</em>
-    </li>
-    <li>As mentioned above, the <em>width</em> of the element will go from border to border! So, we specified that it's
-        200px wide? That means the <em>width</em> of the whole thing will be 200px, and the context box is 190px</li>
-    <li>In the 3 boxes below, look at the way <strong>shorthand</strong> is used!</li>
-    <li>Note how border radii can be manipulated to create circular borders too!</li>
-    <figure>
-        <figcaption>Box 1's CSS</figcaption>
-        <pre>
+    <header>
+        <h1>CSS Box Model</h1>
+    </header>
+    <main>
+        <h1>The Box, <span>The Box!</span></h1><!--Don't use two h1 elements-->
+        <p>This section will elaborate on the CSS <strong>Box Model</strong>, and will help to review section 8 of the
+            Udemy
+            course by Colt Steele</p>
+        <h2>Overview</h2>
+        <li>In the box model, each <strong>element</strong> on our page can be thought of as comprising a <em>box</em>
+            of
+            content, made up of a specific <strong>height</strong> and <strong>width</strong>. The content box is
+            enclosed
+            within a layer of <strong>padding</strong> which is itself surrounded by a <strong>border</strong>, and this
+            border is separated from other elements by a <strong>margin</strong></li>
+        <li>We can manipulate any aspect of a content box/tag in css, but this section focuses on the spatial
+            dimensions.
+            The simplest ones to learn are to manipulate <em>height</em> and <em>width</em>, like so:
+            <em>div</em>{<strong>height:200px;</strong>}
+        </li>
+        <li>One of the easiest ways to make a circular border is to use the <em>border-radius</em> property, set it to
+            50%.
+            It's always useful to remember the shorthand for <em>border</em> adjustment: <em>border</em>:<strong>size
+                style
+                color</strong>, e.g. <em>border:10px dotted green;</em>
+        </li>
+        <li>Adding <em>padding</em> is pretty easy to do, and it's easy to measure the results visually using <a
+                href="https://www.codepen.io">Codepen</a>. The shorthand for <em>padding</em> is not too tough: 1 number
+            changes all
+            sides, 2 changes the vertical then horizontal, 3 values change top horizontal and bottom, and 4 changes top
+            right bottom left (clockwise). We the buttons below more information</li>
+        <li><em>Margin</em> has the same shorthand as <em>padding</em>. Simply, it is the space between one element and
+            other elements, top/right/below/left of the original element. The inline-span in the heading of this page
+            demonstrates margin...although note the lack of padding on top!</li>
+        <li>The <em>display</em> property decides whether an element is treated as a <strong>block, inline or
+                inline-block</strong> element, along with the layout used for the children: <em>flow layout</em>,
+            <em>grid</em>, or <em>flex</em>.
+        </li>
+        <li>Remember:
+            <ol>
+                <li>Block elements break the flow of a document. Width, height, margin and padding are
+                    <strong>respected</strong>
+                </li>
+                <li>With inline elements, width and height are <strong>ignored</strong>. However, margin and padding
+                    push
+                    elements aways horizontally but NOT vertically!</li>
+                <li>Inline-Block elements behave much like an inline elements, although (like a block element) width,
+                    height,
+                    margin, and padding are <strong>respected</strong></li>
+            </ol>
+        </li>
+        <li>Remember that we have <strong>relative values</strong> (em, rem, %age, VH, VW etc...) and <strong>absolute
+                values</strong> (mm, px, in, cm, pt etc...)</li>
+        <li>A %age will either be:
+            <ul>
+                <li>Relative to the value of the PARENT element (e.g. <em>width</em></li>
+                <li>Relative to the value of the element itself (e.g. <em>line-height</em>)</li>
+            </ul>
+        </li>
+        <li><strong>ems</strong> are excellent units to use when building! As opposed to <em>absolute units</em> (such
+            as
+            pixels), ems will 'scale up' with the page if things are changed. With absolute units, we'd need to adjust
+            nearly everything on the page, changing pixel values incalculable times! Keeping things relative with em is
+            hugely beneficial!</li>
+        <li><strong>rems</strong> are also very useful! They are measured relative to the <em>root HTML element's
+                font-size</em>. While <strong>ems</strong> change based on the parent element's font-size, rems do NOT!
+            If
+            dealing with nested uls as an example, ems will cause a weird snowballing effect. REMS will keep things
+            looking
+            good consistent to the rest of the document</li>
+        <li>It's usually a bad idea to set a font-size in pixels anyway! It overrides the default settings of the
+            browser.
+            Finally, check out this link for more on ems and rems: <a
+                href="https://webdesign.tutsplus.com/tutorials/comprehensive-guide-when-to-use-em-vs-rem--cms-23984">Ems
+                and
+                Rems tutorial</a></li>
+        <hr>
+        <h3>Width and Height</h3>
+        <li>The most basic to manipulate! The lorum ipsum in the three <em>div</em>s below will have 200px
+            <strong>height</strong>
+            and <strong>width</strong> dimensions, and be
+            differentiated from the <em>h3</em> element by assigning different
+            color attributes to both
+        </li>
+        <li>If you inspect the boxes above, you'll quickly see why they space out the way they do!</li>
+        <h3>Border And Border Radius</h3>
+        <li>Finally, there's a very important attribute/property called <strong>box-sizing</strong>. If
+            <strong>box-sizing</strong> has been changed to <strong>border-box</strong>, then changing the width or
+            height
+            will set the width of the <em>border</em> area</em>
+        </li>
+        <li>As mentioned above, the <em>width</em> of the element will go from border to border! So, we specified that
+            it's
+            200px wide? That means the <em>width</em> of the whole thing will be 200px, and the context box is 190px
+        </li>
+        <li>In the 3 boxes below, look at the way <strong>shorthand</strong> is used!</li>
+        <li>Note how border radii can be manipulated to create circular borders too!</li>
+        <figure>
+            <figcaption>Box 1's CSS</figcaption>
+            <pre>
               <code>
                 #one {
                     background-color: #e5989b;
@@ -111,10 +129,10 @@
                 }
               </code>
             </pre>
-    </figure>
-    <figure>
-        <figcaption>Box 2's CSS</figcaption>
-        <pre>
+        </figure>
+        <figure>
+            <figcaption>Box 2's CSS</figcaption>
+            <pre>
               <code>
                 #two {
                     background-color: #b5838d;
@@ -128,10 +146,10 @@
                 }
               </code>
             </pre>
-    </figure>
-    <figure>
-        <figcaption>Box 3's CSS</figcaption>
-        <pre>
+        </figure>
+        <figure>
+            <figcaption>Box 3's CSS</figcaption>
+            <pre>
               <code>
                 #three {
                     background-color: #6d6875;
@@ -140,22 +158,22 @@
                 }
               </code>
             </pre>
-    </figure>
-    <div id="one">Wait, we specified that a div be 200px wide? However, after adding border width of 5px, the whole
-        thing will be 210px wide! To make this box 'fit' 200px of width, you need to include <strong>box-sizing:
-            border-box;</strong></div>
-    <div id="two">We're giving this a different color, a border width of 3px, and a new style
-        In addition, the left side of the border is shown. However, what about border shorthand???
-        See the 3rd box! </div>
-    <div id="three">This uses some shorthand. You can reference the documentation on MDN to ensure your order is
-        accurate! In the case of borders, we need to make sure that the thickness goes before style, and that before
-        color. The border-radius at 50% accounts for the circle!!!</div>
+        </figure>
+        <div id="one">Wait, we specified that a div be 200px wide? However, after adding border width of 5px, the whole
+            thing will be 210px wide! To make this box 'fit' 200px of width, you need to include <strong>box-sizing:
+                border-box;</strong></div>
+        <div id="two">We're giving this a different color, a border width of 3px, and a new style
+            In addition, the left side of the border is shown. However, what about border shorthand???
+            See the 3rd box! </div>
+        <div id="three">This uses some shorthand. You can reference the documentation on MDN to ensure your order is
+            accurate! In the case of borders, we need to make sure that the thickness goes before style, and that before
+            color. The border-radius at 50% accounts for the circle!!!</div>
 
-    <h3>Padding</h3>
-    <li>We're demonstrating <em>padding</em> using 4 buttons below: 'Pad Me'</li>
-    <figure>
-        <figcaption>Four Kinds Of Padding (using shorthand)</figcaption>
-        <pre>
+        <h3>Padding</h3>
+        <li>We're demonstrating <em>padding</em> using 4 buttons below: 'Pad Me'</li>
+        <figure>
+            <figcaption>Four Kinds Of Padding (using shorthand)</figcaption>
+            <pre>
               <code>
                 button#padOne{
                     padding: 10px;
@@ -171,70 +189,75 @@
                 }
               </code>
             </pre>
-    </figure>
-    <li>So, using 1 figure applies the value to each side</li>
-    <li>Using 2 figures applies the values to the vertical and horizontal</li>
-    <li>3 Figures applies the values to the top, horizontal, then bottom</li>
-    <li>Finally, 4 figures goes clockwise: top right bottom left</li>
-    <button id="padOne">Pad Me One</button>
-    <button id="padTwo">Pad Me Two</button>
-    <button id="padThree">Pad Me Three</button>
-    <button id="padFour">Pad Me Four</button>
+        </figure>
+        <li>So, using 1 figure applies the value to each side</li>
+        <li>Using 2 figures applies the values to the vertical and horizontal</li>
+        <li>3 Figures applies the values to the top, horizontal, then bottom</li>
+        <li>Finally, 4 figures goes clockwise: top right bottom left</li>
+        <button id="padOne">Pad Me One</button>
+        <button id="padTwo">Pad Me Two</button>
+        <button id="padThree">Pad Me Three</button>
+        <button id="padFour">Pad Me Four</button>
 
-    <h3>Margin</h3>
-    <li>Margin is the space on the outside of the <em>border</em></li>
-    <li>The shorthand for margin is exactly the same as that for padding!</li>
-    <li>Certain elements, such as <em>h1</em>, get default margin. You can change this by resetting the margins to what
-        you want</li>
-    <li>Many people <strong>remove the margin when creating a new webpage!</strong>. To do so, use
-        <em>body</em>{<strong>margin:0;</strong>}
-    </li>
-    <li>Look at the boxes/code above to see how margin changes affect things</li>
-    <li>Also, in the h1 header at the top, we styled the second 'the box' to have a margin. However, when we try to
-        include a <em>margin-top</em> of <em>30px</em>, nothing happens, due to a very important property known as
-        <strong>display</strong>
-    </li>
+        <h3>Margin</h3>
+        <li>Margin is the space on the outside of the <em>border</em></li>
+        <li>The shorthand for margin is exactly the same as that for padding!</li>
+        <li>Certain elements, such as <em>h1</em>, get default margin. You can change this by resetting the margins to
+            what
+            you want</li>
+        <li>Many people <strong>remove the margin when creating a new webpage!</strong>. To do so, use
+            <em>body</em>{<strong>margin:0;</strong>}
+        </li>
+        <li>Look at the boxes/code above to see how margin changes affect things</li>
+        <li>Also, in the h1 header at the top, we styled the second 'the box' to have a margin. However, when we try to
+            include a <em>margin-top</em> of <em>30px</em>, nothing happens, due to a very important property known as
+            <strong>display</strong>
+        </li>
 
-    <h3>Display</h3>
-    <li>These <em>h2</em> elements will show what we're doing:</li>
-    <h2>I am h2</h2>
-    <h2>I'm another h2!</h2>
-    <li>Without changing things, the h2's color would initially go all the way across the page. Note how the h2 above is
-        <strong>block</strong>, and the span below is <strong>include</strong>
-    </li>
-    <span class="spanOne">I am a span</span>
-    <span class="spanOne">I'm another span!</span>
-    <li>These h2s, however, have their <strong>display</strong> set to <strong>inline</strong>, and the spans their
-        <strong>display</strong> set to <strong>block!</strong>
-    </li>
-    <h2 class="exampleOne">I am h2</h2>
-    <h2 class="exampleOne">I'm another h2!</h2>
-    <span class="spanTwo">I am a span</span>
-    <span class="spanTwo">I'm another span!</span>
-    <li>The section below shows 3 sets of <em>block</em> vs <em>inline</em> vs <em>block-inline</em> elements:</li>
-    <div class="blockExample">Block</div>
-    <div class="blockExample">Block</div>
-    <div class="blockExample">Block</div>
-    <div class="inlineExample">Inline</div>
-    <div class="inlineExample">Inline</div>
-    <div class="inlineExample">Inline</div>
-    <div class="blockInline">Block-inline</div>
-    <div class="blockInline">Block-inline</div>
-    <div class="blockInline">Block-inline</div>
-    <li><em>display:none;</em> would also have use (especially with Javascript)</li>
+        <h3>Display</h3>
+        <li>These <em>h2</em> elements will show what we're doing:</li>
+        <h2>I am h2</h2>
+        <h2>I'm another h2!</h2>
+        <li>Without changing things, the h2's color would initially go all the way across the page. Note how the h2
+            above is
+            <strong>block</strong>, and the span below is <strong>include</strong>
+        </li>
+        <span class="spanOne">I am a span</span>
+        <span class="spanOne">I'm another span!</span>
+        <li>These h2s, however, have their <strong>display</strong> set to <strong>inline</strong>, and the spans their
+            <strong>display</strong> set to <strong>block!</strong>
+        </li>
+        <h2 class="exampleOne">I am h2</h2>
+        <h2 class="exampleOne">I'm another h2!</h2>
+        <span class="spanTwo">I am a span</span>
+        <span class="spanTwo">I'm another span!</span>
+        <li>The section below shows 3 sets of <em>block</em> vs <em>inline</em> vs <em>block-inline</em> elements:</li>
+        <div class="blockExample">Block</div>
+        <div class="blockExample">Block</div>
+        <div class="blockExample">Block</div>
+        <div class="inlineExample">Inline</div>
+        <div class="inlineExample">Inline</div>
+        <div class="inlineExample">Inline</div>
+        <div class="blockInline">Block-inline</div>
+        <div class="blockInline">Block-inline</div>
+        <div class="blockInline">Block-inline</div>
+        <li><em>display:none;</em> would also have use (especially with Javascript)</li>
 
-    <h3>CSS Units</h3>
-    <li>In %ages, we must remember that any given %age is given <strong>relative</strong> to some other value. For
-        example, <em>width</em> is 50% of the <strong>parent element</strong>. <em>line-width</em> is 50% of the width
-        of the element itself! Whether the unit is relative to the PARENT or relative to the ELEMENT iself changes. Use
-        MDN if in doubt!</li>
-    <section>
-        <div class="unitEx">Within this div, I adjusted the width to 70% and height to 20% of whatever the parent
-            element is. This pink div is the child of the grey section! Inspect it!</div>
-        <h4>This is a h4 example!</h4>
-        <li>In this case, I wanted to show how %age can be relative to the element itself! Here, font-size was set by me
-            to be 40px. The <em>line-height</em> was adjusted to 200%, giving us the 80px line height!</li>
-        <code>
+        <h3>CSS Units</h3>
+        <li>In %ages, we must remember that any given %age is given <strong>relative</strong> to some other value. For
+            example, <em>width</em> is 50% of the <strong>parent element</strong>. <em>line-width</em> is 50% of the
+            width
+            of the element itself! Whether the unit is relative to the PARENT or relative to the ELEMENT iself changes.
+            Use
+            MDN if in doubt!</li>
+        <section>
+            <div class="unitEx">Within this div, I adjusted the width to 70% and height to 20% of whatever the parent
+                element is. This pink div is the child of the grey section! Inspect it!</div>
+            <h4>This is a h4 example!</h4>
+            <li>In this case, I wanted to show how %age can be relative to the element itself! Here, font-size was set
+                by me
+                to be 40px. The <em>line-height</em> was adjusted to 200%, giving us the 80px line height!</li>
+            <code>
                 div.unitEx {
                     background-color: #e5989b;
                     width: 50%;
@@ -247,50 +270,53 @@
                     line-height:200%;  /*The line-height would be 80px*/
                 }
             </code>
-    </section>
-    <li>To demonstrate <strong>em</strong>. Remember that with font-size, 1em equals the font-size of the parent. 2em =
-        twice the parent's font-size etc...</li>
-    <li>With other properties, 1em equals the computed font-size of the element itself</li>
-    <li>Why are the three buttons on the page different sizes? Well, they all utilize em, and the dimensions stay
-        consistent relative to the size of the parent element!</li>
-    <article>
-        <h5>I am h5! <button class="emz">Click Me!</button></h5>
-        <p>In this example, the font-size of the &lt;article&gt; tag was given as 30px, while the font-size of the
-            &lt;h5&gt; tag was <strong>2em</strong>. Thus, because <em>article</em> is the parent element of h5 (and
-            font-size in em is dependent on the parent element), the font size here will be 60px! I made the p 0.6ems!
-            (18px)</p>
+        </section>
+        <li>To demonstrate <strong>em</strong>. Remember that with font-size, 1em equals the font-size of the parent.
+            2em =
+            twice the parent's font-size etc...</li>
+        <li>With other properties, 1em equals the computed font-size of the element itself</li>
+        <li>Why are the three buttons on the page different sizes? Well, they all utilize em, and the dimensions stay
+            consistent relative to the size of the parent element!</li>
+        <article>
+            <h5>I am h5! <button class="emz">Click Me!</button></h5>
+            <p>In this example, the font-size of the &lt;article&gt; tag was given as 30px, while the font-size of the
+                &lt;h5&gt; tag was <strong>2em</strong>. Thus, because <em>article</em> is the parent element of h5 (and
+                font-size in em is dependent on the parent element), the font size here will be 60px! I made the p
+                0.6ems!
+                (18px)</p>
+            <button class="emz">Click Me!</button>
+            <p>The button above was initially 30px, but this wouldn't <em>scale up</em> if need be. Therefore, I used
+                <strong>em</strong>s instead, keeping it all relative!
+            </p>
+            <ul class="bad">
+                <p>This uses EMS :)</p>
+                <li>Pasta</li>
+                <ul>
+                    <li>Maraconi</li>
+                    <li>Penne</li>
+                </ul>
+                <li>Gelato</li>
+                <ul>
+                    <li>Vanilla</li>
+                    <li>Nutella</li>
+                </ul>
+            </ul>
+            <ul>
+                <p>This one uses REMS</p>
+                <li>Pasta</li>
+                <ul>
+                    <li>Maraconi</li>
+                    <li>Penne</li>
+                </ul>
+                <li>Gelato</li>
+                <ul>
+                    <li>Vanilla</li>
+                    <li>Nutella</li>
+                </ul>
+            </ul>
+        </article>
         <button class="emz">Click Me!</button>
-        <p>The button above was initially 30px, but this wouldn't <em>scale up</em> if need be. Therefore, I used
-            <strong>em</strong>s instead, keeping it all relative!
-        </p>
-        <ul class="bad">
-            <p>This uses EMS :)</p>
-            <li>Pasta</li>
-            <ul>
-                <li>Maraconi</li>
-                <li>Penne</li>
-            </ul>
-            <li>Gelato</li>
-            <ul>
-                <li>Vanilla</li>
-                <li>Nutella</li>
-            </ul>
-        </ul>
-        <ul>
-            <p>This one uses REMS</p>
-            <li>Pasta</li>
-            <ul>
-                <li>Maraconi</li>
-                <li>Penne</li>
-            </ul>
-            <li>Gelato</li>
-            <ul>
-                <li>Vanilla</li>
-                <li>Nutella</li>
-            </ul>
-        </ul>
-    </article>
-    <button class="emz">Click Me!</button>
+    </main>
     <footer>
         <nav>
             <h3>Other CSS Links</h3>

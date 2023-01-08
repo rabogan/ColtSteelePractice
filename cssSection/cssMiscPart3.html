@@ -15,41 +15,52 @@
 </head>
 
 <body>
-    <h1>Transitions</h1>
-    <li>Helpfully included is this link: <a href="https://easings.net/">Transitions Easing</a></li>
-    <h2>Transitions</h2>
-    <li>The CSS property <strong>transition</strong> is simply a shorthand property for the <em>transition-property,
-            transition-duration, transition-timing-function, and transition-delay</em></li>
-    <li><strong>Transitions</strong> allows you to define the transition between two states of an element - and can be
-        defined using either <em>pseudo-classes</em> (i.e. <strong>:hover</strong> or <strong>:active</strong>), or
-        dynamically set using <strong>JavaScript</strong></li>
-    <li>The example below shows how a square div (with a class called <em>circle</em>) morphs into a circle! The class
-        has the requisite height and width, with the magenta color</li>
-    <li><strong>Crucially, </strong>the class also has the <strong>transition: background-color 1s; ease in,
-            border-radius:2s;</strong> property. Ignoring the <em>ease-in</em> for now, when we combine
-        this with the <strong>.circle:hover{...};</strong> class, the .circle class will morph into whatever is outlined
-        inside the hover pseudo-class</li>
-    <li>Below, the <strong>circle:hover</strong> pseudo-class includes a <em>border-radius</em> of 50% and an
-        alternative background color (cyan). The transition of color takes 1s, and the border-radius takes 2s</li>
-    <div class="circle"></div>
-    <li>The <strong>transition-timing-function</strong> is demonstrated by these cute blocks below! These blocks are
-        comprised of FOUR divs in a section. In a nutshell, <strong>transition-timing-function</strong>
-        sets how intermediate values are calculated for CSS properties being affected by a <strong>transition
-            effect</strong></li>
-    <li>We've made use of the <strong>pseudo-class <em>nth-of-type()</em></strong>, plunking 1 thru 4 into that below.
-        In addition, the <strong>margin-left</strong> property has been outlined as the thing to transition (in 3s).
-        Notice how all of these blocks take 3 seconds to reach the right. They're 20px away from each other (see margin)
-    </li>
-    <section>
-        <div>This is ease-in</div>
-        <div>Ease-out</div>
-        <div>Cubic-bezier example 1 (see link)</div>
-        <div>Cubic-bezier example 2 (see link)</div>
-    </section>
-    <li>Famous types of transition-timing-function include <em>ease-in, ease-out, cubic-bezier, and steps</em></li>
-    <li>Transitions are very useful, and are often used with <strong>:hover</strong> to make very presentable effects!
-        Always remember to single out specific things you want to have transition - DON'T just transition:all; If you
-        do, you'll get so many unanticipated problems with your page </li>
+    <header>
+        <h1>Transitions</h1>
+    </header>
+    <main>
+        <li>Helpfully included is this link: <a href="https://easings.net/">Transitions Easing</a></li>
+        <h2>Transitions</h2>
+        <li>The CSS property <strong>transition</strong> is simply a shorthand property for the <em>transition-property,
+                transition-duration, transition-timing-function, and transition-delay</em></li>
+        <li><strong>Transitions</strong> allows you to define the transition between two states of an element - and can
+            be
+            defined using either <em>pseudo-classes</em> (i.e. <strong>:hover</strong> or <strong>:active</strong>), or
+            dynamically set using <strong>JavaScript</strong></li>
+        <li>The example below shows how a square div (with a class called <em>circle</em>) morphs into a circle! The
+            class
+            has the requisite height and width, with the magenta color</li>
+        <li><strong>Crucially, </strong>the class also has the <strong>transition: background-color 1s; ease in,
+                border-radius:2s;</strong> property. Ignoring the <em>ease-in</em> for now, when we combine
+            this with the <strong>.circle:hover{...};</strong> class, the .circle class will morph into whatever is
+            outlined
+            inside the hover pseudo-class</li>
+        <li>Below, the <strong>circle:hover</strong> pseudo-class includes a <em>border-radius</em> of 50% and an
+            alternative background color (cyan). The transition of color takes 1s, and the border-radius takes 2s</li>
+        <div class="circle"></div>
+        <li>The <strong>transition-timing-function</strong> is demonstrated by these cute blocks below! These blocks are
+            comprised of FOUR divs in a section. In a nutshell, <strong>transition-timing-function</strong>
+            sets how intermediate values are calculated for CSS properties being affected by a <strong>transition
+                effect</strong></li>
+        <li>We've made use of the <strong>pseudo-class <em>nth-of-type()</em></strong>, plunking 1 thru 4 into that
+            below.
+            In addition, the <strong>margin-left</strong> property has been outlined as the thing to transition (in 3s).
+            Notice how all of these blocks take 3 seconds to reach the right. They're 20px away from each other (see
+            margin)
+        </li>
+        <section>
+            <div>This is ease-in</div>
+            <div>Ease-out</div>
+            <div>Cubic-bezier example 1 (see link)</div>
+            <div>Cubic-bezier example 2 (see link)</div>
+        </section>
+        <li>Famous types of transition-timing-function include <em>ease-in, ease-out, cubic-bezier, and steps</em></li>
+        <li>Transitions are very useful, and are often used with <strong>:hover</strong> to make very presentable
+            effects!
+            Always remember to single out specific things you want to have transition - DON'T just transition:all; If
+            you
+            do, you'll get so many unanticipated problems with your page </li>
+    </main>
     <footer>
         <nav>
             <h3>Other CSS Links</h3>
