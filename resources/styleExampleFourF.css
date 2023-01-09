@@ -15,7 +15,7 @@ ul li {
 section {
     width: 80%;
     height: 800px;
-    background: center/cover no-repeat url(../images/suarez.jpg);
+    background: top/cover no-repeat url(../images/suarez.jpg);
     margin: 0 auto;
     /*Crops things*/
     /*
@@ -28,10 +28,10 @@ section {
 }
 
 section#multipleImages {
-    background: center/40% url(../images/suarez.jpg), url(https://images.unsplash.com/photo-1671303954963-f1e9b56f9ee2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2187&q=80);
+    background: center/40% no-repeat url(../images/suarez.jpg), url(https://images.unsplash.com/photo-1671303954963-f1e9b56f9ee2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2187&q=80);
 }
 
 h2 {
     font-size: 100px;
-    color: white;
+    color: blue;
 }
