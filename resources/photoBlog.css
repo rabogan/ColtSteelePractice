@@ -37,3 +37,14 @@ body {
     font-family: 'PT Sans', sans-serif;
     margin: 0 auto;
 }
+
+.center {
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+
+.example {
+    width: 45%;
+    margin: calc(10%/4);
+}

@@ -70,8 +70,8 @@
             right. Note that I'll be using descendent selectors for the &lt;<strong>img</strong>&gt; tags - the images
             are inside a
             &lt;<strong>section</strong>&gt;</li>
-        <img src="../images/originalLayout.png" alt="Original Look">
-        <img src="../images/updatedLayout.png" alt="Formatted Layout">
+        <img src="../images/originalLayout.png" alt="Original Look" class="example">
+        <img src="../images/updatedLayout.png" alt="Formatted Layout" class="example">
         <li>Using this simple code results in a much more structured layout!
             <pre>
                 <code>
@@ -80,7 +80,7 @@
                       }
                 </code>
             </pre>
-            <img src="../images/updatedImg1.png" alt="90% Across the page!">
+            <img src="../images/updatedImg1.png" alt="90% Across the page!" class="center">
         </li>
         <li>However, the above is not ideal! We have about 10% on the right-hand side. Hard-coding in some absolute
             value, such as "margin:20px;" is a bad idea! It doesn't scale very well. Instead, we make use of a
@@ -97,7 +97,23 @@
                   }
             </code>
         </pre>
-            <img src="../images/updatedImg2.png" alt="grid completed">
+            <img src="../images/updatedImg2.png" alt="grid completed" class="center">
+        </li>
+        <li>As an aside, some classes are attached to the images above too.
+            <pre>
+                <code>
+                    .center{
+                        display: block;
+                        margin:auto;
+                        width: 80%;
+                    }
+                
+                    .example{
+                        width:45%;
+                        margin:calc(10%/4);
+                    }
+                </code>
+            </pre>
         </li>
         <section>
             <img src="http://c1.staticflickr.com/9/8450/8026519634_f33f3724ea_b.jpg"><img
