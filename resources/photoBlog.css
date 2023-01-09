@@ -23,7 +23,16 @@ h1 {
     font-size: 3rem;
     font-weight: 100;
     text-align: center;
+    width: 30%;
+    margin: auto;
+    padding: 1%;
 }
+
+main>li {
+    margin: 0 auto;
+    width: 65%;
+}
+
 
 h3 {
     font-size: 1.5em;
