@@ -26,11 +26,6 @@ body {
 
 button {
     color: #92dce5;
-    /*Change the text color, not the button color*/
-    background-color: rgb(89, 151, 0);
-}
-
-button {
     font-size: 30px;
     background-color: rgb(134, 53, 92);
 }
