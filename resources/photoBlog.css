@@ -55,7 +55,7 @@ body {
 
 .example {
     width: 45%;
-    margin: calc(10%/4);
+    margin: calc(8%/4);
 }
 
 img {
