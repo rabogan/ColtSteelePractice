@@ -23,14 +23,15 @@ h1 {
     font-size: 3rem;
     font-weight: 100;
     text-align: center;
-    width: 30%;
+    width: 40%;
     margin: auto;
     padding: 1%;
 }
 
 main>li {
-    margin: 0 auto;
+    margin: 1% auto;
     width: 65%;
+    margin: 2.5% auto;
 }
 
 
@@ -45,6 +46,7 @@ body {
     color: #2b2d42;
     font-family: 'PT Sans', sans-serif;
     margin: 0 auto;
+    text-align: justify;
 }
 
 .center {
