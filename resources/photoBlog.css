@@ -1,0 +1,39 @@
+::selection {
+    color: gold;
+    background-color: red;
+}
+
+section>img {
+    width: 30%;
+    margin: calc(10%/6);
+}
+
+h3::first-letter {
+    font-size: 1.6em;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 100;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5em;
+    background-color: plum;
+}
+
+body {
+    line-height: 1.2;
+    background-color: #A2C1C3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
+    margin: 0 auto;
+}

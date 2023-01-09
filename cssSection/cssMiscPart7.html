@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../resources/styleExampleFourG.css">
+    <link rel="stylesheet" href="../resources/photoBlog.css">
     <meta name="description"
         content="Welcome to my Colt Steele practice website, where I post examples of all of the projects I've worked on.">
     <link rel="icon" href="../images/beauty_kanji.ico">
@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <title>Miscellaneous Part 7</title>
+    <title>Photo Blog Code-Along</title>
 </head>
 
 <body>
@@ -24,7 +24,99 @@
         <h1>Photo Blog Code Along</h1>
     </header>
     <main>
+        <li>The purpose of this section is to make a structured photo blog of images of different sizes. For simplicity,
+            my width in the body is different from other areas of the site. Unlike in the
+            lecture, I had some initial CSS code:
+            <pre>
+                <code>
+                    ::selection {
+                        color: gold;
+                        background-color: red;
+                    }
+                    
+                    h3::first-letter {
+                        font-size: 1.6em;
+                    }
+                    
+                    h1,
+                    h2,
+                    h3 {
+                        font-family: 'Open Sans', sans-serif;
+                        margin-bottom: 0.5em;
+                    }
+                    
+                    h1 {
+                        font-size: 3rem;
+                        font-weight: 100;
+                        text-align: center;
+                    }
+                    
+                    h3 {
+                        font-size: 1.5em;
+                        background-color: plum;
+                    }
+                    
+                    body {
+                        line-height: 1.2;
+                        background-color: #A2C1C3;
+                        color: #2b2d42;
+                        font-family: 'PT Sans', sans-serif;
+                        margin: 0 auto;
+                    }
+                </code>
+            </pre>
+        </li>
+        <li>We want to add more code to get from the rough layout shown here to a the more structured layout on the
+            right. Note that I'll be using descendent selectors for the &lt;<strong>img</strong>&gt; tags - the images
+            are inside a
+            &lt;<strong>section</strong>&gt;</li>
+        <img src="../images/originalLayout.png" alt="Original Look">
+        <img src="../images/updatedLayout.png" alt="Formatted Layout">
+        <li>Using this simple code results in a much more structured layout!
+            <pre>
+                <code>
+                    section>img{
+                        width:30%;
+                      }
+                </code>
+            </pre>
+            <img src="../images/updatedImg1.png" alt="90% Across the page!">
+        </li>
+        <li>However, the above is not ideal! We have about 10% on the right-hand side. Hard-coding in some absolute
+            value, such as "margin:20px;" is a bad idea! It doesn't scale very well. Instead, we make use of a
+            calculation function to divide our 10% remainder. Because margin is located on the left AND right of an
+            individual element, we need to calculate <strong>a percentage of 10/6</strong> to get the desired 3*3 grid
+            of equally-sized
+            photos. There are multiple advantages to this approach: the images shrink in sync with the screen size.
+            Rather than use 1.66666666%, we can pass in our values using <strong>calc()</strong>. See below:
+            <pre>
+            <code>
+                section>img{
+                    width:30%;
+                    margin:calc(10%/6);
+                  }
+            </code>
+        </pre>
+            <img src="../images/updatedImg2.png" alt="grid completed">
+        </li>
+        <section>
+            <img src="http://c1.staticflickr.com/9/8450/8026519634_f33f3724ea_b.jpg"><img
+                src="http://c2.staticflickr.com/8/7218/7209301894_c99d3a33c2_h.jpg"><img
+                src="http://c2.staticflickr.com/8/7231/6947093326_df216540ff_b.jpg">
 
+            <!-- Giuseppe Milo -->
+            <img src="http://c1.staticflickr.com/9/8788/17367410309_78abb9e5b6_b.jpg"><img
+                src="http://c2.staticflickr.com/6/5814/20700286354_762c19bd3b_b.jpg"><img
+                src="http://c2.staticflickr.com/6/5647/21137202535_404bf25729_b.jpg">
+
+            <!-- GörlitzPhotography -->
+            <img src="http://c2.staticflickr.com/6/5588/14991687545_5c8e1a2e86_b.jpg"><img
+                src="http://c2.staticflickr.com/4/3888/14878097108_5997041006_b.jpg"><img
+                src="http://c2.staticflickr.com/8/7579/15482110477_0b0e9e5421_b.jpg">
+        </section>
+
+        <!-- All Photos Licensed Under Creative Commons 2.0 -->
+        <!-- https://creativecommons.org/licenses/by/2.0/legalcode  -->
     </main>
     <footer>
         <nav>
