@@ -19,11 +19,94 @@
         <h1>Background and Google Font</h1>
     </header>
     <main>
-        <li>Focusing on the <strong>background</strong> and incorporation of <strong>Google fonts in the
+        <li>This page will focus on the <strong>background</strong> and incorporation of <strong>Google fonts in the
                 website.</strong></li>
+        <h3>Background</h3>
+        <li>Our two example images each sit inside a &lt;<strong>section</strong>&gt;, and have a h2 within that. Here
+            is our CSS code for the area we're using to 'host' the background image and arbitrary header:
+            <pre>
+                <code>
+                    section{
+                        width:80%;
+                        height:800px;
+                        background-image:
+                        margin:0 auto;
+                      }
+                      
+                      h2{
+                        font-size:100px;
+                        color:white;
+                      }
+                </code>
+            </pre>
+        </li>
+        <li>
+            Interestingly, it's possible to use a URL of a web image for the background-image, like this:
+            <pre>
+                <code>
+                   background-image:url(https://images.unsplash.com/photo-1671303954963-f1e9b56f9ee2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2187&q=80);
+                </code>
+            </pre>
+            Also, one could use their own image, like I did! This means it's easier to keep the image up-to-date.
+            <pre>
+                <code>
+                    background-image:url(../images/suarez.jpg);
+                </code>
+            </pre>
+            Remember that <a href="https://www.unsplash.com">unsplash.com</a> is a fabulous resource for free images to
+            use!
+        </li>
+        <li>However, the image in its original form might well be too large or too small to fit the exact space! The
+            <strong>background-size</strong> property will help, and has options including <strong>cover</strong>(which
+            scales the image as large as
+            possible without stretching it, cropping it vertically or horizonally to avoid empty space if necessary),
+            <strong>contain</strong>(which scales the image as large as
+            possible without cropping or stretching it), and auto.
+            <pre>
+                <code>
+                    background-size:cover; /*Crops things*/
+                    background-size:contain;/*This might repeat the image...*/
+                </code>
+            </pre>
+            There is a key drawback to using contain: it will repeat the image to fill the empty alloted space,
+            which looks amateurish. The property <strong>no-repeat</strong>, which is self-explanatory, can't
+            <strong>easily</strong> be used with the <em>background</em> property.
+        </li>
+        <li>The <strong>background-position</strong> property can be used to manipulate the <strong>position of the
+                image within your background-image</strong>. It could be cheaply used to crop out an unwanted ex from a
+            nice family photo, for example! If you had a particularly short partner, using background-position:top;
+            might be useful. Alternatively:
+            <pre>
+                <code>
+                    background-position:bottom; /*Crops out someone tall - or the top of the image!*/
+                </code>
+            </pre>
+        </li>
+        <li>The <strong>background-size</strong> value may ONLY be included immediately after the background-position
+            when we're dealing with the background shorthand, separate with the '/' character, like so:
+            <pre>
+                <code>
+                    background: center/cover no-repeat url(../images/suarez.jpg);
+                </code>
+            </pre>Other common alternatives to center/cover are center/80%, left/49% etc...incidentally, Colt Steele
+            placed no repeat after the center/cover option. <em>no-repeat</em> is from <em>background-repeat</em>
+        </li>
         <section>
-            <h1>I am a heading</h1>
+            <h2>I am a heading</h2>
         </section>
+        <li>As a final note on image incorporation into the background, multiple backgrounds are also possible too!
+            I place a random URL pulled from the web behind my
+            Suarez meme, using the class multipleImages within the section to minimize CSS code.
+            <pre>
+                    <code>
+                        background: center/40% url(image1),url(https://www.netsource.com);
+                    </code>
+                </pre>
+        </li>
+        <section id="multipleImages">
+            <h2>I am another heading</h2>
+        </section>
+        <h3>Google Fonts</h3>
     </main>
     <footer>
         <nav>
