@@ -5,7 +5,7 @@
 
 section>img {
     width: 30%;
-    margin: calc(10%/6);
+    margin: calc(9%/6);
 }
 
 h3::first-letter {
