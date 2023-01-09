@@ -48,3 +48,7 @@ body {
     width: 45%;
     margin: calc(10%/4);
 }
+
+img {
+    border: 2px solid black;
+}
