@@ -23,7 +23,7 @@ h1 {
     padding: 1%;
 }
 
-h3 {
+h2 {
     font-size: 1.5em;
     background-color: plum;
 }
@@ -48,6 +48,7 @@ h3 {
     margin: 0 auto;
     border: 5px solid #003049;
     display: flex;
+    flex-direction: row;
 }
 
 #container div {
@@ -56,5 +57,9 @@ h3 {
 }
 
 main {
+    margin: 0 2%;
+    /* Adds 1cm of space on the left and right sides */
     text-align: justify;
+    width: calc(100vw - 2cm);
+    /* Set the width to be the viewport width minus 2cm on each side */
 }
