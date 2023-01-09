@@ -19,7 +19,7 @@ h1 {
     font-weight: 100;
     text-align: center;
     width: 40%;
-    margin: auto;
+    margin: 0 auto;
     padding: 1%;
 }
 
@@ -28,10 +28,33 @@ h3 {
     background-color: plum;
 }
 
+#initial {
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 5px solid #003049;
+}
+
+#initial div {
+    width: 200px;
+    height: 200px;
+}
+
 #container {
     background-color: #003049;
     width: 90%;
     height: 500px;
     margin: 0 auto;
     border: 5px solid #003049;
+    display: flex;
+}
+
+#container div {
+    width: 200px;
+    height: 200px;
+}
+
+main {
+    text-align: justify;
 }

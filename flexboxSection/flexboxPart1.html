@@ -24,8 +24,6 @@
         <h1>Let's Play With Flexbox</h1>
     </header>
     <main>
-        <p>This uses 5 divs within a section, and all divs have been given styling <strong>inline</strong>, for
-            simplicity.</p>
         <section id="container">
             <div style="background-color: #80ffdb"></div>
             <div style="background-color: #64dfdf"></div>
@@ -33,6 +31,87 @@
             <div style="background-color: #5390d9"></div>
             <div style="background-color: #6930c3"></div>
         </section>
+        <h2>display:flex;</h2>
+        <p>The first thing that is done is to enter the container ID within css, and change the <strong>display</strong>
+            to <strong>flex</strong>.
+        <pre>
+            <code>
+                #container {
+                    background-color: #003049;
+                    width: 90%;
+                    height: 500px;
+                    margin: 0 auto;
+                    border: 5px solid #003049;
+                    display:flex;
+                }
+            </code>
+        </pre>
+        </p>
+        <h2>Flex Direction</h2>
+        <h3>Advantages of using <strong>flex-direction</strong></h3>
+        <ul>
+            <li>It allows you to easily control the layout of items within a container in a flexible and responsive way.
+            </li>
+            <li>It allows you to easily align items along a main axis (horizontally or vertically) and a cross axis
+                (perpendicular to the main axis).</li>
+            <li>It simplifies the process of creating layouts that work on different screen sizes and devices.</li>
+        </ul>
+        <h3>Disadvantages of using <strong>flex-direction</strong></h3>
+        <ul>
+            <li>It may not work well with older browsers that do not support Flexbox.</li>
+            <li>It is not suitable for creating more complex layouts, such as multi-column layouts or grid systems with
+                irregularly sized items.</li>
+        </ul>
+        <h3>Changing the Flex Model</h3>
+        <li>In the Flex model, we have a <strong>main axis</strong> which initially goes from left to right, and a
+            <strong>cross axis</strong> which intially goes from top to bottom.
+        </li>
+        <li>The flex-direction property determines the direction in which the flex items are laid out within a flex
+            container. By default, flex items are laid out in a <strong>row</strong> from left to right. However, you
+            can use
+            <strong>flex-direction</strong> to change the direction to a column from top to bottom, or to rows that are
+            reversed from
+            right to left or bottom to top. To use the <strong>flex-direction</strong> property, you can add it to your
+            CSS code like so:
+            <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: row; /* default value */
+                        }
+                </code>
+            </pre>
+            <img src="../images/flexboxImages/flexDirectionRow.png" alt="defaultFlexDirection">
+        </li>
+        <li>We can adjust the code in 3 other ways
+            <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: column; /* change direction to a column from top to bottom */
+                        }
+                </code>
+            </pre>
+            <img src="../images/flexboxImages/flexDirectionColumn.png" alt="flex-direction:column">
+            <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: row-reverse; /* change direction to a row from right to left */
+                        }
+                </code>
+            </pre>
+            <img src="../images/flexboxImages/flexDirectionRowReverse.png" alt="flex-direction:row-reverse">
+            <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: column-reverse; /* change direction to a column from bottom to top */
+                        }
+                </code>
+            </pre>
+            <img src="../images/flexboxImages/flexDirectionColumnReverse.png" alt="flex-direction:column-reverse">
+        </li>
     </main>
     <footer>
         <nav>
