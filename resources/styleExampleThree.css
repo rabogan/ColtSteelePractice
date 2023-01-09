@@ -4,8 +4,9 @@ article {
 }
 
 body {
-    background-color: #FFE5D4;
-    color: #694F5D;
+    background-color: #A2C1C3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
 }
 
 button#padOne {
@@ -63,11 +64,13 @@ div.unitEx {
 
 h1 {
     background-color: #e5989b;
+    font-family: 'PT Sans', sans-serif;
 }
 
 h2 {
     background-color: palegoldenrod;
     border: 1px solid black;
+    font-family: 'PT Sans', sans-serif;
 }
 
 h2.exampleOne {
@@ -79,6 +82,7 @@ h2.exampleOne {
 h3 {
     background-color: pink;
     width: 250px;
+    font-family: 'PT Sans', sans-serif;
 }
 
 h4 {

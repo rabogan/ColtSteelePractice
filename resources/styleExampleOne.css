@@ -3,8 +3,12 @@ a {
 }
 
 body {
-    background-color: #FFE5D4;
-    color: #694F5D;
+    line-height: 1.2;
+    background-color: #A2C1C3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
+    margin: 0 auto;
+    width: 99%;
 }
 
 button {
@@ -14,19 +18,16 @@ button {
 }
 
 h1 {
+    font-size: 3rem;
+    font-weight: 100;
     text-align: center;
     font-weight: 400;
     text-decoration: red underline wavy;
-    letter-spacing: 15px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h2 {
     color: teal;
     background-color: plum;
-}
-
-p {
-    color: olive;
-    line-height: 2;
-    /*Background does a lot more than just change the color (also does images and is more powerful*/
+    font-family: 'Open Sans', sans-serif;
 }

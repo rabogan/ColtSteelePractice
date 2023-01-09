@@ -33,7 +33,9 @@ button:hover {
 }
 
 body {
-    background-color: #f1faee;
+    background-color: #A2C1C3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
 }
 
 footer a {
@@ -46,7 +48,7 @@ footer>a {
 
 h1,
 h2 {
-    color: darkslateblue;
+    font-family: 'PT Sans', sans-serif;
 }
 
 h2 button {

@@ -1,4 +1,81 @@
 body {
-    background-color: #FFE5D4;
-    color: #694F5D;
+    background-color: #A2C1C3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
 }
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0;
+}
+
+form {
+    margin: 0.9em;
+}
+
+main {
+    margin: 0 auto;
+    width: 99%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/*
+tr:nth-child(even) {
+  background-color: #white;
+}*/
+
+th {
+    color: black;
+}
+
+#teach {
+    text-align: center;
+}
+
+/*font-family: 'Open Sans', sans-serif;  FOR HEADERS AND PARAGRAPHS
+font-family: 'PT Sans', sans-serif; FOR READING*/
+
+/*
+                    body {
+                        font-family: Montserrat, sans-serif;
+                    }
+                    
+                    main {
+                        width: 60%;
+                        margin: 0 auto;
+                    }
+                    
+                    h1 {
+                        font-size: 3rem;
+                        margin-bottom: 0;
+                    }
+                    
+                    h1 + h2 {
+                        margin-top: 10px;
+                    }
+                    
+                    h1,h2,h3 {
+                        font-family: Roboto, sans-serif;
+                        font-weight: 100;
+                    }
+*/
