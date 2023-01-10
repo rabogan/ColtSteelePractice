@@ -36,6 +36,10 @@ h2 {
     border: 5px solid #003049;
 }
 
+img{
+   width:90%;
+}
+
 #initial div {
     width: 200px;
     height: 200px;
