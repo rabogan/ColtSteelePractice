@@ -47,7 +47,7 @@
             </code>
         </pre>
         </p>
-        <h2>Flex Direction</h2>
+        <h2>flex-direction</h2>
         <h3>Advantages of using <strong>flex-direction</strong></h3>
         <ul>
             <li>It allows you to easily control the layout of items within a container in a flexible and responsive way.
@@ -140,6 +140,146 @@
             </pre>
             </li>
         </ul>
+        <h2>justify-content</h2>
+        <p>The Flexbox property <strong>justify-content</strong> is used to align flex items along the main axis of a
+            flex container. It can be set to
+            <strong>"flex-start", "center", "flex-end", "space-between", "space-around", or "space-evenly"</strong>.
+        </p>
+        <p>The <strong>justify-content</strong> property is used to align flex items along the <strong>main
+                axis</strong> of a flex container. It
+            determines the alignment of the flex items along the horizontal (x-axis) or vertical (y-axis) axis,
+            depending on the <strong>flex-direction</strong> value.</p>
+        <h3>Pros and cons of utilizing <strong>justify-content:</strong></h3>
+        <ul>
+            <li>Allows for easy alignment of flex items along the main axis of a flex container.</li>
+            <li>Can be used to create visually pleasing and organized layouts.</li>
+            <li>Can be used in combination with other Flexbox properties, such as align-items and align-content, to
+                create more complex layouts.</li>
+            <li class="con">However, alignment options may be unsuitable for all types of layouts.</li>
+        </ul>
+        <h3>Justifying The Content</h3>
+        <ul>
+            <li>With <strong>justify-content</strong>, the property combines with <strong>flex-direction</strong> to
+                switch the position of elements within a container. The <strong>default</strong> property is
+                <strong>flex-start;</strong>.
+            </li>
+            <p>There are 6 properties associated with this:</p>
+            <ol>
+                <li><strong>flex-start</strong> is the default. This dictates that the flex items are aligned to the
+                    start of the <strong>main axis</strong> within a flex container. This means that the items will be
+                    aligned
+                    to the left if the <strong>flex-direction</strong>s is set to "row" or to the <strong>top</strong>
+                    if the
+                    flex-direction is
+                    set to <strong>column</strong>.
+                </li>
+                <li><strong>center</strong> simply does centering of the content around the <strong>main axis.</strong>
+                </li>
+                <li><strong>flex-end</strong> will take the content, and move it to the <strong>end</strong> of the
+                    <strong>main axis</strong>
+                </li>
+                <li><strong>space-between</strong> evenly distributes space <strong>between</strong> the elements. If no
+                    border is set,
+                    the elements push themselves to the furthest points either side of the main axis</li>
+                <li><strong>space-around</strong> gives even spacing <strong>around</strong> each element on the main
+                    axis, but usually gives a 'half-space' on the far ends of the axis, while the spaces between
+                    elements is a 'full space'</li>
+                <li><strong>space-evenly</strong> basically puts space around each element on the main-axis, but does so
+                    in a way that means the space around each element in the container is perfectly equal!</li>
+            </ol>
+        </ul>
+        <ul>
+            <ol>
+                <li><strong>justify-content:flex-start;</strong> means that the items will remain in the same direction
+                    as the main axis dictated by the <strong>flex-direction</strong> property.</li>
+                <li><strong>justify-content:center; </strong>However, it's easiest to visualize if we show an image
+                    outlining a clear use of
+                    <strong>justify-content</strong>. Here, we will demonstrate how
+                    <strong>justify-content:center;</strong>
+                    works alongside the various <strong>flex-direction</strong> properties:
+                    <figure>
+                        <img src="../images/flexboxImages/justifyContentCenter.png" alt="justify-content:center;">
+                        <figcaption><em>justify-content:center;</em> PLUS (clockwise: flex-direction:row; flex-direction
+                            row-reverse; flex-direction:column; flex-direction:column-reverse;</figcaption>
+                    </figure>
+                    <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: row; 
+                        justify-content: center;
+                        }
+                </code>
+            </pre>
+                </li>
+                <p>We can adjust the code in 4 other ways. For simplicity, the default of
+                    <strong>flex-direction:row;</strong> is used, but feel free to play around with others as well.
+                </p>
+                <li><strong>justify-content:flex-end;</strong>
+                    <figure>
+                        <img src="../images/flexboxImages/justifyContentFlexEnd.png" alt="justify-content:flex-end;">
+                        <figcaption><em>justify-content:flex-end;</em></figcaption>
+                    </figure>
+                    <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content:flex-end;
+                        }
+                </code>
+            </pre>
+                </li>
+                <li><strong>justify-content:space-between;</strong>
+                    <figure>
+                        <img src="../images/flexboxImages/justifyContentSpaceBetween.png"
+                            alt="justify-content:space-between;">
+                        <figcaption><em>justify-content:space-between;</em></figcaption>
+                    </figure>
+                    <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content:space-between;
+                        }
+                </code>
+            </pre>
+                </li>
+                <li><strong>justify-content:space-around;</strong>
+                    <figure>
+                        <img src="../images/flexboxImages/justifyContentSpaceAround.png"
+                            alt="justify-content:space-around;">
+                        <figcaption><em>justify-content:space-around;</em></figcaption>
+                    </figure>
+                    <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content:space-around;
+                        }
+                </code>
+            </pre>
+                </li>
+                <li><strong>justify-content:space-evenly;</strong>
+                    <figure>
+                        <img src="../images/flexboxImages/justifyContentSpaceEvenly.png"
+                            alt="justify-content:space-evenly;">
+                        <figcaption><em>justify-content:space-evenly;</em></figcaption>
+                    </figure>
+                    <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content:space-evenly;
+                        }
+                </code>
+            </pre>
+                </li>
+            </ol>
+        </ul>
     </main>
     <footer>
         <nav>
@@ -147,7 +287,6 @@
             <ul>
                 <li><a href="./introduction.html">Introduction</a></li>
             </ul>
-
         </nav>
         <a href="../index.html">Home</a>
     </footer>

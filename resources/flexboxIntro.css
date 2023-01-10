@@ -47,6 +47,7 @@ h2 {
     border: 5px solid #003049;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 #container div {
@@ -65,3 +66,11 @@ main {
     text-align: justify;
     /*Set the width to be the viewport width minus 2cm on each side*/
 }
+
+.con {
+    color: #610000;
+}
+
+/*Used on codepen.io to check images incorporate okay
+                    <img src="https://images.unsplash.com/photo-1666315209049-91e938e33c62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80" alt="flex-direction:row-reverse">
+*/
