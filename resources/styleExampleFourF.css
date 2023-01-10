@@ -1,6 +1,7 @@
 body {
     background-color: #A2C1C3;
     color: #2b2d42;
+    line-height: 1.2;
     font-family: 'PT Sans', sans-serif;
 }
 
@@ -16,7 +17,7 @@ ul li {
 section {
     width: 80%;
     height: 800px;
-    background: top/cover no-repeat url(../images/suarez.jpg);
+    background: top/cover no-repeat url(https://images.unsplash.com/photo-1671303954963-f1e9b56f9ee2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2187&q=80);
     margin: 0 auto;
     /*Crops things*/
     /*
@@ -32,7 +33,28 @@ section#multipleImages {
     background: center/40% no-repeat url(../images/suarez.jpg), url(https://images.unsplash.com/photo-1671303954963-f1e9b56f9ee2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2187&q=80);
 }
 
+h1,
+h2,
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 100;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    padding: 1%;
+}
+
 h2 {
-    font-size: 100px;
+    font-size: 1.5em;
+    background-color: plum;
+}
+
+h3 {
+    font-size: 4em;
     color: blue;
 }
