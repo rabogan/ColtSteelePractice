@@ -6,10 +6,10 @@ body {
 }
 
 li {
-    margin-top: 5px;
+    margin-top: 1em;
 }
 
-ul li {
+nav ul li {
     margin: 0;
 }
 
@@ -33,6 +33,11 @@ section#multipleImages {
     background: center/40% no-repeat url(../images/suarez.jpg), url(https://images.unsplash.com/photo-1671303954963-f1e9b56f9ee2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2187&q=80);
 }
 
+main {
+    width: 90%;
+    margin: 0 auto;
+}
+
 h1,
 h2,
 h3 {
@@ -50,16 +55,12 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2em;
+    width: 100%;
     background-color: plum;
 }
 
 h3 {
     font-size: 4em;
     color: blue;
-}
-
-main {
-    width: 90%;
-    margin: 0 auto;
 }
