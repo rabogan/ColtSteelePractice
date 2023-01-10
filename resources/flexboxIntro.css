@@ -16,7 +16,8 @@ h1 {
     font-size: 3rem;
     font-weight: 100;
     text-align: center;
-    margin: auto;
+    margin: 0 auto;
+    width: 40%;
     padding: 1%;
 }
 
@@ -58,9 +59,11 @@ img {
 }
 
 main {
+    /* 
     margin: 0 2%;
-    /* Adds 1cm of space on the left and right sides */
+    Adds 1cm of space on the left and right sides */
     text-align: justify;
+    /*
     width: calc(100vw - 2cm);
     /*Set the width to be the viewport width minus 2cm on each side*/
 }
