@@ -16,7 +16,6 @@ h1 {
     font-size: 3rem;
     font-weight: 100;
     text-align: center;
-    width: 40%;
     margin: auto;
     padding: 1%;
 }
@@ -62,6 +61,6 @@ main {
     margin: 0 2%;
     /* Adds 1cm of space on the left and right sides */
     text-align: justify;
-    /* width: calc(100vw - 2cm);
-    Set the width to be the viewport width minus 2cm on each side */
+    width: calc(100vw - 2cm);
+    /*Set the width to be the viewport width minus 2cm on each side*/
 }
