@@ -57,11 +57,11 @@ h2 {
 img {
     max-width: 500px;
     max-height: 500px;
+    border: 1px dotted rebeccapurple;
 }
 
 main {
     /* Adds 1cm of space on the left and right sides */
     text-align: justify;
-    width: calc(100vw - 2cm);
     /*Set the width to be the viewport width minus 2cm on each side*/
 }
