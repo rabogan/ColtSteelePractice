@@ -229,7 +229,140 @@
             </figcaption>
         </figure>
         <h2>align-content</h2>
-
+        <p>The <strong>align-content</strong> property in Flexbox is used to align the items on a flex container's
+            <strong>cross-axis</strong>. It can be
+            used to distribute space between rows or columns of flex items. This can be useful for creating evenly
+            spaced grids of items, or for aligning items to the start or end of a container. The TLDR: it aligns a flex
+            container's
+            lines within the flex container when there is <strong>extra space in the cross-axis.</strong>
+        </p>
+        <p>align-content is similar to justify-content, but works on the cross-axis(rows) rather than the
+            main-axis(columns)</p>
+        <p>Finally, if neither <strong>wrap</strong> nor <strong>wrap-reverse</strong> are being used, then this
+            property is meaningless!</p>
+        <h3>The benefits of <strong>align-content</strong></h3>
+        <li>Allows for precise alignment of lines within a flex container.</li>
+        <li>Can be used to distribute space between lines evenly.</li>
+        <ol>
+            <li><strong>stretch (default value)</strong>: with this, lines stretch to take up the remaining space.
+                <h4><strong>align-content:;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/align-content-stretch.png" alt="align-content:stretch;">
+                    <figcaption><em>align-content:stretch;</em></figcaption>
+                </figure>
+                <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items:flex-end;
+                            flex-wrap:wrap;
+                            align-content:stretch; /*DEFAULT*/
+                            }
+                    </code>
+                    </pre>
+            </li>
+            <li><strong>center</strong>: lines are centered within the flex container. Look at the effect on the image.
+                Below is <strong>after</strong>
+                <h4><strong>align-content:center;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/align-content-center.png" alt="align-content:center;">
+                    <figcaption><em>align-content:center;</em></figcaption>
+                </figure>
+                <pre>
+                        <code>
+                            #container {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items:flex-end;
+                                flex-wrap:wrap;
+                                align-content:center; 
+                                }
+                        </code>
+                        </pre>
+            </li>
+        </ol>
+        <li><strong>space-between</strong>: lines are evenly distributed with equal space between each line.
+            <h4><strong>align-content:space-between;</strong></h4>
+            <figure>
+                <img src="../images/flexboxImages/align-content-space-between.png" alt="align-content:space-between;">
+                <figcaption><em>align-content:space-between;</em></figcaption>
+            </figure>
+            <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items:flex-end;
+                            flex-wrap:wrap;
+                            align-content:space-between;
+                            }
+                    </code>
+                    </pre>
+        </li>
+        <li><strong>space-around</strong>: lines are evenly distributed with equal space around each line.
+            <h4><strong>align-content:space-around;</strong></h4>
+            <figure>
+                <img src="../images/flexboxImages/align-content-space-around.png" alt="align-content:space-around;">
+                <figcaption><em>align-content:space-around;</em></figcaption>
+            </figure>
+            <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items:flex-end;
+                                flex-wrap:wrap;
+                                align-content:space-around;
+                            }
+                    </code>
+                    </pre>
+        </li>
+        <li><strong>flex-start</strong>: lines are positioned at the start of the flex container.
+            <h4><strong>align-content:flex-start;</strong></h4>
+            <figure>stretch
+                <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
+                    alt="align-content:flex-start;">
+                <figcaption><em>align-content:flex-start;</em></figcaption>
+            </figure>
+            <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items:flex-end;
+                                flex-wrap:wrap;
+                                align-content:flex-start;
+                            }
+                    </code>
+                    </pre>
+        </li>
+        <li><strong>flex-end</strong>: lines are positioned at the end of the flex container.
+            <h4><strong>align-content:flex-end;</strong></h4>
+            <figure>
+                <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
+                    alt="align-content:flex-end;">
+                <figcaption><em>align-content:flex-end;</em></figcaption>
+            </figure>
+            <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items:flex-end;
+                                flex-wrap:wrap;
+                                align-content:flex-end;
+                            }
+                    </code>
+                    </pre>
+        </li>
+        </ol>
     </main>
     <footer>
         <nav>
