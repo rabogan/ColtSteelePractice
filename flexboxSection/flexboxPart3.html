@@ -64,7 +64,8 @@
             </li>
         </ol>
         <h3><em>flex-basis</em></h3>
-        <li><strong>flex-basis</strong> is changed using units. I will demonstrate (without the code snippets, which is
+        <li><strong>flex-basis</strong> is changed using units. It's the initial size will entered into our container
+            as. I will demonstrate (without the code snippets, which is
             a mistake) thus:
             <h4><strong>flex-wrap:nowrap;</strong></h4>
             <figure>
@@ -73,8 +74,36 @@
             </figure>
         </li>
         <h3><em>flex-grow</em></h3>
+        <li><strong>flex-grow</strong> uses a unit-less value. Look at the effect different values have on the separate
+            divs! I've used <strong>div:nth-of-type()</strong> to help show this.
+            <h4><strong>flex-grow:1;</strong></h4>
+            <figure>
+                <img src="../images/flexboxImages/flex-grow-example.png" alt="flex-grow">
+                <figcaption><em>Notice how the growth is markedly different!</em></figcaption>
+            </figure>
+            <pre>
+            <code>
+                #container div {
+                    width: 200px;
+                    height: 200px;
+                    flex-basis:200px;
+                }
+                
+                div:nth-of-type(1){
+                  flex-grow:1;
+                }
+
+                div:nth-of-type(5){
+                    flex-grow:1;  (2nd image)  
+                    /*vs flex-grow:2; (3rd image)*/
+                }
+            </code>
+            </pre>
+            Notice how things scale and stack. These will be able to grow. To prevent over-growing, you can assign a
+            max-width too. In the 3rd image, we changed things slightly so that the growth of div 5 is twice that of div
+            1. Notice how the elements can get so much larger when adjusting the size of the display!
+        </li>
         <h3><em>flex-shrink</em></h3>
-        <p></p>
         <h2>Flex shorthand</h2>
         <p><strong><em>flex-basis, flex-grow, and flex-shrink</em></strong> are used so frequently that special
             shorthand has been developed to help use them effectively.</p>
