@@ -35,135 +35,98 @@
         <h2><em>flex-wrap</em></h2>
         <p>
         </p>
-        <p>The <strong>justify-content</strong> property is used to align flex items along the <strong>main
-                axis</strong> of a flex container. The main axis could be the horizontal (x-axis) or vertical (y-axis)
-            axis: it depends on the <strong>flex-direction</strong> value.</p>
-        <h3>Pros and cons of utilizing <em>justify-content:</em></h3>
+        <p>The <strong>flex-wrap</strong> property sets whether flex items are forced onto one line or can wrap onto
+            multiple lines. If wrapping is allowed, <strong>flex-wrap</strong> sets the direction in which lines are
+            stacked. It's also affected by the choices made in <strong>flex-direction</strong> and
+            <strong>justify-content</strong>.
+        </p>
+        <h3>Pros and cons of utilizing <em>flex-wrap:</em></h3>
         <ul>
-            <li>Allows for easy alignment of flex items along the main axis of a flex container.</li>
-            <li>Can be used to create visually pleasing and organized layouts.</li>
-            <li>Can be used in combination with other Flexbox properties, such as align-items and align-content, to
-                create more complex layouts.</li>
-            <li class="con">However, alignment options may be unsuitable for all types of layouts.</li>
-        </ul>
-        <h3>Justifying The Content</h3>
-        <ul>
-            <li>With <strong>justify-content</strong>, the property combines with <strong>flex-direction</strong> to
-                switch the position of elements within a container. The <strong>default</strong> property is
-                <strong>flex-start;</strong>
+            <li>Using <strong>flex-wrap</strong> prevents elements from becoming too wide or too tall for the container.
+                By wrapping elements onto multiple lines with either the <strong>wrap</strong> or
+                <strong>wrap-reverse</strong> value, you can ensure that they all fit within the container's bounds in
+                their original sizes.
             </li>
-            <p>There are 6 properties associated with this:</p>
-            <ol>
-                <li><strong>flex-start</strong> is the default. This dictates that the flex items are aligned to the
-                    start of the <strong>main axis</strong> within a flex container. This means that the items will be
-                    aligned
-                    to the left if the <strong>flex-direction</strong>s is set to "row" or to the <strong>top</strong>
-                    if the
-                    flex-direction is
-                    set to <strong>column</strong>. <strong>justify-content:flex-start;</strong> means that the items
-                    will remain in the same direction
-                    as the main axis dictated by the <strong>flex-direction</strong> property.
-                </li>
-                <li><strong>center</strong> simply does centering of the content around the <strong>main axis.</strong>
-                    <strong>justify-content:center; </strong>However, it's easiest to visualize if we show an image
-                    outlining a clear use of
-                    <strong>justify-content</strong>. Here, we will demonstrate how
-                    <strong>justify-content:center</strong>
-                    works alongside the various <strong>flex-direction</strong> properties. For simplicity, the default
-                    of
-                    <strong>flex-direction:row;</strong> is used, but feel free to play around with others as well.
-                    <h4><strong>justify-content:center;</strong></h4>
-                    <figure>
-                        <img src="../images/flexboxImages/justifyContentCenter.png" alt="justify-content:center;">
-                        <figcaption><em>justify-content:center;</em> PLUS (clockwise: flex-direction:row; flex-direction
-                            row-reverse; flex-direction:column; flex-direction:column-reverse;</figcaption>
-                    </figure>
-                    <pre>
+            <li>Again, this property helps create more flexible and responsive layouts that are visually appealing:
+                wrapping elements can allow for a more dynamic layout that adapts to the size of the container or the
+                viewport.</li>
+            <li class="con">However, some browsers have issues with compatibility. This can be averted with a few
+                fallbacks in the head of the HTML.</li>
+            <li class="con">In addition, flex-wrap can have a significant cost on performance, as it causes additional
+                computation and layout work for the browser.</li>
+        </ul>
+        <h3>Key Values Associated with the <em>flex-wrap</em> property</h3>
+        <p>There are three commonly accepted values used with <strong>flex-wrap</strong>, which are the <em>default
+                value</em> <strong>nowrap</strong>, <strong>wrap</strong>, and <strong>wrap-reverse</strong>.</p>
+        <ol>
+            <li><strong>nowrap</strong> is the default. With <strong>nowrap</strong>, the flex items will be laid out in
+                a single line. In undersized
+                containers, these elements would shrink down to fit. Everything is aligned to the top, because our main
+                axis goes from top to bottom in this case.
+                <h4><strong>flex-wrap:nowrap;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/flexWrap-nowrap.png" alt="flex-wrap:wrap;">
+                    <figcaption><em>flex-wrap:wrap;</em></figcaption>
+                </figure>
+                <pre>
                 <code>
                     #container {
                         display: flex;
-                        flex-direction: row; 
-                        justify-content: center;
+                        flex-direction: column;  /*main axis is vertical*/
+                        justify-content: flex-start;  /*main axis is top to bottom*/
+                        flex-wrap:nowrap;  /*DEFAULT!*/
                         }
                 </code>
-            </pre>
-                </li>
-                <li><strong>flex-end</strong> will take the content, and move it to the <strong>end</strong> of the
-                    <strong>main axis</strong>.
-                    <h4><strong>justify-content:flex-end;</strong></h4>
-                    <figure>
-                        <img src="../images/flexboxImages/justifyContentFlexEnd.png" alt="justify-content:flex-end;">
-                        <figcaption><em>justify-content:flex-end;</em></figcaption>
-                    </figure>
-                    <pre>
-                        <code>
-                            #container {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content:flex-end;
-                                }
-                        </code>
-                    </pre>
-                </li>
-
-                <li><strong>space-between</strong> evenly distributes space <strong>between</strong> the elements. If no
-                    border is set,
-                    the elements push themselves to the furthest points either side of the main axis.
-                    <h4><strong>justify-content:space-between;</strong></h4>
-                    <figure>
-                        <img src="../images/flexboxImages/justifyContentSpaceBetween.png"
-                            alt="justify-content:space-between;">
-                        <figcaption><em>justify-content:space-between;</em></figcaption>
-                    </figure>
-                    <pre>
-                        <code>
-                            #container {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content:space-between;
-                                }
-                        </code>
-                    </pre>
-                </li>
-                <li><strong>space-around</strong> gives even spacing <strong>around</strong> each element on the main
-                    axis, but usually gives a 'half-space' on the far ends of the axis, while the spaces between
-                    elements is a 'full space'</li>.
-                <h4><strong>justify-content:space-around;</strong></h4>
+                </pre>
+            </li>
+            <li>Changing this to <strong>wrap</strong> gives a dramatic difference! For ease of understanding, the other
+                Flexbox properties will remain the same! With <strong>wrap</strong>, the Flexbox properties break into
+                multiple lines. The <em>cross-start</em> is either equivalent to start or before depending on the
+                <strong>flex-direction</strong> value, and the <em>cross-end</em> is the opposite of the specified
+                <em>cross-start</em>.
+                <h4><strong>flex-wrap:wrap;</strong></h4>
                 <figure>
-                    <img src="../images/flexboxImages/justifyContentSpaceAround.png"
-                        alt="justify-content:space-around;">
-                    <figcaption><em>justify-content:space-around;</em></figcaption>
+                    <img src="../images/flexboxImages/flexWrap-wrap.png" alt="flex-wrap:wrap;">
+                    <figcaption><em>flex-wrap:nowrap;</em></figcaption>
                 </figure>
                 <pre>
-                        <code>
-                            #container {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content:space-around;
-                                }
-                        </code>
-                    </pre>
-
-                <li><strong>space-evenly</strong> basically puts space around each element on the main-axis, but does so
-                    in a way that means the space around each element in the container is perfectly equal!
-                    <h4><strong>justify-content:space-evenly;</strong></h4>
-                    <figure>
-                        <img src="../images/flexboxImages/justifyContentSpaceEvenly.png"
-                            alt="justify-content:space-evenly;">
-                        <figcaption><em>justify-content:space-evenly;</em></figcaption>
-                    </figure>
-                    <pre>
-                        <code>
-                            #container {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content:space-evenly;
-                                }
-                        </code>
-                    </pre>
-                </li>
-            </ol>
-        </ul>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: column;   
+                        justify-content: flex-start;
+                        flex-wrap:wrap;  /*Causes STACKING*/
+                    }
+                </code>
+                </pre>
+            </li>
+            <li>Finally, you should see how <strong>wrap-reverse</strong> works. It's the same as wrap, but with
+                cross-start and cross-end beng permuted.
+                <h4><strong>flex-wrap:wrap;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/flexWrap-wrap-reverse.png" alt="flex-wrap:wrap-reverse;">
+                    <figcaption><em>flex-wrap:wrap-reverse;</em></figcaption>
+                </figure>
+                <pre>
+                <code>
+                    #container {
+                        display: flex;
+                        flex-direction: column;   
+                        justify-content: flex-start;
+                        flex-wrap:wrap-reverse;  /**/
+                    }
+                </code>
+                </pre>
+            </li>
+            <li>As a final example for <strong>flex-wrap</strong>, have a look at what was achieved within this
+                container:</li>
+            <figure>
+                <img src="../images/flexboxImages/flexWrapExample.png" alt="Example">
+                <figcaption><em>Look at the code for further examples!</em></figcaption>
+            </figure>
+            </li>
+        </ol>
+        <h2><em>align-items</em></h2>
     </main>
     <footer>
         <nav>
