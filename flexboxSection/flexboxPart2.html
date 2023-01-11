@@ -283,14 +283,14 @@
                         </code>
                         </pre>
             </li>
-        </ol>
-        <li><strong>space-between</strong>: lines are evenly distributed with equal space between each line.
-            <h4><strong>align-content:space-between;</strong></h4>
-            <figure>
-                <img src="../images/flexboxImages/align-content-space-between.png" alt="align-content:space-between;">
-                <figcaption><em>align-content:space-between;</em></figcaption>
-            </figure>
-            <pre>
+            <li><strong>space-between</strong>: lines are evenly distributed with equal space between each line.
+                <h4><strong>align-content:space-between;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/align-content-space-between.png"
+                        alt="align-content:space-between;">
+                    <figcaption><em>align-content:space-between;</em></figcaption>
+                </figure>
+                <pre>
                     <code>
                         #container {
                             display: flex;
@@ -302,14 +302,14 @@
                             }
                     </code>
                     </pre>
-        </li>
-        <li><strong>space-around</strong>: lines are evenly distributed with equal space around each line.
-            <h4><strong>align-content:space-around;</strong></h4>
-            <figure>
-                <img src="../images/flexboxImages/align-content-space-around.png" alt="align-content:space-around;">
-                <figcaption><em>align-content:space-around;</em></figcaption>
-            </figure>
-            <pre>
+            </li>
+            <li><strong>space-around</strong>: lines are evenly distributed with equal space around each line.
+                <h4><strong>align-content:space-around;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/align-content-space-around.png" alt="align-content:space-around;">
+                    <figcaption><em>align-content:space-around;</em></figcaption>
+                </figure>
+                <pre>
                     <code>
                         #container {
                             display: flex;
@@ -321,15 +321,15 @@
                             }
                     </code>
                     </pre>
-        </li>
-        <li><strong>flex-start</strong>: lines are positioned at the start of the flex container.
-            <h4><strong>align-content:flex-start;</strong></h4>
-            <figure>stretch
-                <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
-                    alt="align-content:flex-start;">
-                <figcaption><em>align-content:flex-start;</em></figcaption>
-            </figure>
-            <pre>
+            </li>
+            <li><strong>flex-start</strong>: lines are positioned at the start of the flex container.
+                <h4><strong>align-content:flex-start;</strong></h4>
+                <figure>stretch
+                    <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
+                        alt="align-content:flex-start;">
+                    <figcaption><em>align-content:flex-start;</em></figcaption>
+                </figure>
+                <pre>
                     <code>
                         #container {
                             display: flex;
@@ -341,15 +341,15 @@
                             }
                     </code>
                     </pre>
-        </li>
-        <li><strong>flex-end</strong>: lines are positioned at the end of the flex container.
-            <h4><strong>align-content:flex-end;</strong></h4>
-            <figure>
-                <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
-                    alt="align-content:flex-end;">
-                <figcaption><em>align-content:flex-end;</em></figcaption>
-            </figure>
-            <pre>
+            </li>
+            <li><strong>flex-end</strong>: lines are positioned at the end of the flex container.
+                <h4><strong>align-content:flex-end;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
+                        alt="align-content:flex-end;">
+                    <figcaption><em>align-content:flex-start vs center vs flex-end;</em></figcaption>
+                </figure>
+                <pre>
                     <code>
                         #container {
                             display: flex;
@@ -361,8 +361,46 @@
                             }
                     </code>
                     </pre>
-        </li>
+            </li>
         </ol>
+        <h2>align-self</h2>
+        <p>Whereas <strong>align-content</strong> is used to align the lines within a flex container along the
+            cross-axis,
+            <strong>align-self</strong> is used to align individual items along the cross-axis within a flex container.
+        </p>
+        <li><strong>flex-end</strong>: lines are positioned at the end of the flex container. It allows you to align a
+            single item, and can have an effect on each element individually. I'll briefly demonstrate this on the 2nd
+            child div in the container
+            <h4><strong>align-self:flex-end;</strong></h4>
+            <figure>
+                <img src="../images/flexboxImages/align-self-example-1.png" alt="align-content:flex-end;">
+                <figcaption><em>align-self:flex-end;</em></figcaption>
+            </figure>
+            <pre>
+                    <code>
+                        #container {
+                            background-color: #003049;
+                            width: 90%;
+                            height: 500px;
+                            margin: 0 auto;
+                            border: 5px solid #003049;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-evenly;
+                        }
+                        
+                        #container div {
+                            width: 200px;
+                            height: 200px;
+                        }
+                        
+                        #container div:nth-child(2) {
+                            align-self: flex-end;
+                        }
+                    </code>
+                    </pre>
+        </li>
+        <p>If you're ready, try <a href="flexboxPart3.html">part 3</a> of this section</p>
     </main>
     <footer>
         <nav>
@@ -371,6 +409,9 @@
                 <li><a href="./introduction.html">Introduction</a></li>
                 <li><a href="./flexboxPart1.html">Flexbox Properties: <strong>display:flex;</strong>,
                         <strong>flex-direction</strong> and <strong>justify-content</strong></a></li>
+                <li><a href="./flexboxPart3.html">Flexbox Properties: <strong>flex-basis</strong>,
+                        <strong>flex-grow</strong>, <strong>flex-shrink</strong> and some <strong>flex
+                            shorthand</strong></a></li>
             </ul>
         </nav>
         <a href="../index.html">Home</a>
