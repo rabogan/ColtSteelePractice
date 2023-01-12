@@ -20,12 +20,39 @@
 </head>
 
 <body>
-    <header>Building a responsive navigation bar</header>
+    <header>
+        <h1>Navigation Bar Project</h1>
+        <nav>
+            <a href="/">Home</a>
+            <ul>
+                <li><a href="../htmlSection/htmlIntro.html">HTML</a></li>
+                <li><a href="../cssSection/cssIntro.html">CSS</a< /li>
+                <li><a href="../flexboxSection/introduction.html">Flexbox</a></li>
+                <li><a href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a></li>
+                <li><a href="../javascriptSection/javascriptIntro.html">Javascript</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
+        <h2>Building a Navigation Bar</h2>
+        <p>Be mindful that we're building a simple navbar here: the fancier ones involving JavaScript or jQuery will be
+            addressed in the JavaScript section! In the meantime, good rules of thumb include:</p>
+        <ol>
+            <li>Use a <strong>flexible container</strong> (Flexbox/Grid) for navigation links. A <strong>hamburger
+                    menu</strong> button is also helpful.</li>
+            <li>Use <strong>media queries</strong>: build the navigation bar to fit on smaller screens first, then allow
+                it to build up!</li>
+            <li>You can choose to make sure it stays visible for easy access.</li>
+            <li>Make sure it isn't <strong>too</strong> weighty.</li>
+            <li>The most commonly used links include <strong>&lt;nav&gt;</strong>, <strong>&lt;ul&gt;</strong>,
+                <strong>&lt;li&gt;</strong>, <strong>&lt;a&gt;</strong>, and <strong>&lt;button&gt;</strong>.
+            </li>
+        </ol>
+        <h2>The Power of Media Queries</h2>
         <p>Move on to <a href="flexboxPricingPanelProject.html">the pricing panel project</a></p>
     </main>
     <footer>
-        <nav>
+        <nav class="footer">
             <h2>Other Flexbox Links</h2>
             <ul>
                 <li><a href="./introduction.html">Introduction</a></li>
