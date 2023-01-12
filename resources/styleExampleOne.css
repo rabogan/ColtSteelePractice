@@ -8,6 +8,7 @@ body {
     color: #2b2d42;
     font-family: 'PT Sans', sans-serif;
     margin: 0 auto;
+    text-align: justify;
 }
 
 button {

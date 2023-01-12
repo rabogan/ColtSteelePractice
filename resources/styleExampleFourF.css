@@ -1,8 +1,9 @@
 body {
+    line-height: 1.2;
     background-color: #A2C1C3;
     color: #2b2d42;
-    line-height: 1.2;
     font-family: 'PT Sans', sans-serif;
+    text-align: justify;
 }
 
 li {

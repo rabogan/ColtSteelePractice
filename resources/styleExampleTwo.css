@@ -24,10 +24,12 @@ body {
     margin: 0 auto;
 }
 
-button {
-    color: #92dce5;
-    font-size: 30px;
-    background-color: rgb(134, 53, 92);
+body {
+    line-height: 1.2;
+    background-color: #A2C1C3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
+    text-align: justify;
 }
 
 button:hover {
