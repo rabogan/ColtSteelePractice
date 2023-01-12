@@ -42,12 +42,11 @@ h2 {
 #container {
     background-color: #003049;
     width: 90%;
-    /*height: 500px;*/
+    height: 500px;
     margin: 0 auto;
     border: 5px solid #003049;
     display: flex;
     flex-direction: row;
-    /*KEY CHANGE*/
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -55,14 +54,6 @@ h2 {
 #container div {
     width: 200px;
     height: 200px;
-}
-
-div:nth-of-type(1) {
-    flex-grow: 1;
-}
-
-div:nth-of-type(5) {
-    flex-grow: 2;
 }
 
 img {
@@ -79,7 +70,6 @@ main {
     color: #610000;
 }
 
-/*
 #mainEx {
     width: 80%;
     margin: 0 auto;
@@ -90,12 +80,13 @@ main {
 
 div .sidebar {
     background-color: #6930c3;
+    flex: 1 2 600px;
 }
 
 div .maincontent {
     background-color: #80ffdb;
+    flex: 1 2 300px;
 }
-*/
 
 /*Used on codepen.io to check images incorporate okay
                     <img src="https://images.unsplash.com/photo-1666315209049-91e938e33c62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2232&q=80" alt="flex-direction:row-reverse">

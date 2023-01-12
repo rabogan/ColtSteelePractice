@@ -32,22 +32,93 @@
             <div style="background-color: #6930c3"></div>
         </section>
         <h2>Media Queries</h2>
-        <p>All of these properties are used to control the size and behavior of flexbox items. When used with other
-            flexbox properties like <strong>flex-direction</strong>, <strong>align-items</strong> and
-            <strong>justify-content</strong>, these properties can be used to create flexible and responsive layout.
+        <pre>
+            <code>
+                @media only screen and (max-width: 600px) {
+                    /* styles for small screens go here */
+                  }
+                  @media only screen and (min-width: 600px) and (max-width: 900px) {
+                    /* styles for medium screens go here */
+                  }
+                  @media only screen and (min-width: 900px) {
+                    /* styles for large screens go here */
+                  }
+            </code>
+        </pre>
+        <p>A <strong>media query</strong> is CSS is used to apply different styles to a webpage depending on particular
+            parameters, such as screen width or device type. Most commonly are the screen size, but also
+            <strong>portrait vs landscape</strong>, and one of the most common examples is to collapse a nav-bar so that
+            it doesn't take up too much space!
         </p>
+        <pre>
+            <code>
+                @media (max-width:800px){
+                    .sidebar{
+                        display:none;
+                    }
+                    .main{
+                        width:80%;
+                    }
+                }
+
+                @media (min-width:30em) and (orientation:landscape){
+                    #container{
+                        flex-direction:column;
+                        justify-content:center;
+                    }
+                }
+            </code>
+        </pre>
+        <h2>General Advice on Media Queries</h2>
+        <p>To make the website responsive across a range of screens using HTML and CSS provided, you can take the
+            following steps:</p>
+        <ol>
+            <li>
+                Ensure there's a <strong>viewport &lt;meta&gt; tag</strong> in the head of your HTML document. This
+                tells the browser how to
+                adjust
+                the dimensions of the page to fit each device's screen. Each of my pages already included one of these:
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"gt;</li>
+
+            <li>Use CSS <strong>media queries</strong> to apply different styles to different screen sizes.
+                <strong>Media queries</strong> allow you to
+                apply
+                specific CSS styles based on the characteristics of the device, such as its screen size or resolution.
+            </li>
+
+            <li>Use <strong>CSS Flexbox</strong> and <strong>Grid</strong> layout to create flexible and responsive
+                layouts. <strong>Flexbox</strong> and <strong>Grid</strong> make it easy
+                to
+                create layouts that can adapt to different screen sizes and orientations, allowing you to create designs
+                that look good on both small and large screens.</li>
+
+            <li>Use <strong>relative units</strong> for sizes, such as <strong>em, rem, vw, and vh</strong>, instead of
+                absolute units like px . This will
+                allow your website to adjust to different screen sizes.</li>
+
+            <li>Consider using a CSS framework like <strong>Bootstrap</strong> or <strong>Foundation</strong> that
+                already have built-in responsive design
+                features. This can save you time and effort in creating a responsive design from scratch.</li>
+
+            <li>Test your website on different devices and screen sizes, and make any necessary adjustments to the CSS
+                code
+                to ensure that it looks and works as expected.</li>
+
+            <li><strong>Optimize</strong> images to reduce their size, this will help your website load faster on mobile
+                devices.</li>
+        </ol>
     </main>
     <footer>
         <nav>
             <h2>Other Flexbox Links</h2>
             <ul>
                 <li><a href="./introduction.html">Introduction</a></li>
-                <li><a href="./flexboxPart1.html">Flexbox Properties: <strong>display:flex;</strong>,
+                <li><a href="./flexboxPart1.html">Flexbox Properties Part I: <strong>display:flex;</strong>,
                         <strong>flex-direction</strong> and <strong>justify-content</strong></a></li>
                 <li><a href="./flexboxPart2.html">Flexbox Properties Part II: <strong>flex-wrap</strong>,
                         <strong>align-items</strong>,
                         <strong>align-content</strong> and <strong>align-self</strong></a></li>
-                <li><a href="./flexboxPart3.html">Flexbox Properties: <strong>flex-basis</strong>,
+                <li><a href="./flexboxPart3.html">Flexbox Properties Part III: <strong>flex-basis</strong>,
                         <strong>flex-grow</strong>, <strong>flex-shrink</strong> and some <strong>flex
                             shorthand</strong></a></li>
             </ul>
