@@ -64,13 +64,19 @@
             </li>
         </ol>
         <h3><em>flex-basis</em></h3>
-        <li><strong>flex-basis</strong> is changed using units. It's the initial size will entered into our container
-            as. I will demonstrate (without the code snippets, which is
-            a mistake) thus:
-            <h4><strong>flex-wrap:nowrap;</strong></h4>
+        <li><strong>flex-basis</strong> is changed using units! The top image has no flex-basis change. The lower, more
+            stretched image has <strong>flex-basis:333px;</strong>
+            <h4><strong>flex-basis:333px;</strong></h4>
             <figure>
                 <img src="../images/flexboxImages/flex-basis-example1.png" alt="flex-basis">
-                <figcaption><em>flex-wrap:wrap;</em></figcaption>
+                <figcaption><em>flex-basis:333px;</em></figcaption>
+            </figure>
+            <h4><strong>flex-basis:333px;</strong></h4>
+            <p>In this example, the flex-direction is in the column direction! Look at the different between no
+                flex-basis and when a flex-basis of 333px; is applied!</p>
+            <figure>
+                <img src="../images/flexboxImages/flex-basis-example2.png" alt="flex-basis">
+                <figcaption><em>flex-basis:333px;</em></figcaption>
             </figure>
         </li>
         <h3><em>flex-grow</em></h3>
@@ -104,6 +110,16 @@
             1. Notice how the elements can get so much larger when adjusting the size of the display!
         </li>
         <h3><em>flex-shrink</em></h3>
+        <li>The <strong>flex-basis</strong> has been changed to 600px to help demonstrate this one too!
+            <h4><strong>flex-shrink:2;</strong></h4>
+            <p>This will make the affected div shrink by <strong>twice</strong> the usual shrink rate.
+                flex-shrink:4; will affect the div's shrinkage by 4 times the rate. So div 1 will shrink twice as much
+                as the middle 3 divs, while div 5 shrinks four times as fast!</p>
+            <figure>
+                <img src="../images/flexboxImages/flex-shrink-ex1.png" alt="flex-shrink">
+                <figcaption><em>Notice how the growth is markedly different!</em></figcaption>
+            </figure>
+        </li>
         <h2>Flex shorthand</h2>
         <p><strong><em>flex-basis, flex-grow, and flex-shrink</em></strong> are used so frequently that special
             shorthand has been developed to help use them effectively.</p>
@@ -131,7 +147,12 @@
                 <strong>flex-shrink</strong> are being used. (<em>e.g.</em><strong>flex:2 2;</strong>)
             </li>
             <li>Two values, where the latter has been given units means that the <strong>flex-grow</strong> and
-                <strong>flex-basis</strong> are changed. (<em>e.g.</em><strong>flex:2 30px;</strong>)
+                <strong>flex-basis</strong> are changed. (<em>e.g.</em><strong>flex:2 30px;</strong>) Here is a brief
+                image-based summary so far:
+                <figure>
+                    <img src="../images/flexboxImages/flex-shorthand-1.png" alt="flex-shorthand">
+                    <figcaption><em>See how introducing flex at all changes everything!</em></figcaption>
+                </figure>
             </li>
             <li>Three values are used this order: <strong>flex-grow</strong>, then <strong>flex-shrink</strong>, then
                 <strong>flex-basis</strong>. (<em>e.g.</em><strong>flex:2 2 10%;</strong>)
@@ -149,9 +170,10 @@
                 <li><a href="./introduction.html">Introduction</a></li>
                 <li><a href="./flexboxPart1.html">Flexbox Properties: <strong>display:flex;</strong>,
                         <strong>flex-direction</strong> and <strong>justify-content</strong></a></li>
-                <li><a href="./flexboxPart3.html">Flexbox Properties: <strong>flex-basis</strong>,
-                        <strong>flex-grow</strong>, <strong>flex-shrink</strong> and some <strong>flex
-                            shorthand</strong></a></li>
+                <li><a href="./flexboxPart2.html">Flexbox Properties Part II: <strong>flex-wrap</strong>,
+                        <strong>align-items</strong>,
+                        <strong>align-content</strong> and <strong>align-self</strong></a></li>
+                <li><a href="./flexboxPart4.html"><strong>Media queries and building a responsive nav</strong></a></li>
             </ul>
         </nav>
         <a href="../index.html">Home</a>
