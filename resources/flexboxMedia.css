@@ -1,5 +1,9 @@
 body {
-    font-family: 'Open Sans', sans-serif;
+    line-height: 1.2;
+    background-color: #A2C1C3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
+    text-align: justify;
 }
 
 h1 {
@@ -7,12 +11,16 @@ h1 {
     text-align: center;
 }
 
+img {
+    width: 90%;
+    border: 3px dotted black;
+}
+
 nav {
-    font-size: 1.5em;
+    font-size: 1em;
     display: flex;
     justify-content: space-between;
 }
-
 
 ul,
 li {
@@ -22,8 +30,9 @@ li {
 }
 
 ul {
+    border: 1px solid red;
     flex: 1;
-    max-width: 50%;
+    max-width: 40%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -31,12 +40,24 @@ ul {
 @media (max-width:480px) {
     h1 {
         color: purple;
+        font-size: 3em;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
 @media (min-width:481px) and (max-width:768px) {
     h1 {
         color: orange;
+        font-size: 4em;
     }
 }
 
@@ -46,26 +67,59 @@ ul {
     }
 }
 
+footer ul {
+    display: flex;
+    flex-wrap: nowrap;
+    border: none;
+    max-width: 100%;
+}
+
+footer nav {
+    display: flex;
+    flex-wrap: nowrap;
+    border: none;
+    max-width: 100%;
+}
+
+footer {
+    display: block;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+footer li {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*
 @media only screen and (min-width : 320px) and (max-width : 480px) {
     /*--- Mobile portrait ---*/
-}
+/*}
 
 @media only screen and (min-width : 480px) and (max-width : 595px) {
     /*--- Mobile landscape ---*/
-}
+/*}
 
 @media only screen and (min-width : 595px) and (max-width : 690px) {
     /*--- Small tablet portrait ---*/
-}
+/*}
 
 @media only screen and (min-width : 690px) and (max-width : 800px) {
     /*--- Tablet portrait ---*/
-}
+/*}
 
 @media only screen and (min-width : 800px) and (max-width : 1024px) {
     /*--- Small tablet landscape ---*/
-}
+/*}
 
 @media only screen and (min-width : 1024px) and (max-width : 1224px) {
     /*--- Tablet landscape --- */
-}
+/*}*/

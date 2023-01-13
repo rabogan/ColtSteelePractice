@@ -25,7 +25,6 @@
     <nav>
         <a href="/">Home</a>
         <ul>
-
             <li>
                 <a href="/">Learn More</a>
             </li>
@@ -35,10 +34,90 @@
             <li>
                 <a href="/">Contact</a>
             </li>
-
         </ul>
         <a href="/">Sign Up</a>
     </nav>
     <h1>Media Queries</h1>
     <p>All clicks go back home :)</p>
+    <p>Additional things done to this:
+    <p>1) The font-size at different sizes is now responsive! The &lt;h1&gt; header is now 6em on larger screens,
+        4em on tables, and 3em on smartphone size displays</p>
+    <p>2) The &ltnav&gt; has been given the additional properties <strong>display:flex;</strong> and
+        <strong>justify-content:space-between;</strong>
+    <figure>
+        <img src="../images/flexboxImages/navbar-1.png" alt="navbarChangedLook">
+        <figcaption><strong>display:flex;</strong> and
+            <strong>justify-content:space-between;</strong> as well as different font-size and color for the h1!
+        </figcaption>
+    </figure>
+    <p>3) You should realize that the <strong>&lt;nav&gt;</strong> element consists of an unordered list
+        <strong>&lt;ul&gt;</strong> with 3 elements <strong>&lt;li&gt;</strong> inside it, plus two other
+        <strong>&lt;a&gt;</strong> elements linking to "Home" and "Sign Up". We can change the way these
+        <strong>&lt;li&gt;</strong> elements stack like so:
+    <pre>
+            <code>
+                ul{
+                    border:1px solid red;
+                    flex:1;
+                    max-width:50%;
+                    display:flex;
+                    justify-content:space-evenly;
+                }
+            </code>
+        </pre>
+    <p>One thing that was crucial for me was to place this code BELOW the ul,li{...} in the CSS file. If I hadn't the
+        display would have been set to inline again.</p>
+    </p>
+    <p>4) Now, to deal with the untidy border. We only need to do this for smartphones, so within the media query for
+        displays of less than 480px, I have included some extra code:
+    <pre>
+            <code>
+                @media (max-width:480px) {
+                    h1 {
+                        color: purple;
+                        font-size: 3em;
+                    }
+                
+                    nav {
+                        flex-direction: column;
+                    }
+                
+                    nav ul {
+                        flex-direction: column;
+                    }
+                }
+            </code>
+        </pre>
+    <figure>
+        <img src="../images/flexboxImages/navbar-2.png" alt="navbarChangedLook">
+        <figcaption>This is after creating a nested flex element (for the unordered list).
+        </figcaption>
+    </figure>
+    </p>
+    <p>Finally, we have:
+    <figure>
+        <img src="../images/flexboxImages/navbar-2.png" alt="navbarChangedLook">
+    </figure>
+    </p>
+    <footer>
+        <nav class="footer">
+            <h2>Other Flexbox Links</h2>
+            <ul>
+                <li><a href="./introduction.html">Introduction</a></li>
+                <li><a href="./flexboxPart1.html">Flexbox Properties Part I: <strong>&lt;display:flex&gt;</strong>,
+                        <strong>flex-direction</strong> and <strong>justify-content</strong></a></li>
+                <li><a href="./flexboxPart2.html">Flexbox Properties Part II: <strong>flex-wrap</strong>,
+                        <strong>align-items</strong>,
+                        <strong>align-content</strong> and <strong>align-self</strong></a></li>
+                <li><a href="./flexboxPart3.html">Flexbox Properties Part III: <strong>flex-basis</strong>,
+                        <strong>flex-grow</strong>, <strong>flex-shrink</strong> and some <strong>flex
+                            shorthand</strong></a></li>
+                <li><a href="./flexboxPart4.html"><strong>Flexbox Part IV: Media queries and building a responsive
+                            nav</strong></a></li>
+                <li><a href="./flexboxPricingPanelProject.html">Pricing Panel Project</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
+
+</html>
