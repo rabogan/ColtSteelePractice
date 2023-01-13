@@ -31,9 +31,9 @@
             <div style="background-color: #5390d9"></div>
             <div style="background-color: #6930c3"></div>
         </section>
-        <h2>display:flex;</h2>
+        <h2><em>display:flex;</em></h2>
         <p>The first thing that is done is to enter the container ID within css, and change the <strong>display</strong>
-            to <strong>flex</strong>.
+            to <strong>flex</strong>. This creates a so-called <strong>flex container.</strong>
         <pre>
             <code>
                 #container {
@@ -48,7 +48,19 @@
         </pre>
         </p>
         <h2>flex-direction</h2>
-        <h3>Advantages of using <strong>flex-direction</strong></h3>
+        <p>In the <strong>Flex</strong> model, we have a <strong>main-axis</strong> which initially goes from left
+            to right, and a
+            <strong>cross axis</strong> which intially goes from top to bottom.
+        </p>
+        <p>The <strong>flex-direction</strong> property determines the direction in which the flex items are laid
+            out within a flex container. By default, flex items are laid out in a <strong>row</strong> from left to
+            right.</p>
+        <p>However, you can use <strong>flex-direction</strong> to change the direction to a column from top to bottom,
+            or to make rows that are reversed from right to left or bottom to top.
+        </p>
+        <p>Essentially, <strong>flex-direction</strong> sets the direction in which flex items are laid out along the
+            main axis.</p>
+        <h3>Advantages of using <em>flex-direction</em></h3>
         <ul>
             <li>It allows you to easily control the layout of items within a container in a flexible and responsive way.
             </li>
@@ -56,164 +68,140 @@
                 (perpendicular to the main axis).</li>
             <li>It simplifies the process of creating layouts that work on different screen sizes and devices.</li>
         </ul>
-        <h3>Disadvantages of using <strong>flex-direction (and Flexbox in general)</strong></h3>
-        <ul>
-            <li class="con">It may not work well with older browsers that do not support Flexbox.</li>
-            <li class="con">It is not suitable for creating more complex layouts, such as multi-column layouts or grid
-                systems with
-                irregularly sized items.</li>
-        </ul>
         <h3>Changing the Flex Model</h3>
         <ul>
-            <li>In the <strong>Flex</strong> model, we have a <strong>main axis</strong> which initially goes from left
-                to right, and a
-                <strong>cross axis</strong> which intially goes from top to bottom.
-            </li>
-            <li>The <strong>flex-direction</strong> property determines the direction in which the flex items are laid
-                out within a flex
-                container.
-            </li>
-            <li>By default, flex items are laid out in a <strong>row</strong> from left to right. However,
-                you
-                can use
-                <strong>flex-direction</strong> to change the direction to a column from top to bottom, or to rows that
-                are
-                reversed from
-                right to left or bottom to top.
-            </li>
             <li>To use the <strong>flex-direction</strong> property, you can add it to
                 your
                 CSS code like so:
-                <h4><strong>flex-direction: row;</strong></h4>
+                <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: row; 
+                            /* default value */
+                            }
+                    </code>
+                </pre>
                 <figure>
                     <img src="../images/flexboxImages/flexDirectionRow.png" alt="defaultFlexDirection">
-                    <figcaption><em>The default flex-direction, flex-direction:row;</em></figcaption>
+                    <figcaption><strong>flex-direction: row;</strong> <em>essentially, this lays out items from left to
+                            right.</em>
+                    </figcaption>
                 </figure>
-                <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: row; 
-                        /* default value */
-                        }
-                </code>
-            </pre>
             </li>
             <li>We can adjust the code in 3 other ways:
-                <h4><strong>flex-direction: column;</strong></h4>
                 <figure>
                     <img src="../images/flexboxImages/flexDirectionColumn.png" alt="flex-direction:column">
-                    <figcaption><em>flex-direction:column (top-to-bottom)</em></figcaption>
+                    <figcaption><strong>flex-direction: column;</strong> <em>this arranges our divs from top to
+                            bottom.</em></figcaption>
                 </figure>
                 <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: column; 
-                        /* change direction to a column from top to bottom */
-                        }
-                </code>
-            </pre>
-                <h4><strong>flex-direction: row-reverse;</strong></h4>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: column; 
+                            /* change direction to a column from top to bottom */
+                            }
+                    </code>
+                    </pre>
                 <figure>
                     <img src="../images/flexboxImages/flexDirectionRowReverse.png" alt="flex-direction:row-reverse">
-                    <figcaption><em>flex-direction:row-reverse (right-to-left)</em></figcaption>
+                    <figcaption><strong>flex-direction: row-reverse;</strong> <em>this sets our divs in reverse
+                            order along the main-axis</em></figcaption>
                 </figure>
                 <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: row-reverse; 
-                        /* change direction to a row from right to left */
-                        }
-                </code>
-            </pre>
-                <h4><strong>flex-direction: column-reverse;</strong></h4>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: row-reverse; 
+                            /* change direction to a row from right to left */
+                            }
+                    </code>
+                </pre>
                 <figure>
                     <img src="../images/flexboxImages/flexDirectionColumnReverse.png"
                         alt="flex-direction:column-reverse">
-                    <figcaption><em>flex-direction:column-reverse (bottom-to-top)</em></figcaption>
+                    <figcaption><strong>flex-direction: column-reverse;</strong> <em>lays out things in a column
+                            from bottom to top</em></figcaption>
                 </figure>
                 <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: column-reverse; 
-                        /* change direction to a column from bottom to top */
-                        }
-                </code>
-            </pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: column-reverse; 
+                            /* change direction to a column from bottom to top */
+                            }
+                    </code>
+                </pre>
             </li>
         </ul>
-        <h2>justify-content</h2>
+        <h2><em>justify-content</em></h2>
         <p>The Flexbox property <strong>justify-content</strong> is used to align flex items along the main axis of a
             flex container. It can be set to
-            <strong>flex-start, center, flex-end, space-between, space-around, or space-evenly</strong>.
+            <strong>flex-start</strong>, <strong>center</strong>, <strong>flex-end</strong>,
+            <strong>space-between</strong>,
+            <strong>space-around</strong>, or <strong>space-evenly</strong>.
         </p>
         <p>The <strong>justify-content</strong> property is used to align flex items along the <strong>main
                 axis</strong> of a flex container. Later, you'll see that a property called <a
                 href="./flexboxPart2.html"><strong>align-items</strong></a>, which
-            is used to align items along the <strong>cross-axis</strong>. In etiher case, the main axis could be the
+            is used to align items along the <strong>cross-axis</strong>. In either case, the main axis could be the
             horizontal
             (x-axis) or vertical (y-axis)
             axis: it depends on the <strong>flex-direction</strong> value!</p>
         <h3>Pros and cons of utilizing <em>justify-content:</em></h3>
         <ul>
-            <li>Allows for easy alignment of flex items along the main axis of a flex container.</li>
+            <li>Allows for <strong>easy alignment</strong> of flex items along the main axis of a flex container.</li>
             <li>Can be used to create visually pleasing and organized layouts.</li>
-            <li>Can be used in combination with other Flexbox properties, such as align-items and align-content, to
-                create more complex layouts.</li>
+            <li>Can be used in combination with other Flexbox properties, such as <strong>align-items</strong> and
+                <strong>align-content</strong>, to
+                create more complex layouts.
+            </li>
             <li class="con">However, alignment options may be unsuitable for all types of layouts.</li>
         </ul>
         <h3>Justifying The Content</h3>
         <ul>
             <li>With <strong>justify-content</strong>, the property combines with <strong>flex-direction</strong> to
-                switch the position of elements within a container. The <strong>default</strong> property is
-                <strong>flex-start;</strong>
+                switch the position of elements within a container. The default value for this property looks like this:
+                <strong>justify-content:flex-start;</strong>
             </li>
-            <p>There are 6 properties associated with this:</p>
+            <p>There are six values associated with <strong>justify-content</strong>:</p>
             <ol>
                 <li><strong>flex-start</strong> is the default. This dictates that the flex items are aligned to the
                     start of the <strong>main axis</strong> within a flex container. This means that the items will be
                     aligned
-                    to the left if the <strong>flex-direction</strong>s is set to "row" or to the <strong>top</strong>
-                    if the
-                    flex-direction is
-                    set to <strong>column</strong>. <strong>justify-content:flex-start;</strong> means that the items
-                    will remain in the same direction
-                    as the main axis dictated by the <strong>flex-direction</strong> property.
+                    to the left if the <strong>flex-direction</strong> is set to "row" or to the <strong>top</strong>
+                    if the flex-direction is set to <strong>column</strong>.
+                    <strong>justify-content:flex-start;</strong> means that the items
+                    will remain in the same direction as the main axis dictated by the <strong>flex-direction</strong>
+                    property.
                 </li>
-                <li><strong>center</strong> simply does centering of the content around the <strong>main axis.</strong>
-                    <strong>justify-content:center; </strong>However, it's easiest to visualize if we show an image
-                    outlining a clear use of
-                    <strong>justify-content</strong>. Here, we will demonstrate how
+                <li><strong>justify-content:center</strong> simply does centering of the content around the main axis.
+                    However, it's easiest to visualize how this works with the image below. Here, we will demonstrate
+                    how
                     <strong>justify-content:center</strong>
                     works alongside the various <strong>flex-direction</strong> properties. For simplicity, the default
                     of
-                    <strong>flex-direction:row;</strong> is used, but feel free to play around with others as well.
-                    <h4><strong>justify-content:center;</strong></h4>
+                    <strong>flex-direction:row;</strong> is used first, but look at the other possibilities for
+                    combinining <strong>flex-direction</strong> with <strong>justify-content:center;</strong>
+                    <pre>
+                        <code>
+                            #container {
+                                display: flex;
+                                flex-direction: row;  /*<strong>This is variable!</strong>*/
+                                justify-content: center;
+                                }
+                        </code>
+                    </pre>
                     <figure>
                         <img src="../images/flexboxImages/justifyContentCenter.png" alt="justify-content:center;">
-                        <figcaption><em>justify-content:center;</em> PLUS (clockwise: flex-direction:row; flex-direction
-                            row-reverse; flex-direction:column; flex-direction:column-reverse;</figcaption>
+                        <figcaption><strong>justify-content:center;</strong> <em> (clockwise: flex-direction:row;
+                                flex-direction
+                                row-reverse; flex-direction:column; flex-direction:column-reverse;</em></figcaption>
                     </figure>
-                    <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: row; 
-                        justify-content: center;
-                        }
-                </code>
-            </pre>
                 </li>
                 <li><strong>flex-end</strong> will take the content, and move it to the <strong>end</strong> of the
                     <strong>main axis</strong>.
-                    <h4><strong>justify-content:flex-end;</strong></h4>
-                    <figure>
-                        <img src="../images/flexboxImages/justifyContentFlexEnd.png" alt="justify-content:flex-end;">
-                        <figcaption><em>justify-content:flex-end;</em></figcaption>
-                    </figure>
                     <pre>
                         <code>
                             #container {
@@ -223,17 +211,14 @@
                                 }
                         </code>
                     </pre>
+                    <figure>
+                        <img src="../images/flexboxImages/justifyContentFlexEnd.png" alt="justify-content:flex-end;">
+                        <figcaption><strong>justify-content:flex-end;</strong></figcaption>
+                    </figure>
                 </li>
-
                 <li><strong>space-between</strong> evenly distributes space <strong>between</strong> the elements. If no
                     border is set,
                     the elements push themselves to the furthest points either side of the main axis.
-                    <h4><strong>justify-content:space-between;</strong></h4>
-                    <figure>
-                        <img src="../images/flexboxImages/justifyContentSpaceBetween.png"
-                            alt="justify-content:space-between;">
-                        <figcaption><em>justify-content:space-between;</em></figcaption>
-                    </figure>
                     <pre>
                         <code>
                             #container {
@@ -243,17 +228,16 @@
                                 }
                         </code>
                     </pre>
+                    <figure>
+                        <img src="../images/flexboxImages/justifyContentSpaceBetween.png"
+                            alt="justify-content:space-between;">
+                        <figcaption><strong>justify-content:space-between;</strong></figcaption>
+                    </figure>
                 </li>
                 <li><strong>space-around</strong> gives even spacing <strong>around</strong> each element on the main
                     axis, but usually gives a 'half-space' on the far ends of the axis, while the spaces between
-                    elements is a 'full space'</li>.
-                <h4><strong>justify-content:space-around;</strong></h4>
-                <figure>
-                    <img src="../images/flexboxImages/justifyContentSpaceAround.png"
-                        alt="justify-content:space-around;">
-                    <figcaption><em>justify-content:space-around;</em></figcaption>
-                </figure>
-                <pre>
+                    elements is a 'full space'.
+                    <pre>
                         <code>
                             #container {
                                 display: flex;
@@ -262,15 +246,14 @@
                                 }
                         </code>
                     </pre>
-
+                    <figure>
+                        <img src="../images/flexboxImages/justifyContentSpaceAround.png"
+                            alt="justify-content:space-around;">
+                        <figcaption><strong>justify-content:space-around;</strong></figcaption>
+                    </figure>
+                </li>
                 <li><strong>space-evenly</strong> basically puts space around each element on the main-axis, but does so
                     in a way that means the space around each element in the container is perfectly equal!
-                    <h4><strong>justify-content:space-evenly;</strong></h4>
-                    <figure>
-                        <img src="../images/flexboxImages/justifyContentSpaceEvenly.png"
-                            alt="justify-content:space-evenly;">
-                        <figcaption><em>justify-content:space-evenly;</em></figcaption>
-                    </figure>
                     <pre>
                         <code>
                             #container {
@@ -280,6 +263,11 @@
                                 }
                         </code>
                     </pre>
+                    <figure>
+                        <img src="../images/flexboxImages/justifyContentSpaceEvenly.png"
+                            alt="justify-content:space-evenly;">
+                        <figcaption><strong>justify-content:space-evenly;</strong></figcaption>
+                    </figure>
                 </li>
             </ol>
         </ul>
