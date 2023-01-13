@@ -56,75 +56,85 @@
             <li class="con">In addition, flex-wrap can have a significant cost on performance, as it causes additional
                 computation and layout work for the browser.</li>
         </ul>
-        <h3>Key Values Associated with the <em>flex-wrap</em> property</h3>
+        <h3>Key values associated with the <em>flex-wrap</em> property: a demo with <em>flex-direction:column</em></h3>
         <p>There are three commonly accepted values used with <strong>flex-wrap</strong>, which are the <em>default
-                value</em> <strong>nowrap</strong>, <strong>wrap</strong>, and <strong>wrap-reverse</strong>.</p>
+                value</em> <strong>nowrap</strong>, <strong>wrap</strong>, and <strong>wrap-reverse</strong>. Obviously,
+            our 5 200px high divs <strong>DO NOT FIT</strong> inside a 500px container. Let's see what
+            <strong>flex-wrap</strong> and its values do with this:
+        </p>
         <ol>
             <li><strong>nowrap</strong> is the default. With <strong>nowrap</strong>, the flex items will be laid out in
                 a single line. In undersized
-                containers, these elements would shrink down to fit. Everything is aligned to the top, because our main
+                containers, these elements will <strong>shrink down</strong> to fit. Everything is aligned to the top,
+                because our main
                 axis goes from top to bottom in this case.
-                <h4><strong>flex-wrap:nowrap;</strong></h4>
+                <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: column;  /*main axis is vertical*/
+                            justify-content: flex-start;  /*main axis is top to bottom*/
+                            flex-wrap:nowrap;  /*DEFAULT!*/
+                            }
+                    </code>
+                    </pre>
                 <figure>
                     <img src="../images/flexboxImages/flexWrap-nowrap.png" alt="flex-wrap:wrap;">
-                    <figcaption><em>flex-wrap:wrap;</em></figcaption>
+                    <figcaption><strong>flex-wrap:nowrap;</strong></figcaption>
                 </figure>
-                <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: column;  /*main axis is vertical*/
-                        justify-content: flex-start;  /*main axis is top to bottom*/
-                        flex-wrap:nowrap;  /*DEFAULT!*/
-                        }
-                </code>
-                </pre>
             </li>
-            <li>Changing this to <strong>wrap</strong> gives a dramatic difference! For ease of understanding, the other
-                Flexbox properties will remain the same! With <strong>wrap</strong>, the Flexbox properties break into
-                multiple lines. The <em>cross-start</em> is either equivalent to start or before depending on the
-                <strong>flex-direction</strong> value, and the <em>cross-end</em> is the opposite of the specified
-                <em>cross-start</em>.
-                <h4><strong>flex-wrap:wrap;</strong></h4>
+            <li>Changing this to <strong>flex-wrap:wrap</strong> gives a dramatic difference! With
+                <strong>wrap</strong>, the Flexbox properties break into
+                multiple lines.
+                <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: column;   
+                            justify-content: flex-start;
+                            flex-wrap:wrap;  /*Causes STACKING*/
+                        }
+                    </code>
+                    </pre>
                 <figure>
                     <img src="../images/flexboxImages/flexWrap-wrap.png" alt="flex-wrap:wrap;">
-                    <figcaption><em>flex-wrap:nowrap;</em></figcaption>
+                    <figcaption><strong>flex-wrap:wrap;</strong></figcaption>
                 </figure>
-                <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: column;   
-                        justify-content: flex-start;
-                        flex-wrap:wrap;  /*Causes STACKING*/
-                    }
-                </code>
-                </pre>
             </li>
             <li>Finally, you should see how <strong>wrap-reverse</strong> works. It's the same as wrap, but with
                 cross-start and cross-end beng permuted.
-                <h4><strong>flex-wrap:wrap;</strong></h4>
+                <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: column;   
+                            justify-content: flex-start;
+                            flex-wrap:wrap-reverse;  /**/
+                        }
+                    </code>
+                    </pre>
                 <figure>
                     <img src="../images/flexboxImages/flexWrap-wrap-reverse.png" alt="flex-wrap:wrap-reverse;">
-                    <figcaption><em>flex-wrap:wrap-reverse;</em></figcaption>
+                    <figcaption><strong>flex-wrap:wrap;</strong></figcaption>
                 </figure>
-                <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: column;   
-                        justify-content: flex-start;
-                        flex-wrap:wrap-reverse;  /**/
-                    }
-                </code>
-                </pre>
             </li>
             <li>As a final example for <strong>flex-wrap</strong>, have a look at what was achieved within this
-                container:</li>
-            <figure>
-                <img src="../images/flexboxImages/flexWrapExample.png" alt="Example">
-                <figcaption><em>Look at the code for further examples!</em></figcaption>
-            </figure>
+                container:
+                <pre>
+                    <code>
+                        #container {
+                <strong> display: flex;
+                            flex-direction: row;   
+                            justify-content: space-evenly;
+                            flex-wrap:wrap-reverse; </strong> 
+                        }
+                    </code>
+                    </pre>
+                <figure>
+                    <img src="../images/flexboxImages/flexWrapExample.png" alt="Example">
+                    <figcaption>Notice how <strong>flex-wrap</strong> is set, and that <strong>justify-content</strong>
+                        is space-evenly etc...</figcaption>
+                </figure>
             </li>
         </ol>
         <h2><em>align-items</em></h2>
