@@ -6,9 +6,11 @@ body {
     text-align: justify;
 }
 
-nav.footer {
-    font-size: 1.5em;
+/*
+nav .footer{
+
 }
+*/
 
 h1,
 h2,
@@ -17,12 +19,10 @@ h3 {
 }
 
 h2 {
-    font-size: 3em;
     background-color: plum;
 }
 
 h1 {
-    font-size: 6em;
     font-weight: 100;
     text-align: center;
     margin: 0 auto;
