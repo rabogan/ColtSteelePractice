@@ -104,10 +104,6 @@
         </ol>
         <h2>Media Query Example</h2>
         <p>Please look at the following image, which uses the HTML code shown:</p>
-        <figure>
-            <img src="../images/flexboxImages/mediaquerynavbar.png" alt="navbar">
-            <figcaption><em>Showing the smartphone view, initial CSS code, and laptop view</em></figcaption>
-        </figure>
         <pre>
             <code>
                 &lt;body&gt;
@@ -133,6 +129,47 @@
                 &lt;/body&gt;
             </code>
         </pre>
+        <figure>
+            <img src="../images/flexboxImages/mediaquerynavbar.png" alt="navbar">
+            <figcaption><em>Showing the smartphone view, initial CSS code, and laptop view</em></figcaption>
+        </figure>
+        <p>We want to try and adjust this so that it looks good on both smartphone and laptop!</p>
+        <p>We must use a <strong>media query</strong> to achieve this! For a smartphone, which current discourse in the
+            community dictate has a maximum width of 480px, we can ensure that our CSS layout obeys it using:
+        <pre>
+            <code>
+                @media (max-width:480px){
+                    color:purple;
+                }
+            </code>
+        </pre>
+        </p>
+        <p>We want to try and adjust this so that it looks good on both smartphone and laptop!</p>
+        <pre>
+            <code>
+                @media (max-width:480px) {
+                    h1 {
+                        color: purple;
+                    }
+                }
+                @media (min-width:481px) and (max-width:768px) {
+                    h1 {
+                        color: orange;
+                    }
+                }
+                @media(min-width:768px) {
+                    h1 {
+                        color: red;
+                    }
+                }
+            </code>
+        </pre>
+        <figure>
+            <img src="../images/flexboxImages/mediaQueriesOnDevices.png" alt="navbar">
+            <figcaption>This shows the use of code to create different displays on different devices!</figcaption>
+        </figure>
+        <p>We must use a <strong>media query</strong> to achieve this! Play around with resizing the page <a
+                href="./flexboxMediaQuery.html">here</a></p>
         <p>Move on to <a href="flexboxNavbarMiniProject.html">the navigation bar project page</a></p>
     </main>
     <footer>

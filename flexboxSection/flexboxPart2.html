@@ -140,74 +140,74 @@
         <h2><em>align-items</em></h2>
         <p>
             In Flexbox, the <strong>align-items</strong> property is used to align the items on the
-            <strong>cross-axis</strong> of a flex container. The
+            <strong>cross-axis</strong> of a flex container. Note how it constrasts with
+            <strong>justify-content</strong>! <strong>justify-content</strong> aligns items along the main axis, whereas
+            <strong>align-items</strong> aligns items along the cross axis! The
             cross-axis is the axis perpendicular to the main axis, which is determined by the
             <strong>flex-direction</strong> property.
         </p>
         <h3>Values of <em>align-items</em></h3>
         <p>The <strong>align-items</strong> property takes several possible values, including:</p>
         <ol>
-            <li><strong>stretch (default)</strong>: Stretches the items to fill the container along the cross axis. In
+            <li><strong>stretch (default)</strong>: Stretches the items to <strong>fill the container along the cross
+                    axis</strong>. In
                 non-flex items, the default is "normal".
-                <h4><strong>align-items:stretch;</strong></h4>
+                <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items:stretch;
+                            }
+                    </code>
+                    </pre>
                 <figure>
                     <img src="../images/flexboxImages/align-items-stretch.png" alt="align-items:stretch;">
-                    <figcaption><em>align-items:stretch;</em></figcaption>
+                    <figcaption><strong>align-items:stretch;</strong></figcaption>
                 </figure>
-                <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        align-items:stretch;
-                        }
-                </code>
-                </pre>
             </li>
-            <li><strong>flex-start</strong> aligns the items to the start of the container along the cross-axis.
-                <h4><strong>align-items:flex-start;</strong></h4>
-                <p>This will have an identical image to the one above!</p>
+            <li><strong>align-items:flex-start;</strong> aligns the items to the start of the container along the
+                cross-axis. If <strong>flex-direction</strong> is row, and <strong>justify-content</strong> is center,
+                we'll have an identical image to the one above!
             </li>
             <li><strong>flex-end</strong> aligns the items to the <strong>end</strong> of the container along the cross
                 axis.
-                <h4><strong>align-items:flex-end;</strong></h4>
+                <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items:flex-end;
+                            }
+                    </code>
+                    </pre>
                 <figure>
                     <img src="../images/flexboxImages/align-items-flex-end.png" alt="align-items:flex-end;">
-                    <figcaption><em>align-items:flex-end;</em></figcaption>
+                    <figcaption><strong>align-items:flex-end;</strong></figcaption>
                 </figure>
-                <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        align-items:flex-end;
-                        }
-                </code>
-                </pre>
             </li>
             <li><strong>center</strong> aligns the items to the center of the container along the cross axis. One really
                 <strong>key point</strong> to note is that if you want to center your items horizontally and vertically,
                 you can set both <strong>justify-content</strong> and <strong>align-items</strong> to <em>center</em>.
                 To really show the point, I did some (temporary) inline editing of the heights of two of the divs! The
                 <strong>HELLO</strong> is included to help reinforce the next point too!
-                <h4><strong>align-items:center;</strong></h4>
+                <pre>
+                    <code>
+                        #container {
+                            /*Some heights were changed to help show the effect*/
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items:center;
+                            }
+                    </code>
+                    </pre>
                 <figure>
                     <img src="../images/flexboxImages/align-items-center.png" alt="align-items:center;">
-                    <figcaption><em>align-items:center;</em></figcaption>
+                    <figcaption><strong>align-items:center;</strong></figcaption>
                 </figure>
-                <pre>
-                <code>
-                    #container {
-                        /*Some heights were changed to help show the effect*/
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        align-items:center;
-                        }
-                </code>
-                </pre>
             </li>
             <li><strong>baseline</strong> aligns the items to the baseline of the contents of container along the
                 cross-axis. So,
@@ -215,21 +215,20 @@
                 the container. However, in the 2nd image, not all of the contents are aligned to the top of the
                 container: rather, the contents are aligned around the word HELLO: i.e. the contents are aligned to the
                 <strong>baseline!</strong>
-                <h4><strong>align-items:baseline;</strong></h4>
+                <pre>
+                    <code>
+                        #container {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items:baseline;
+                            }
+                    </code>
+                    </pre>
                 <figure>
                     <img src="../images/flexboxImages/align-items-baseline.png" alt="align-items:baseline;">
-                    <figcaption><em>align-items:baseline;</em></figcaption>
+                    <figcaption><strong>align-items:baseline;</strong></figcaption>
                 </figure>
-                <pre>
-                <code>
-                    #container {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        align-items:baseline;
-                        }
-                </code>
-                </pre>
             </li>
         </ol>
         <h3>An example of combinations and their effect</h3>
