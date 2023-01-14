@@ -12,11 +12,8 @@ h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
-h2 {
-    background-color: rgb(221, 160, 221);
-}
-
 h1 {
+    font-size: 3rem;
     font-weight: 100;
     text-align: center;
     margin: 0 auto;
@@ -24,18 +21,29 @@ h1 {
     padding: 1%;
 }
 
-.specialHeader {
-    display: flex;
-    list-style-type: none;
-    background-color: rgb(221, 160, 221, 0.33);
+h2 {
+    font-size: 1.5em;
+    background-color: plum;
 }
 
-ul.specialHeader {
-    flex: 1;
-    max-width: 30%;
+nav.flexNavbar {
     display: flex;
-    margin: 0;
     justify-content: space-between;
+    background-color: rgb(221, 160, 221, 0.6);
+}
+
+nav.flexNavbar li {
+    display: inline;
+    margin: 0;
+}
+
+nav.flexNavbar ul {
+    flex: 1;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    max-width: 90%;
 }
 
 @media (max-width:480px) {
@@ -45,9 +53,13 @@ ul.specialHeader {
         background-color: none;
     }
 
-    nav ul {
+    nav.flexNavbar {
+        background-color: rgb(221, 160, 221, 0.0);
+        border: 2px solid rgb(221, 160, 221, 0.8);
+    }
+
+    nav.flexNavbar ul {
         flex-direction: column;
         align-items: center;
-        background-color: none;
     }
 }
