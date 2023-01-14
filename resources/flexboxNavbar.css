@@ -6,12 +6,6 @@ body {
     text-align: justify;
 }
 
-/*
-nav .footer{
-
-}
-*/
-
 h1,
 h2,
 h3 {
@@ -19,7 +13,7 @@ h3 {
 }
 
 h2 {
-    background-color: plum;
+    background-color: rgb(221, 160, 221);
 }
 
 h1 {
@@ -30,6 +24,30 @@ h1 {
     padding: 1%;
 }
 
-/*
-More info later
-*/
+.specialHeader {
+    display: flex;
+    list-style-type: none;
+    background-color: rgb(221, 160, 221, 0.33);
+}
+
+ul.specialHeader {
+    flex: 1;
+    max-width: 30%;
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+
+@media (max-width:480px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        background-color: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        background-color: none;
+    }
+}
