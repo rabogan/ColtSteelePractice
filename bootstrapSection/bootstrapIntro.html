@@ -2,7 +2,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../resources/defaultStyle.css">
     <meta name="description"
         content="Welcome to my Colt Steele practice website, where I post examples of all of the projects I've worked on.">
     <link rel="icon" href="../images/beauty_kanji.ico">
@@ -13,28 +12,381 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../resources/bootstrapExample.css">
     <title>Bootstrap</title>
 </head>
 
 <body>
-    <header>
-        <h1>Bootstrap</h1>
-    </header>
-    <main>
-        <h2>An introduction to the Bootstrap Framework</h2>
-        <p>This page has been set up to accommodate my new navbar (constructed at the end of the flex section). It will
-            be added to in due course!
-        </p>
-    </main>
-    <footer>
-        <nav>
-            <h2>Bootstrap Links</h2>
+    <div class="container">
+        <header>
+            <h1 class="display-1">Bootstrap</h1>
+        </header>
+        <main>
+            <h2>The Bootstrap Framework</h2>
+            <p>The website is <a href="https://getbootstrap.com/docs/5.0/getting-started/introduction/">here</a></p>
             <ul>
+                <li><strong>Bootstrap</strong> provides the framework or starting point for all sorts of different
+                    websites
+                </li>
+                <li>This is currently the world's most popular CSS <strong>framework</strong>. Leading competitors
+                    include
+                    <strong>Semantic</strong>, <strong>UIkit</strong>, <strong>Bulma</strong>, and
+                    <strong>Foundation</strong>.
+                </li>
+                <li>It gives us access to plenty of pre-built <strong>components</strong>, such as buttons and navbars.
+                </li>
+                <li>It also comes with a grid system, helping us contruct our own <strong>customized</strong> responsive
+                    layouts!</li>
             </ul>
+            <h2>Incorporating Bootstrap</h2>
+            <h4>Method 1: Including Bootstrap via a Content Delivery Network (CDN)</h4>
+            <p>The easy way to get started with Bootstrap is to access it remotely using a CDN.
+                By using this method, you are linking to the Bootstrap CSS file hosted on a remote server, so you don't
+                need
+                to host the file on your own server.
+            </p>
 
-        </nav>
-        <a href="../index.html">Home</a>
-    </footer>
+            <p>To do so, always include the first of the following links in the HEAD of your document. If you want to
+                include your own CSS stylesheet as
+                well, always include it AFTERWARDS, so that Bootstrap doesn't override any of the properties included.
+                I've called my CSS stylesheet
+                <strong>bootstrapExample</strong>. Include these like so:
+            </p>
+            <ul>
+                <pre>
+                    <code>
+                        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"&gt;
+                        &lt;link rel="stylesheet" href="../resources/bootstrapExample.css"&gt;
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"&gt;
+                        &lt;link rel="stylesheet" href="../resources/bootstrapExample.css"&gt;
+                    </code>
+                </pre>
+            </ul>
+            <p>This is a good option if you don't want to host the files on your own server. Just remember to include
+                the
+                CSS file
+                in the head of your HTML file. After that, you'll need to include theBootstrap JavaScript files in this
+                way
+                before the end of the closing body tag. The Popper.js library is a dependency of Bootstrap and is used
+                to
+                handle
+                positioning and tooltips, so it should be included before the Bootstrap JavaScript file.</p>
+            <ul>
+                <li>&lt;script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+                    crossorigin="anonymous"&gt;&lt;/script&gt;</li>
+                <li>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+                    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+                    crossorigin="anonymous"&gt;&lt;/script&gt;</li>
+            </ul>
+            <h4>Method 2: Including Bootstrap via download</h4>
+            <p>The other way involves downloading the Bootstrap package from the official website and including the CSS
+                and
+                JavaScript files in your project. You can include the CSS file in the head of your HTML file, and the
+                JavaScript file just before the closing body tag.
+            <pre>
+                        <code>
+                            &lt;link rel="stylesheet" href="path/to/bootstrap.min.css"&gt;
+                            <--This link goes in the head-->
+
+                            &lt;script src="path/to/bootstrap.min.js"&gt;&lt;/script&gt;
+                            <--This link comes in before the closing &lt;body&gt; tag
+                        </code>
+                    </pre>
+            However, it's good practice to use a Content Delivery Network (CDN) to include the
+            Bootstrap files in
+            your website. This allows your website to load the files from a server that is geographically closer to the
+            user, which can improve the website's loading time.
+            </p>
+            <h2>Using Classes From Bootstrap's Stylesheet</h2>
+            <p>A container is the <strong>most basic layout system</strong>, and required to use Bootstrap's <string>
+                    Grid System</string>.</p>
+            <figure>
+                <img src="../images/bootstrapImages/containerComparison.png" alt="containers">
+                <figcaption>Showing the standard container class versus the fluid container class</figcaption>
+            </figure>
+            <p>There are three main types of container (created quickly in VS Studio Code using a class name, such as
+                <strong>.container</strong> and hitting TAB), including:
+            <ol>
+                <li>The standard <strong>.container</strong></li>
+                <li>A fluid container like <strong>.container-fluid</strong></li>
+                <li>Responsive containers, such as <strong>.container-sm</strong>, <strong>.container-md</strong>,
+                    <strong>.container-lg</strong>, and <strong>.container-xl</strong>
+                </li>
+            </ol>
+            </p>
+            <p>The standard <strong>container</strong> simply enclosed the content of our &lt;body&gt; in a class that
+                imposes margins and
+                padding. The <strong>fluid container</strong> class is used for a full-width
+                container spanning the length of the viewport. The <strong>responsive containers</strong> keep the
+                screen at full-width
+                <strong>until a specific breakpoint is reached</strong>.
+            </p>
+            <h2>Buttons in Bootstrap</h2>
+            <p><strong>Buttons</strong>, as with many features in Bootstrap, need to make use of classes. Whether it's a
+                button or a navbar, be ready to consult the documentation often! In general, it's easier to consult the
+                documentation than to attempt to memorize the order of something like btn-outline-warning etc...</p>
+            <h4>Semantic Buttons</h4>
+            <p>The typical button styles can be found <a
+                    href="https://getbootstrap.com/docs/5.0/components/buttons/">here</a></p>
+            <p>It's fairly easy to include them...compare the following two button types: the former using Bootstrap,
+                the latter nothing:
+            <ul>
+                <li><button type="button" class="btn btn-primary">Primary</button>: made using &lt;button type="button"
+                    class="btn btn-primary"&gt;</li>
+                <li><button>Primary</button>: utilizes the button tag &lt;button&gt; alone!</li>
+            </ul>
+            There are numerous <strong>semantic buttons</strong>. Many styles in Bootstrap include special semantics.
+            For
+            example, the
+            term <strong><em>class="btn btn-primary"</em></strong> can be used (and adapted) for primary buttons.
+            Success
+            buttons can use
+            <strong><em>class="btn btn-success"</em></strong> and are green. A number of examples are shown:
+            <button type="button" class="btn btn-primary">Semantic</button>
+            <button type="button" class="btn btn-secondary">buttons</button>
+            <button type="button" class="btn btn-success">are</button>
+            <button type="button" class="btn btn-danger">quite</button>
+            <button type="button" class="btn btn-warning">easy</button>
+            <button type="button" class="btn btn-info">to</button>
+            <button type="button" class="btn btn-light">use,</button>
+            <button type="button" class="btn btn-dark">right?</button>
+            </p>
+            <h4>Different styles of button</h4>
+            <p>Buttons can come in an array of different styles and sizes. For example, the
+                <strong>outline</strong> is
+                semantic, and included to create buttons without background images/colors.
+                <strong><em>class="btn
+                        btn-outline-primary"</em>: </strong><button type="button"
+                    class="btn btn-outline-primary">Outline</button>
+                <button type="button" class="btn btn-outline-secondary">buttons</button>
+                <button type="button" class="btn btn-outline-success">are</button>
+                <button type="button" class="btn btn-outline-danger">also</button>
+                <button type="button" class="btn btn-outline-warning">easy</button>
+                <button type="button" class="btn btn-outline-info">to</button>
+                <button type="button" class="btn btn-outline-light">use,</button>
+                <button type="button" class="btn btn-outline-dark">I hope</button>
+            </p>
+            <p>It's also very common to see semantic terms representing size, such as <strong>sm, md, and lg</strong>.
+                e.g. from <strong><em>class="btn
+                        btn-primary btn-lg"</em></strong> down: <button type="button"
+                    class="btn btn-primary btn-lg">Large
+                    button</button><button type="button" class="btn btn-primary btn-md">Medium
+                    button</button><button type="button" class="btn btn-primary btn-sm">Small button</button></p>
+            <h4>Adding the disabled state to a button</h4>
+            <p>Adding the <strong>disabled</strong> attribute to a button makes the button look unsaturated and
+                disabled: <strong><em>class="btn btn-lg btn-primary" disabled</em></strong>: <button type="button"
+                    class="btn btn-lg btn-primary" disabled>Primary button</button>
+                <button type="button" class="btn btn-secondary btn-lg" disabled>Button</button>
+            </p>
+            <h2>Typography and Utilities</h2>
+            <p>Typography is found <a href="https://getbootstrap.com/docs/5.0/content/typography/">here</a></p>
+            <h4 class="display-4">Display Class</h4>
+            <ul>
+                <li>Used to make large headers (a display heading). Indeed, the heading of this page uses:
+                    <strong>&lt;h1
+                        class="display-1"&gt;Bootstrap&lt;/h1&gt;</strong>
+                </li>
+                <li>I did the same with the &lt;h4&gt; for the heading immediately above too! The
+                    easiest way to do this quickly is to type in "h4", add <strong>.display-1</strong>, and then hit
+                    TAB.
+                    You'll now have a</strong>
+                    h4 tag with the class <strong>display-4</strong>.</li>
+                <li>Using Bootstrap's <strong>"display"</strong> classes, such as
+                    "display-1", "display-2", etc., with your headers can be a good way to <strong>create consistent,
+                        visually
+                        appealing typography</strong> throughout your website. These classes are designed to provide a
+                    set of
+                    predefined
+                    font sizes and weights that can be easily applied to headings.</li>
+
+                <li>It's <strong>best practice</strong> to use them when you want to create a consistent typography, or
+                    when you want to
+                    make
+                    your headings stand out more prominently. If you want to create different typography styles for
+                    different sections of your website, you can use these classes selectively.</li>
+
+                <li>However, keep in mind that using <strong>too many</strong> different font sizes and styles can make
+                    your website <strong>look
+                        cluttered and difficult to read</strong>. It's important to use a consistent typography and to
+                    <strong>use different
+                        font
+                        sizes and styles sparingly</strong> and with purpose.
+                </li>
+            </ul>
+            <h4>Lead Class</h4>
+            <ul>
+                <li class="lead">The lead class, as use here will make this &lt;li&gt; block look more prominent than
+                    the
+                    otherwise identical block that follows.</li>
+                <li>Can you see the difference? It's honestly best to stick to <strong>&lt;p class="lead"&gt;</strong>
+                    or
+                    <strong>&lt;div class="lead"&gt;</strong>
+                </li>
+            </ul>
+            <h4>Blockquotes</h4>
+            <li>This is a very convenient way to incorporate quotes in the page naturally</li>
+            <figure>
+                <blockquote class="blockquote">
+                    <p>This element represents a quotation that is offset in its own line. Using
+                        <strong>&lt;blockquote&gt;</strong> is an easy way to do this, and <a
+                            href="https://getbootstrap.com/docs/5.0/content/typography/">this section</a> in the
+                        documentation is really helpful with that!
+                    </p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Colt Steele <cite title="Source Title">The Web Developer Bootcamp 2023</cite>
+                </figcaption>
+            </figure>
+            <h4>Alignment of text</h4>
+            <p>Text is relatively easy to align using classes such as <strong>.text-end</strong>, or
+                <strong>text-center</strong>. We'll use text-center below:
+            <figure class="text-center">
+                <blockquote class="blockquote">
+                    <p><a href="https://getbootstrap.com/docs/5.0/utilities/text/">Here</a> is where some more detailed
+                        text components can be changed!</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Colt Steele <cite title="Source Title">The Web Developer Bootcamp 2023</cite>
+                </figcaption>
+            </figure>
+            <h4>Basic Utilties</h4>
+            <li>Very briefly, this is largely used to change color and background-color</li>
+            <figure class="text-end">
+                <blockquote class="blockquote">
+                    <p>Finally, other basic utilities will be covered next! <a
+                            href="https://getbootstrap.com/docs/5.0/utilities/text/">Here</a> are some helpful ways to
+                        adjust text color and background-color</p>
+                    </p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Colt Steele <cite title="Source Title">The Web Developer Bootcamp 2023</cite>
+                </figcaption>
+            </figure>
+            </p>
+            <h2>Badges, Alerts, and Button Groups</h2>
+            <h4>Badges</h4>
+            <li><a href="https://getbootstrap.com/docs/5.0/components/badge/">Badges</a> are relatively easy to
+                incorporate. They're most often used in alerts for a navbar. For example,
+                if we want to provide some way of communicating that there have been a specific number of updates
+                (generated by some other function) in a page, we can do so by combining a button and badge like so:
+                <button type="button" class="btn btn-primary">
+                    Updates <span class="badge bg-secondary">4</span>
+                </button>
+            </li>
+            <li>These very often incorporate a <strong>badge</strong> class inside a <strong>&lt;span&gt;</strong>. Look
+                at the code for the above, for example:
+                <pre>
+                <code>
+                    &ltbutton type="button" class="btn btn-primary"&gt;
+                        Updates <strong>&lt;span class="badge bg-secondary"&gt;4&lt;/span&gt;</strong>
+                    &lt;/button&gt;
+                </code>
+            </pre>
+            </li>
+            <li>
+                There are also <strong>pill badges</strong>, such as <span class="badge rounded-pill bg-primary">Pill
+                    Badge</span>, which use the class <strong>badge-pill</strong>. The full version of the pill padge on
+                the left looks something like
+                <strong>&lt;span&gt;&lt;class="badge badge-pill badge-primary"&gt;Example&lt;span&gt;</strong>
+            </li>
+            <h4>The <a href="https://getbootstrap.com/docs/5.0/components/button-group/">button group</a> component just
+                melds multiple buttons into a group</h4>
+            <li>The underlying language uses JavaScript, but we'll come to that later!</li>
+            <li>For now, let's look at an example:</li>
+            <div class="btn-group">
+                <button class="btn btn-primary">One</button>
+                <button class="btn btn-danger">Two</button>
+                <button class="btn btn-primary">Three</button>
+            </div>
+            <li>Firstly, we created 3 buttons using <strong>&ltbutton class="btn btn-primary"&gt;</strong></li>
+            <li>This was then enclosed in a div of class <strong>btn-group</strong>. Take care to use "btn-group", not
+                "button-group"</li>
+            <li>Additional: In Bootstrap, there's the <strong>role="group"</strong> attribute is used on the parent
+                element of a button group to
+                indicate that the contained buttons are a group of related controls. This attribute is used to improve
+                the accessibility of the button group by providing additional information to assistive technologies,
+                such as screen readers: essentially by telling screen readers that we're dealing with a group of
+                buttons!</li>
+            <h4>Alerts</h4>
+            <li><a href="https://getbootstrap.com/docs/5.0/components/alerts/">Alerts</a> in Bootstrap are components
+                used to display a message or notification to the user. They inform
+                the user of a successful or unsuccessful action, provide validation feedback, or can display other
+                important information.</li>
+            <li>They use the <strong>alert</strong> base class, and are often combined with other semantic elements,
+                such as "alter-danger" or "alert-primary"</li>
+            <li>An example from a chess player:
+                <div class="alert alert-danger">
+                    <h4 class="alter-heading">Oh No!</h4>
+                    My queen!
+                </div>
+            </li>
+            <li>The code used looks something like this:
+                <pre>
+                    <code>
+                        <strong>&lt;div class="alert alert-danger"&gt;
+                            &lt;h4 class="alter-heading"&gt;Oh No!&lt;/h4&gt;
+                            My queen!
+                        &lt;/div&gt;</strong>
+                    </code>
+                </pre>
+            </li>
+            <li><strong>Dismissing alerts</strong> involves a little Javascript, and thus begins a little look at
+                something new!</li>
+            <h2>Don't Dismiss This</h2>
+            <li>Many people use the following entity code (of the <strong>times</strong> symbol: <strong>&lt;span
+                    aria-hidden="true"&gt;&times&lt;/span&gt;</strong></li>
+            <li><strong>aria-hidden</strong> is used to tell a screen reader that the screen-reader doesn't need to read
+                out part of a code</li>
+            <li>In addition to this, we can make it so we can click on the &times; symbol and make it fade out!</li>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <h4 class="alert-heading">Can you...</h4>
+                ... make me disappear?
+                <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <li>Using the <strong>alert</strong> JavaScript plugin, it’s possible to dismiss any alert inline. Here’s
+                how:
+                <pre>
+                    <code>
+                        &lt;div class="alert alert-warning alert-dismissible fade show" role="alert"&gt;
+                            &lt;h4 class="alert-heading">Can you...&lt;/h4&gt;
+                            ... make me disappear?
+                            &lt;button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"&gt;
+                                &lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+                            &lt;/button&gt;
+                        &lt;/div&gt;
+                    </code>
+                </pre>
+            </li>
+            <li>It ONLY works well if Javascript has been used!</li>
+        </main>
+        <footer>
+            <nav>
+                <h2>Bootstrap Links</h2>
+                <ul>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

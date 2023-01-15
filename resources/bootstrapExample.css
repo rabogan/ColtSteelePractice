@@ -1,0 +1,24 @@
+body {
+    line-height: 1.2;
+    background-color: #A2C1C3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
+    text-align: justify;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-weight: 100;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+h2 {
+    background-color: plum;
+}
