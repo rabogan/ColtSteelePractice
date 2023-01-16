@@ -21,21 +21,109 @@
 <body>
     <div class="container">
         <header>
-            <h1 class="display-1">Bootstrap Grid Practice!</h1>
+            <h1 class="display-1">The Grid System</h1>
         </header>
-        <div class="row">
-            <div class="col bg-success">Lazy 1</div>
-            <div class="col bg-warning">Lazy 2nd</div>
-        </div>
-        <div class="row">
-            <div class="col bg-success">Lazy 1</div>
-            <div class="col bg-warning">Lazy 2nd</div>
-            <div class="col bg-alert">Lazy 3rd</div>
-        </div>
         <main>
-
+            <h2>class="row" and class = "col"</h2>
+            <div class="row">
+                <div class="col bg-success">This is the simple way of using a grid system in Bootstrap</div>
+                <div class="col bg-info">This row has been divided into two columns, but how?</div>
+            </div>
+            <div class="row">
+                <div class="col bg-primary">The above simply uses a <strong>class="row"</strong> &lt;div&gt;, and inside
+                    of
+                    this, we have two <strong>class="col"</strong> divs</div>
+                <div class="col bg-secondary">Also included are some semantic terms for color:
+                    <strong>bg-success</strong>
+                    is
+                    green, <strong>bg-warning</strong> is red, and <strong>bg-alert</strong> is yellow
+                </div>
+                <div class="col bg-warning">If no number is included for a term like <strong>&lt;div class="col
+                        bg-alert"&gt;</strong>, then each column class within our row div will divide up the 12 units of
+                    space that each row is allocated!</div>
+            </div>
+            <p>The above isn't exactly the prettiest! We can use numbering to spread out the 12 units of space allocated
+                for
+                each row among the columns</p>
+            <div class="row">
+                <div class="col-4 bg-secondary">This element uses the class col-4</div>
+                <div class="col-3 bg-warning">This uses col-3</div>
+                <div class="col-2 bg-dark text-primary">col-2 is over here</div>
+                <div class="col-3 bg-success">And this is col-3 again</div>
+            </div>
+            <h2 class="display2">Responsive Grid</h2>
+            <div class="row">
+                <div class="col-md-6 bg-primary">Both of these elements are 50-50! The class name is
+                    <strong>&lt;col-md-6&gt;</strong> Basically, when
+                    we include a number (X) we know we're allocated X/12ths of the space to this. However, what about
+                    <strong>md</strong>?
+                </div>
+                <div class="col-md-6 bg-info">Well, the use of <strong>md</strong> is all about breakpoints! As soon as
+                    we
+                    go below the 'medium' breakpoint (can you remember what that is?), the columns will adjust
+                    themselves
+                    responsively BACK into the full viewport width (unless some further trickery has been applied)</div>
+            </div>
+            <p>In the above, the columns begin STACKING once the screen size goes below the medium screen-width
+                breakpoint
+                .</p>
+            <h2 class="display2">Images and <em>img-fluid</em></h2>
+            <p>See how spaced out these are?</p>
+            <div class="row">
+                <div class="col">
+                    <img class="img-fluid" src="../images/bootstrapImages/cristofer-maximilian-NSKP7Gwa_I0-unsplash.jpg"
+                        alt="start with why">
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="../images/bootstrapImages/hello-i-m-nik-z1d-LP8sjuI-unsplash.jpg"
+                        alt="english">
+                </div>
+                <div class="col">
+                    <img class="img-fluid" src="../images/bootstrapImages/tatiana-lapina-E3I9thV98kQ-unsplash.jpg"
+                        alt="desk">
+                </div>
+            </div>
+            <p>Set out like above, they use the class <strong>img-fluid</strong>. You can make it so that the images
+                start
+                stacking (rather than shrinking) below a certain breakpoint. Use the sm/md/lg tags to do so! Below, the
+                same
+                images will stack once the medium break point is breached!</p>
+            <p>The stacking is easy to achieve using <strong>&lt;div class="col-md-4"&lt;&gt;/div&lt;&gt;/p&lt;</strong>
+            </p>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="../images/bootstrapImages/cristofer-maximilian-NSKP7Gwa_I0-unsplash.jpg"
+                        alt="start with why">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-fluid" src="../images/bootstrapImages/hello-i-m-nik-z1d-LP8sjuI-unsplash.jpg"
+                        alt="english">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-fluid" src="../images/bootstrapImages/tatiana-lapina-E3I9thV98kQ-unsplash.jpg"
+                        alt="desk">
+                </div>
+            </div>
+            <p>One more thing...to get rid of the gutters, <s>simply add the <strong>no-gutters</strong> class
+                    to
+                    the row</s>...replaced in Bootstrap V5.0 by <strong>g-0</strong>. See <a
+                    href="https://stackoverflow.com/questions/21254889/how-to-remove-the-gutter-spacing-between-columns-in-bootstrap">this</a>
+                for more, or spend time with the documentation!</p>
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img class="img-fluid" src="../images/bootstrapImages/cristofer-maximilian-NSKP7Gwa_I0-unsplash.jpg"
+                        alt="start with why">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-fluid" src="../images/bootstrapImages/hello-i-m-nik-z1d-LP8sjuI-unsplash.jpg"
+                        alt="english">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-fluid" src="../images/bootstrapImages/tatiana-lapina-E3I9thV98kQ-unsplash.jpg"
+                        alt="desk">
+                </div>
+            </div>
         </main>
-
         <footer>
             <nav>
                 <h2>Bootstrap Links</h2>
@@ -45,7 +133,6 @@
             </nav>
             <a href="../index.html">Home</a>
         </footer>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

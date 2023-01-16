@@ -12,6 +12,10 @@ h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
+h1 {
+    text-align: center;
+}
+
 h2 {
     background-color: plum;
 }
