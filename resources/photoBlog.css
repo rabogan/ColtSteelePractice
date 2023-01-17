@@ -19,6 +19,13 @@ h3 {
     margin-bottom: 0.5em;
 }
 
+.header-navbar-color {
+    background-color: #DDA0DD;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.2em;
+}
+
 h1 {
     font-size: 3rem;
     font-weight: 100;

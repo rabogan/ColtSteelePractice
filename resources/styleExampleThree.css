@@ -70,6 +70,18 @@ h1 {
 }
 
 h2 {
+    background-color: #DDA0DD;
+    font-size: 1.5em;
+}
+
+.header-navbar-color {
+    background-color: #DDA0DD;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.2em;
+}
+
+h2 {
     background-color: palegoldenrod;
     border: 1px solid black;
     font-family: 'PT Sans', sans-serif;

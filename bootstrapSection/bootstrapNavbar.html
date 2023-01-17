@@ -23,7 +23,7 @@
         <h1 class="display-1">Navbars in Bootstrap</h1>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-pill">
-                <a class="navbar-brand" href="#">My Website</a>
+                <a class="navbar-brand" href="#">Teach Time</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -48,33 +48,153 @@
         <div class="container">
             <p>Have a look <a href="https://getbootstrap.com/docs/4.0/components/navbar/">here</a> for more details on
                 navbars in Bootstrap 5!</p>
-            <ul>
-                Here's a breakdown of what's happening in this code:
-                <li>The nav element is the container for the entire Navbar. It uses the navbar class, as well as classes
-                    for
-                    the background color (navbar-light) and the color scheme (bg-light)</li>
-                <li>The navbar-brand class is used for the logo or main title of the Navbar, which is "My Website" in
-                    this
-                    example.</li>
-                <li>The navbar-toggler class is used for the button that appears when the Navbar is in a smaller screen
-                    size. It is used to toggle the visibility of the Navbar links.</li>
-                <li> The collapse navbar-collapse class is used for the container that holds the Navbar links.</li>
-                <li>The navbar-nav class is used for the unordered list that holds the Navbar links.</li>
-                <li>The nav-item class is used for each list item that holds a Navbar link.</li>
-                <li>The nav-link class is used for each link within the Navbar.</li>
-                <li>You can customize this basic example by adding more links, changing the colors or styles, or adding
-                    a
-                    search bar or other elements to the Navbar.</li>
-
-                <li>Also, it is important to include Bootstrap's CSS and JavaScript in your project in order to make the
-                    Navbar work properly.</li>
-            </ul>
+            <h2>The Basics</h2>
+            <li>The <strong>&lt;nav&gt;</strong> element is the container for our entire Navbar. It uses the
+                <strong>navbar</strong>
+                class, as well a class like <strong>navbar-light</strong> or <strong>navbar-dark</strong> for the
+                color of the text, plus something for the color of the background, which is
+                <strong>bg-light</strong> in the example above! I added rounded-pill too - it should be obvious what
+                that does!
+                <pre>
+                    <code>
+                        <strong>&lt;nav class="navbar navbar-light bg-light rounded-pill&gt;</strong>
+                           <---****-->
+                        &lt;/nav&gt;
+                    </code>
+                </pre>
+            </li>
+            <li>The <strong>navbar-expand</strong> class lets Bootstrap know when we want the collapse to stop
+                (see the collapse class below)
+                <pre>
+                    <code>
+                        &lt;nav class="navbar <strong>navbar-expand-lg</strong> navbar-light bg-light rounded-pill&gt;
+                           <---****-->
+                        &lt;/nav&gt;
+                    </code>
+                </pre>
+                It's possible to choose the breakpoint at well, and I opted for <strong>navbar-expand-lg</strong> in the
+                header...and <strong>navbar-expand-sm</strong> in the footer.
+            </li>
+            <h2>Navbar Brand</h2>
+            <li>The <strong>navbar-brand</strong> class is used for the logo or main title of the Navbar, which is
+                "TeachTime" in
+                the footer
+                example:
+                <pre>
+                    <code>
+                        &lt;nav class="navbar navbar-expand-sm navbar-dark bg-primary"&gt;
+                            <strong>&lt;a class="navbar-brand" href="#"&gt;Bob's Example&lt;/a&gt;</strong>
+                        &lt;/nav&gt;
+                    </code>
+                </pre>
+            </li>
+            <h2>Including Tags</h2>
+            <li>There are two ways to include the links in your Navbar. We can either use a div with
+                a lot of anchor tags inside, or use an unordered list. Let's look at the former:
+                <pre>
+                <code>
+                            &lt;div class="collapse navbar-collapse"&gt;
+                                &lt;div class="navbar-nav"&gt;
+                                    &lt;a href="Home Link" class="nav-item nav-link"&gt;Home&lt;/a&gt;
+                                    &lt;a href="About Link" class="nav-item nav-link"&gt;About&lt;/a&gt;
+                                    &lt;a href="Contact Link" class="nav-item nav-link"&gt;Contact&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                </code>
+            </pre>
+                The <strong>collapse</strong> class is used for the container that holds the Navbar
+                links:
+                <pre>
+                    <code>
+                        &lt;nav class="navbar navbar-dark bg-primary"&gt;
+                            &lt;a class="navbar-brand" href="#"&gt;Bob's Example&lt;/a&gt;
+                            <strong>&lt;div class="collapse navbar-collapse"&gt;</strong>
+                                &lt;div class="navbar-nav"&gt;
+                                    &lt;a href="Home" class="nav-item nav-link"&gt;Home&lt;/a&gt;
+                                    &lt;a href="About Link" class="nav-item nav-link"&gt;About&lt;/a&gt;
+                                    &lt;a href="Contact Link" class="nav-item nav-link"&gt;Contact&lt;/a&gt;
+                                &lt;/div&gt;
+                            <strong>&lt;/div&gt;</strong>
+                        &lt;/nav&gt;
+                    </code>
+                </pre>
+                The collapse class helps to show or hide content!
+            </li>
+            <li>To ensure the links in our anchor tags (either in the unordered list or div with anchors) are
+                visible, we use the <strong>navbar-expand</strong> class (as mentioned in the Basics section! This can
+                be adjusted for the size of the
+                viewport, like so:
+                <pre>
+                    <code>
+                        &lt;nav class="navbar <strong>navbar-expand-sm</strong> navbar-dark bg-primary"&gt;
+                            &lt;a class="navbar-brand" href="#"&gt;Bob's Example&lt;/a&gt;
+                            &lt;div class="collapse navbar-collapse"&gt;
+                                &lt;div class="navbar-nav"&gt;
+                                    &lt;a href="Home" class="nav-item nav-link"&gt;Home&lt;/a&gt;
+                                    &lt;a href="Home" class="nav-item nav-link"&gt;About&lt;/a&gt;
+                                    &lt;a href="Home" class="nav-item nav-link"&gt;Contact&lt;/a&gt;
+                                &lt;/div&gt;
+                            <strong>&lt;/div&gt;</strong>
+                        &lt;/nav&gt;
+                    </code>
+                </pre>
+            </li>
+            <li>The navbar-nav class is used for the unordered list that holds the Navbar links.</li>
+            <li>The nav-item class is used for each list item that holds a Navbar link.</li>
+            <li>The nav-link class is used for each link within the Navbar.</li>
+            <li>You can customize this basic example by adding more links, changing the colors or styles, or adding
+                a
+                search bar or other elements to the Navbar.</li>
+            <h2>Hamburger</h2>
+            <li>The <strong>navbar-toggler</strong> class is used for the button that appears when the Navbar is in
+                a smaller screen
+                size. It is used to toggle the visibility of the Navbar links - and commonly involves a
+                <strong>hamburger icon</strong>. It involves <strong>creating a button</strong> with a class of
+                <strong>navbar-toggler</strong>, and including a span class of <strong>navbar-toggler-icon</strong>
+                inside the button.
+                <pre>
+                    <code>
+                        &lt;button class="navbar-toggler"&gt;
+                            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+                        &lt;/button&gt;
+                    </code>
+                </pre>
+                However, this alone isn't enough!
+            </li>
+            <li>We want our hamburger to expand upon clicking. To do this, we need a <strong>data-target</strong>
+                attribute, and a <strong>data-toggle</strong>.</li>
+            <h2>Fixed Navbars</h2>
+            <li>We make fix the navbar to the top or bottom of the page, or use the (not always browser-incorporated)
+                sticky option</li>
         </div>
+
     </main>
     <footer>
-        <div class="container">
-
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
