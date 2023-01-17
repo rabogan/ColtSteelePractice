@@ -24,13 +24,6 @@ h2 {
     font-size: 1.5em;
 }
 
-.header-navbar-color {
-    background-color: #ADB2D3;
-    color: #2b2d42;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 1.2em;
-}
-
 #initial {
     background-color: #003049;
     width: 90%;
@@ -91,6 +84,13 @@ div .sidebar {
 div .maincontent {
     background-color: #80ffdb;
     flex: 1 2 300px;
+}
+
+.header-navbar-color {
+    background-color: #ADB2D3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.2em;
 }
 
 /*Used on codepen.io to check images incorporate okay
