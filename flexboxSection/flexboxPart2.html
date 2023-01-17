@@ -20,55 +20,100 @@
 </head>
 
 <body>
-    <header>
-        <h1>Let's Play A Little More With Flexbox</h1>
-    </header>
-    <main>
-        <section id="container">
-            <div style="background-color: #80ffdb"></div>
-            <div style="background-color: #64dfdf"></div>
-            <div style="background-color: #48bfe3"></div>
-            <div style="background-color: #5390d9"></div>
-            <div style="background-color: #6930c3"></div>
-        </section>
+    <div class="container">
+        <header>
+            <h1>Flexbox Alignment</h1>
+            <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <main>
+            <section id="container">
+                <div style="background-color: #80ffdb"></div>
+                <div style="background-color: #64dfdf"></div>
+                <div style="background-color: #48bfe3"></div>
+                <div style="background-color: #5390d9"></div>
+                <div style="background-color: #6930c3"></div>
+            </section>
 
-        <h2><em>flex-wrap</em></h2>
-        <p>
-        </p>
-        <p>The <strong>flex-wrap</strong> property sets whether flex items are forced onto one line or can wrap onto
-            multiple lines. If wrapping is allowed, <strong>flex-wrap</strong> sets the direction in which lines are
-            stacked. It's also affected by the choices made in <strong>flex-direction</strong> and
-            <strong>justify-content</strong>. <strong>flex-wrap</strong> can also be used to change the direction of the
-            cross-axis.
-        </p>
-        <h3>Pros and cons of utilizing <em>flex-wrap:</em></h3>
-        <ul>
-            <li>Using <strong>flex-wrap</strong> prevents elements from becoming too wide or too tall for the container.
-                By wrapping elements onto multiple lines with either the <strong>wrap</strong> or
-                <strong>wrap-reverse</strong> value, you can ensure that they all fit within the container's bounds in
-                their original sizes.
-            </li>
-            <li>Again, this property helps create more flexible and responsive layouts that are visually appealing:
-                wrapping elements can allow for a more dynamic layout that adapts to the size of the container or the
-                viewport.</li>
-            <li class="con">However, some browsers have issues with compatibility. This can be averted with a few
-                fallbacks in the head of the HTML.</li>
-            <li class="con">In addition, flex-wrap can have a significant cost on performance, as it causes additional
-                computation and layout work for the browser.</li>
-        </ul>
-        <h3>Key values associated with the <em>flex-wrap</em> property: a demo with <em>flex-direction:column</em></h3>
-        <p>There are three commonly accepted values used with <strong>flex-wrap</strong>, which are the <em>default
-                value</em> <strong>nowrap</strong>, <strong>wrap</strong>, and <strong>wrap-reverse</strong>. Obviously,
-            our 5 200px high divs <strong>DO NOT FIT</strong> inside a 500px container. Let's see what
-            <strong>flex-wrap</strong> and its values do with this:
-        </p>
-        <ol>
-            <li><strong>nowrap</strong> is the default. With <strong>nowrap</strong>, the flex items will be laid out in
-                a single line. In undersized
-                containers, these elements will <strong>shrink down</strong> to fit. Everything is aligned to the top,
-                because our main
-                axis goes from top to bottom in this case.
-                <pre>
+            <h2><em>flex-wrap</em></h2>
+            <p>
+            </p>
+            <p>The <strong>flex-wrap</strong> property sets whether flex items are forced onto one line or can wrap onto
+                multiple lines. If wrapping is allowed, <strong>flex-wrap</strong> sets the direction in which lines are
+                stacked. It's also affected by the choices made in <strong>flex-direction</strong> and
+                <strong>justify-content</strong>. <strong>flex-wrap</strong> can also be used to change the direction of
+                the
+                cross-axis.
+            </p>
+            <h3>Pros and cons of utilizing <em>flex-wrap:</em></h3>
+            <ul>
+                <li>Using <strong>flex-wrap</strong> prevents elements from becoming too wide or too tall for the
+                    container.
+                    By wrapping elements onto multiple lines with either the <strong>wrap</strong> or
+                    <strong>wrap-reverse</strong> value, you can ensure that they all fit within the container's bounds
+                    in
+                    their original sizes.
+                </li>
+                <li>Again, this property helps create more flexible and responsive layouts that are visually appealing:
+                    wrapping elements can allow for a more dynamic layout that adapts to the size of the container or
+                    the
+                    viewport.</li>
+                <li class="con">However, some browsers have issues with compatibility. This can be averted with a few
+                    fallbacks in the head of the HTML.</li>
+                <li class="con">In addition, flex-wrap can have a significant cost on performance, as it causes
+                    additional
+                    computation and layout work for the browser.</li>
+            </ul>
+            <h3>Key values associated with the <em>flex-wrap</em> property: a demo with <em>flex-direction:column</em>
+            </h3>
+            <p>There are three commonly accepted values used with <strong>flex-wrap</strong>, which are the <em>default
+                    value</em> <strong>nowrap</strong>, <strong>wrap</strong>, and <strong>wrap-reverse</strong>.
+                Obviously,
+                our 5 200px high divs <strong>DO NOT FIT</strong> inside a 500px container. Let's see what
+                <strong>flex-wrap</strong> and its values do with this:
+            </p>
+            <ol>
+                <li><strong>nowrap</strong> is the default. With <strong>nowrap</strong>, the flex items will be laid
+                    out in
+                    a single line. In undersized
+                    containers, these elements will <strong>shrink down</strong> to fit. Everything is aligned to the
+                    top,
+                    because our main
+                    axis goes from top to bottom in this case.
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -78,15 +123,15 @@
                             }
                     </code>
                     </pre>
-                <figure>
-                    <img src="../images/flexboxImages/flexWrap-nowrap.png" alt="flex-wrap:wrap;">
-                    <figcaption><strong>flex-wrap:nowrap;</strong></figcaption>
-                </figure>
-            </li>
-            <li>Changing this to <strong>flex-wrap:wrap</strong> gives a dramatic difference! With
-                <strong>wrap</strong>, the Flexbox properties break into
-                multiple lines.
-                <pre>
+                    <figure>
+                        <img src="../images/flexboxImages/flexWrap-nowrap.png" alt="flex-wrap:wrap;">
+                        <figcaption><strong>flex-wrap:nowrap;</strong></figcaption>
+                    </figure>
+                </li>
+                <li>Changing this to <strong>flex-wrap:wrap</strong> gives a dramatic difference! With
+                    <strong>wrap</strong>, the Flexbox properties break into
+                    multiple lines.
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -96,14 +141,14 @@
                         }
                     </code>
                     </pre>
-                <figure>
-                    <img src="../images/flexboxImages/flexWrap-wrap.png" alt="flex-wrap:wrap;">
-                    <figcaption><strong>flex-wrap:wrap;</strong></figcaption>
-                </figure>
-            </li>
-            <li>Finally, you should see how <strong>wrap-reverse</strong> works. It's the same as wrap, but with
-                cross-start and cross-end beng permuted.
-                <pre>
+                    <figure>
+                        <img src="../images/flexboxImages/flexWrap-wrap.png" alt="flex-wrap:wrap;">
+                        <figcaption><strong>flex-wrap:wrap;</strong></figcaption>
+                    </figure>
+                </li>
+                <li>Finally, you should see how <strong>wrap-reverse</strong> works. It's the same as wrap, but with
+                    cross-start and cross-end beng permuted.
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -113,14 +158,14 @@
                         }
                     </code>
                     </pre>
-                <figure>
-                    <img src="../images/flexboxImages/flexWrap-wrap-reverse.png" alt="flex-wrap:wrap-reverse;">
-                    <figcaption><strong>flex-wrap:wrap;</strong></figcaption>
-                </figure>
-            </li>
-            <li>As a final example for <strong>flex-wrap</strong>, have a look at what was achieved within this
-                container:
-                <pre>
+                    <figure>
+                        <img src="../images/flexboxImages/flexWrap-wrap-reverse.png" alt="flex-wrap:wrap-reverse;">
+                        <figcaption><strong>flex-wrap:wrap;</strong></figcaption>
+                    </figure>
+                </li>
+                <li>As a final example for <strong>flex-wrap</strong>, have a look at what was achieved within this
+                    container:
+                    <pre>
                     <code>
                         #container {
                 <strong> display: flex;
@@ -130,29 +175,33 @@
                         }
                     </code>
                     </pre>
-                <figure>
-                    <img src="../images/flexboxImages/flexWrapExample.png" alt="Example">
-                    <figcaption>Notice how <strong>flex-wrap</strong> is set, and that <strong>justify-content</strong>
-                        is space-evenly etc...</figcaption>
-                </figure>
-            </li>
-        </ol>
-        <h2><em>align-items</em></h2>
-        <p>
-            In Flexbox, the <strong>align-items</strong> property is used to align the items on the
-            <strong>cross-axis</strong> of a flex container. Note how it constrasts with
-            <strong>justify-content</strong>! <strong>justify-content</strong> aligns items along the main axis, whereas
-            <strong>align-items</strong> aligns items along the cross axis! The
-            cross-axis is the axis perpendicular to the main axis, which is determined by the
-            <strong>flex-direction</strong> property.
-        </p>
-        <h3>Values of <em>align-items</em></h3>
-        <p>The <strong>align-items</strong> property takes several possible values, including:</p>
-        <ol>
-            <li><strong>stretch (default)</strong>: Stretches the items to <strong>fill the container along the cross
-                    axis</strong>. In
-                non-flex items, the default is "normal".
-                <pre>
+                    <figure>
+                        <img src="../images/flexboxImages/flexWrapExample.png" alt="Example">
+                        <figcaption>Notice how <strong>flex-wrap</strong> is set, and that
+                            <strong>justify-content</strong>
+                            is space-evenly etc...
+                        </figcaption>
+                    </figure>
+                </li>
+            </ol>
+            <h2><em>align-items</em></h2>
+            <p>
+                In Flexbox, the <strong>align-items</strong> property is used to align the items on the
+                <strong>cross-axis</strong> of a flex container. Note how it constrasts with
+                <strong>justify-content</strong>! <strong>justify-content</strong> aligns items along the main axis,
+                whereas
+                <strong>align-items</strong> aligns items along the cross axis! The
+                cross-axis is the axis perpendicular to the main axis, which is determined by the
+                <strong>flex-direction</strong> property.
+            </p>
+            <h3>Values of <em>align-items</em></h3>
+            <p>The <strong>align-items</strong> property takes several possible values, including:</p>
+            <ol>
+                <li><strong>stretch (default)</strong>: Stretches the items to <strong>fill the container along the
+                        cross
+                        axis</strong>. In
+                    non-flex items, the default is "normal".
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -162,18 +211,20 @@
                             }
                     </code>
                     </pre>
-                <figure>
-                    <img src="../images/flexboxImages/align-items-stretch.png" alt="align-items:stretch;">
-                    <figcaption><strong>align-items:stretch;</strong></figcaption>
-                </figure>
-            </li>
-            <li><strong>align-items:flex-start;</strong> aligns the items to the start of the container along the
-                cross-axis. If <strong>flex-direction</strong> is row, and <strong>justify-content</strong> is center,
-                we'll have an identical image to the one above!
-            </li>
-            <li><strong>flex-end</strong> aligns the items to the <strong>end</strong> of the container along the cross
-                axis.
-                <pre>
+                    <figure>
+                        <img src="../images/flexboxImages/align-items-stretch.png" alt="align-items:stretch;">
+                        <figcaption><strong>align-items:stretch;</strong></figcaption>
+                    </figure>
+                </li>
+                <li><strong>align-items:flex-start;</strong> aligns the items to the start of the container along the
+                    cross-axis. If <strong>flex-direction</strong> is row, and <strong>justify-content</strong> is
+                    center,
+                    we'll have an identical image to the one above!
+                </li>
+                <li><strong>flex-end</strong> aligns the items to the <strong>end</strong> of the container along the
+                    cross
+                    axis.
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -183,17 +234,21 @@
                             }
                     </code>
                     </pre>
-                <figure>
-                    <img src="../images/flexboxImages/align-items-flex-end.png" alt="align-items:flex-end;">
-                    <figcaption><strong>align-items:flex-end;</strong></figcaption>
-                </figure>
-            </li>
-            <li><strong>center</strong> aligns the items to the center of the container along the cross axis. One really
-                <strong>key point</strong> to note is that if you want to center your items horizontally and vertically,
-                you can set both <strong>justify-content</strong> and <strong>align-items</strong> to <em>center</em>.
-                To really show the point, I did some (temporary) inline editing of the heights of two of the divs! The
-                <strong>HELLO</strong> is included to help reinforce the next point too!
-                <pre>
+                    <figure>
+                        <img src="../images/flexboxImages/align-items-flex-end.png" alt="align-items:flex-end;">
+                        <figcaption><strong>align-items:flex-end;</strong></figcaption>
+                    </figure>
+                </li>
+                <li><strong>center</strong> aligns the items to the center of the container along the cross axis. One
+                    really
+                    <strong>key point</strong> to note is that if you want to center your items horizontally and
+                    vertically,
+                    you can set both <strong>justify-content</strong> and <strong>align-items</strong> to
+                    <em>center</em>.
+                    To really show the point, I did some (temporary) inline editing of the heights of two of the divs!
+                    The
+                    <strong>HELLO</strong> is included to help reinforce the next point too!
+                    <pre>
                     <code>
                         #container {
                             /*Some heights were changed to help show the effect*/
@@ -204,18 +259,20 @@
                             }
                     </code>
                     </pre>
-                <figure>
-                    <img src="../images/flexboxImages/align-items-center.png" alt="align-items:center;">
-                    <figcaption><strong>align-items:center;</strong></figcaption>
-                </figure>
-            </li>
-            <li><strong>baseline</strong> aligns the items to the baseline of the contents of container along the
-                cross-axis. So,
-                the baseline of the text HELLO will be aligned! In the former example, HELLO is aligned to the top of
-                the container. However, in the 2nd image, not all of the contents are aligned to the top of the
-                container: rather, the contents are aligned around the word HELLO: i.e. the contents are aligned to the
-                <strong>baseline!</strong>
-                <pre>
+                    <figure>
+                        <img src="../images/flexboxImages/align-items-center.png" alt="align-items:center;">
+                        <figcaption><strong>align-items:center;</strong></figcaption>
+                    </figure>
+                </li>
+                <li><strong>baseline</strong> aligns the items to the baseline of the contents of container along the
+                    cross-axis. So,
+                    the baseline of the text HELLO will be aligned! In the former example, HELLO is aligned to the top
+                    of
+                    the container. However, in the 2nd image, not all of the contents are aligned to the top of the
+                    container: rather, the contents are aligned around the word HELLO: i.e. the contents are aligned to
+                    the
+                    <strong>baseline!</strong>
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -225,41 +282,42 @@
                             }
                     </code>
                     </pre>
-                <figure>
-                    <img src="../images/flexboxImages/align-items-baseline.png" alt="align-items:baseline;">
-                    <figcaption><strong>align-items:baseline;</strong></figcaption>
-                </figure>
-            </li>
-        </ol>
-        <h3>An example of combinations and their effect</h3>
-        <figure>
-            <img src="../images/flexboxImages/flexing-example-1.png" alt="Example of combinations">
-            <figcaption><em>Flexing Example 1: changing <strong>flex-wrap (default/wrap/wrap-reverse)</strong></em>
-            </figcaption>
-        </figure>
-        <h2>align-content</h2>
-        <p>The <strong>align-content</strong> property in Flexbox is used to align the items on a flex container's
-            <strong>cross-axis</strong>. It can be
-            used to distribute space between rows or columns of flex items. This can be useful for creating evenly
-            spaced grids of items, or for aligning items to the start or end of a container. The TLDR: it aligns a flex
-            container's
-            lines within the flex container when there is <strong>extra space in the cross-axis.</strong>
-        </p>
-        <p>align-content is similar to justify-content, but works on the cross-axis(rows) rather than the
-            main-axis(columns)</p>
-        <p>Finally, if neither <strong>wrap</strong> nor <strong>wrap-reverse</strong> are being used, then this
-            property is meaningless!</p>
-        <h3>The benefits of <strong>align-content</strong></h3>
-        <li>Allows for precise alignment of lines within a flex container.</li>
-        <li>Can be used to distribute space between lines evenly.</li>
-        <ol>
-            <li><strong>stretch (default value)</strong>: with this, lines stretch to take up the remaining space.
-                <h4><strong>align-content:;</strong></h4>
-                <figure>
-                    <img src="../images/flexboxImages/align-content-stretch.png" alt="align-content:stretch;">
-                    <figcaption><em>align-content:stretch;</em></figcaption>
-                </figure>
-                <pre>
+                    <figure>
+                        <img src="../images/flexboxImages/align-items-baseline.png" alt="align-items:baseline;">
+                        <figcaption><strong>align-items:baseline;</strong></figcaption>
+                    </figure>
+                </li>
+            </ol>
+            <h3>An example of combinations and their effect</h3>
+            <figure>
+                <img src="../images/flexboxImages/flexing-example-1.png" alt="Example of combinations">
+                <figcaption><em>Flexing Example 1: changing <strong>flex-wrap (default/wrap/wrap-reverse)</strong></em>
+                </figcaption>
+            </figure>
+            <h2>align-content</h2>
+            <p>The <strong>align-content</strong> property in Flexbox is used to align the items on a flex container's
+                <strong>cross-axis</strong>. It can be
+                used to distribute space between rows or columns of flex items. This can be useful for creating evenly
+                spaced grids of items, or for aligning items to the start or end of a container. The TLDR: it aligns a
+                flex
+                container's
+                lines within the flex container when there is <strong>extra space in the cross-axis.</strong>
+            </p>
+            <p>align-content is similar to justify-content, but works on the cross-axis(rows) rather than the
+                main-axis(columns)</p>
+            <p>Finally, if neither <strong>wrap</strong> nor <strong>wrap-reverse</strong> are being used, then this
+                property is meaningless!</p>
+            <h3>The benefits of <strong>align-content</strong></h3>
+            <li>Allows for precise alignment of lines within a flex container.</li>
+            <li>Can be used to distribute space between lines evenly.</li>
+            <ol>
+                <li><strong>stretch (default value)</strong>: with this, lines stretch to take up the remaining space.
+                    <h4><strong>align-content:;</strong></h4>
+                    <figure>
+                        <img src="../images/flexboxImages/align-content-stretch.png" alt="align-content:stretch;">
+                        <figcaption><em>align-content:stretch;</em></figcaption>
+                    </figure>
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -271,15 +329,16 @@
                             }
                     </code>
                     </pre>
-            </li>
-            <li><strong>center</strong>: lines are centered within the flex container. Look at the effect on the image.
-                Below is <strong>after</strong>
-                <h4><strong>align-content:center;</strong></h4>
-                <figure>
-                    <img src="../images/flexboxImages/align-content-center.png" alt="align-content:center;">
-                    <figcaption><em>align-content:center;</em></figcaption>
-                </figure>
-                <pre>
+                </li>
+                <li><strong>center</strong>: lines are centered within the flex container. Look at the effect on the
+                    image.
+                    Below is <strong>after</strong>
+                    <h4><strong>align-content:center;</strong></h4>
+                    <figure>
+                        <img src="../images/flexboxImages/align-content-center.png" alt="align-content:center;">
+                        <figcaption><em>align-content:center;</em></figcaption>
+                    </figure>
+                    <pre>
                         <code>
                             #container {
                                 display: flex;
@@ -291,15 +350,15 @@
                                 }
                         </code>
                         </pre>
-            </li>
-            <li><strong>space-between</strong>: lines are evenly distributed with equal space between each line.
-                <h4><strong>align-content:space-between;</strong></h4>
-                <figure>
-                    <img src="../images/flexboxImages/align-content-space-between.png"
-                        alt="align-content:space-between;">
-                    <figcaption><em>align-content:space-between;</em></figcaption>
-                </figure>
-                <pre>
+                </li>
+                <li><strong>space-between</strong>: lines are evenly distributed with equal space between each line.
+                    <h4><strong>align-content:space-between;</strong></h4>
+                    <figure>
+                        <img src="../images/flexboxImages/align-content-space-between.png"
+                            alt="align-content:space-between;">
+                        <figcaption><em>align-content:space-between;</em></figcaption>
+                    </figure>
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -311,14 +370,15 @@
                             }
                     </code>
                     </pre>
-            </li>
-            <li><strong>space-around</strong>: lines are evenly distributed with equal space around each line.
-                <h4><strong>align-content:space-around;</strong></h4>
-                <figure>
-                    <img src="../images/flexboxImages/align-content-space-around.png" alt="align-content:space-around;">
-                    <figcaption><em>align-content:space-around;</em></figcaption>
-                </figure>
-                <pre>
+                </li>
+                <li><strong>space-around</strong>: lines are evenly distributed with equal space around each line.
+                    <h4><strong>align-content:space-around;</strong></h4>
+                    <figure>
+                        <img src="../images/flexboxImages/align-content-space-around.png"
+                            alt="align-content:space-around;">
+                        <figcaption><em>align-content:space-around;</em></figcaption>
+                    </figure>
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -330,15 +390,15 @@
                             }
                     </code>
                     </pre>
-            </li>
-            <li><strong>flex-start</strong>: lines are positioned at the start of the flex container.
-                <h4><strong>align-content:flex-start;</strong></h4>
-                <figure>stretch
-                    <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
-                        alt="align-content:flex-start;">
-                    <figcaption><em>align-content:flex-start;</em></figcaption>
-                </figure>
-                <pre>
+                </li>
+                <li><strong>flex-start</strong>: lines are positioned at the start of the flex container.
+                    <h4><strong>align-content:flex-start;</strong></h4>
+                    <figure>stretch
+                        <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
+                            alt="align-content:flex-start;">
+                        <figcaption><em>align-content:flex-start;</em></figcaption>
+                    </figure>
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -350,15 +410,15 @@
                             }
                     </code>
                     </pre>
-            </li>
-            <li><strong>flex-end</strong>: lines are positioned at the end of the flex container.
-                <h4><strong>align-content:flex-end;</strong></h4>
-                <figure>
-                    <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
-                        alt="align-content:flex-end;">
-                    <figcaption><em>align-content:flex-start vs center vs flex-end;</em></figcaption>
-                </figure>
-                <pre>
+                </li>
+                <li><strong>flex-end</strong>: lines are positioned at the end of the flex container.
+                    <h4><strong>align-content:flex-end;</strong></h4>
+                    <figure>
+                        <img src="../images/flexboxImages/align-content-flex-start-center-end.png"
+                            alt="align-content:flex-end;">
+                        <figcaption><em>align-content:flex-start vs center vs flex-end;</em></figcaption>
+                    </figure>
+                    <pre>
                     <code>
                         #container {
                             display: flex;
@@ -370,22 +430,25 @@
                             }
                     </code>
                     </pre>
-            </li>
-        </ol>
-        <h2>align-self</h2>
-        <p>Whereas <strong>align-content</strong> is used to align the lines within a flex container along the
-            cross-axis,
-            <strong>align-self</strong> is used to align individual items along the cross-axis within a flex container.
-        </p>
-        <li><strong>flex-end</strong>: lines are positioned at the end of the flex container. It allows you to align a
-            single item, and can have an effect on each element individually. I'll briefly demonstrate this on the 2nd
-            child div in the container
-            <h4><strong>align-self:flex-end;</strong></h4>
-            <figure>
-                <img src="../images/flexboxImages/align-self-example-1.png" alt="align-content:flex-end;">
-                <figcaption><em>align-self:flex-end;</em></figcaption>
-            </figure>
-            <pre>
+                </li>
+            </ol>
+            <h2>align-self</h2>
+            <p>Whereas <strong>align-content</strong> is used to align the lines within a flex container along the
+                cross-axis,
+                <strong>align-self</strong> is used to align individual items along the cross-axis within a flex
+                container.
+            </p>
+            <li><strong>flex-end</strong>: lines are positioned at the end of the flex container. It allows you to align
+                a
+                single item, and can have an effect on each element individually. I'll briefly demonstrate this on the
+                2nd
+                child div in the container
+                <h4><strong>align-self:flex-end;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/align-self-example-1.png" alt="align-content:flex-end;">
+                    <figcaption><em>align-self:flex-end;</em></figcaption>
+                </figure>
+                <pre>
                     <code>
                         #container {
                             background-color: #003049;
@@ -408,27 +471,30 @@
                         }
                     </code>
                     </pre>
-        </li>
-        <p>If you're ready, try <a href="flexboxPart3.html">part 3</a> of this section</p>
-    </main>
-    <footer>
-        <nav>
-            <h2>Other Flexbox Links</h2>
-            <ul>
-                <li><a href="./introduction.html">Introduction</a></li>
-                <li><a href="./flexboxPart1.html">Flexbox Properties Part I: <strong>&lt;display:flex&gt;</strong>,
-                        <strong>flex-direction</strong> and <strong>justify-content</strong></a></li>
-                <li><a href="./flexboxPart3.html">Flexbox Properties Part III: <strong>flex-basis</strong>,
-                        <strong>flex-grow</strong>, <strong>flex-shrink</strong> and some <strong>flex
-                            shorthand</strong></a></li>
-                <li><a href="./flexboxPart4.html"><strong>Flexbox Part IV: Media queries and building a responsive
-                            nav</strong></a></li>
-                <li><a href="./flexboxNavbarMiniProject.html">Responsive Navigation Bar Project</a></li>
-                <li><a href="./flexboxPricingPanelProject.html">Pricing Panel Project</a></li>
-            </ul>
-        </nav>
-        <a href="../index.html">Home</a>
-    </footer>
+            </li>
+            <p>If you're ready, try <a href="flexboxPart3.html">part 3</a> of this section</p>
+        </main>
+    </div>
+    <div class="container">
+        <footer>
+            <nav>
+                <h2>Other Flexbox Links</h2>
+                <ul>
+                    <li><a href="./introduction.html">Introduction</a></li>
+                    <li><a href="./flexboxPart1.html">Flexbox Properties Part I: <strong>&lt;display:flex&gt;</strong>,
+                            <strong>flex-direction</strong> and <strong>justify-content</strong></a></li>
+                    <li><a href="./flexboxPart3.html">Flexbox Properties Part III: <strong>flex-basis</strong>,
+                            <strong>flex-grow</strong>, <strong>flex-shrink</strong> and some <strong>flex
+                                shorthand</strong></a></li>
+                    <li><a href="./flexboxPart4.html"><strong>Flexbox Part IV: Media queries and building a responsive
+                                nav</strong></a></li>
+                    <li><a href="./flexboxNavbarMiniProject.html">Responsive Navigation Bar Project</a></li>
+                    <li><a href="./flexboxPricingPanelProject.html">Pricing Panel Project</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

@@ -20,18 +20,55 @@
 </head>
 
 <body>
-    <header>
-        <h1>Background and Google Font</h1>
-    </header>
-    <main>
-        <p>This page will focus on the <strong>background</strong> and incorporation of <strong>Google fonts in the
-                website.</strong></p>
-        <h2>Background</h2>
-        <ul>
-            <li>Our two example images each sit inside a &lt;<strong>section</strong>&gt;, and have a h2 within that.
-                Here
-                is our CSS code for the area we're using to 'host' the background image and arbitrary header:
-                <pre>
+    <div class="container">
+        <header>
+            <h1>Background and Google Font</h1>
+            <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <main>
+            <p>This page will focus on the <strong>background</strong> and incorporation of <strong>Google fonts in the
+                    website.</strong></p>
+            <h2>Background</h2>
+            <ul>
+                <li>Our two example images each sit inside a &lt;<strong>section</strong>&gt;, and have a h2 within
+                    that.
+                    Here
+                    is our CSS code for the area we're using to 'host' the background image and arbitrary header:
+                    <pre>
                 <code>
                     section{
                         width:80%;
@@ -46,103 +83,113 @@
                       }
                 </code>
             </pre>
-            </li>
-            <li>
-                Interestingly, it's possible to use a URL of a web image for the background-image, like this:
-                <pre>
+                </li>
+                <li>
+                    Interestingly, it's possible to use a URL of a web image for the background-image, like this:
+                    <pre>
                 <code>
                    background-image:url(https://images.unsplash.com/photo-1);
                 </code>
             </pre>
-                Also, one could use their own image, like I did! This means it's easier to keep the image up-to-date.
-                <pre>
+                    Also, one could use their own image, like I did! This means it's easier to keep the image
+                    up-to-date.
+                    <pre>
                 <code>
                     background-image:url(../images/suarez.jpg);
                 </code>
             </pre>
-                Remember that <a href="https://www.unsplash.com">unsplash.com</a> is a fabulous resource for free images
-                to
-                use!
-            </li>
-            <li>However, the image in its original form might well be too large or too small to fit the exact space! The
-                <strong>background-size</strong> property will help, and has options including
-                <strong>cover</strong>(which
-                scales the image as large as
-                possible without stretching it, cropping it vertically or horizonally to avoid empty space if
-                necessary),
-                <strong>contain</strong>(which scales the image as large as
-                possible without cropping or stretching it), and auto.
-                <pre>
+                    Remember that <a href="https://www.unsplash.com">unsplash.com</a> is a fabulous resource for free
+                    images
+                    to
+                    use!
+                </li>
+                <li>However, the image in its original form might well be too large or too small to fit the exact space!
+                    The
+                    <strong>background-size</strong> property will help, and has options including
+                    <strong>cover</strong>(which
+                    scales the image as large as
+                    possible without stretching it, cropping it vertically or horizonally to avoid empty space if
+                    necessary),
+                    <strong>contain</strong>(which scales the image as large as
+                    possible without cropping or stretching it), and auto.
+                    <pre>
                 <code>
                     background-size:cover; /*Crops things*/
                     background-size:contain;/*This might repeat the image...*/
                 </code>
             </pre>
-                There is a key drawback to using contain: it will repeat the image to fill the empty alloted space,
-                which looks amateurish. The property <strong>no-repeat</strong>, which is self-explanatory, can't
-                <strong>easily</strong> be used with the <em>background</em> property.
-            </li>
-            <li>The <strong>background-position</strong> property can be used to manipulate the <strong>position of the
-                    image within your background-image</strong>. It could be cheaply used to crop out an unwanted ex
-                from a
-                nice family photo, for example! If you had a particularly short partner, using background-position:top;
-                might be useful. Alternatively:
-                <pre>
+                    There is a key drawback to using contain: it will repeat the image to fill the empty alloted space,
+                    which looks amateurish. The property <strong>no-repeat</strong>, which is self-explanatory, can't
+                    <strong>easily</strong> be used with the <em>background</em> property.
+                </li>
+                <li>The <strong>background-position</strong> property can be used to manipulate the <strong>position of
+                        the
+                        image within your background-image</strong>. It could be cheaply used to crop out an unwanted ex
+                    from a
+                    nice family photo, for example! If you had a particularly short partner, using
+                    background-position:top;
+                    might be useful. Alternatively:
+                    <pre>
                 <code>
                     background-position:bottom; /*Crops out someone tall - or the top of the image!*/
                 </code>
             </pre>
-            </li>
-            <li>The <strong>background-size</strong> value may ONLY be included immediately after the
-                background-position
-                when we're dealing with the background shorthand, separate with the '/' character, like so:
-                <pre>
+                </li>
+                <li>The <strong>background-size</strong> value may ONLY be included immediately after the
+                    background-position
+                    when we're dealing with the background shorthand, separate with the '/' character, like so:
+                    <pre>
                 <code>
                     background: center/cover no-repeat url(../images/suarez.jpg);
                 </code>
             </pre>Other common alternatives to center/cover are center/80%, left/49% etc...incidentally, Colt Steele
-                placed no repeat after the center/cover option. <em>no-repeat</em> is from <em>background-repeat</em>
+                    placed no repeat after the center/cover option. <em>no-repeat</em> is from
+                    <em>background-repeat</em>
 
-                <section>
-                    <h3>I am a heading</h3>
-                </section>
-            </li>
-            <li>As a final note on image incorporation into the background, multiple backgrounds are also possible too!
-                I place a random URL pulled from the web behind my
-                Suarez meme, using the class multipleImages within the section to minimize CSS code.
-                <pre>
+                    <section>
+                        <h3>I am a heading</h3>
+                    </section>
+                </li>
+                <li>As a final note on image incorporation into the background, multiple backgrounds are also possible
+                    too!
+                    I place a random URL pulled from the web behind my
+                    Suarez meme, using the class multipleImages within the section to minimize CSS code.
+                    <pre>
                     <code>
                         background: center/40% no-repeat url(image1),url(https://www.netsource.com);
                     </code>
                 </pre>
 
-                <section id="multipleImages">
-                    <h3>I am another heading</h3>
-                </section>
-            </li>
-        </ul>
-        <h2>Google Fonts</h2>
-        <ul>
-            <li><a href="https://dequeuniversity.com/color-contrast">A tool for checking out color contrast!</a> A
-                contrast
-                ratio of
-                around 7:1 is the rule of
-                thumb right now.</li>
-            <li>This resource allows us to from a huge variety of different web-safe fonts for free! However, there is a
-                performace aspect to this. When incorporating a Google Font, we can't just choose a huge number of fonts
-                and
-                different font-weights. This could significantly increase the loading time of the website!</li>
-            <li>Find the font(s) you want to use on the <a href="">Google Font website</a>, then select
-                <strong>embed</strong> and follow the instructions shown! You get a link to the font itself, as well as
-                an
-                exemplar piece of CSS code. The <strong>pairings</strong> section on the site shows popular paired
-                fonts, which will help you
-                improve the overall look of your site.
-            </li>
-            <li>Incidentally, use <strong>sans-serif</strong> in the body, and you can pair up other font types
-                elsewhere! The following code helped to <strong>center the text</strong>, and made the content more
-                readable. My own code is adjusted from this!
-                <pre>
+                    <section id="multipleImages">
+                        <h3>I am another heading</h3>
+                    </section>
+                </li>
+            </ul>
+            <h2>Google Fonts</h2>
+            <ul>
+                <li><a href="https://dequeuniversity.com/color-contrast">A tool for checking out color contrast!</a> A
+                    contrast
+                    ratio of
+                    around 7:1 is the rule of
+                    thumb right now.</li>
+                <li>This resource allows us to from a huge variety of different web-safe fonts for free! However, there
+                    is a
+                    performace aspect to this. When incorporating a Google Font, we can't just choose a huge number of
+                    fonts
+                    and
+                    different font-weights. This could significantly increase the loading time of the website!</li>
+                <li>Find the font(s) you want to use on the <a href="">Google Font website</a>, then select
+                    <strong>embed</strong> and follow the instructions shown! You get a link to the font itself, as well
+                    as
+                    an
+                    exemplar piece of CSS code. The <strong>pairings</strong> section on the site shows popular paired
+                    fonts, which will help you
+                    improve the overall look of your site.
+                </li>
+                <li>Incidentally, use <strong>sans-serif</strong> in the body, and you can pair up other font types
+                    elsewhere! The following code helped to <strong>center the text</strong>, and made the content more
+                    readable. My own code is adjusted from this!
+                    <pre>
                 <code>
                     body {
                         font-family: Montserrat, sans-serif;
@@ -168,27 +215,30 @@
                     }
                 </code>
             </pre>
-            </li>
-        </ul>
-        <p>Now, we'll attempt the <a href="./cssMiscPart7.html">Photo Blog codealong</a></p>
-    </main>
-    <footer>
-        <nav>
-            <h2>Other CSS Links</h2>
-            <ul>
-                <li><a href="./cssExamples.html">CSS Examples</a></li>
-                <li><a href="./cssSelectors.html">CSS Selectors</a></li>
-                <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
-                <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
-                <li><a href="./cssMiscPart2.html">Position</a></li>
-                <li><a href="./cssMiscPart3.html">Transitions</a></li>
-                <li><a href="./cssMiscPart4.html">Transform</a></li>
-                <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
-                <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
+                </li>
             </ul>
-        </nav>
-        <a href="../index.html">Home</a>
-    </footer>
+            <p>Now, we'll attempt the <a href="./cssMiscPart7.html">Photo Blog codealong</a></p>
+        </main>
+    </div>
+    <div class="container">
+        <footer>
+            <nav>
+                <h2>Other CSS Links</h2>
+                <ul>
+                    <li><a href="./cssExamples.html">CSS Examples</a></li>
+                    <li><a href="./cssSelectors.html">CSS Selectors</a></li>
+                    <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
+                    <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
+                    <li><a href="./cssMiscPart2.html">Position</a></li>
+                    <li><a href="./cssMiscPart3.html">Transitions</a></li>
+                    <li><a href="./cssMiscPart4.html">Transform</a></li>
+                    <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
+                    <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

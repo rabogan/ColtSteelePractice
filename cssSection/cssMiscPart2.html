@@ -16,85 +16,136 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../resources/styleExampleFourB.css">
-    <title>CSS Miscellaneous Part 2</title>
+    <title>The Position Property</title>
 </head>
 
 <body>
-    <header>
-        <h1>The Position Property</h1>
-    </header>
-    <main></main>
-    <h2>Position</h2>
-    <li>The CSS property <strong>position</strong> sets how an element is positioned within a document. It establishes
-        how <em>top, right, bottom and left</em> will work</li>
-    <li>To demonstrate this, I've set up another div using the id <em>pos</em></li>
-    <section id="static">
-        <h2>Static</h2>
-        <li>Here, the middle div has <strong>position:static;</strong></li>
-        <div></div>
-        <div id="middle"></div>
-        <div></div>
+    <section class="container">
+        <header>
+            <h1>The Position Property</h1>
+            <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                <section class="container">
+                    <section class="navbar-header">
+                        <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                    </section>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <section class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+            </nav>
+        </header>
     </section>
-    <section id="relative">
-        <h2>Relative</h2>
-        <li>Here, the middle div has <strong>position:relative;</strong></li>
-        <li>In addition, the <em>top</em> and <em>left</em> attributes have been changed to 50px each, which pushes the
-            element DOWN 50px and to the right (from the left) 50 px too!</li>
-        <li>In essence, the block is positioned where <em>it would be </em><strong>relative to</strong> its own position
-        </li>
-        <div></div>
-        <div id="middle"></div>
-        <div></div>
+    <section class="container">
+        <main>
+            <h2>Position</h2>
+            <li>The CSS property <strong>position</strong> sets how an element is positioned within a document. It
+                establishes
+                how <em>top, right, bottom and left</em> will work</li>
+            <li>To demonstrate this, I've set up another div using the id <em>pos</em></li>
+            <section id="static">
+                <h2>Static</h2>
+                <li>Here, the middle div has <strong>position:static;</strong></li>
+                <div></div>
+                <div id="middle"></div>
+                <div></div>
+            </section>
+            <section id="relative">
+                <h2>Relative</h2>
+                <li>Here, the middle div has <strong>position:relative;</strong></li>
+                <li>In addition, the <em>top</em> and <em>left</em> attributes have been changed to 50px each, which
+                    pushes the
+                    element DOWN 50px and to the right (from the left) 50 px too!</li>
+                <li>In essence, the block is positioned where <em>it would be </em><strong>relative to</strong> its
+                    own position
+                </li>
+                <div></div>
+                <div id="middle"></div>
+                <div></div>
+            </section>
+            <section id="absolute">
+                <h2>Absolute</h2>
+                <li>Here, the middle div has <strong>position:absolute;</strong></li>
+                <li>In addition, the <em>top</em> and <em>left</em> attributes have AGAIN been changed to 50px each
+                </li>
+                <li>However, <strong>absolute</strong> will remove an element from normal document flow, and
+                    position it
+                    <strong>closest to its closest positioned ancestor</strong>, or <strong>relative to the initial
+                        containing
+                        block</strong>
+                </li>
+                <li>Thus, if something is <strong>absolute, but</strong> <em>not nested inside a POSITIONED (i.e.
+                        with a
+                        position set to something other than static) element</em>, it will be positioned relative to
+                    the
+                    containing block, which is usually &lt;body&gt;</li>
+                <li>In my example, the section the blocks are contained in is a <strong>positioned</strong> element,
+                    with the
+                    position changed to <em>relative</em>. In addition, I've made it so the middle block has had its
+                    position
+                    changed significantly. Inspect to check!</li>
+                <div></div>
+                <div id="middle"></div>
+                <div></div>
+            </section>
+            <section id="fixed">
+                <h2>Fixed</h2>
+                <li>Here, the middle div has <strong>position:fixed;</strong></li>
+                <li>In addition, the <em>top</em> and <em>left</em> attributes have been changed to 0 and 400px</li>
+                <li>This is the reason that BLOCK is hanging over in this page!!!</li>
+                <li>Basically, if something is positioned as <strong>fixed</strong>, then <strong>it will always be
+                        positioned
+                        relative to the overall containing block</strong>! <em>(Unless an ancestor has a transform,
+                        perspective
+                        or filter property contributing to the containing block info)</em></li>
+                <div></div>
+                <div id="middle"></div>
+                <div></div>
+            </section>
+            <p>Move on to <a href="./cssMiscPart3.html">Transitions</a></p>
+        </main>
     </section>
-    <section id="absolute">
-        <h2>Absolute</h2>
-        <li>Here, the middle div has <strong>position:absolute;</strong></li>
-        <li>In addition, the <em>top</em> and <em>left</em> attributes have AGAIN been changed to 50px each</li>
-        <li>However, <strong>absolute</strong> will remove an element from normal document flow, and position it
-            <strong>closest to its closest positioned ancestor</strong>, or <strong>relative to the initial containing
-                block</strong>
-        </li>
-        <li>Thus, if something is <strong>absolute, but</strong> <em>not nested inside a POSITIONED (i.e. with a
-                position set to something other than static) element</em>, it will be positioned relative to the
-            containing block, which is usually &lt;body&gt;</li>
-        <li>In my example, the section the blocks are contained in is a <strong>positioned</strong> element, with the
-            position changed to <em>relative</em>. In addition, I've made it so the middle block has had its position
-            changed significantly. Inspect to check!</li>
-        <div></div>
-        <div id="middle"></div>
-        <div></div>
+    <section class="container">
+        <footer>
+            <nav>
+                <h3>Other CSS Links</h3>
+                <ul>
+                    <li><a href="./cssExamples.html">CSS Examples</a></li>
+                    <li><a href="./cssSelectors.html">CSS Selectors</a></li>
+                    <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
+                    <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
+                    <li><a href="./cssMiscPart3.html">Transitions</a></li>
+                    <li><a href="./cssMiscPart4.html">Transform</a></li>
+                    <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
+                    <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
+                    <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
     </section>
-    <section id="fixed">
-        <h2>Fixed</h2>
-        <li>Here, the middle div has <strong>position:fixed;</strong></li>
-        <li>In addition, the <em>top</em> and <em>left</em> attributes have been changed to 0 and 400px</li>
-        <li>This is the reason that BLOCK is hanging over in this page!!!</li>
-        <li>Basically, if something is positioned as <strong>fixed</strong>, then <strong>it will always be positioned
-                relative to the overall containing block</strong>! <em>(Unless an ancestor has a transform, perspective
-                or filter property contributing to the containing block info)</em></li>
-        <div></div>
-        <div id="middle"></div>
-        <div></div>
-    </section>
-    <p>Move on to <a href="./cssMiscPart3.html">Transitions</a></p>
-    </main>
-    <footer>
-        <nav>
-            <h3>Other CSS Links</h3>
-            <ul>
-                <li><a href="./cssExamples.html">CSS Examples</a></li>
-                <li><a href="./cssSelectors.html">CSS Selectors</a></li>
-                <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
-                <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
-                <li><a href="./cssMiscPart3.html">Transitions</a></li>
-                <li><a href="./cssMiscPart4.html">Transform</a></li>
-                <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
-                <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
-                <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
-            </ul>
-        </nav>
-        <a href="../index.html">Home</a>
-    </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

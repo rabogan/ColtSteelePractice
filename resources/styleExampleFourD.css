@@ -6,11 +6,6 @@ body {
     text-align: justify;
 }
 
-h2 {
-    background-color: #DDA0DD;
-    font-size: 1.5em;
-}
-
 .header-navbar-color {
     background-color: #ADB2D3;
     color: #2b2d42;
@@ -25,6 +20,11 @@ h1 {
 }
 
 h2 {
+    background-color: #DDA0DD;
+    font-size: 1.5em;
+}
+
+h3 {
     background-color: #2a9d8f;
     border: 5px solid #264653;
     color: #eae2b7;
@@ -38,48 +38,47 @@ h2 {
 }
 
 
-
-h2:nth-of-type(2n) {
+h3:nth-of-type(2n) {
     background-color: #e9c46a;
 }
 
-h2:nth-of-type(3n) {
+h3:nth-of-type(3n) {
     background-color: #f4a261;
 }
 
-h2:nth-of-type(4n) {
+h3:nth-of-type(4n) {
     background-color: #e76f51;
 }
 
-section:first-of-type h2:nth-of-type(1) {
+section:first-of-type h3:nth-of-type(1) {
     transform: rotate(45deg);
 }
 
-section:first-of-type h2:nth-of-type(2) {
+section:first-of-type h3:nth-of-type(2) {
     transform: scale(0.6);
 }
 
-section:first-of-type h2:nth-of-type(3) {
+section:first-of-type h3:nth-of-type(3) {
     transform: translateX(200px);
 }
 
-section:first-of-type h2:nth-of-type(4) {
+section:first-of-type h3:nth-of-type(4) {
     transform: translate(-100px, 50px);
 }
 
-section:nth-of-type(2) h2:nth-of-type(1) {
+section:nth-of-type(2) h3:nth-of-type(1) {
     transform: skew(30deg);
 }
 
-section:nth-of-type(2) h2:nth-of-type(2) {
+section:nth-of-type(2) h3:nth-of-type(2) {
     transform: skew(10deg, 5deg);
 }
 
-section:nth-of-type(2) h2:nth-of-type(3) {
+section:nth-of-type(2) h3:nth-of-type(3) {
     transform: rotate(-20deg) scale(1.3);
 }
 
-section:nth-of-type(2) h2:nth-of-type(4) {
+section:nth-of-type(2) h3:nth-of-type(4) {
     transform: translateX(-500px) rotate(0.5turn) scaleY(1.5);
 }
 

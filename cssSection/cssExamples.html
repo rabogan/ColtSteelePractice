@@ -20,23 +20,60 @@
 </head>
 
 <body>
-    <header>
-        <h1>CSS Examples</h1>
-    </header>
-    <main>
-        <li>As you should know, CSS follows one basic
-            pattern:
-            <pre>
+    <div class="container">
+        <header>
+            <h1>CSS Examples</h1>
+            <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <main>
+            <h2>The Basics</h2>
+            <li>As you should know, CSS follows one basic
+                pattern:
+                <pre>
             <code>
                 selector{
                     property: value;
                 }
             </code>
         </pre>
-        </li>
-        <h1>Hello</h1>
-        <li>This is button is represented by the code below <button>I am a button</button>:
-            <pre>
+            </li>
+            <h1>Hello</h1>
+            <li>This is button is represented by the code below <button>I am a button</button>:
+                <pre>
                 <code>
                     button {
                         color: #92dce5;
@@ -45,10 +82,10 @@
                     }                    
                 </code>
             </pre>
-        </li>
-        <li>As you can see in the code above, we commonly represent colors using text, (e.g. purple), RGB values, or
-            hex. Look at another example here:
-            <pre>
+            </li>
+            <li>As you can see in the code above, we commonly represent colors using text, (e.g. purple), RGB values, or
+                hex. Look at another example here:
+                <pre>
             <code>
                 h2 {
                     color: teal;
@@ -57,16 +94,17 @@
                 }
             </code>
         </pre>
-        </li>
-        <h2>This is a &lt;h2&gt; header, all the background-color changed using RGB, and text-color changed using the
-            hexadecimal number!
-        </h2>
-        <h2><a href="https://coolors.co/">www.coolors.co</a> is
-            one nice way of selecting color codes, either in RGB or hexadecimal</h2>
-        <h3>Using common text properties</h3>
-        <li>In the h1, we're also changing the font weight (boldness/lightness): 400 being normal, 700 being bold.
-            &lt;h1&gt; is usually bold, but is now set to 400.
-            <pre>
+            </li>
+            <h2>This is a &lt;h2&gt; header, all the background-color changed using RGB, and text-color changed using
+                the
+                hexadecimal number!
+            </h2>
+            <h2><a href="https://coolors.co/">www.coolors.co</a> is
+                one nice way of selecting color codes, either in RGB or hexadecimal</h2>
+            <h2>Using common text properties</h2>
+            <li>In the h1, we're also changing the font weight (boldness/lightness): 400 being normal, 700 being bold.
+                &lt;h1&gt; is usually bold, but is now set to 400.
+                <pre>
                 <code>
                     h1 {
                         text-align: center;
@@ -77,58 +115,61 @@
                     }
                 </code>
             </pre>
-        </li>
-        <li>The <em>text-decoration</em> property can be used to add or REMOVE decorative lines on text! I've set
-            h1 to be <strong>underlined</strong> in <strong>red</strong> with a <strong>wavy</strong> line!</li>
-        <li>If you want to remove all underlines from your web links, just set text-decoration of anchor tags
-            &lt;a&gt; to <em>none</em>.
-        </li>
-        <li>To double-space your paragraphs (as below), set the line-height to 2! I double-spaced the &ltbody&gt;
-            body of this document to 1.2.</li>
-        <li>Letter-spacing adds some distance between letters! For this example, I added 15 pixels of letter-spacing
-            in h1.</li>
-        <li>We can look at different font families on <a>www.cssfontstack.com</a>. We don't always know if our font
-            will
-            work across all machines (Windows, Mac, Chrome, whatever). So, in the font-family
-            part of our specific element, we list a stack of fonts in order. We start with our most preferred and
-            specific, all the way to the most generic.
-            <pre>
+            </li>
+            <li>The <em>text-decoration</em> property can be used to add or REMOVE decorative lines on text! I've set
+                h1 to be <strong>underlined</strong> in <strong>red</strong> with a <strong>wavy</strong> line!</li>
+            <li>If you want to remove all underlines from your web links, just set text-decoration of anchor tags
+                &lt;a&gt; to <em>none</em>.
+            </li>
+            <li>To double-space your paragraphs (as below), set the line-height to 2! I double-spaced the &ltbody&gt;
+                body of this document to 1.2.</li>
+            <li>Letter-spacing adds some distance between letters! For this example, I added 15 pixels of letter-spacing
+                in h1.</li>
+            <li>We can look at different font families on <a>www.cssfontstack.com</a>. We don't always know if our font
+                will
+                work across all machines (Windows, Mac, Chrome, whatever). So, in the font-family
+                part of our specific element, we list a stack of fonts in order. We start with our most preferred and
+                specific, all the way to the most generic.
+                <pre>
             <code>
                 font-family: Georgia, Times New Roman, serif
             </code>
         </pre>
-        </li>
-        <li><a href="./cssMiscPart6.html">This page</a> of my website shows us how to include custom fonts, which
-            guarantee
-            that the user will be able to access them (although possibly at the expense of loading time - don't
-            overuse them!)</li>
-        <li>Finally, here is a brief and highly UNrecommended way of using inline styles:
-            <pre>
+            </li>
+            <li><a href="./cssMiscPart6.html">This page</a> of my website shows us how to include custom fonts, which
+                guarantee
+                that the user will be able to access them (although possibly at the expense of loading time - don't
+                overuse them!)</li>
+            <li>Finally, here is a brief and highly UNrecommended way of using inline styles:
+                <pre>
                         <code>
                             &lt;h1 style="color:purple"&gt;Hello&lt;/h1&gt;
                             &lt;button style="background-color:palegreen&gt;I am button&lt;/button&gt;
                         </code>
                     </pre>
-        </li>
-        <p>Next in this section, try <a href="./cssSelectors.html">CSS Selectors</a></p>
-    </main>
-    <footer>
-        <nav>
-            <h3>Other CSS Links</h3>
-            <ul>
-                <li><a href="./cssSelectors.html">CSS Selectors</a></li>
-                <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
-                <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
-                <li><a href="./cssMiscPart2.html">Position</a></li>
-                <li><a href="./cssMiscPart3.html">Transitions</a></li>
-                <li><a href="./cssMiscPart4.html">Transform</a></li>
-                <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
-                <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
-                <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
-            </ul>
-        </nav>
-        <a href="../index.html">Home</a>
-    </footer>
+            </li>
+            <p>Next in this section, try <a href="./cssSelectors.html">CSS Selectors</a></p>
+        </main>
+    </div>
+    <div class="container">
+        <footer>
+            <nav>
+                <h2>Other CSS Links</h2>
+                <ul>
+                    <li><a href="./cssSelectors.html">CSS Selectors</a></li>
+                    <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
+                    <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
+                    <li><a href="./cssMiscPart2.html">Position</a></li>
+                    <li><a href="./cssMiscPart3.html">Transitions</a></li>
+                    <li><a href="./cssMiscPart4.html">Transform</a></li>
+                    <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
+                    <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
+                    <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

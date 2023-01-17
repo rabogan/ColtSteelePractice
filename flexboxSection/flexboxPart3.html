@@ -20,74 +20,116 @@
 </head>
 
 <body>
-    <header>
-        <h1>Playing with Flexbox Again</h1>
-    </header>
-    <main>
-        <h2>Example 1</h2>
-        <section id="container">
-            <div style="background-color: #80ffdb"></div>
-            <div style="background-color: #64dfdf"></div>
-            <div style="background-color: #48bfe3"></div>
-            <div style="background-color: #5390d9"></div>
-            <div style="background-color: #6930c3"></div>
-        </section>
-        <h2>Example 2 (Demonstrating the effect of <em><strong>flex shorthand)</strong></em></h2>
-        <div id="mainEx"><!--Semantically, this is poor-->
-            <section class="sidebar"></section>
-            <section class="maincontent"></section>
-            <section class="sidebar"></section>
-        </div>
-        <h2><em>flex-basis, flex-grow, and flex-shrink</em></h2>
-        <p>All of these properties are used to control the size and behavior of flexbox items. When used with other
-            flexbox properties like <strong>flex-direction</strong>, <strong>align-items</strong> and
-            <strong>justify-content</strong>, these properties can be used to create flexible and responsive layout.
-        </p>
-        <ol>
-            <li><strong>flex-basis</strong> sets the initial size of a flex item before any addition space (or
-                shrinking) is distributed/applied. It can be set to a specific value (e.g.
-                <strong>flex-basis:200px;</strong>) or a percentage of the available space (e.g.
-                <strong>flex-basis:50%;</strong>
+    <div class="container">
+        <header>
+            <h1>Flexbox Growth And Shrinkage</h1>
+            <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <main>
+            <h2>Example 1</h2>
+            <section id="container">
+                <div style="background-color: #80ffdb"></div>
+                <div style="background-color: #64dfdf"></div>
+                <div style="background-color: #48bfe3"></div>
+                <div style="background-color: #5390d9"></div>
+                <div style="background-color: #6930c3"></div>
+            </section>
+            <h2>Example 2 (Demonstrating the effect of <em><strong>flex shorthand)</strong></em></h2>
+            <div id="mainEx"><!--Semantically, this is poor-->
+                <section class="sidebar"></section>
+                <section class="maincontent"></section>
+                <section class="sidebar"></section>
+            </div>
+            <h2><em>flex-basis, flex-grow, and flex-shrink</em></h2>
+            <p>All of these properties are used to control the size and behavior of flexbox items. When used with other
+                flexbox properties like <strong>flex-direction</strong>, <strong>align-items</strong> and
+                <strong>justify-content</strong>, these properties can be used to create flexible and responsive layout.
+            </p>
+            <ol>
+                <li><strong>flex-basis</strong> sets the initial size of a flex item before any addition space (or
+                    shrinking) is distributed/applied. It can be set to a specific value (e.g.
+                    <strong>flex-basis:200px;</strong>) or a percentage of the available space (e.g.
+                    <strong>flex-basis:50%;</strong>
+                </li>
+                <li><strong>flex-grow</strong> controls how much a flex item should grow relative to other flex items:
+                    i.e.
+                    <strong>flex-grow</strong> controls the amount of available space an element should take up. For
+                    example, if one flex item has a <strong>flex-grow</strong> value of 2 and another has a value of 1,
+                    the
+                    first item will take up twice as much space as the second. It'w usually a positive number that
+                    represents the proportion of available space, e.g. <strong>flex-grow:2;</strong>
+                </li>
+                <li><strong>flex-shrink</strong> is deployed on items larger than the container - when there is not
+                    enough
+                    space in the container. This property
+                    controls how much a flex item should shrink relative to other flex items, and (as with
+                    <strong>flex-grow</strong> is a positive number that represents the proportion of available space
+                    that
+                    should be taken away from the item. For example, if one flex item has a <strong>flex-shrink</strong>
+                    value of 2 and another has a value of 1, the first item will shrink twice as much as the second.
+                </li>
+            </ol>
+            <h3><em>flex-basis</em></h3>
+            <li><strong>flex-basis</strong> is changed using units! The top image has no flex-basis change. The lower,
+                more
+                stretched image has <strong>flex-basis:333px;</strong>
+                <h4><strong>flex-basis:333px;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/flex-basis-example1.png" alt="flex-basis">
+                    <figcaption><em>flex-basis:333px;</em></figcaption>
+                </figure>
+                <h4><strong>flex-basis:333px;</strong></h4>
+                <p>In this example, the flex-direction is in the column direction! Look at the different between no
+                    flex-basis and when a flex-basis of 333px; is applied!</p>
+                <figure>
+                    <img src="../images/flexboxImages/flex-basis-example2.png" alt="flex-basis">
+                    <figcaption><em>flex-basis:333px;</em></figcaption>
+                </figure>
             </li>
-            <li><strong>flex-grow</strong> controls how much a flex item should grow relative to other flex items: i.e.
-                <strong>flex-grow</strong> controls the amount of available space an element should take up. For
-                example, if one flex item has a <strong>flex-grow</strong> value of 2 and another has a value of 1, the
-                first item will take up twice as much space as the second. It'w usually a positive number that
-                represents the proportion of available space, e.g. <strong>flex-grow:2;</strong>
-            </li>
-            <li><strong>flex-shrink</strong> is deployed on items larger than the container - when there is not enough
-                space in the container. This property
-                controls how much a flex item should shrink relative to other flex items, and (as with
-                <strong>flex-grow</strong> is a positive number that represents the proportion of available space that
-                should be taken away from the item. For example, if one flex item has a <strong>flex-shrink</strong>
-                value of 2 and another has a value of 1, the first item will shrink twice as much as the second.
-            </li>
-        </ol>
-        <h3><em>flex-basis</em></h3>
-        <li><strong>flex-basis</strong> is changed using units! The top image has no flex-basis change. The lower, more
-            stretched image has <strong>flex-basis:333px;</strong>
-            <h4><strong>flex-basis:333px;</strong></h4>
-            <figure>
-                <img src="../images/flexboxImages/flex-basis-example1.png" alt="flex-basis">
-                <figcaption><em>flex-basis:333px;</em></figcaption>
-            </figure>
-            <h4><strong>flex-basis:333px;</strong></h4>
-            <p>In this example, the flex-direction is in the column direction! Look at the different between no
-                flex-basis and when a flex-basis of 333px; is applied!</p>
-            <figure>
-                <img src="../images/flexboxImages/flex-basis-example2.png" alt="flex-basis">
-                <figcaption><em>flex-basis:333px;</em></figcaption>
-            </figure>
-        </li>
-        <h3><em>flex-grow</em></h3>
-        <li><strong>flex-grow</strong> uses a unit-less value. Look at the effect different values have on the separate
-            divs! I've used <strong>div:nth-of-type()</strong> to help show this.
-            <h4><strong>flex-grow:1;</strong></h4>
-            <figure>
-                <img src="../images/flexboxImages/flex-grow-example.png" alt="flex-grow">
-                <figcaption><em>Notice how the growth is markedly different!</em></figcaption>
-            </figure>
-            <pre>
+            <h3><em>flex-grow</em></h3>
+            <li><strong>flex-grow</strong> uses a unit-less value. Look at the effect different values have on the
+                separate
+                divs! I've used <strong>div:nth-of-type()</strong> to help show this.
+                <h4><strong>flex-grow:1;</strong></h4>
+                <figure>
+                    <img src="../images/flexboxImages/flex-grow-example.png" alt="flex-grow">
+                    <figcaption><em>Notice how the growth is markedly different!</em></figcaption>
+                </figure>
+                <pre>
             <code>
                 #container div {
                     width: 200px;
@@ -105,83 +147,93 @@
                 }
             </code>
             </pre>
-            Notice how things scale and stack. These will be able to grow. To prevent over-growing, you can assign a
-            max-width too. In the 3rd image, we changed things slightly so that the growth of div 5 is twice that of div
-            1. Notice how the elements can get so much larger when adjusting the size of the display!
-        </li>
-        <h3><em>flex-shrink</em></h3>
-        <li>The <strong>flex-basis</strong> has been changed to 600px to help demonstrate this one too!
-            <h4><strong>flex-shrink:2;</strong></h4>
-            <p>This will make the affected div shrink by <strong>twice</strong> the usual shrink rate.
-                flex-shrink:4; will affect the div's shrinkage by 4 times the rate. So div 1 will shrink twice as much
-                as the middle 3 divs, while div 5 shrinks four times as fast!</p>
-            <figure>
-                <img src="../images/flexboxImages/flex-shrink-ex1.png" alt="flex-shrink">
-                <figcaption><em>Notice how the growth is markedly different!</em></figcaption>
-            </figure>
-        </li>
-        <h2>Flex shorthand</h2>
-        <p><strong><em>flex-basis, flex-grow, and flex-shrink</em></strong> are used so frequently that special
-            shorthand has been developed to help use them effectively.</p>
-        <ol>
-            <li>One value (unitless number) means <strong>flex-grow</strong> is being changed.
-                <em>e.g.</em><strong>flex:2;</strong>
+                Notice how things scale and stack. These will be able to grow. To prevent over-growing, you can assign a
+                max-width too. In the 3rd image, we changed things slightly so that the growth of div 5 is twice that of
+                div
+                1. Notice how the elements can get so much larger when adjusting the size of the display!
             </li>
-            <li>One value with units (<em>e.g.</em><strong>flex:2;</strong> or <strong>flex:10em;</strong> or
-                <strong>flex:30%;</strong>) means we are changing the width and height - thus,
-                <strong>flex-basis</strong> is affected. Another common example is <strong>flex:min-content;</strong>.
-                It tells the flex item to take up the minimum amount of space required to fit its content. This means
-                that the item will shrink down to the size of its content, rather than using the value specified in the
-                flex-basis property.
-
-                For example, if a flex item has a flex-basis value of 200px and its content only takes up 150px, the
-                item will take up 150px of space if flex-basis:min-content is used. This can be useful in situations
-                where the content of the item is dynamic and may change in size, or when you want to ensure that the
-                item only takes up as much space as it needs to.
-
-                Keep in mind that when the flex-basis is set to min-content, the flex-item will only be shrinked to
-                minimum size of its contents and if the contents is not big enough to fill the parent container the
-                container may not be filled up and would leave some empty spaces.
-            </li>
-            <li>Two values, where both are <strong>unitless</strong> mean that the <strong>flex-grow</strong> and
-                <strong>flex-shrink</strong> are being used. (<em>e.g.</em><strong>flex:2 2;</strong>)
-            </li>
-            <li>Two values, where the latter has been given units means that the <strong>flex-grow</strong> and
-                <strong>flex-basis</strong> are changed. (<em>e.g.</em><strong>flex:2 30px;</strong>) Here is a brief
-                image-based summary so far:
+            <h3><em>flex-shrink</em></h3>
+            <li>The <strong>flex-basis</strong> has been changed to 600px to help demonstrate this one too!
+                <h4><strong>flex-shrink:2;</strong></h4>
+                <p>This will make the affected div shrink by <strong>twice</strong> the usual shrink rate.
+                    flex-shrink:4; will affect the div's shrinkage by 4 times the rate. So div 1 will shrink twice as
+                    much
+                    as the middle 3 divs, while div 5 shrinks four times as fast!</p>
                 <figure>
-                    <img src="../images/flexboxImages/flex-shorthand-1.png" alt="flex-shorthand">
-                    <figcaption><em>See how introducing flex at all changes everything!</em></figcaption>
+                    <img src="../images/flexboxImages/flex-shrink-ex1.png" alt="flex-shrink">
+                    <figcaption><em>Notice how the growth is markedly different!</em></figcaption>
                 </figure>
             </li>
-            <li>Three values are used this order: <strong>flex-grow</strong>, then <strong>flex-shrink</strong>, then
-                <strong>flex-basis</strong>. (<em>e.g.</em><strong>flex:2 2 10%;</strong>)
-            </li>
-            <li>Finally, global values are sometimes used in the flex shorthand. They come in the form of
-                <strong>flex:inherit;</strong>,
-                <strong>flex:initial;</strong>, and <strong>flex:unset;</strong>
-            </li>
-        </ol>
-        <p>Move on to <a href="flexboxPart4.html">Media Queries</a></p>
-    </main>
-    <footer>
-        <nav>
-            <h2>Other Flexbox Links</h2>
-            <ul>
-                <li><a href="./introduction.html">Introduction</a></li>
-                <li><a href="./flexboxPart1.html">Flexbox Properties Part I: <strong>&lt;display:flex&gt;</strong>,
-                        <strong>flex-direction</strong> and <strong>justify-content</strong></a></li>
-                <li><a href="./flexboxPart2.html">Flexbox Properties Part II: <strong>flex-wrap</strong>,
-                        <strong>align-items</strong>,
-                        <strong>align-content</strong> and <strong>align-self</strong></a></li>
-                <li><a href="./flexboxPart4.html"><strong>Flexbox Part IV: Media queries and building a responsive
-                            nav</strong></a></li>
-                <li><a href="./flexboxNavbarMiniProject.html">Responsive Navigation Bar Project</a></li>
-                <li><a href="./flexboxPricingPanelProject.html">Pricing Panel Project</a></li>
-            </ul>
-        </nav>
-        <a href="../index.html">Home</a>
-    </footer>
+            <h2>Flex shorthand</h2>
+            <p><strong><em>flex-basis, flex-grow, and flex-shrink</em></strong> are used so frequently that special
+                shorthand has been developed to help use them effectively.</p>
+            <ol>
+                <li>One value (unitless number) means <strong>flex-grow</strong> is being changed.
+                    <em>e.g.</em><strong>flex:2;</strong>
+                </li>
+                <li>One value with units (<em>e.g.</em><strong>flex:2;</strong> or <strong>flex:10em;</strong> or
+                    <strong>flex:30%;</strong>) means we are changing the width and height - thus,
+                    <strong>flex-basis</strong> is affected. Another common example is
+                    <strong>flex:min-content;</strong>.
+                    It tells the flex item to take up the minimum amount of space required to fit its content. This
+                    means
+                    that the item will shrink down to the size of its content, rather than using the value specified in
+                    the
+                    flex-basis property.
+
+                    For example, if a flex item has a flex-basis value of 200px and its content only takes up 150px, the
+                    item will take up 150px of space if flex-basis:min-content is used. This can be useful in situations
+                    where the content of the item is dynamic and may change in size, or when you want to ensure that the
+                    item only takes up as much space as it needs to.
+
+                    Keep in mind that when the flex-basis is set to min-content, the flex-item will only be shrinked to
+                    minimum size of its contents and if the contents is not big enough to fill the parent container the
+                    container may not be filled up and would leave some empty spaces.
+                </li>
+                <li>Two values, where both are <strong>unitless</strong> mean that the <strong>flex-grow</strong> and
+                    <strong>flex-shrink</strong> are being used. (<em>e.g.</em><strong>flex:2 2;</strong>)
+                </li>
+                <li>Two values, where the latter has been given units means that the <strong>flex-grow</strong> and
+                    <strong>flex-basis</strong> are changed. (<em>e.g.</em><strong>flex:2 30px;</strong>) Here is a
+                    brief
+                    image-based summary so far:
+                    <figure>
+                        <img src="../images/flexboxImages/flex-shorthand-1.png" alt="flex-shorthand">
+                        <figcaption><em>See how introducing flex at all changes everything!</em></figcaption>
+                    </figure>
+                </li>
+                <li>Three values are used this order: <strong>flex-grow</strong>, then <strong>flex-shrink</strong>,
+                    then
+                    <strong>flex-basis</strong>. (<em>e.g.</em><strong>flex:2 2 10%;</strong>)
+                </li>
+                <li>Finally, global values are sometimes used in the flex shorthand. They come in the form of
+                    <strong>flex:inherit;</strong>,
+                    <strong>flex:initial;</strong>, and <strong>flex:unset;</strong>
+                </li>
+            </ol>
+            <p>Move on to <a href="flexboxPart4.html">Media Queries</a></p>
+        </main>
+    </div>
+    <div class="container">
+        <footer>
+            <nav>
+                <h2>Other Flexbox Links</h2>
+                <ul>
+                    <li><a href="./introduction.html">Introduction</a></li>
+                    <li><a href="./flexboxPart1.html">Flexbox Properties Part I: <strong>&lt;display:flex&gt;</strong>,
+                            <strong>flex-direction</strong> and <strong>justify-content</strong></a></li>
+                    <li><a href="./flexboxPart2.html">Flexbox Properties Part II: <strong>flex-wrap</strong>,
+                            <strong>align-items</strong>,
+                            <strong>align-content</strong> and <strong>align-self</strong></a></li>
+                    <li><a href="./flexboxPart4.html"><strong>Flexbox Part IV: Media queries and building a responsive
+                                nav</strong></a></li>
+                    <li><a href="./flexboxNavbarMiniProject.html">Responsive Navigation Bar Project</a></li>
+                    <li><a href="./flexboxPricingPanelProject.html">Pricing Panel Project</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

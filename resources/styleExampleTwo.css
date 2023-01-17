@@ -40,13 +40,6 @@ h2 {
     font-size: 1.5em;
 }
 
-.header-navbar-color {
-    background-color: #ADB2D3;
-    color: #2b2d42;
-    font-family: 'PT Sans', sans-serif;
-    font-size: 1.2em;
-}
-
 h2 {
     background-color: plum;
     font-family: 'Open Sans', sans-serif;
@@ -94,4 +87,11 @@ footer a {
 
 footer>a {
     color: #457b9d;
+}
+
+.header-navbar-color {
+    background-color: #ADB2D3;
+    color: #2b2d42;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.2em;
 }

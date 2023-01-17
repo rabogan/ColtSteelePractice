@@ -16,26 +16,65 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../resources/styleExampleFourD.css">
-    <title>Miscellaneous Part 4</title>
+    <title>Transforms</title>
 </head>
 
 <body>
-    <header>
-        <h1>Transforms</h1>
-    </header>
-    <main>
-        <li>The CSS property <strong>transform</strong> allows one to <em>rotate, scale, skew, or translate</em> an
-            element.
-            Basically, it modifies the coordinate space of the CSS visual formatting model.</li>
-        <li>The examples below outline transform operations performed on a bunch of &lt;h2&gt; blocks contained within a
-            &lt;section&gt; block. In all, there are 4 h2 elements contained within 2 sections.</li>
-        <li>To include CSS code on your page, wrap the code in a &lt;pre&gt; element, and use the &lt;code&gt; element
-            inside
-            of it. This will preserve the formatting of the code and make it easier to read</li>
-        <li>Initially, the h2 elements are all centered according to the following CSS code:
-            <pre>
+    <div class="container">
+        <header>
+            <h1>Transforms</h1>
+            <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <main>
+            <h2>Introduction to Transforms</h2>
+            <li>The CSS property <strong>transform</strong> allows one to <em>rotate, scale, skew, or translate</em> an
+                element.
+                Basically, it modifies the coordinate space of the CSS visual formatting model.</li>
+            <li>The examples below outline transform operations performed on a bunch of &lt;h3&gt; blocks contained
+                within a
+                &lt;section&gt; block. In all, there are 4 h3 elements contained within 2 sections.</li>
+            <li>To include CSS code on your page, wrap the code in a &lt;pre&gt; element, and use the &lt;code&gt;
+                element
+                inside
+                of it. This will preserve the formatting of the code and make it easier to read</li>
+            <li>Initially, the h3 elements are all centered according to the following CSS code:
+                <pre>
         <code>
-            <strong>h2</strong> {
+            <strong>h3</strong> {
                 background-color: #2a9d8f;
                 border: 5px solid #264653;
                 color: #eae2b7;
@@ -49,187 +88,204 @@
             }
         </code>
     </pre>
-        </li>
-        <li>One new topic from the above is the use of <strong>margin:auto;</strong> By using margin:20px auto; this
-            means
-            that we have a margin of 20px top and bottom, but more importantly, the use of <strong>auto</strong> centers
-            an
-            element in its container! So, when you see <em>margin:auto;</em> (or the other variations), that means we're
-            centering the element in its container - by automatically distributing the margin to the left and
-            right.</em>
-        </li>
-        <li>As well as the above, we have changed the colors of alternate elements according to the following code:
-            <pre>
+            </li>
+            <li>One new topic from the above is the use of <strong>margin:auto;</strong> By using margin:20px auto; this
+                means
+                that we have a margin of 20px top and bottom, but more importantly, the use of <strong>auto</strong>
+                centers
+                an
+                element in its container! So, when you see <em>margin:auto;</em> (or the other variations), that means
+                we're
+                centering the element in its container - by automatically distributing the margin to the left and
+                right.</em>
+            </li>
+            <li>As well as the above, we have changed the colors of alternate elements according to the following code:
+                <pre>
         <code>
-            h2:nth-of-type(2n) {
+            h3:nth-of-type(2n) {
                 background-color: #e9c46a;
             }
-            h2:nth-of-type(3n) {
+            h3:nth-of-type(3n) {
                 background-color: #f4a261;
             }
-            h2:nth-of-type(4n) {
+            h3:nth-of-type(4n) {
                 background-color: #e76f51;
             }
         </code>
     </pre>
-        </li>
-        <li>This allows us to distinguish between what we're changing more easily. In the 8 different h2s in the page,
-            can
-            you work out what <strong>transform</strong> operations were performed? As an aside, the
-            <em>transform-origin</em> property is addressed but not used in this document. As you might imagine, this
-            merely
-            sets the origin point (or point around which a transformation is applied).
-        </li>
-        <h3>Of particular note:</h3>
-        <ul>
-            <li>In terms of performance, using <strong>transform</strong> is better than using a bunch of padding/margin
-                properties to move things around</li>
-            <li>Overall, the <strong>rotate()</strong> function is very useful to
-                transform the rotation of the element.</li>
-            <li><strong>scale()</strong> is especially good when we when we resize our horizontal and vertical
-                dimensions
-                at different scales.</li>
-            <li><strong>translate()</strong> is used to reposition the element along the x and/or y axes. Note that
-                positive
-                values for x or y will push the element rightwards and downwards, respectively</li>
-            <li>The <strong>skew()</strong> function is a way of skewing an element on the 2D plane.</li>
-        </ul>
-        <section>
-            <h2>Transform me!</h2>
-            <h2>Transform me!</h2>
-            <h2>Transform me!</h2>
-            <h2>Transform me!</h2>
-        </section>
-        <section>
-            <h2>Transform me!</h2>
-            <h2>Transform me!</h2>
-            <h2>Transform me!</h2>
-            <h2>Transform me!</h2>
-        </section>
-        <ol>
-            <li>Firstly, we used the following code to rotate the <em>first element</em> in the <strong>first</strong>
-                &lt;section&gt; by 45 degrees. Note how the <strong>first-of-type</strong> and
-                <strong>nth-of-type</strong>
-                pseudo-classes are being made use of! There are other types of rotations, such as <strong>rotate 3d,
-                    rotate
-                    X, rotate Y </strong> and so on.
-                <pre>
+            </li>
+            <li>This allows us to distinguish between what we're changing more easily. In the 8 different h3s in the
+                page,
+                can
+                you work out what <strong>transform</strong> operations were performed? As an aside, the
+                <em>transform-origin</em> property is addressed but not used in this document. As you might imagine,
+                this
+                merely
+                sets the origin point (or point around which a transformation is applied).
+            </li>
+            <h2>Of particular note:</h2>
+            <ul>
+                <li>In terms of performance, using <strong>transform</strong> is better than using a bunch of
+                    padding/margin
+                    properties to move things around</li>
+                <li>Overall, the <strong>rotate()</strong> function is very useful to
+                    transform the rotation of the element.</li>
+                <li><strong>scale()</strong> is especially good when we when we resize our horizontal and vertical
+                    dimensions
+                    at different scales.</li>
+                <li><strong>translate()</strong> is used to reposition the element along the x and/or y axes. Note that
+                    positive
+                    values for x or y will push the element rightwards and downwards, respectively</li>
+                <li>The <strong>skew()</strong> function is a way of skewing an element on the 2D plane.</li>
+            </ul>
+            <section>
+                <h3>Transform me!</h3>
+                <h3>Transform me!</h3>
+                <h3>Transform me!</h3>
+                <h3>Transform me!</h3>
+            </section>
+            <section>
+                <h3>Transform me!</h3>
+                <h3>Transform me!</h3>
+                <h3>Transform me!</h3>
+                <h3>Transform me!</h3>
+            </section>
+            <ol>
+                <li>Firstly, we used the following code to rotate the <em>first element</em> in the
+                    <strong>first</strong>
+                    &lt;section&gt; by 45 degrees. Note how the <strong>first-of-type</strong> and
+                    <strong>nth-of-type</strong>
+                    pseudo-classes are being made use of! There are other types of rotations, such as <strong>rotate 3d,
+                        rotate
+                        X, rotate Y </strong> and so on.
+                    <pre>
             <code>
-                section:first-of-type h2:nth-of-type(1){
+                section:first-of-type h3:nth-of-type(1){
                     transform:rotate(45deg);
                 }
             </code>
         </pre>
-            </li>
-            <li>The second example changed the <strong>scale</strong> of the element to 60% of its original size. We can
-                use
-                <strong>transform:scale()</strong> to do this! While it's common to use 1 number, we can morph the shape
-                completely by adjusting the x and y values like so: <em>transform: scale(1.3, 0.4);</em> This has the
-                potential to create very distorted and ugly shapes, but you might find it useful one day!
-                <pre>
+                </li>
+                <li>The second example changed the <strong>scale</strong> of the element to 60% of its original size. We
+                    can
+                    use
+                    <strong>transform:scale()</strong> to do this! While it's common to use 1 number, we can morph the
+                    shape
+                    completely by adjusting the x and y values like so: <em>transform: scale(1.3, 0.4);</em> This has
+                    the
+                    potential to create very distorted and ugly shapes, but you might find it useful one day!
+                    <pre>
                 <code>
-                    section:first-of-type h2:nth-of-type(2){
+                    section:first-of-type h3:nth-of-type(2){
                         transform: scale(0.6);
                     }
                 </code>
             </pre>
-            </li>
-            <li>The 3rd (and 4th) examples make use of a <strong>translate()</strong> function. There are various types,
-                such as the <strong>translate(), translateX(), translate3D()</strong> and so on. It's another way of
-                changing the position of an element. In this example, the position along the X-axis has been changed to
-                200px. A positive value for translateX() moves it from the left to the right.
-                <pre>
+                </li>
+                <li>The 3rd (and 4th) examples make use of a <strong>translate()</strong> function. There are various
+                    types,
+                    such as the <strong>translate(), translateX(), translate3D()</strong> and so on. It's another way of
+                    changing the position of an element. In this example, the position along the X-axis has been changed
+                    to
+                    200px. A positive value for translateX() moves it from the left to the right.
+                    <pre>
                 <code>
-                    section:first-of-type h2:nth-of-type(3){
+                    section:first-of-type h3:nth-of-type(3){
                         transform: translateX(200px);
                     }
                 </code>
             </pre>
-            </li>
-            <li>The fourth example uses a <strong>translate()</strong> function with both X and Y values inserted. As
-                you
-                can see, positive values for X and Y will move the element to the right and <strong>down</strong>
-                respectively.
-                <pre>
+                </li>
+                <li>The fourth example uses a <strong>translate()</strong> function with both X and Y values inserted.
+                    As
+                    you
+                    can see, positive values for X and Y will move the element to the right and <strong>down</strong>
+                    respectively.
+                    <pre>
                 <code>
-                    section:first-of-type h2:nth-of-type(4){
+                    section:first-of-type h3:nth-of-type(4){
                         transform: translate(-100px, 50px);
                     }
                 </code>
             </pre>
-            </li>
-            <li>Example 5 uses the <strong>skew()</strong> function. Using one value in the function will skew the
-                element
-                along the x-axis.
-                <pre>
+                </li>
+                <li>Example 5 uses the <strong>skew()</strong> function. Using one value in the function will skew the
+                    element
+                    along the x-axis.
+                    <pre>
                 <code>
-                    section:nth-of-type(2) h2:nth-of-type(1){
+                    section:nth-of-type(2) h3:nth-of-type(1){
                         transform:skew(30deg);
                     }
                 </code>
             </pre>
-            </li>
-            <li>That said, <strong>skew()</strong> can be specified with either one or two values, which represent the
-                amount of skewing to be
-                applied in each direction. Example 6 demonstrates how to skew the element along both axes.
-                <pre>
+                </li>
+                <li>That said, <strong>skew()</strong> can be specified with either one or two values, which represent
+                    the
+                    amount of skewing to be
+                    applied in each direction. Example 6 demonstrates how to skew the element along both axes.
+                    <pre>
                 <code>
-                    section:nth-of-type(2) h2:nth-of-type(2){
+                    section:nth-of-type(2) h3:nth-of-type(2){
                         transform: skew(10deg, 5deg);
                     }
                 </code>
             </pre>
-            </li>
-            <li>The 7th example is just showing how we can combine multiple <strong>transform</strong> functions at
-                once, in
-                this case, the <strong>rotate</strong> and <strong>scale</strong> functions.
-                <pre>
+                </li>
+                <li>The 7th example is just showing how we can combine multiple <strong>transform</strong> functions at
+                    once, in
+                    this case, the <strong>rotate</strong> and <strong>scale</strong> functions.
+                    <pre>
                 <code>
-                    section:nth-of-type(2) h2:nth-of-type(3){
+                    section:nth-of-type(2) h3:nth-of-type(3){
                         transform: rotate(-20deg) scale(1.3);
                     }
                 </code>
             </pre>
-            </li>
-            <li>The 8th example does something very similar to the previous example!
-                <pre>
+                </li>
+                <li>The 8th example does something very similar to the previous example!
+                    <pre>
                 <code>
-                    section:nth-of-type(2) h2:nth-of-type(4){
+                    section:nth-of-type(2) h3:nth-of-type(4){
                         transform: translateX(-500px) rotate(0.5turn) scaleY(1.5);
                     }
                 </code>
             </pre>
-            </li>
-        </ol>
-        <li>Finally, and independent of the above, it's possible to perform further transformations on the section as a
-            whole!
-            <pre>
+                </li>
+            </ol>
+            <li>Finally, and independent of the above, it's possible to perform further transformations on the section
+                as a
+                whole!
+                <pre>
             <code>
                 section:nth-of-type(2) {
                     transform: scale(0.7) translateX(500px);
                 }
             </code>
         </pre>
-        </li>
-        <p>Now, we'll try a fancy <a href="./cssMiscPart5.html">Hover Button</a></p>
-    </main>
-    <footer>
-        <nav>
-            <h3>Other CSS Links</h3>
-            <ul>
-                <li><a href="./cssExamples.html">CSS Examples</a></li>
-                <li><a href="./cssSelectors.html">CSS Selectors</a></li>
-                <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
-                <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
-                <li><a href="./cssMiscPart2.html">Position</a></li>
-                <li><a href="./cssMiscPart3.html">Transitions</a></li>
-                <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
-                <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
-                <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
-            </ul>
-        </nav>
-        <a href="../index.html">Home</a>
-    </footer>
+            </li>
+            <p>Now, we'll try a fancy <a href="./cssMiscPart5.html">Hover Button</a></p>
+        </main>
+    </div>
+    <div class="container">
+        <footer>
+            <nav>
+                <h2>Other CSS Links</h2>
+                <ul>
+                    <li><a href="./cssExamples.html">CSS Examples</a></li>
+                    <li><a href="./cssSelectors.html">CSS Selectors</a></li>
+                    <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
+                    <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
+                    <li><a href="./cssMiscPart2.html">Position</a></li>
+                    <li><a href="./cssMiscPart3.html">Transitions</a></li>
+                    <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
+                    <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
+                    <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

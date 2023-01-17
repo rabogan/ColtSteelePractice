@@ -16,74 +16,122 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../resources/styleExampleFourC.css">
-    <title>Miscellaneous Part 3</title>
+    <title>Transitions</title>
 </head>
 
 <body>
-    <header>
-        <h1>Transitions</h1>
-    </header>
-    <main>
-        <li>Helpfully included is this link: <a href="https://easings.net/">Transitions Easing</a></li>
-        <h2>Transitions</h2>
-        <li>The CSS property <strong>transition</strong> is simply a shorthand property for the <em>transition-property,
-                transition-duration, transition-timing-function, and transition-delay</em></li>
-        <li><strong>Transitions</strong> allows you to define the transition between two states of an element - and can
-            be
-            defined using either <em>pseudo-classes</em> (i.e. <strong>:hover</strong> or <strong>:active</strong>), or
-            dynamically set using <strong>JavaScript</strong></li>
-        <li>The example below shows how a square div (with a class called <em>circle</em>) morphs into a circle! The
-            class
-            has the requisite height and width, with the magenta color</li>
-        <li><strong>Crucially, </strong>the class also has the <strong>transition: background-color 1s; ease in,
-                border-radius:2s;</strong> property. Ignoring the <em>ease-in</em> for now, when we combine
-            this with the <strong>.circle:hover{...};</strong> class, the .circle class will morph into whatever is
-            outlined
-            inside the hover pseudo-class</li>
-        <li>Below, the <strong>circle:hover</strong> pseudo-class includes a <em>border-radius</em> of 50% and an
-            alternative background color (cyan). The transition of color takes 1s, and the border-radius takes 2s</li>
-        <div class="circle"></div>
-        <li>The <strong>transition-timing-function</strong> is demonstrated by these cute blocks below! These blocks are
-            comprised of FOUR divs in a section. In a nutshell, <strong>transition-timing-function</strong>
-            sets how intermediate values are calculated for CSS properties being affected by a <strong>transition
-                effect</strong></li>
-        <li>We've made use of the <strong>pseudo-class <em>nth-of-type()</em></strong>, plunking 1 thru 4 into that
-            below.
-            In addition, the <strong>margin-left</strong> property has been outlined as the thing to transition (in 3s).
-            Notice how all of these blocks take 3 seconds to reach the right. They're 20px away from each other (see
-            margin)
-        </li>
-        <section>
-            <div>This is ease-in</div>
-            <div>Ease-out</div>
-            <div>Cubic-bezier example 1 (see link)</div>
-            <div>Cubic-bezier example 2 (see link)</div>
-        </section>
-        <li>Famous types of transition-timing-function include <em>ease-in, ease-out, cubic-bezier, and steps</em></li>
-        <li>Transitions are very useful, and are often used with <strong>:hover</strong> to make very presentable
-            effects!
-            Always remember to single out specific things you want to have transition - DON'T just transition:all; If
-            you
-            do, you'll get so many unanticipated problems with your page </li>
-        <p>Next is <a href="./cssMiscPart4.html">Transforms</a></p>
-    </main>
-    <footer>
-        <nav>
-            <h3>Other CSS Links</h3>
-            <ul>
-                <li><a href="./cssExamples.html">CSS Examples</a></li>
-                <li><a href="./cssSelectors.html">CSS Selectors</a></li>
-                <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
-                <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
-                <li><a href="./cssMiscPart2.html">Position</a></li>
-                <li><a href="./cssMiscPart4.html">Transform</a></li>
-                <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
-                <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
-                <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
-            </ul>
-        </nav>
-        <a href="../index.html">Home</a>
-    </footer>
+    <div class="container">
+        <header>
+            <h1>Transitions</h1>
+            <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <main>
+            <h2>Transitions</h2>
+            <p>Helpfully included is this link: <a href="https://easings.net/">Transitions Easing</a></p>
+            <li>The CSS property <strong>transition</strong> is simply a shorthand property for the
+                <em>transition-property,
+                    transition-duration, transition-timing-function, and transition-delay</em>
+            </li>
+            <li><strong>Transitions</strong> allows you to define the transition between two states of an element - and
+                can
+                be
+                defined using either <em>pseudo-classes</em> (i.e. <strong>:hover</strong> or <strong>:active</strong>),
+                or
+                dynamically set using <strong>JavaScript</strong></li>
+            <li>The example below shows how a square div (with a class called <em>circle</em>) morphs into a circle! The
+                class
+                has the requisite height and width, with the magenta color</li>
+            <li><strong>Crucially, </strong>the class also has the <strong>transition: background-color 1s; ease in,
+                    border-radius:2s;</strong> property. Ignoring the <em>ease-in</em> for now, when we combine
+                this with the <strong>.circle:hover{...};</strong> class, the .circle class will morph into whatever is
+                outlined
+                inside the hover pseudo-class</li>
+            <li>Below, the <strong>circle:hover</strong> pseudo-class includes a <em>border-radius</em> of 50% and an
+                alternative background color (cyan). The transition of color takes 1s, and the border-radius takes 2s
+            </li>
+            <div class="circle"></div>
+            <li>The <strong>transition-timing-function</strong> is demonstrated by these cute blocks below! These blocks
+                are
+                comprised of FOUR divs in a section. In a nutshell, <strong>transition-timing-function</strong>
+                sets how intermediate values are calculated for CSS properties being affected by a <strong>transition
+                    effect</strong></li>
+            <li>We've made use of the <strong>pseudo-class <em>nth-of-type()</em></strong>, plunking 1 thru 4 into that
+                below.
+                In addition, the <strong>margin-left</strong> property has been outlined as the thing to transition (in
+                3s).
+                Notice how all of these blocks take 3 seconds to reach the right. They're 20px away from each other (see
+                margin)
+            </li>
+            <section>
+                <div>This is ease-in</div>
+                <div>Ease-out</div>
+                <div>Cubic-bezier example 1 (see link)</div>
+                <div>Cubic-bezier example 2 (see link)</div>
+            </section>
+            <li>Famous types of transition-timing-function include <em>ease-in, ease-out, cubic-bezier, and steps</em>
+            </li>
+            <li>Transitions are very useful, and are often used with <strong>:hover</strong> to make very presentable
+                effects!
+                Always remember to single out specific things you want to have transition - DON'T just transition:all;
+                If
+                you
+                do, you'll get so many unanticipated problems with your page </li>
+            <p>Next is <a href="./cssMiscPart4.html">Transforms</a></p>
+        </main>
+    </div>
+    <div class="container">
+        <footer>
+            <nav>
+                <h2>Other CSS Links</h2>
+                <ul>
+                    <li><a href="./cssExamples.html">CSS Examples</a></li>
+                    <li><a href="./cssSelectors.html">CSS Selectors</a></li>
+                    <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
+                    <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
+                    <li><a href="./cssMiscPart2.html">Position</a></li>
+                    <li><a href="./cssMiscPart4.html">Transform</a></li>
+                    <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
+                    <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
+                    <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>

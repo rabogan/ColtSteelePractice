@@ -20,20 +20,58 @@
 </head>
 
 <body>
-    <header>
-        <h1>CSS Selectors</h1>
-    </header>
-    <main>
-        <p>This page is also somewhat ugly by design, as it is designed to introduce different CSS selectors!</p>
-        <h2>Basic Selectors: Universal and Element Selectors</h2>
-        <ul>
-            <li>The <strong>universal</strong> selector <strong>*</strong> covers everything, but its use is not
-                recommended. It will attempt to change all elements on the page, but lacks control</li>
-            <li>The <strong>element selector</strong> (e.g. &lt;<strong>button</strong>&gt;/&lt;<strong>h1</strong>gt;
-                etc...) changes all
-                elements of the type specified. My page uses an ugly plum color to help illustrate this, although I like
-                the font I found via <a href="">Google Fonts.</a>
-                <pre>
+    <div class="container">
+        <header>
+            <h1>CSS Selectors</h1>
+            <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+        <main>
+            <p>This page is also somewhat ugly by design, as it is designed to introduce different CSS selectors!</p>
+            <h2>Basic Selectors: Universal and Element Selectors</h2>
+            <ul>
+                <li>The <strong>universal</strong> selector <strong>*</strong> covers everything, but its use is not
+                    recommended. It will attempt to change all elements on the page, but lacks control</li>
+                <li>The <strong>element selector</strong> (e.g.
+                    &lt;<strong>button</strong>&gt;/&lt;<strong>h1</strong>gt;
+                    etc...) changes all
+                    elements of the type specified. My page uses an ugly plum color to help illustrate this, although I
+                    like
+                    the font I found via <a href="">Google Fonts.</a>
+                    <pre>
                 <code>
                     h2{
                         font-family: 'Open Sans', sans-serif;
@@ -41,13 +79,14 @@
                     }
                 </code>
             </pre>
-            </li>
-            <li>Using a <strong>,</strong><em>(comma)</em> to separate elements is also acceptable. For
-                example, the simple code below means that both &lt;<strong>h1</strong>&gt; <strong>AND</strong>
-                &lt;<strong>h2</strong>&gt; will have their attributes adjusted. Later on in this section, you'll see
-                that <strong>ID-types</strong> and <strong>class-types</strong> can be represented in the same way.
-                Don't worry about the options presented for now!
-                <pre>
+                </li>
+                <li>Using a <strong>,</strong><em>(comma)</em> to separate elements is also acceptable. For
+                    example, the simple code below means that both &lt;<strong>h1</strong>&gt; <strong>AND</strong>
+                    &lt;<strong>h2</strong>&gt; will have their attributes adjusted. Later on in this section, you'll
+                    see
+                    that <strong>ID-types</strong> and <strong>class-types</strong> can be represented in the same way.
+                    Don't worry about the options presented for now!
+                    <pre>
                     <code>
                         h1+h2{
                             font-weight:100;
@@ -60,15 +99,17 @@
                         }
                     </code>
                 </pre>
-            </li>
-        </ul>
-        <h2>ID Selectors</h2>
-        <ul>
-            <li>We can use the <strong>#</strong> (representing a specific ID) to zero in on individual elements
-                which use them <strong>inline</strong>. In my example, I changed the <strong>background-color</strong>
-                of my sign-up button to #1d3557. This specific &lt;<strong>button</strong>&gt; element</li>'s color was
-            changed as well:
-            <pre>
+                </li>
+            </ul>
+            <h2>ID Selectors</h2>
+            <ul>
+                <li>We can use the <strong>#</strong> (representing a specific ID) to zero in on individual elements
+                    which use them <strong>inline</strong>. In my example, I changed the
+                    <strong>background-color</strong>
+                    of my sign-up button to #1d3557. This specific &lt;<strong>button</strong>&gt; element</li>'s color
+                was
+                changed as well:
+                <pre>
             <code>
                 #signup {
                     background-color: #1d3557;
@@ -76,24 +117,28 @@
                 }
             </code>
         </pre>
-            </li>
-            <li>Of <strong>huge importance:</strong> an ID of any <strong>specific name</strong> should only be used
-                <strong>once</strong> on a single HTML page. We shouldn't overuse ID selectors, although there's no need
-                to avoid using them! A handful on a single page seems to be optimum, but <strong>class
-                    selectors</strong> are much more commonly used.
-            </li>
-        </ul>
-        <h2>Class Selectors</h2>
-        <ul>
-            <li>Below is some code representing popular posts from a Reddit-like forum. Below the header, it's comprised
-                of a group of &lt<strong>section</strong>&gt; elements of class <strong>post.</strong> The reason
-                why will become clear later. In my document, each username for the post is contained with a
-                &lt;<strong>span</strong>&gt;. Remember that &lt;<strong>span</strong>&gt; is a generic inline element)
-            </li>
-            <li>The first thing that is changed from the original document, is to change the
-                &lt;<strong>span</strong>&gt;. To help with this, I introduced a class called <strong>tag</strong>, with
-                the properties shown:
-                <pre>
+                </li>
+                <li>Of <strong>huge importance:</strong> an ID of any <strong>specific name</strong> should only be used
+                    <strong>once</strong> on a single HTML page. We shouldn't overuse ID selectors, although there's no
+                    need
+                    to avoid using them! A handful on a single page seems to be optimum, but <strong>class
+                        selectors</strong> are much more commonly used.
+                </li>
+            </ul>
+            <h2>Class Selectors</h2>
+            <ul>
+                <li>Below is some code representing popular posts from a Reddit-like forum. Below the header, it's
+                    comprised
+                    of a group of &lt<strong>section</strong>&gt; elements of class <strong>post.</strong> The reason
+                    why will become clear later. In my document, each username for the post is contained with a
+                    &lt;<strong>span</strong>&gt;. Remember that &lt;<strong>span</strong>&gt; is a generic inline
+                    element)
+                </li>
+                <li>The first thing that is changed from the original document, is to change the
+                    &lt;<strong>span</strong>&gt;. To help with this, I introduced a class called <strong>tag</strong>,
+                    with
+                    the properties shown:
+                    <pre>
                     <code>
                         .tag {
                             background-color: #e63946;
@@ -102,128 +147,134 @@
                         }
                     </code>
                 </pre>
-            </li>
-            <li>Below, the first post by not_funny doesn't include the span. The other two do!</li>
-        </ul>
-        <h1>Popular Posts</h1>
-        <section>
-            <span class="tag">Posted by <a href="#213adas">/u/not_funny</a></span>
-            <h2>Lol look at this hilarious meme <span>funny</span></h2>
-            <button>+Vote</button>
-            <hr>
-        </section>
-        <section class="post">
-            <span class="tag">Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
-            <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span>gunners</span></h2>
-            <button>+Vote</button>
-            <hr>
-        </section>
-        <section class="post">
-            <span class="tag">Posted by <a href="#981adas">/u/dogfan</a></span>
-            <h2>This Corgi got some good stuff from the vet. <button>h2>button</button> <span>dogs</span></h2>
-            <button>+Vote</button>
-            <hr>
-        </section>
-        <h2>The Descendant Selector</h2>
-        <ul>
-            <li>Where we use <strong>space</strong> or <strong>comma</strong> between elements in the css file is very
-                important!</li>
+                </li>
+                <li>Below, the first post by not_funny doesn't include the span. The other two do!</li>
+            </ul>
+            <h1>Popular Posts</h1>
+            <section>
+                <span class="tag">Posted by <a href="#213adas">/u/not_funny</a></span>
+                <h2>Lol look at this hilarious meme <span>funny</span></h2>
+                <button>+Vote</button>
+                <hr>
+            </section>
+            <section class="post">
+                <span class="tag">Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
+                <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span>gunners</span></h2>
+                <button>+Vote</button>
+                <hr>
+            </section>
+            <section class="post">
+                <span class="tag">Posted by <a href="#981adas">/u/dogfan</a></span>
+                <h2>This Corgi got some good stuff from the vet. <button>h2>button</button> <span>dogs</span></h2>
+                <button>+Vote</button>
+                <hr>
+            </section>
+            <h2>The Descendant Selector</h2>
+            <ul>
+                <li>Where we use <strong>space</strong> or <strong>comma</strong> between elements in the css file is
+                    very
+                    important!</li>
 
-            <li>Here, the <strong>space</strong> in the h1 h2 code means that <strong>any</strong> descendant
-                &lt;h2&gt; <strong>INSIDE</strong> a &lt;h1gt; element will have its attributes adjusted:
-                <pre>
+                <li>Here, the <strong>space</strong> in the h1 h2 code means that <strong>any</strong> descendant
+                    &lt;h2&gt; <strong>INSIDE</strong> a &lt;h1gt; element will have its attributes adjusted:
+                    <pre>
                     <code>
                         h1 h2{
                             color:gold;  
                         }
                     </code>
                 </pre>
-            </li>
-            <li>On the other hand, a comma (<strong>,</strong>) between &lt;h1&gt; and &lt;h2&gt; simply means h1
-                <strong>and</strong> h2! Thus, h1,h2,h3 = h1 AND h2 AND h3!
-                <pre>
+                </li>
+                <li>On the other hand, a comma (<strong>,</strong>) between &lt;h1&gt; and &lt;h2&gt; simply means h1
+                    <strong>and</strong> h2! Thus, h1,h2,h3 = h1 AND h2 AND h3!
+                    <pre>
                     <code>
                         h1,h2{
                             color: gold;
                         }
                     </code>
                 </pre>
-            </li>
-            <li>As another example of how SPACE allows for descendants to have their attributes adjusted, we can choose
-                to select all anchor (&lt;<strong>a</strong>&gt;) elements that are
-                nested inside a list element (<strong>&lt;li&gt;.</strong>). So, no li tags would be styled! ONLY anchor
-                tags &lt;a&gt; that are inside an &lt;li&gt;
-                tag would be styled. To change the text of the links to the users, we can use the following:
-                <pre>
+                </li>
+                <li>As another example of how SPACE allows for descendants to have their attributes adjusted, we can
+                    choose
+                    to select all anchor (&lt;<strong>a</strong>&gt;) elements that are
+                    nested inside a list element (<strong>&lt;li&gt;.</strong>). So, no li tags would be styled! ONLY
+                    anchor
+                    tags &lt;a&gt; that are inside an &lt;li&gt;
+                    tag would be styled. To change the text of the links to the users, we can use the following:
+                    <pre>
                     <code>
                         li a{
                             color:pink;
                         }
                     </code>
                 </pre>
-            </li>
-            <li>As mentioned, two of the &lt<strong>section</strong>&gt; elements above have the class 'post' appended
-                to them. All anchor tags within the class <strong>post</strong> have been made pink! Compare and
-                contrast the above posts to see what happened!
-                <pre>
+                </li>
+                <li>As mentioned, two of the &lt<strong>section</strong>&gt; elements above have the class 'post'
+                    appended
+                    to them. All anchor tags within the class <strong>post</strong> have been made pink! Compare and
+                    contrast the above posts to see what happened!
+                    <pre>
                 <code>footer a
                     .post a {
                         color: pink;
                     }                    
                 </code>
             </pre>
-            </li>
-            <li>Finally, the code for footer SPACE a (i.e. any &lt;<strong>a</strong>&gt; found INSIDE OF (or descending
-                from) &lt;<strong>footer</strong>&gt;) was used to change the color to a lurid magenta color!
-                <pre>
+                </li>
+                <li>Finally, the code for footer SPACE a (i.e. any &lt;<strong>a</strong>&gt; found INSIDE OF (or
+                    descending
+                    from) &lt;<strong>footer</strong>&gt;) was used to change the color to a lurid magenta color!
+                    <pre>
                     <code>footer a{
                         color: magenta;
                         }                    
                     </code>
                 </pre>
-            </li>
-        </ul>
-        <h2>The Combinator (Adjacent Selector/Adjacent Sibling Selected) and Direct Child/Direct Descendant Selector
-        </h2>
-        <ul>
-            <li>h1<strong>,</strong>h2 {...} : as you know, the comma means h1 AND h2</li>
-            <li>h1 h2{...}: the <strong>space</strong> means any <strong>descendant <em>h2</em> INSIDE OF
-                </strong><em>h1</em> will have attributes adjusted</li>
-            <li>The <strong>+</strong> sign just means that any &lt;<strong>h2</strong>h2&gt; that is
-                <strong>immediately preceded by</strong> a &lt;<strong>h1</strong>&gt; will have its attributes
-                adjusted, in this case, to the color yellow!
-                <pre>
+                </li>
+            </ul>
+            <h2>The Combinator (Adjacent Selector/Adjacent Sibling Selected) and Direct Child/Direct Descendant Selector
+            </h2>
+            <ul>
+                <li>h1<strong>,</strong>h2 {...} : as you know, the comma means h1 AND h2</li>
+                <li>h1 h2{...}: the <strong>space</strong> means any <strong>descendant <em>h2</em> INSIDE OF
+                    </strong><em>h1</em> will have attributes adjusted</li>
+                <li>The <strong>+</strong> sign just means that any &lt;<strong>h2</strong>h2&gt; that is
+                    <strong>immediately preceded by</strong> a &lt;<strong>h1</strong>&gt; will have its attributes
+                    adjusted, in this case, to the color yellow!
+                    <pre>
                     <code>
                         h1+h2{
                             color:yellow;
                         }:
                     </code>
                 </pre>
-            </li>
-            <li>The plus sign (in something like either the above, or h1+p {...}) is known as a
-                <strong>COMBINATOR</strong>. These will <strong>ONLY</strong>
-                change the 2nd element if <strong>immediately preceded</strong> by the first. In this case, all
-                paragraphs immediately
-                preceded by h1 would be changed. Look at h1+h2 above once more!
-            </li>
-            <li>Also, the <strong>&gt;</strong> sign below denotes that any &lt;<strong>h2</strong>h2&gt; element that's
-                a DIRECT CHILD (as opposed to a non-direct descendant nested deeply inside of) a
-                &lt;<strong>h1</strong>gt; element will be aquamarine in color.
-                <pre>
+                </li>
+                <li>The plus sign (in something like either the above, or h1+p {...}) is known as a
+                    <strong>COMBINATOR</strong>. These will <strong>ONLY</strong>
+                    change the 2nd element if <strong>immediately preceded</strong> by the first. In this case, all
+                    paragraphs immediately
+                    preceded by h1 would be changed. Look at h1+h2 above once more!
+                </li>
+                <li>Also, the <strong>&gt;</strong> sign below denotes that any &lt;<strong>h2</strong>h2&gt; element
+                    that's
+                    a DIRECT CHILD (as opposed to a non-direct descendant nested deeply inside of) a
+                    &lt;<strong>h1</strong>gt; element will be aquamarine in color.
+                    <pre>
                     <code>
                         h1 > h2{
                             color:aquamarine;
                         }:
                     </code>
                 </pre>
-            </li>
-            <li><strong>Child/Direct Descendant</strong> Selectors are quite easy. They make use of the &gt; sign,
-                as in
-                footer &gt; a, in my CSS file! Essentially, it demands that ONLY direct descendants of a specific
-                selector are looked at. In our page's example, the odd corgi button inside the
-                &lt;<strong>h2</strong>&gt; element has been
-                changed to slightly more garish colors. See also <em>footer&gt;a</em> in the CSS file!
-                <pre>
+                </li>
+                <li><strong>Child/Direct Descendant</strong> Selectors are quite easy. They make use of the &gt; sign,
+                    as in
+                    footer &gt; a, in my CSS file! Essentially, it demands that ONLY direct descendants of a specific
+                    selector are looked at. In our page's example, the odd corgi button inside the
+                    &lt;<strong>h2</strong>&gt; element has been
+                    changed to slightly more garish colors. See also <em>footer&gt;a</em> in the CSS file!
+                    <pre>
                     <code>
                         h2>button {
                             background-color: magenta;
@@ -231,35 +282,35 @@
                         }
                     </code>
                 </pre>
-            </li>
-        </ul>
-        <h2>The Attribute Selector</h2>
-        <h4><em>Examples</em></h4>
-        <ol>
-            <li>This selects all &lt;<strong>input</strong>&gt; elements where the <strong>type
-                    attribute is set to <em>text</em></strong>
-                <pre>
+                </li>
+            </ul>
+            <h2>The Attribute Selector</h2>
+            <h4><em>Examples</em></h4>
+            <ol>
+                <li>This selects all &lt;<strong>input</strong>&gt; elements where the <strong>type
+                        attribute is set to <em>text</em></strong>
+                    <pre>
                 <code>
                     input[type="text"]{
                         color:blue;
                     }:
                 </code>
             </pre>
-            </li>
-            <li>
-            <li>This selects all &lt;<strong>input</strong>&gt; elements where the <strong>type
-                    attribute</strong> is set to <strong>password</strong>:
-                <pre>
+                </li>
+                <li>
+                <li>This selects all &lt;<strong>input</strong>&gt; elements where the <strong>type
+                        attribute</strong> is set to <strong>password</strong>:
+                    <pre>
                     <code>
                         input[type="password"]{
                             color:blue;
                         }
                     </code>
                 </pre>
-            </li>
-            <li>This selects all &lt;<strong>input</strong>&gt; elements where the <strong>class
-                    attribute</strong> is set to <strong>post</strong>:
-                <pre>
+                </li>
+                <li>This selects all &lt;<strong>input</strong>&gt; elements where the <strong>class
+                        attribute</strong> is set to <strong>post</strong>:
+                    <pre>
                         <code>
                             section[class="post"]{
                                 color:pink;
@@ -267,170 +318,174 @@
                         </code>
                     </pre>
 
-            </li>
-            <li>This selects all &lt;<strong>a</strong>&gt; elements where the
-                <strong>href attribute</strong> matches the <a href="www.rabogan.github.io">www.rabogan.github.io</a>
-                website:
-                <pre>
+                </li>
+                <li>This selects all &lt;<strong>a</strong>&gt; elements where the
+                    <strong>href attribute</strong> matches the <a
+                        href="www.rabogan.github.io">www.rabogan.github.io</a>
+                    website:
+                    <pre>
                     <code>
                         a[href="https://www.rabogan.github.io"]{
                             color:black;
                         }
                     </code>
                 </pre>
-            </li>
-        </ol>
-        <ul>
-            <li>Although little uncommon, the above allows us to select all elements that contain a <strong>SPECIFIC
-                    ATTRIBUTE</strong>: for example, changing the color for all inputs of type 'password'</li>
-            <li>There are multiple attribute selectors (most rarely used), such as:</li>
+                </li>
+            </ol>
             <ul>
-                <li>The <strong>=</strong> used in this way denotes a DIRECT match
-                    <pre>
+                <li>Although little uncommon, the above allows us to select all elements that contain a <strong>SPECIFIC
+                        ATTRIBUTE</strong>: for example, changing the color for all inputs of type 'password'</li>
+                <li>There are multiple attribute selectors (most rarely used), such as:</li>
+                <ul>
+                    <li>The <strong>=</strong> used in this way denotes a DIRECT match
+                        <pre>
                         <code>
                             element1=[attribute="example"]{
                                 color:coral;
                             }
                         </code>
                     </pre>
-                </li>
-                <li>In the example below, <strong>*=</strong> denotes a 'fuzzy' match. So, if a
-                    &lt;<strong>href</strong>gt; element
-                    contains even the sequence 'goo', that could take you to google, goodbar, gooner4lyfe etc...
-                    <pre>
+                    </li>
+                    <li>In the example below, <strong>*=</strong> denotes a 'fuzzy' match. So, if a
+                        &lt;<strong>href</strong>gt; element
+                        contains even the sequence 'goo', that could take you to google, goodbar, gooner4lyfe etc...
+                        <pre>
                         <code>
                             element1*=[attribute="example"]{
                                 color:yellow;
                             }
                         </code>
                     </pre>
-                </li>
-                <li>Finally, <em>$=</em> is used to mean that the
-                    match for an element must end with "example". This is most often used in websites!
-                    <pre>
+                    </li>
+                    <li>Finally, <em>$=</em> is used to mean that the
+                        match for an element must end with "example". This is most often used in websites!
+                        <pre>
                         <code>
                             element1$=[attribute="example"] {
                                 color:yellow;
                             }
                         </code>
                     </pre>
-                </li>
+                    </li>
+                </ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">There are SO many
+                        examples to explore!</a></li>
             </ul>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">There are SO many
-                    examples to explore!</a></li>
-        </ul>
-        <h2>Pseudo-classes</h2>
-        <li>A <strong>pseudo-class</strong> in CSS is a <em>keyword</em> added to a <em>selector</em> that specifies
-            a
-            special state of the selected element</li>
-        <li>Common examples include <strong>:hover</strong>, <strong>:visited</strong>,
-            <strong>:nth-child()</strong>,
-            and
-            <strong>:active</strong>
-        </li>
-        <li>A common example is to <strong>change the color of a button</strong> when the mouse is
-            <strong>hovering</strong>
-            over it! To do this, we need to use a <strong>pseudo-class</strong> in our CSS file. In my example, I
-            used
-            <em>button:<strong>hover</strong></em>{...}, and changed the <em>background-color</em> and
-            <em>color</em> of
-            all
-            buttons that don't have their <strong>specificity</strong> overridden!</em>
-        </li>
-        <li>So, to change all <em>buttons</em> so that when the mouse is over them, the <em>background-color</em>
-            changes to
-            red and text to white, we use <em>button<strong>:hover</strong>{...}</em>, where ... is the color
-            changes
-        </li>
-        <li>Another example is this: <em>input</em>[<em>type="radio"</em>]<strong>:checked</strong>{...} In this,
-            all
-            inputs
-            of type radio that have been checked will have specific attributes adjusted (usually some kind of
-            <em>box-shadow</em>)
-        </li>
-        <li>Finally, <strong>:nth-of-type()</strong> is very useful. Plugging in a number, e.g.
-            <em>p</em><strong>:nth-of-type(2)</strong>{...} will simply changed the 2nd p-element among siblings of
-            type
-            p.
-            However, <em>p</em><strong>:nth-of-type(2n)</strong>{...} will change <strong>every 2nd</strong> element
-            among
-            siblings of type p
-        </li>
-        <h2>Briefly, pseudo-elements</h2>
-        <li>A <strong>pseudo-element</strong> in CSS is a keyword added to a selector that allows you to style a
-            specific
-            part of the selected element(s)</li>
-        <li>Common examples include <strong>::before</strong>, <strong>::after</strong>,
-            <strong>::selection</strong>,
-            <strong>::first-line</strong>, and <strong>::first-letter</strong>
-        </li>
-        <li>Within this page, my example involves having the <em>first letter</em> of <strong>every</strong>
-            <em>h2</em>
-            tag
-            on the page be resized to 36px: <em>h2</em><strong>::first-letter</strong>{...}
-        </li>
-        <li>In addition, the <strong>::selection</strong>{...} standalone code in my CSS file made it so that most
-            selected
-            text is red and gold</li>
-        <li>The parts that differ are for any text selected with a <em>h2</em>: inspect to see why!</li>
-        <h2>Specificity</h2>
-        <li>This is quite an easy concept. Basically:</li>
-        <ul>
-            <li>ID > Class > Element > Universal (Class includes pseudo-classes, Element includes pseudo-elements)
+            <h2>Pseudo-classes</h2>
+            <li>A <strong>pseudo-class</strong> in CSS is a <em>keyword</em> added to a <em>selector</em> that specifies
+                a
+                special state of the selected element</li>
+            <li>Common examples include <strong>:hover</strong>, <strong>:visited</strong>,
+                <strong>:nth-child()</strong>,
+                and
+                <strong>:active</strong>
             </li>
-            <li>The common tiebreaker is to count the number of each type, with precedence given the highest
-                leftmost
+            <li>A common example is to <strong>change the color of a button</strong> when the mouse is
+                <strong>hovering</strong>
+                over it! To do this, we need to use a <strong>pseudo-class</strong> in our CSS file. In my example, I
+                used
+                <em>button:<strong>hover</strong></em>{...}, and changed the <em>background-color</em> and
+                <em>color</em> of
+                all
+                buttons that don't have their <strong>specificity</strong> overridden!</em>
+            </li>
+            <li>So, to change all <em>buttons</em> so that when the mouse is over them, the <em>background-color</em>
+                changes to
+                red and text to white, we use <em>button<strong>:hover</strong>{...}</em>, where ... is the color
+                changes
+            </li>
+            <li>Another example is this: <em>input</em>[<em>type="radio"</em>]<strong>:checked</strong>{...} In this,
+                all
+                inputs
+                of type radio that have been checked will have specific attributes adjusted (usually some kind of
+                <em>box-shadow</em>)
+            </li>
+            <li>Finally, <strong>:nth-of-type()</strong> is very useful. Plugging in a number, e.g.
+                <em>p</em><strong>:nth-of-type(2)</strong>{...} will simply changed the 2nd p-element among siblings of
                 type
+                p.
+                However, <em>p</em><strong>:nth-of-type(2n)</strong>{...} will change <strong>every 2nd</strong> element
+                among
+                siblings of type p
             </li>
-            <li>If there are an identical number of classes/ids/pseudo-things/etc..., then the LAST one read as
-                input
-                (i.e.
-                the last one entered in the stylesheet, or the last one of the last-entered stylesheet in the head
-                section)
-                will take precedence!</li>
-        </ul>
-        <li>One thing to note is that <strong>inline styles</strong> have higher specificity than ids! For example,
-            something like &lt;<em>button</em>&gt; <strong>style="color:coral"</strong>&gt; will trump any number of
-            ids,
-            classes or elements associated with a button in the CSS stylesheet. They're avoided because they can
-            cause
-            serious confusion</li>
-        <li>On the topic of confusion, the <strong>!important</strong> exception is an example of <em>bad
-                practice</em>.
-            When the <strong>!important</strong> rule is used on a style declaration, it signals to the browser that
-            the
-            specific declaration should override ANY other declarations. Why is it bad practice? Simply, it makes
-            things
-            difficult to debug, as it <strong>breaks the cascading between stylesheets!</strong></li>
-        <li>Finally, this link which helps to compare specificity might be very useful: <a
-                href="https://www.specificity.keegan.st">Compare Specificities Here</a></li>
-        <h2>Inheritance</h2>
-        <li>This should be an intuitive concept for you!</li>
-        <nav>
-            <label for="search" id="search">Search</label>
-            <input type="text" placeholder="search">
-            <button>Log In</button>
-            <button id="signup">Sign Up</button>
-        </nav>
-        <p>Move on to the <a href="./cssBoxModel.html">CSS Box Model</a></p>
-    </main>
-    <footer>
-        <nav>
-            <h3>Other CSS Links</h3>
+            <h2>Briefly, pseudo-elements</h2>
+            <li>A <strong>pseudo-element</strong> in CSS is a keyword added to a selector that allows you to style a
+                specific
+                part of the selected element(s)</li>
+            <li>Common examples include <strong>::before</strong>, <strong>::after</strong>,
+                <strong>::selection</strong>,
+                <strong>::first-line</strong>, and <strong>::first-letter</strong>
+            </li>
+            <li>Within this page, my example involves having the <em>first letter</em> of <strong>every</strong>
+                <em>h2</em>
+                tag
+                on the page be resized to 36px: <em>h2</em><strong>::first-letter</strong>{...}
+            </li>
+            <li>In addition, the <strong>::selection</strong>{...} standalone code in my CSS file made it so that most
+                selected
+                text is red and gold</li>
+            <li>The parts that differ are for any text selected with a <em>h2</em>: inspect to see why!</li>
+            <h2>Specificity</h2>
+            <li>This is quite an easy concept. Basically:</li>
             <ul>
-                <li><a href="./cssExamples.html">CSS Examples</a></li>
-                <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
-                <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
-                <li><a href="./cssMiscPart2.html">Position</a></li>
-                <li><a href="./cssMiscPart3.html">Transitions</a></li>
-                <li><a href="./cssMiscPart4.html">Transform</a></li>
-                <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
-                <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
-                <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
+                <li>ID > Class > Element > Universal (Class includes pseudo-classes, Element includes pseudo-elements)
+                </li>
+                <li>The common tiebreaker is to count the number of each type, with precedence given the highest
+                    leftmost
+                    type
+                </li>
+                <li>If there are an identical number of classes/ids/pseudo-things/etc..., then the LAST one read as
+                    input
+                    (i.e.
+                    the last one entered in the stylesheet, or the last one of the last-entered stylesheet in the head
+                    section)
+                    will take precedence!</li>
             </ul>
-        </nav>
-        <a href="../index.html">Home</a>
-    </footer>
+            <li>One thing to note is that <strong>inline styles</strong> have higher specificity than ids! For example,
+                something like &lt;<em>button</em>&gt; <strong>style="color:coral"</strong>&gt; will trump any number of
+                ids,
+                classes or elements associated with a button in the CSS stylesheet. They're avoided because they can
+                cause
+                serious confusion</li>
+            <li>On the topic of confusion, the <strong>!important</strong> exception is an example of <em>bad
+                    practice</em>.
+                When the <strong>!important</strong> rule is used on a style declaration, it signals to the browser that
+                the
+                specific declaration should override ANY other declarations. Why is it bad practice? Simply, it makes
+                things
+                difficult to debug, as it <strong>breaks the cascading between stylesheets!</strong></li>
+            <li>Finally, this link which helps to compare specificity might be very useful: <a
+                    href="https://www.specificity.keegan.st">Compare Specificities Here</a></li>
+            <h2>Inheritance</h2>
+            <li>This should be an intuitive concept for you!</li>
+            <nav>
+                <label for="search" id="search">Search</label>
+                <input type="text" placeholder="search">
+                <button>Log In</button>
+                <button id="signup">Sign Up</button>
+            </nav>
+            <p>Move on to the <a href="./cssBoxModel.html">CSS Box Model</a></p>
+        </main>
+    </div>
+    <div class="container">
+        <footer>
+            <nav>
+                <h2>Other CSS Links</h2>
+                <ul>
+                    <li><a href="./cssExamples.html">CSS Examples</a></li>
+                    <li><a href="./cssBoxModel.html">The CSS Box Model</a></li>
+                    <li><a href="./cssMiscellaneous.html">Opacity and Alpha Channels</a></li>
+                    <li><a href="./cssMiscPart2.html">Position</a></li>
+                    <li><a href="./cssMiscPart3.html">Transitions</a></li>
+                    <li><a href="./cssMiscPart4.html">Transform</a></li>
+                    <li><a href="./cssMiscPart5.html">Fancy Button Code-Along</a></li>
+                    <li><a href="./cssMiscPart6.html">Background and Google Fonts</a></li>
+                    <li><a href="./cssMiscPart7.html">Photo Blog Code-Along</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
