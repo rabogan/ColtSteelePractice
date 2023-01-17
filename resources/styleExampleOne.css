@@ -18,13 +18,14 @@ button {
 }
 
 h1 {
-    font-size: 3rem;
+    background-color: #e5989b;
+    font-family: 'PT Sans', sans-serif;
     font-weight: 100;
     text-align: center;
-    font-weight: 400;
+    padding: 1%;
     text-decoration: red underline wavy;
-    font-family: 'Open Sans', sans-serif;
 }
+
 
 h2 {
     background-color: #DDA0DD;

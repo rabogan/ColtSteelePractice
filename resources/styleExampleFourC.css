@@ -18,6 +18,12 @@ body {
     border-radius: 50%;
 }
 
+h1 {
+    font-weight: 100;
+    text-align: center;
+    padding: 1%;
+}
+
 h2 {
     background-color: #DDA0DD;
     font-size: 1.5em;

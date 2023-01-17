@@ -67,6 +67,9 @@ div.unitEx {
 h1 {
     background-color: #e5989b;
     font-family: 'PT Sans', sans-serif;
+    font-weight: 100;
+    text-align: center;
+    padding: 1%;
 }
 
 h2 {

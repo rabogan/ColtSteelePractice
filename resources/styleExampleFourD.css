@@ -18,6 +18,12 @@ h2 {
     font-size: 1.2em;
 }
 
+h1 {
+    font-weight: 100;
+    text-align: center;
+    padding: 1%;
+}
+
 h2 {
     background-color: #2a9d8f;
     border: 5px solid #264653;

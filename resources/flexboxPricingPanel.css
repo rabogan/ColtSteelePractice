@@ -148,6 +148,12 @@ h3 {
     font-family: 'Open Sans', sans-serif;
 }
 
+h1 {
+    font-weight: 100;
+    text-align: center;
+    padding: 1%;
+}
+
 h2 {
     background-color: #DDA0DD;
     font-size: 1.5em;
@@ -158,13 +164,6 @@ h2 {
     color: #2b2d42;
     font-family: 'PT Sans', sans-serif;
     font-size: 1.2em;
-}
-
-h1 {
-    font-size: 3em;
-    font-weight: 100;
-    text-align: center;
-    padding: 1%;
 }
 
 main {
