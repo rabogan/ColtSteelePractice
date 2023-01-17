@@ -20,36 +20,71 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="display-1">Navbars in Bootstrap</h1>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-pill">
-                <a class="navbar-brand" href="#">Teach Time</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
+    <div class="container">
+        <header>
+            <h1>Navbars in Bootstrap</h1>
+            <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
-        </div>
-    </header>
-    <main>
-        <div class="container">
+        </header>
+    </div>
+    <div class="container">
+        <main>
+            <h2>The Basics</h2>
             <p>Have a look <a href="https://getbootstrap.com/docs/4.0/components/navbar/">here</a> for more details on
                 navbars in Bootstrap 5!</p>
-            <h2>The Basics</h2>
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-pill">
+                    <a class="navbar-brand" href="#">Teach Time</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
             <li>The <strong>&lt;nav&gt;</strong> element is the container for our entire Navbar. It uses the
                 <strong>navbar</strong>
                 class, as well a class like <strong>navbar-light</strong> or <strong>navbar-dark</strong> for the
@@ -167,36 +202,22 @@
             <h2>Fixed Navbars</h2>
             <li>We make fix the navbar to the top or bottom of the page, or use the (not always browser-incorporated)
                 sticky option</li>
-        </div>
 
-    </main>
-    <footer>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </footer>
+        </main>
+    </div>
+    <div class="container">
+        <footer>
+            <nav>
+                <h2>Other Bootstrap Links</h2>
+                <ul>
+                    <li><a href="./bootstrapForm.html">Bootstrap Intro</a></li>
+                    <li><a href="./bootstrapGrid.html">The Bootstrap Grip</a></li>
+                    <li><a href="./bootstrapForm.html">Bootstrap Forms</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html">Home</a>
+        </footer>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
