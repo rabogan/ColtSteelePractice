@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Welcome to my Colt Steele practice website, where I post examples of all of the projects I've worked on.">
+    <link rel="icon" href="../images/beauty_kanji.ico">
+    <meta name="author" content="Robert Bogan">
+    <meta name="keywords" content="CSS, Inline, Colt Steele, web development">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../resources/defaultStyle.css">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <header>
+                <h1>JavaScript</h1>
+                <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="https://github.com/rabogan">Robert Bogan</a>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../htmlSection/htmlIntro.html">HTML</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../cssSection/cssIntro.html">CSS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../flexboxSection/introduction.html">FlexBox</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../bootstrapSection/bootstrapIntro.html">Bootstrap</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../javascriptSection/javascriptIntro.html">JavaScript</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="container">
+            <main>
+                <h2>JavaScript methods</h2>
+                <p>A background in C++ makes this a lot less complicated, but JS methods take the following form:
+                <pre>
+                        <code>
+                            thing.method(arg);
+                        </code>
+                    </pre>
+                Some methods accept arguments <strong>arg</strong> that modify their behavior. Think of them as inputs
+                that we can pass in. We pass these arguments inside of the parentheses. Here follows some examples of
+                the above:
+                </p>
+                <p>There are a huge number of string methods, and we'll be looking at a very small subset of them below.
+                    To look for more examples, try <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">here</a>
+                </p>
+                <h3>indexOf()</h3>
+                <p><strong>.indexOf('arg')</strong> returns the <strong>first</strong> matching instance of the
+                    argument. If no argument is found within our string, then -1 is returned!</p>
+                <pre>
+                    <code>
+                        let tvShow = 'catdog';
+                        tvShow.indexOf('cat');  //Returns 0
+                        tvShow.indexOf('dog');  //Returns 3
+                        tvShow.indexOf('X');    //Returns -1
+                    </code>
+                </pre>
+                <h3>slice()</h3>
+                <p><strong>.slice()</strong> is used to extract a section of a string, returning it as a new string,
+                    without modifying the original string. For example, look at the following:
+                <pre>
+                        <code>
+                            let example = 'Murphy, you are an elf.  Uncontrollably...';
+                            example.slice(0,5);  //Murphy
+                            example.slice(8,10);  //you
+                            example.slice(-4,-1);  //y...
+                        </code>
+                    </pre>
+                Notice how using a negative number makes things wrap around to the back of the string :)
+                </p>
+                <h3>replace</h3>
+                <p>This uses a regular expression (regex) to match patterns and replace <strong>patterns</strong>, not
+                    just specific strings.
+                <pre>
+                        <code>
+                            let example2 = 'haha that is so funny!';
+                            example2.replace('haha', 'lolololol'); //Will give us 'lolololol that is so funny!';
+                        </code>
+                    </pre>
+                Note, however, that the method <strong>.replaceAll()</strong> isn't necessarily included in all modern
+                browsers.
+                </p>
+                <h2>Template Literals</h2>
+                <p>These are new and extremely useful! Thye are strings that allow embedded expressions, which will be
+                    evaluated and then turned into a resulting string. For example:
+                <pre>
+                    <code>
+                        `I counted ${<strong>3</strong> + <strong>4</strong>} sheep`; 
+                    </code>
+                </pre>
+                </p>
+                <p>
+                    As you can see in the above, we don't need to declare specific numbers. Just use <strong>${
+                        }</strong>
+                    In the above instance, one must use the <strong>BACKTICK</strong> character, <strong>`</strong>. If
+                    we
+                    use the special sequence (i.e. including the $ sign with the braces), within a pair of backticks,
+                    the
+                    sequence within the braces will be evaluated and returned as a string!
+                <pre>
+                    <code>
+                        let qty = 5;
+                        let product = artichoke;
+                        let price = 2.25;
+
+                        <strong>`</strong>You bought <strong>${</strong>qty<strong>} ${</strong>produce<strong>}</strong>.  
+                        The total is $<strong>${</strong>price*qty<strong>}</strong>.
+                    </code>
+                </pre>
+                </p>
+                <h2>The Math Object</h2>
+                <p>There are numerous methods that can be used on an object of type <strong>Math</strong>. The most
+                    common being used in the course is the random number generator, such as that generated when using
+                    <strong>Math.random()</strong>
+                </p>
+                <p>To generate a random number between 1-10 in JavaScript:
+                <ol>
+                    <li>Use Math.random();</li>
+                    <li>Multiply the result by 10: i.e. Math.random()*10;</li>
+                    <li>Use Math.floor() on that result</li>
+                    <li>Overall, we can use <strong>Math.floor(Math.random()*10);</strong></li>
+                </ol>
+                </p>
+                <p>The following shows us how to generate a random number on a dice via JS:
+                <pre>
+                        <code>
+                            // NO TOUCHING! (please)
+                            const die1 = Math.floor(Math.random() * 6) + 1; //random number from 1-6
+                            const die2 = Math.floor(Math.random() * 6) + 1; //random number from 1-6
+
+                            <strong>let roll = `You rolled a ${die1} and ${die2}.  They sum to ${die1+die2}`;</strong>
+                        </code>
+                    </pre>
+                </p>
+            </main>
+        </div>
+        <div class="container">
+            <footer>
+                <nav>
+                    <h2>JavaScript Links</h2>
+                    <ul>
+                        <li><a href="./javascriptIntro.html">Javascript Introduction</a></li>
+                        <li><a href="./javascriptBackground1.html">JavaScript Funamentals I</a></li>
+                    </ul>
+                </nav>
+                <a href="../index.html">Home</a>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
