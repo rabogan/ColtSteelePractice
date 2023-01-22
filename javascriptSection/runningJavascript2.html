@@ -65,6 +65,153 @@
         </div>
         <div class="container">
             <main>
+                <h2>JavaScript Objects</h2>
+                <p>These are considered a <strong>data structure</strong> in JS. Objects are just a collection of
+                    properties. (Perhaps it's appropriate to compare them to the objects created in structs/classes in
+                    C++). There are some specific restrictions in JS, but all properties consist of a
+                    <strong>key-value</strong> pair. You may remember this distinction when thinking back to learning
+                    about JSON (JavaScript-Only Notation)
+                </p>
+                <p>An object allows us to access data using <strong>custom keys</strong>, rather than an
+                    <strong>index</strong>. Let's look at an example:
+
+                <pre>
+                        <code>
+                            const martyDreamboat = {
+                                height: 160;
+                                weight: 160;
+                                name: 'McFly';
+                                leastFavouriteColor: 'Yellow';
+                                hobby: 'Hoverboarding';
+                            }
+                        </code>
+                    </pre>
+                Notice how the above object has a bunch of keys, each with an associated value! We have <strong>five
+                    pairs of key-value</strong> information inside this object, labelled <em>martyDreamboat</em>.
+                </p>
+                <p>Another example:
+                <pre>
+                        <code>
+                            const user1230{
+                                username: 'crazyCatLady';
+                                upvotes:7;
+                                text:'Gnarrr!!!';
+                            }
+                        </code>
+                    </pre>
+
+                </p>
+                <p><strong>property</strong> = <strong>key</strong>+<strong>value</strong></p>
+                <h2>Object Literals</h2>
+                <p>An object literal refers to a means of storing a <strong>key-value</strong> pair. Let's look at how
+                    to construct a person:
+                <pre>
+                    <code>
+                        const person = {firstName:'Mick',lastName:'Dundee'};
+                    </code>
+                </pre>
+                </p>
+                <p>When we create an object, we can use almost anything as a value, as long as we remmeber that it'll be
+                    one of the 7 basic possible types used in JS. Something like Reddit will have the following types of
+                    values associated with the average comment:
+                <pre>
+                    <code>
+                        let comment ={userName:'paulB',downVotes:19,upVotes:259,netScore:240,commentText:"That's what she said",isGilded:false};
+                    </code>
+                </pre>
+                If you really need to, you can sketch out the object, putting each variable on a separate line. However,
+                my own familiarity with objects in C++ has helped me bypass this need!
+                </p>
+                <p>Also of note, we only use the curly braces, <strong>{...}</strong> when we're creating the object
+                    itself. When we want to access the data out of objects, we need to use the name of the KEY, enclosed
+                    in <strong>[...]</strong> <em>square brackets</em>, AND a pair of double quotes! For example,
+                <pre>
+                        <code>
+                            comment["upVotes"];  //This will return 259!
+                        </code>
+                    </pre>
+                In more basic form, <strong>object["key"];</strong> will give us access to the value of the key to the
+                property being held within a specific object. I imagine that with access comes the relatively easy
+                ability to change the value associated with that key! If we spell the <strong>key incorrectly</strong>,
+                then we'll get an answer of <strong>undefined.</strong> Another, and slightly easier option, is to
+                access the value of a key-value pair using the dot
+                operator!
+                </p>
+                <p>Remember: all keys get converted into strings.
+                <pre>
+                        <code>
+                            const years = {1999:'GOOD',2020:'BAD'};
+                        </code>
+                    </pre>
+                Behind the scenes in JavaScript, <strong>all keys are converted to strings</strong>. So, our seeming
+                integer value of <strong>1999</strong> will be converted to string. When we search for years[1999], we
+                will get the value 'Good' returned. However, when we look for years["1999"], we'll get the same result.
+                The TLDR: all key values are converted into strings!
+                </p>
+                <p>The Coding Exercise 30 was the first one in this course to make me think long and hard about the
+                    answer! Essentially, we're given the following object:
+                <pre>
+                    <code>
+                        const restaurant = {
+                            name:'Ichiran Ramen';
+                            address: `${Math.floor(Math.random()*100)+1} Johnson Ave`;  
+                            //Note the use of backticks with the template literal!
+                            city: 'Brooklyn';
+                            state: 'NY';
+                            zipcode: '11206';
+                        }  
+                    </code>
+                </pre>
+                We are asked to create the variable <strong>fullAddress</strong>, which incorporates the
+                address/city/state/zipcode from the restaurant object. Note that we're not trying to insert a new
+                key-value pair (where the key is 'fullAddress') into the restaurant object! The best answer involves the
+                MODERN use of <strong>template literals!</strong>
+                <pre>
+                    <code>
+                        let fullAddress=`${restaurant.address}+${restaurant.city}+${restaurant.state}+${restaurant.zipcode}`;
+                    </code>
+                </pre>
+                The above gives <em>
+                    '7 Johnson Ave+Brooklyn+NY+11206'</em> in our console, when we ask for the variable
+                <em>fullAddress</em>.
+                </p>
+                <h2>Modifying Objects</h2>
+                <p>Let's use the following example:
+                <pre>
+                        <code>
+                            const midterms = {danielle:96, thomas:78};
+                        </code>
+                    </pre>
+                Let's say we want to change thomas's score to 79, we'll use:
+                <pre>
+                        <code>
+                            midterms.thomas = 79;
+                        </code>
+                    </pre>
+                That's fairly easy, isn't it? Use of the <strong>dot operator</strong> makes updating the properties
+                very simple!
+                </p>
+                <p>If we really want to, we can change the grade into a string grade, such as:
+                <pre>
+                        <code>
+                            mindterms.thomas = 'C+';
+                        </code>
+                    </pre>
+                Fairly strict grading, but Thomas now finds his grade updated to a string!
+                </p>
+                <p>It's also <strong>very easy</strong> to add new key-value pairs into the object:
+                <pre>
+                    <code>
+                        midterms['antonio'] = 'A-';
+                        midterms.ezra = 'F';
+                    </code>
+                </pre>
+                As you can see, the syntax of JavaScript allows for a great deal MORE flexibility than that of C++!
+                Midterms will read: {danielle:96, thomas:'C+',antonio:'A-',ezra:'F'};
+                </p>
+                <h2>Arrays & Objects</h2>
+                <p>A <strong>very</strong> common pattern in C++ is to use an array with a bunch of objects inside, or
+                    vice-versa!</p>
             </main>
         </div>
         <div class="container">
