@@ -209,9 +209,50 @@
                 As you can see, the syntax of JavaScript allows for a great deal MORE flexibility than that of C++!
                 Midterms will read: {danielle:96, thomas:'C+',antonio:'A-',ezra:'F'};
                 </p>
-                <h2>Arrays & Objects</h2>
+                <h3>Arrays & Objects</h3>
                 <p>A <strong>very</strong> common pattern in C++ is to use an array with a bunch of objects inside, or
                     vice-versa!</p>
+
+                <h2>for-loops</h2>
+                <p>There are multiple types of for-loops in JS:
+                <ul>
+                    <li>for-loops</li>
+                    <li>while-loops</li>
+                    <li>for...of loops</li>
+                    <li>for...in loops</li>
+                </ul>
+                </p>
+                <h3>for-loops</h3>
+                <p>The syntax is identical to that used in C++:
+                <pre>
+                        <code>
+                            for(let i = 1; i <= 10; i++)
+                                console.log(i);
+                        </code>
+                    </pre>
+                Just notice that we don't need to define the <strong>type</strong> of the variable. It's quite common
+                just to use the variable name <strong>i</strong> in practice, but don't forget that variables need to
+                have meaningful names (Colt, in the course, changes the name <em>i</em> to <strong>num</strong>!
+                Regardless of the name, the
+                above for-loop will print out 1-10.
+                </p>
+                <p>Be wary of making infinite loops. Check the increment carefully, looking at whether/when they will
+                    meet up with the condition!</p>
+                <p>One really common use of the for-loop is to iterate over an array. For example:
+                <pre>
+                        <code>
+                            const animals = ['Aardvark','Alligator',...,'Zorialla'];
+                            for(let i = 0; i < animals.length(); i++)
+                                console.log(animals[i]);
+                            This will print out all animals in the array, from Aardvark to Zorilla :)
+                            for(let i = animals.length()-1; i>=0; i--)
+                                console.log(animals[i]);
+                            This prints out all animals, from Zorilla to Aardvark!
+                            //Probably notable only as a means to avoid needing to use the 'reverse' function :)
+                            Recently, another method has come into vogue...
+                        </code>
+                    </pre>
+                </p>
             </main>
         </div>
         <div class="container">
