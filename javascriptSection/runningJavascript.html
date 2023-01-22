@@ -120,6 +120,114 @@
                 have multiple different TYPES used within the same array. (Note: I think this is useful when dealing
                 with JSON).
                 </p>
+                <p>One additional point of interest is the way in which we add elements to an array. In C++, the size of
+                    the array is generally fixed (although it is possible to <em>push_back</em> into a vector. Security
+                    errors are rife in C++ because of illegal access to an array, by going outside the limits (i.e.
+                    below 0 or at/above an index equal to the size of the array). <strong>However, in
+                        JavaScript</strong>, we can do the following:
+                <pre>
+                        <code>
+                            let beatles = ['John','Paul','George','Ringo'];
+                            beatles[4] = 'Stuart';
+
+                            let dwarves = ['Doc','Dopey','Grumpy'];
+                            dwarves[6] = 'Bashful';
+                        </code>
+                    </pre>
+                In the above case, adding a fifth Beatle is no problem! Also of interest, we can just skip the 3
+                lesser-known dwarves, and plop the ludicrous 'Bashful' in a dwarf 7, at dwarves[6]! Until named, the
+                spaces in the array at indices 4, 5, and 6 will be empty.
+                </p>
+                <h2>Arrays: .push() & .pop()</h2>
+                <p>The method <strong>.push(item)</strong> allows us to add an item to the end of our array.</p>
+                <ul>
+                    <li>Using .push(item) is easy!</li>
+                    <li>.push(item1,item2) is also possible in JavaScript!</li>
+                    <li>In fact, .push(item1, item2..., ...itemn) is fine in JavaScript!</li>
+                </ul>
+                <p>.pop() removes one item from the back of the array! If you've used a vector, queue, stack, or deque
+                    in C++, you should be familiar with the meaning of the functions!</p>
+                <h2>Shift and Unshift</h2>
+                <p>These are new to C++ guys. <strong>shift</strong> means to <strong>remove from the start</strong> of
+                    the array. <strong>unshift</strong> means to add to the start of the array</p>
+                <pre>
+                    <code>
+                        let movieLine = ['Tom','Nancy','Pablo','Oliver','Eva'];
+                        
+                        movieLine.shift();
+                        //This RETURNS THE ELEMENT REMOVED, which is Tom...
+                        //Remember that <strong>.shift()</strong> removes the first element (<em>in line</em>) within the array!
+                        
+                        movieLine.push('Bruce');
+                        //Adds Bruce at the end of the line
+
+                        //<strong>.unshift(item)</strong>: <strong>unshift</strong> adds an element to the front of the array:
+                        movieLine.unshift('VIP');
+                        //If we print out the movieLine, we have [VIP, Nancy, Pable, Oliver, Eva, and Bruce]
+                    </code>
+                </pre>
+                <ul>
+                    <li>Essentially, <strong>.shift()</strong> is analogous to <strong>pop_front()</strong>!</li>
+                    <li>Conversely, <strong>.unshift(item)</strong> is similar to <strong>push_front(item)</strong>!
+                    </li>
+                </ul>
+                <h2>Additional Methods</h2>
+                <p>The following methods are also covered in Section 17 of the course:</p>
+                <ul>
+                    <li><strong>concat</strong> is used to merge arrays.</li>
+                    <li><strong>includes</strong> looks for a value</li>
+                    <li><strong>indexOf</strong> is just like string.indexOf</li>
+                    <li><strong>join</strong> creates a string from an array</li>
+                    <li><strong>reverse</strong> reverses an array</li>
+                    <li><strong>slice</strong> copies a portion of an array</li>
+                    <li><strong>splice</strong> removes/replaces elements</li>
+                    <li><strong>sort</strong>...well, it sorts an array!</li>
+                </ul>
+                <h3>concat</h3>
+                <p>This is fairly easy to use. We call .concat on one array, and pass the other array into this,
+                    like so:
+                <pre>
+                    <code>
+                    let cats = ['blue','kitty'];
+                    let dogs = ['molly','eric'];
+                    cats.concat(dogs);
+                    console.log(cats) //Gives us ['blue', 'kitty', 'molly', 'eric']
+                    </code>
+                </pre>
+                </p>
+                <h3>includes</h3>
+                <p>This searchs for SPECIFIC elements in our array! Using <em>cats.includes('Bobo')</em> will merely
+                    return <strong>false</strong> in the array above. However:
+                <pre>
+                    <code>
+                        cats.includes('kitty');  //This will give us TRUE!
+                    </code>
+                </pre>
+                </p>
+                <h3>indexOf</h3>
+                <p>Remarkably similar to the above, it returns the index of a specific (yearned after) value. If no such
+                    value exists within the array, then -1 is the result. So, in the example above:
+                <pre>
+                    <code>
+                        console.log(cats.indexOf('molly')) //This will give us 2
+                        console.log(cats.indexOf('ceilidh')) //This give -1!
+                    </code>
+                </pre>
+                If multiple elements of the same value are held within the array, then the FIRST index of that value
+                will be returned.
+                </p>
+                <h3>reverse</h3>
+                <p><strong>reverse</strong> is known as a destructive method: it reverses the entire content of the
+                    array in place. For example:
+                <pre>
+                        <code>
+                            let beatles = ['John','Paul','George','Ringo','Stuart'];
+                            console.log(beatles.reverse());
+                            //Gives us Stuart Ringo George Paul John
+                            //Interesting order....
+                        </code>
+                    </pre>
+                </p>
             </main>
         </div>
         <div class="container">
