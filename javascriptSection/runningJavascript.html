@@ -81,7 +81,7 @@
                     <li><em>Additional Note:</em> to comment out an entire section: highlight the area, then use
                         CTRL+'/'</li>
                 </ul>
-                <h2>Conditionals</h2>
+                <h2>Conditionals and the (Extremely Annoying) Prompt</h2>
                 <p>Experience learning C++ introduced me to what <strong>conditionals</strong> are, as well as how to
                     use the if/else if/else statements. In this tiny exercise, I want to try and prompt the user to
                     enter a password of at least 6 characters. Additionally, the password must not contain a space. If
@@ -92,7 +92,8 @@
                 </p>
                 <p>The use of <a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch"><strong>switch</strong></a>
-                    statements isn't at all different from in C++, either!</p>
+                    statements isn't at all different from in C++, either! Just don't forget the <strong>break</strong>
+                    statements, unless you intend to!</p>
                 <h2>Arrays</h2>
                 <p>Arrays have multiple uses in JavaScript. Among other examples, they can be used to help with:</p>
                 <ul>
@@ -183,7 +184,10 @@
                     <li><strong>splice</strong> removes/replaces elements</li>
                     <li><strong>sort</strong>...well, it sorts an array!</li>
                 </ul>
-                <h3>concat</h3>
+                <h3><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">concat</a>
+                    CSN.concat(Y);
+                </h3>
                 <p>This is fairly easy to use. We call .concat on one array, and pass the other array into this,
                     like so:
                 <pre>
@@ -195,8 +199,11 @@
                     </code>
                 </pre>
                 </p>
-                <h3>includes</h3>
-                <p>This searchs for SPECIFIC elements in our array! Using <em>cats.includes('Bobo')</em> will merely
+                <h3><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">includes(value)</a>
+                    beatles.includes('Stuart');
+                </h3>
+                <p>This searches for SPECIFIC elements in our array! Using <em>cats.includes('Bobo')</em> will merely
                     return <strong>false</strong> in the array above. However:
                 <pre>
                     <code>
@@ -204,7 +211,9 @@
                     </code>
                 </pre>
                 </p>
-                <h3>indexOf</h3>
+                <h3><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">indexOf(value)</a>
+                    moonwalkers.indexOf('Buzz') will give index 1 (second comes right after first)</h3>
                 <p>Remarkably similar to the above, it returns the index of a specific (yearned after) value. If no such
                     value exists within the array, then -1 is the result. So, in the example above:
                 <pre>
@@ -216,7 +225,10 @@
                 If multiple elements of the same value are held within the array, then the FIRST index of that value
                 will be returned.
                 </p>
-                <h3>reverse</h3>
+                <h3><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse">reverse</a>
+                    helps to reverse an array <strong>in place</strong>, and returns the reference to the same array
+                </h3>
                 <p><strong>reverse</strong> is known as a destructive method: it reverses the entire content of the
                     array in place. For example:
                 <pre>
@@ -228,6 +240,107 @@
                         </code>
                     </pre>
                 </p>
+                <h3><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">slice()
+                        olympicMedals.slice(0,1); (Omits shameful, shameful Bronze)</a>
+                </h3>
+                <p>This returns a shallow copy of a portion of an array into a NEW array object selected from start to
+                    end, where start and end represent the index of items in that array.</p>
+                <p>In other words, it's a means of getting a <strong>copy of a slice of an array.</strong></p>
+                <p>In the example in the header, using olympicMedals.slice(1); will give us Silver and Bronze in a new
+                    array!</p>
+                <p>We can choose between adding <strong>just a starting point</strong>, or including both the
+                    <strong>starting and stopping point!</strong>
+
+                <pre>
+                    <code>
+                        let beatles = ['J','P','G','R','Pete','Stuart'];
+                        let forgottenBeatles = beatles.slice(4);
+                        OR
+                        let forgottenBeatles2 = beatles.slice(4,5);
+                    </code>
+                </pre>
+                </p>
+                <h3><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">.splice()</a>
+                </h3>
+                <p>.splice() is a bit more complicated, but involves changing the contents of an array by removing or
+                    replacing existing elements and/or adding new elements <strong>in place</strong>. To access part of
+                    an array without modifying it, use <strong>slice()</strong> instead.</p>
+                <pre>
+                    <code>
+                        .splice(start);
+                        .splice(start, deleteCount);
+                        .splice(start, deleteCount, item1);
+                        .splice(start, deleteCount, item1, item2, itemN);
+                    </code>
+                </pre>
+                <p>As you can see, there are so many methods involving splice() to incorporate! This operation is quite
+                    efficient, and very rarely used.</p>
+                <pre>
+                    <code>
+                        let colors = ['Red','Orange','Yellow','Green','Blue','Violet'];
+                        colors.splice(5,0,'Indigo');
+                        Adds indigo into the array between 'Blue' and 'Violet'
+
+                        colors.splice(5,1,'Deleted');
+                        Removes indigo from our array
+                        colors will now be:  ['Red','Orange','Yellow','Green','Blue','Indigo','Violet'];
+                    </code>
+                </pre>
+                <h3><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">.sort()</a>
+                </h3>
+                <p>The <strong>sort()</strong> method sorts the elements in place, returning a refeence to the same
+                    array, now sorted. The default sort order is ascending, converting eleemnts into strings, then
+                    comparing their sequences of UTF-16 code unit values. The time and space complexity of the sort is
+                    NOT guaranteed, as it depends on the implementation.</p>
+                <p>So, <strong>.sort()</strong> by itself is NOT a viable numeric sort. We can sort things using
+                    functions, which will be covered in Section 20 of the course.</p>
+                <h2>Reference Types and Equality Testing</h2>
+                <p>This is an uncomplicated point, but you should recognize that the way objects or variables are stored
+                    in JS is quite similar to the style of C++. In the lecture, the following example is used:
+                <pre>
+                    <code>
+                        let nums = [1,2,3];
+                        [1,2,3]===nums;  //Returns false;
+
+                        let copyNums = nums;
+                        copyNums===nums;  //Returns true!
+                    </code>
+                </pre>
+                As anyone with rudimentary understanding recognizes, variables and objects are stored in memory. When we
+                use an equality operator, we are looking to see if the <strong>references</strong> are the same: i.e.
+                whether the references are at the same address in memory.
+                </p>
+                <p>Long story short, <strong>=== & !==</strong>, and <strong>== & !=</strong> look at the references in
+                    memory when determining whether two objects are 'equal' or not.</p>
+                <h2>Arrays and const</h2>
+                <p>With our arrays, we can set an array using:
+                <pre>
+                        <code>
+                            const nums = [1,2,3];
+                            nums[0] = -13;
+                        </code>
+                    </pre>
+                Changing the content of the array is just fine! As long as the array stays at the same space/reference
+                in memory, it's okay to make changes to the internal parts of the array! We can perform all of the
+                operations we learned, such as .pop(), .push(value), .shift(), .unshift(value) etc...
+                </p>
+                <p>What isn't possible is to suddenly try and reassign the array to something else entirely. So, we
+                    can't use something like <em>nums = 1;</em> (for example)</p>
+                <h2>Multidimensional Arrays</h2>
+                <p>Just like in C++, it is possible to create and use nested arrays in JavaScript. One famous example is
+                    the tic-tac-toe game:
+                <pre>
+                    <code>
+                        const gameBoard = [['X','O','X'],['O',null,'X'],['O','O','X']];
+                    </code>
+                </pre>
+                How would we access 'null' in the above array (ignoring the winning line!)? Well, we can use
+                <strong>gameBoard[1][1] = 'O';</strong>
+                If modelling a Rubiks cube, we might be able to use a 3D array :) But not yet...
+                </p>
             </main>
         </div>
         <div class="container">
@@ -235,9 +348,10 @@
                 <nav>
                     <h2>JavaScript Links</h2>
                     <ul>
-                        <li><a href="./javascriptSection/javascriptIntro.html">JavaScript Introduction</a></li>
-                        <li><a href="./javascriptSection/javascriptBackground1.html">JavaScript Fundamentals I</a></li>
-                        <li><a href="./javascriptSection/javascriptBackground2.html">JavaScript Fundamentals II</li>
+                        <li><a href="./javascriptIntro.html">JavaScript Introduction</a></li>
+                        <li><a href="./javascriptBackground1.html">JavaScript Fundamentals I</a></li>
+                        <li><a href="./javascriptBackground2.html">JavaScript Fundamentals II</li>
+                        <li><a href="./runningJavascript2.html">Running JavaScript II</a></li>
                     </ul>
                 </nav>
                 <a href="../index.html">Home</a>
