@@ -256,6 +256,53 @@
                 <h3>while-loops</h3>
                 <p>We take the opportunity to use these in <a href="./javascriptGuessingGame.html">this</a> section...
                 </p>
+                <h3>for-of loops</h3>
+                <p>These make it much easier to iterate over arrays - or anything else that is
+                    <strong>iterable</strong>, such as <strong>strings, maps and sets</strong>. The basic form is:
+                <pre>
+                        <code>
+                            for(variable of iterable){
+                                statement;
+                            }
+
+                            let beatles = ['John','Paul','George','Ringo'];
+                            <strong>for</strong>(let member <strong>of</strong> beatles){
+                                console.log(`${member}`);
+                            }
+                        </code>
+                    </pre>
+                This seems to be equivalent to <strong>for (string member:beatles){...}</strong> in C++. The for-of
+                looks like a variation on the use of <strong>:</strong>
+                <strong>NOTE: we can't iterate over objects using a for...of loop.</strong>
+                </p>
+                <h3>Iterating over objects</h3>
+                <p>The way to iterate over an object, we use the <strong>for...in</strong> loop. It's rather uncommon
+                    these days, but is still very useful!</p>
+                <p>We can use something like <strong>Object.keys(testScores);</strong> to access our set of keys,
+                    <strong>Object.values(testScores);</strong> for the values, and
+                    <strong>Object.entries(testScores);</strong> to get a list of key-value pairs inside the object! As
+                    an example:
+                <pre>
+                        <code>
+                            const testScores = {
+                                keenan:80;
+                                kel:5;
+                                roger:99;
+                                orange:0;
+                                soda:10;
+                            }
+                            let total = 0;
+                            let scores = Object.values(testScores);
+                            for(let score of scores){
+                                total+=score;
+                            }
+                            console.log(total/scores.length);
+                        </code>
+                    </pre>
+                </p>
+                <h3>To Do List Project</h3>
+                <p>The last thing we'll handle in Section 19 of the course is a <strong>project</strong>. The whole
+                    thing will be shown <a href="./javascriptToDoList.html">here</a></p>
             </main>
         </div>
         <div class="container">
@@ -268,6 +315,7 @@
                         <li><a href="./javascriptBackground2.html">JavaScript Fundamentals II</li>
                         <li><a href="./runningJavascript.html">Running JavaScript I</a></li>
                         <li><a href="./javascriptGuessingGame.html">JS Guessing Game</a></li>
+                        <li><a href="./javascriptToDoList.html">JS To-Do List</a></li>
                     </ul>
                 </nav>
                 <a href="../index.html">Home</a>
