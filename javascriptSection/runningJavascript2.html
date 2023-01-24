@@ -78,11 +78,11 @@
                 <pre>
                         <code>
                             const martyDreamboat = {
-                                height: 160;
-                                weight: 160;
-                                name: 'McFly';
-                                leastFavouriteColor: 'Yellow';
-                                hobby: 'Hoverboarding';
+                                height: 160,
+                                weight: 160,
+                                name: 'McFly',
+                                leastFavouriteColor: 'Yellow',
+                                hobby: 'Hoverboarding'
                             }
                         </code>
                     </pre>
@@ -93,9 +93,9 @@
                 <pre>
                         <code>
                             const user1230{
-                                username: 'crazyCatLady';
-                                upvotes:7;
-                                text:'Gnarrr!!!';
+                                username: 'crazyCatLady',
+                                upvotes:7,
+                                text:'Gnarrr!!!'
                             }
                         </code>
                     </pre>
@@ -194,7 +194,7 @@
                 <p>If we really want to, we can change the grade into a string grade, such as:
                 <pre>
                         <code>
-                            mindterms.thomas = 'C+';
+                            midterms.thomas = 'C+';
                         </code>
                     </pre>
                 Fairly strict grading, but Thomas now finds his grade updated to a string!
@@ -273,32 +273,50 @@
                     </pre>
                 This seems to be equivalent to <strong>for (string member:beatles){...}</strong> in C++. The for-of
                 looks like a variation on the use of <strong>:</strong>
-                <strong>NOTE: we can't iterate over objects using a for...of loop.</strong>
+                <li><strong>NOTE: we can't iterate over objects using a for...of loop.</strong></li>
                 </p>
                 <h3>Iterating over objects</h3>
-                <p>The way to iterate over an object, we use the <strong>for...in</strong> loop. It's rather uncommon
-                    these days, but is still very useful!</p>
-                <p>We can use something like <strong>Object.keys(testScores);</strong> to access our set of keys,
+                <p>One way to iterate over an object is to use the <strong>for...in</strong> loop. It's rather uncommon
+                    these days, but is still useful!
+                <pre>
+                    <code>
+                        const testScores = {
+                            keenan:80;
+                            kel:5;
+                            roger:99;
+                            orange:0;
+                            soda:10;
+                        }
+                        for(let person in testScores){
+                            console.log(`${person} scored $testScores[person]`);
+                        }                            }
+                    </code>
+                </pre>
+                The above code, uses <strong>template literals</strong> very nicely to print out the person's name and
+                their score:
+                console.log(`<strong>${person}</strong> scored <strong>$testScores[person]</strong>`)
+                </p>
+                <p>We could use something like <strong>Object.keys(testScores);</strong> to access our set of keys,
                     <strong>Object.values(testScores);</strong> for the values, and
                     <strong>Object.entries(testScores);</strong> to get a list of key-value pairs inside the object! As
                     an example:
                 <pre>
-                        <code>
-                            const testScores = {
-                                keenan:80;
-                                kel:5;
-                                roger:99;
-                                orange:0;
-                                soda:10;
-                            }
-                            let total = 0;
-                            let scores = Object.values(testScores);
-                            for(let score of scores){
-                                total+=score;
-                            }
-                            console.log(total/scores.length);
-                        </code>
-                    </pre>
+                    <code>
+                        const testScores = {
+                            keenan:80;
+                            kel:5;
+                            roger:99;
+                            orange:0;
+                            soda:10;
+                        }
+                        let total = 0;
+                        let scores = Object.values(testScores);
+                        for(let score of scores){
+                            total+=score;
+                        }
+                        console.log(total/scores.length);
+                    </code>
+                </pre>
                 </p>
                 <h3>To Do List Project</h3>
                 <p>The last thing we'll handle in Section 19 of the course is a <strong>project</strong>. The whole

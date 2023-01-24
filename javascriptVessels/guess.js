@@ -4,16 +4,16 @@ while (!maximum || maximum < 1 || maximum > 100) {
 }
 const targetNum = Math.floor(Math.random() * maximum) + 1;
 
-let guess = prompt('Enter your first guess, or use "q" to quit!');
+let guess = prompt(`Enter your first guess, from 1-${maximum} or use "q" to quit!`);
 let attempts = 1;
 
 while (parseInt(guess) !== targetNum) {
     if (guess === 'q') break;
     attempts++;
     if (guess > targetNum)
-        guess = prompt('Too high!  Enter a new guess!');
+        guess = prompt(`Too high!  Enter a new guess from 1-${maximum}`);
     else
-        guess = prompt('Too low.  Enter a new guess:');
+        guess = prompt(`Too low.  Enter a new guess in the range 1-${maximum}:`);
 }
 
 if (guess === 'q') {
