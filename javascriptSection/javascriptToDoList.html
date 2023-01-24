@@ -18,7 +18,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../resources/defaultStyle.css">
-    <script src="../javascriptVessels/toDoList.js"></script>
     <title>JavaScript To Do List</title>
 </head>
 
@@ -65,7 +64,214 @@
         </div>
         <div class="container">
             <main>
-                <h2>Project Outline</h2>
+                <h2>Project Outline - To Do List</h2>
+                <p>The point of this exercise is to create an extremely simple application! It consists of the following
+                    options:
+                <ul>
+                    <li>"new" - Adds a To-do</li>
+                    <li>"list" - List All To-dos</li>
+                    <li>"delete" - Remove a Specific Todo</li>
+                    <li>"quit" - Quit App</li>
+                </ul>
+                </p>
+                <h2>The basics</h2>
+                <ol>
+                    <li>Setting up the JavaScript file is rudimentary! Including it in a script before the closing
+                        &lt;body&gt; tag is important. Include them AFTER the Bootstrap links (if using them)
+                        because the
+                        <strong>Bootstrap scripts need to be loaded and initialized first</strong> before any custom
+                        scripts can
+                        interact with and modify the elements on the page.
+                    </li>
+                    <li>Implement a quick <strong>alert</strong> in the JS file, just to check the script in the
+                        HTML file is correctly included.</li>
+                    <li>This program will start with a prompt, such as 'What would you like to do?', and the user is
+                        expected to enter one of the options above! It is easiest to implement the 'quit' option
+                        first...</li>
+                    <li>To do so, we create a variable called <strong>input</strong>. If input happens to NOT be
+                        either 'quit' or 'q', then the while-loop within which the program runs will continue.</li>
+                    <pre>
+                            <code>
+                                let input = prompt('What would you like to do?');
+
+                                while (input !== 'quit' && input !== 'q') {
+                                    input = prompt('What would you like to do?');
+                                }
+
+                                console.log('Okay, you have quit the app for today');
+                            </code>
+                        </pre>
+                    <li>Note that it's good practice to include some kind of message to the user, indicating the
+                        application has been closed.</li>
+                </ol>
+                <h2>Option 2: Printing Things Out</h2>
+                <ol>
+                    <li>Firstly, our ToDo list needs to be set up. <strong>const todos = [];</strong> seems reasonable.
+                        It's okay to add a dummy entry to check whether the printing will work, so I did so: <em>const
+                            todos = ['Finish lecture 201'];</em></li>
+                    <li>Let's think about our <strong>while-loop</strong>. If the <em>input</em> is 'list', then we want
+                        to print things out. The first way to test things could use a couple of
+                        <strong>console.log('**********')</strong> statements, just to make sure there are no minor
+                        issues.
+                    </li>
+                    <li>If that passes the check, we can very easily include a loop that <strong>iterates through the
+                            todo list array</strong>, and prints out both the appropriate index - and the task
+                        associated with that index. <strong>for(let i = 0; i < todos.length(); i++)</strong>
+                    </li>
+                    <li>
+                        <pre>
+                            <code>
+                                let todos = ['Finish Lecture 201'];
+                                while (input !== 'quit' && input !== 'q') {
+                                if (input === 'list') {
+                                    console.log('******Generating List of Todos******');
+                                    for (let i = 0; i < todos.length; i++) {
+                                        console.log(`${i}: ${todos[i]}`);
+                                    }
+                                    console.log('***********List Generated***********');
+                                }
+                                
+                                ****OTHER FUNCTIONS INCOMING*****
+
+                                input = prompt('What would you like to do?');
+                            }
+                            </code>
+                        </pre>
+                    </li>
+                </ol>
+                <h2>Option 1: Adding A New ToDo</h2>
+                <ol>
+                    <li>After the <strong>input</strong> variable (via the prompt) <strong>new</strong> has been
+                        entered, we then once again <strong>prompt the user</strong>. Using something like <strong>const
+                            newToDo = prompt('Okay, what is the new todo?');, we can get the string input</strong></li>
+                    <li>Once that is successfully acquired, we push it into the list (which has already been created as
+                        an <strong>array</strong>)</li>
+                    <li>Once again, it's also nice to include some means of communicating that a process has taken
+                        place!</li>
+                    <pre>
+                        <code>
+                            ****OTHER FUNCTION**** (as seen above :))
+
+                            else if (input === 'new') {
+                                const newToDo = prompt('What is your new todo?');
+                                todos.push(newToDo);
+                                console.log(`${newToDo} has been added to the list`);
+                            }
+                        </code>
+                    </pre>
+                </ol>
+                <h2>Option 3: Deleting A Specific ToDo</h2>
+                <ol>
+                    <li>After we receive the input 'delete', we might want to print out the list, and ask 'What index do
+                        you want to delete?' In this case, I will omit the list printing! However, I will obtain a value
+                        for the index using <strong>const index = parseInt(prompt('Please enter an index to
+                            delete'));</strong></li>
+                    <li>If our entry is NOT valid, we will simply explain that an invalid index has been entered. What
+                        makes for a VALID index, though? Simply, we need the value entered to be within the bounds of
+                        the todo list. We both a non-empty todo list, the value to be less than its length, AND the
+                        value to be <strong>not NaN</strong>. This is expressed by the conditional statement:
+                        <strong>if(!Number.isNan(index) && index&gt;=0 && index&lt;todos.length)</strong>
+                    </li>
+                    <li>N.B. The <strong>Number.isNan()</strong> is a special process in the mold of
+                        Object.values/Math.floor
+                        and other things we've seen in the course!</li>
+                    <li>Speaking of which, we use <strong>splice()</strong> to remove the chosen index from our array.
+                        Remember how <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">splice</a>
+                        works? If not, just look at this: <strong>const deleted = todos.splice(index,1);</strong></li>
+                    <li>In the above splice(index, 1) means we're splicing 1 entry from the array, at index index :).
+                        Subsequent to that operation, it's a good idea to print a message to the user!</li>
+                    <pre>
+                        <code>
+                            else if (input === 'delete') {
+                                const index = parseInt(prompt('Please enter an index to delete:'));
+                                if (!Number.isNaN(index) && index >= 0 && index < todos.length) {
+                                    const deleted = todos.splice(index, 1);
+                                    console.log(`You have selected ${index}.  Deleted ${deleted}`);
+                                } else {
+                                    console.log('Invalid index entered.  Operation FAILED!');
+                                }
+                            }
+                        </code>
+                    </pre>
+                </ol>
+                <h2>Rejected Code!</h2>
+                <p>I originally wanted to include <strong>functions</strong>, such as a means of calling a menu, but
+                    these have <strong>not</strong> been covered yet (and I don't want to learn them pre-emptively,
+                    picking up bad habits). Below lists some of the <strong>rejected code ideas:</strong>
+                <pre>
+                    <code>
+                        let menu = {
+                            1: 'New: add a to-do',
+                            2: 'List: list all to-dos',
+                            3: 'Delete: remove specific todo',
+                            4: 'Quit: quit app'
+                        }
+                        
+                        const toDoList = [];
+                        
+                        function addItem() {
+                            const toDoItem = prompt('Please enter your todo:');
+                            toDoList.push(toDoItem);
+                            console.log(`${toDoItem} added to the list!`);
+                        }
+                        
+                        function printList() {
+                            console.log('**********Generating list**********');
+                            for (let i = 0; i < toDoList.length; i++){
+                                console.log(`${i+1}: ${toDoList[i]}`);
+                            }
+                            console.log('*********List Over*********');
+                        }
+                        
+                        function removeItem() {
+                            printList();
+                            const index = parseInt(prompt('Which item do you want to remove?'));
+                            console.log(index);
+                        
+                        }
+                        
+                        function userMenu(menu) {
+                            for (let choice in menu) {
+                                console.log(`${choice}: ${menu[choice]}`);
+                            }
+                            console.log('Please enter your choice:');
+                        }
+                        
+                        let running = true;
+                        
+                        while (running===true) {
+                            let choice = parseInt(prompt(userMenu(menu)));
+                        
+                            while (!choice || choice < 1 || choice > 4)
+                                console.log('Please enter a valid choice!');
+                        
+                            if (choice === 1) {
+                                addItem();
+                            }
+                        
+                            else if (choice === 2) {
+                                if (toDoList.length === 0)
+                                    console.log('No to-dos to do!');
+                                else
+                                    printList();
+                            }
+                        
+                            else if (choice == 3) {
+                                if (toDoList.length === 0)
+                                    console.log('Nothing to remove!');
+                                else
+                                    removeItem();
+                            }
+                        
+                            else {
+                                console.log('Very well!  Exiting program...');
+                                running = false;
+                            }
+                        }
+                    </code>
+                </pre>
+                </p>
             </main>
         </div>
         <div class="container">
@@ -92,6 +298,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+    <script src="../javascriptVessels/toDoList.js"></script>
 </body>
 
 </html>
