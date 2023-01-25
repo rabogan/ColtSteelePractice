@@ -25,7 +25,7 @@
     <div class="container">
         <div class="container">
             <header>
-                <h1>JavaScript</h1>
+                <h1>JavaScript Functions</h1>
                 <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
                     <div class="container">
                         <div class="navbar-header">
@@ -75,7 +75,442 @@
                     <li>The <strong>return</strong> keyword does have a usage, however! We can arbitrarily define
                         values/variables that achieve what we want to yield from the function, and then these
                         variables/values.</li>
+                    <li><strong>scope</strong> is another topic about which my C++ study has already familiarized me
+                    </li>
                 </ul>
+                <p>The following quiz on scope has had the CSS and JavaScript stolen from one of the answers posted <a
+                        href="https://stackoverflow.com/questions/61302125/hiding-answers-to-questions-using-javascript">here</a>.
+                    Without irony, I can say that the code used within the JavaScript is currently beyond my scope!
+                <ol>
+                    <li>What is printed to the console when this code runs?
+                        <pre>
+                            <code>
+                                let animal = "Giant Pacific Octopus";
+                                function observe(){
+                                    let animal = "Pajama Squid";
+                                    console.log(animal);
+                                }
+                                observe();
+                            </code>
+                        </pre>
+                        <button onclick="myFunction()">Show Answer</button>
+                        <div style="display: none;">
+                            Pajama Squid
+                        </div>
+                    </li>
+
+                    <li>What is the result of running the following code?
+                        <pre>
+                            <code>
+                                const creature = "Common Sea Dragon";
+ 
+                                function scubaDive(){
+                                    const creature = "Spanish Dancer"; //A type of sea slug
+                                    console.log(creature);
+                                }
+ 
+                                scubaDive();
+                            </code>
+                        </pre>
+                        <button onclick="myFunction()">Show Answer</button>
+                        <div style="display: none;">
+                            Spanish Dancer! Remember, the two "creature" variables are not in the same scope! If
+                            they
+                            were, we would see an error!
+                        </div>
+                    </li>
+
+                    <li>What two values are printed to the console?
+                        <pre>
+                            <code>
+                                let deadlyAnimal = "Blue-Ringed Octopus";
+
+                                function handleAnimal() {
+                                let deadlyAnimal = "Scorpionfish";
+                                console.log(deadlyAnimal);
+                                }
+ 
+                                handleAnimal();
+                                console.log(deadlyAnimal)
+                            </code>
+                        </pre>
+                        <button onclick="myFunction()">Show Answer</button>
+                        <div style="display: none;">
+                            Scorpionfish
+                            Blue-Ringed Octopus
+                        </div>
+                    </li>
+
+                    <li>What is the JavaScript used in the Q&A format?
+                        <pre></pre>
+                        <button onclick="myFunction()">Show Somewhat Advanced JavaScript</button>
+                        <div style="display: none;">
+                            <pre>
+                                <code>
+    function myFunction($event) {
+        console.log(event);
+        let temp = event.target;
+        let temp1 = event.target.nextElementSibling;
+        console.log(temp);
+        console.log(temp1);
+        if (temp1.className == "answerBlock") {
+        temp1.classList.remove("answerBlock");
+        temp.innerHTML = 'Show Answer';
+        } else {
+        temp1.classList.add("answerBlock");
+        temp.innerHTML = 'Hide Answer';
+        }
+    }</code>
+</pre>
+                        </div>
+                    </li>
+                </ol>
+                </p>
+
+                <h2>Regarding Scope and const/let/var</h2>
+                <p>There's an interesting difference between the use of <strong>var</strong> and
+                    <strong>let/const</strong> in JavaScript. If we use <strong>let/const</strong>, our variables
+                    generally stay within their scopes: for example, in a for-loop <em>for(let i = 0; i < 4; i++)</em>,
+                            the <strong>i</strong> variable wouldn't be accessible outside of the block over which it
+                            iterates. However, if we use <em>for(<strong>var</strong> i = 0; i < 4; i++)</em>, we would
+                                    be able to output i later (it, presumably, would be 4). I imagine it would also be
+                                    possible to further manipulate that particular variable!
+                                    <ul>
+                                        <li>'var' is function scoped, meaning that a variable declared with 'var' within
+                                            a function is only accessible within that function. Variables declared with
+                                            'var' are also hoisted, meaning that they are moved to the top of their
+                                            scope, and can be accessed before they are declared in the code.</li>
+                                        <li>'const' is used to declare a variable that cannot be reassigned, while 'let'
+                                            is used to declare a variable that can be reassigned. Both 'const' and 'let'
+                                            are block scoped, meaning that a variable declared with 'const' or 'let'
+                                            within a block is only accessible within that block.</li>
+                                        <li>In modern JavaScript, it is generally recommended to use 'const' by default,
+                                            and only use 'let' when you know a variable needs to be reassigned. 'var' is
+                                            not considered best practice in modern JavaScript, and it is recommended to
+                                            avoid using it.</li>
+                                    </ul>
+                </p>
+                <h2>Function Expressions</h2>
+                <p>In JavaScript, functions are considered as values! In this language, we can return functions as
+                    values, just as we return numbers!</p>
+                <li>Definition: a <strong>function expression</strong> is a way to define a function and <strong>assign
+                        it to a variable</strong>.</li>
+                <li>The most basic example is shown in the code below. Notice how a function expression can be
+                    anonymous, or it can have a named identifier. An anonymous function expression is a function without
+                    a name, and it is usually assigned to a variable like so:
+                    <pre>
+                        <code>
+                            const add = function(a, b) {
+                                return a + b;
+                            };
+                            console.log(add(1, 2)); 
+                        </code>
+                    </pre>
+                    So, we created a <strong>function expression</strong> and assigned it to the variable
+                    <strong>add</strong>. In this example, the function <strong>function(a, b) { return a + b;
+                        }</strong> is an anonymous
+                    function expression, and it is assigned to the variable add. This function can be invoked by calling
+                    add(1, 2), which would return 3.
+                </li>
+                <li>
+                    A named function expression is a function that has a name, and it is also assigned to a variable.
+                    The name of the function is only accessible within the function's scope.
+                    <pre>
+                        <code>
+                            let multiply = function multiply(a, b) {
+                                return a * b;
+                            }                            
+                        </code>
+                    </pre>
+                    In this example, the function function <strong>multiply(a, b) { return a * b; }</strong> is a
+                    <strong>named function
+                        expression</strong>, and it is assigned to the variable multiply. This function can be invoked
+                    by calling
+                    multiply(2, 3), which would return 6. It is important to note that a <strong>named function
+                        expression
+                        cannot be invoked before it is defined</strong>,
+                    unlike function declaration.
+                </li>
+                <li><strong>Function Expressions</strong> are commonly used in JavaScript when a function is defined
+                    <strong>inside another function</strong>, or if the <strong>function is used only in a specific
+                        scope.</strong> It is also useful when <strong>you want want to assign a function to a
+                        variable</strong> and pass it as an argument to another function or return it from a function.
+                </li>
+                <li>Advanced Topic 1: <strong>Function expressions</strong> could also be used with
+                    <strong>IIFE(Immediately-Invoked Function
+                        Expressions)</strong> which allows us to execute a function immediately after it is defined.
+                </li>
+                <li>Advanced Topic 2a: Another way of writing function expressions is by using the <strong>arrow
+                        function
+                        notation</strong>, which is more concise and also introduced in <strong>ECMAScript 6
+                        (ES6)</strong>. Here is an example of the
+                    same function expression written with arrow function notation:
+                    <pre>
+                        <code>
+                            <strong>const sum = (a, b) => a + b;</strong>
+                        </code>
+                    </pre>
+                </li>
+                <li>Advanced Topic 2b: Function expressions are used frequently in JavaScript, and one of the most
+                    common use cases is to pass a function as an argument to another function, like
+                    <strong>setTimeout</strong> or
+                    <strong>Array.prototype.map</strong>. They also can be used for creating <strong>closures</strong>
+                    (see next point!), creating
+                    functions on the fly, or
+                    to use it as a return value.
+                    <pre>
+                        <code>
+                            const multiply = (a, b) => a * b;
+                            const divide = (a, b) => a / b;
+                            const calculator = (a, b, operator) => operator(a, b);
+                            console.log(calculator(2,3,multiply))
+                            console.log(calculator(10,5,divide))    
+                        </code>
+                    </pre>
+                    In this example, we defined two functions multiply and divide as function expressions, and then we
+                    defined another function calculator which takes 3 arguments a, b and operator which is a function,
+                    and it applies the function to a and b and return the result.
+                </li>
+                <li>Advanced Topic 3: In JavaScript, a closure is <strong>a function that has access to the variables in
+                        its
+                        parent scope</strong>, even after the parent function has returned.
+
+                    A <strong>closure is created when a function is defined inside another function</strong>, and the
+                    <strong>inner function has
+                        access to the variables of the outer function</strong>. Here is an example:
+                    <pre>
+                        <code>
+                            function outerFunction(x) {
+                                let innerVariable = x;
+                              
+                                return function innerFunction() {
+                                  console.log(innerVariable);
+                                }
+                              }
+                              
+                              const myClosure = outerFunction(10);
+                              myClosure(); // logs "10"                              
+                        </code>
+                    </pre>
+                    In this example, the outerFunction takes in a parameter x and assigns it to the variable
+                    innerVariable. Then it returns the function innerFunction <strong>which has access to the
+                        innerVariable</strong> and
+                    it <strong>logs the innerVariable value</strong> when we call it.
+
+                    We assigned the outerFunction to the variable myClosure and when we call myClosure() it returns the
+                    innerFunction and logs the innerVariable value which is 10.
+
+                    Closures are useful for a number of different tasks, such as:
+                    <ol>
+                        <li><strong>Creating private variables</strong> that can only be accessed by privileged
+                            functions.</li>
+                        <li>Creating function factories that <strong>return different functions with different
+                                behavior</strong>.</li>
+                        <li>Implementing data privacy and <strong>encapsulation</strong></li>
+                        <li>Creating and returning function with an already set context or scope.</li>
+                    </ol>
+                    In the above example we are <strong>using a closure to create a factory function</strong> that
+                    returns a new function
+                    that has access to the innerVariable of the outer function, even after the outer function has
+                    returned.
+                </li>
+                <h2>Higher Order Functions</h2>
+                <p>A higher order function is a function that <strong>takes one or more functions as arguments, and/or
+                        returns a
+                        function as its result.</strong></p>
+                <p>In JavaScript, functions are <strong>first-class citizens</strong>, meaning that they can be treated
+                    just like any
+                    other data type, such as a number or a string. This means that you can <strong>pass functions as
+                        arguments
+                        to other functions</strong>, <strong>return functions as the result of other functions</strong>,
+                    and <strong>assign them to variables</strong>.
+                </p>
+                <p>Let's look at a simple example:
+                <pre>
+                        <code>
+                            function callTwice(func){
+                                func();
+                                func();
+                            }
+
+                            function rollDie(){
+                                const roll = Math.floor(Math.random() * 6) + 1;
+                                console.log(roll);
+                            }
+
+                            callTwice(rollDie);
+                        </code>
+                    </pre>
+                Here, we're passing the rollDie function as an argument. <strong>Important: we use rollDie<s>()</s>,
+                    rather than use parentheses</strong>! We don't want to pass the return value from the function we're
+                passing: rather, we pass the function itself, which is then called by the calling function! The above
+                example executes the rollDie() function twice.
+                </p>
+                <h2>Higher Order Functions: Returning Functions</h2>
+                <p>So, a higher-order function can also <strong>return a function!</strong>. Here's another example of a
+                    simple higher-order function that takes <strong>a function and
+                        a number as arguments</strong>, and returns a new function that multiplies the number by the
+                    result of the
+                    original function:
+                <pre>
+                        <code>
+                            function multiplyBy(factor) {
+                                return function(number) {
+                                  return number * factor;
+                                };
+                              }
+                              
+                              const double = multiplyBy(2);
+                              console.log(double(5)); // logs 10                              
+                        </code>
+                    </pre>
+                In this example, <strong>multiplyBy</strong> is a higher-order function because it takes a function as
+                an argument (in
+                this case, the function is just <strong>number</strong>) and returns a new function as its result. We
+                assigned the
+                returned function to the variable <strong>double</strong> and when we call <strong>double(5)</strong> it
+                returns <strong>5*2=10</strong>
+
+                Higher-order functions are a powerful feature of JavaScript and are used frequently in functional
+                programming. They allow you to write reusable and composable code that can be easily understood, tested,
+                and maintained. Some examples of higher-order functions that you might use in JavaScript include
+                <strong>Array.prototype.map</strong>, <strong>Array.prototype.filter</strong>,
+                <strong>Array.prototype.reduce</strong> and <strong>setTimeout</strong> which take a function
+                as an argument and returns a new function as a result.
+
+                In summary, a higher-order function is a function that either takes one or more functions as arguments
+                or returns a function as a result. They allow you to write reusable and composable code and are widely
+                used in JavaScript.
+                </p>
+                <p>In the course, the following example is used:
+                <pre>
+                        <code>
+                        function makeMysteryFunc(){
+                            const rand = Math.random();
+                            if(rand>0.5){
+                                return function(){
+                                    console.log('Congrats!  I'm a good function!');
+                                    console.log('You win a million dollars!');
+                                }
+                            }else{
+                                return function(){
+                                    alert('Uh oh!  You have been infected by a virus!');
+                                    alert('Stop trying to close this window!')
+                                    alert('Stop trying to close this window!')
+                                    alert('Stop trying to close this window!')
+                                    alert('Stop trying to close this window!')
+                                    alert('Stop trying to close this window!')
+                                }
+                            }
+                        }
+                        </code>
+                    </pre>
+                So, using something like:
+                <pre>
+                        <code>
+                            let mystery = makeMysteryFunc();
+                        </code>
+                    </pre>
+                ...would allow us to <strong>call</strong> mystery() itself, and see what we got: the function was
+                returned by the makeMysteryFunc function!
+                </p>
+                <p>A better example is illustrated with this function:
+                <pre>
+                        <code>
+                            function makeBetweenFunct(min,max){
+                                return function(num){
+                                    return num>=min && num<=max;
+                                }
+                            }
+                        </code>
+                    </pre>
+                This function takes in two arguments (min and max), and return a function that can be used to verify if
+                a value falls between the specified min and max values.
+                For example, we could define some specific age ranges (ages correct in 2023*) like so:
+                <pre>
+                    <code>
+                        <s>function</s> (note how the keyword isn't needed)
+                        <s>function</s> const genAlpha = makeBetweenFunct(0,13);
+                        const genZ = makeBetweenFunct(14,26);
+                        const millenial = makeBetweenFunct(27,42);
+                        const genX = makeBetweenFunct(43,58);
+                        const boomer = makeBetweenFunct(59,77);
+                        const silentGen = makeBetweenFunct(78,94);
+                        const greatestGen = makeBetweenFunct(95,120);
+                    </code>
+                </pre>
+                We can call these various functions, and check out what they return!
+                <pre>
+                    <code>
+                        genZ(25) <em>returns true!</em>
+                        millenial(44) <em>false</em>
+                        genX(69) <em>false</em>
+                        boomer(100) <em>false</em>
+                        silentGen(92) <em>true</em>
+                        greatestGen(37) <em>false</em>
+                    </code>
+                </pre>
+                </p>
+                <h2>Methods</h2>
+                <p>In JavaScript, a <strong>method</strong> is a function that is a property of an object. In C++, a
+                    <strong>member function</strong> is found in a class, and is similar! Both define behavior for
+                    objects, and they can be called on an instance of the class or object! (But let's focus on the
+                    JavaScript!!!)
+                </p>
+                <p>
+                    In JavaScript, you can define a method as a property of an object, like this:
+                <pre>
+                        <code>
+                            <strong>const myObject = {
+                                myMethod: function() {
+                                    // method logic here
+                                }
+                            };</strong>
+
+                            ANOTHER EXAMPLE:
+                            const myMath = {
+                                PI:3.14159;
+                                square:function(num){
+                                    return num*num;
+                                }<strong>,</strong>
+                                cube:function(num){
+                                    return num*num*num;  (Or num**3) ** being like ^
+                                }
+                            }
+                        </code>
+                    </pre>
+                We can call these using myMath.PI (as one example), or myMath.square(5) (giving, hopefully, 25!).
+                </p>
+                <p>One key thing: <strong>objects</strong> are everywhere in JavaScript! An array is, by itself,
+                    technically an object!</p>
+                <p>
+                <ol>
+                    <li>Define an object called <strong>square</strong>, which will hold methods that have to do with
+                        the geometry of
+                        squares. It should contain two methods, <strong>area</strong> and <strong>perimeter</strong>.
+                        <strong>area</strong> should accept the length of a
+                        side (all sides are the same in a square) and then return the side squared.
+                        <strong>perimeter</strong> should
+                        accept the length of a <strong>side</strong> and return that side multiplied by 4.
+                        <pre></pre>
+                        <button onclick="myFunction()">Show Answer</button>
+                        <div style="display: none;">
+                            <pre>
+                                <code>
+                                    const square={
+                                        area:function(num){
+                                            return num*num;
+                                        },
+                                        perimeter:function(num){
+                                            return num*4;
+                                        }
+                                    };
+                                </code>
+                            </pre>
+                        </div>
+                    </li>
+                </ol>
+                </p>
             </main>
         </div>
         <div class="container">

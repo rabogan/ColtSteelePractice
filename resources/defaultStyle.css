@@ -1,3 +1,7 @@
+button {
+    background-color: #00BBF9;
+}
+
 body {
     line-height: 1.2;
     background-color: #A2C1C3;
@@ -58,4 +62,12 @@ th {
     color: #2b2d42;
     font-family: 'PT Sans', sans-serif;
     font-size: 1.2em;
+}
+
+.answerBlock {
+    display: block !important;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #00BBF9;
 }
