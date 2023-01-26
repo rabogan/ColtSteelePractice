@@ -536,6 +536,91 @@
                         </li>
                     </ol>
                     </p>
+                    <h2>The <em>this</em> keyword</h2>
+                    <p><strong>this</strong> refers to the object that the current function or method is operating on.
+                        It is often used to access properties and methods of said current object.</p>
+                    <p>In this example, the 'sayHello' method uses the <strong>this</strong> keyword to access the
+                        <strong>name</strong> property of the <strong>person</strong> object, and prints 'Hello, my name
+                        is Bobby'
+                    </p>
+                    <pre>
+                        <code>
+                            let person = {
+                                name: 'Bobby',
+                                age: 25,
+                                sayHello: function() {
+                                    console.log('Hello, my name is '' + this.name);
+                                }
+                            };
+                            
+                            person.sayHello(); // Output: 'Hello, my name is Bobby'                            
+                        </code></pre>
+                    <p>Unfortunately, it's not all that simple! <strong>this</strong>'s value changes depending on
+                        <strong>how the function is called.</strong>
+                    </p>
+                    <li>When a function is called a <strong>method of an object</strong>, <strong>this</strong> refers
+                        to the object!</li>
+                    <li>When a function is called as a <strong>standalone function</strong>, <strong>this</strong>
+                        refers to the global object: in the browser, this is the <strong>window</strong> object.</li>
+                    <h2>The Window Object?</h2>
+                    <p>The <strong>window object</strong> can be thought of as the <strong>browser window.</strong> It's
+                        the blobal object in web browsers, and is automatically created by the browser: and available to
+                        <strong>all JS code</strong> running on the page.
+                    </p>
+                    <p>The <strong>window object</strong> refers to various browser-related functionalities, such as the
+                        URL, web page's history, and the ability to create/manipulate browser windows and dialogs.</p>
+                    <p>It also provides access to the <strong>document object</strong>, which represents the web page's
+                        <strong>Document Object Model (DOM)</strong>, and allows you to manipulate the elements of the
+                        page.
+                    </p>
+                    <p>For example, this code uses <strong>window.location</strong> to redirect the browser to a new
+                        URL:
+                    <pre>
+                        <code>
+                            window.location = "https://www.backToWorkQuick.com";
+                        </code></pre>
+                    </p>
+                    <p>
+                        This one uses the <strong>window.alert()</strong> method to display an alert dialog with a
+                        message:
+                    <pre>
+                            <code>
+                                window.alert("Greetings Friend!");
+                            </code></pre>
+                    </p>
+                    <p>NOTE: <strong>window</strong> is only available in the browser environment, and not in other JS
+                        environments like node.js</p>
+                    <h2>Try/Catch: Error Handling</h2>
+                    <p>The <strong>try...catch statement</strong> is comprised of a <strong>try block</strong> and
+                        either a <strong>catch block</strong>, a <strong>finally block</strong>,
+                        or <strong>both</strong>. The code in the <strong>try block</strong> is executed first, and if
+                        it throws an exception, the code in
+                        the catch block will be executed. The code in the <strong>finally block</strong> will always be
+                        executed before
+                        control flow exits the entire construct.</p>
+                    <pre>
+                        <code>
+                            try {
+                                nonExistentFunction();
+                              } catch (error) {
+                                console.error(error);
+                                // Expected output: ReferenceError: nonExistentFunction is not defined
+                                // (Note: the exact output may be browser-dependent)
+                              }                              
+                        </code></pre>
+                    <p>Another example:
+                    <pre>
+                            <code>
+                                function yell(msg){
+                                    try{
+                                        console.log(msg.toUpperCase().repeat(3));
+                                    }catch(e){
+                                        console.log(e);
+                                        console.log("Please pass a string next time!");
+                                    }
+                                }
+                            </code></pre>
+                    </p>
             </main>
         </div>
         <div class="container">
@@ -550,6 +635,7 @@
                         <li><a href="./runningJavascript2.html">Running JavaScript II</a></li>
                         <li><a href="./javascriptGuessingGame.html">JavaScript Guessing Game</a></li>
                         <li><a href="./javascriptToDoList.html">JavaScript To-Do List</a></li>
+                        <li><a href="./javascriptArrayMethods.html">JavaScript Callbacks and Array Methods</a></li>
                     </ul>
                 </nav>
                 <a href="../index.html">Home</a>
