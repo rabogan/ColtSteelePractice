@@ -64,7 +64,133 @@
         </div>
         <div class="container">
             <main>
-                <h2>JavaScript Methods</h2>
+                <h2>An outline of what you'll learn!</h2>
+                <p>In brief, this section will help you to understand the <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow
+                        function</a> syntax, as well as the following methods:
+                <ul>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>
+                    </li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map</a>
+                    </li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a>
+                    </li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">find</a>
+                    </li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">reduce</a>
+                    </li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">some</a>
+                    </li>
+                    <li><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">every</a>
+                    </li>
+                </ul>
+                </p>
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>
+                </h2>
+                <p>This is a little old-fashioned. Put simply, it:
+                    <li>Accepts a <strong>callback</strong> function</li>
+                    <li>Calls the function once per element in the array</li>
+                </p>
+                <p>An uncommon example is this! It is MUCH MORE common to define some anonymous function
+                    <strong>inline</strong>,
+                    i.e. using <strong>nums.forEach(function (element))</strong>.
+                <pre>
+                        <code>
+                            const numbers = [1,2,3,4,5];
+                            COMMON
+                            <strong>numbers.forEach(function(element){
+                                console.log(element);
+                            })
+                            </strong>
+
+                            UNCOMMON
+                            function print(element){
+                                console.log(element)
+                            }
+                            nums.forEach(print);
+                        </code></pre>
+                </p>
+                <p>In a nutshell, the <strong>forEach() method</strong> executes a provided function once for each array
+                    element</p>
+                <p>Now, for a more complicated example, using players! We want some means of printing out their name and
+                    rating in FIFA! The biggest pitall of forEach is the placement of the <strong>inline function
+                        parentheses!</strong>
+                <pre>
+                        <code>
+                            const players = [
+                                {
+                                name:'Lionel Messi',
+                                rating: 95
+                                },
+                                {
+                                name:'Bukayo Saka',
+                                rating: 92
+                                },
+                                {
+                                name:'Pedri',
+                                rating: 90
+                                }
+                            ]
+
+                            players.forEach(function(player){
+                                console.log(`${player.name} ${player.rating}`);
+                            })
+                        </code></pre>
+                </p>
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">map</a>
+                </h2>
+                <p>The <strong>map()</strong> method creates a <strong>new array</strong> populated with the results of
+                    calling a
+                    provided function on every element in the calling array.</p>
+                <pre>
+                        <code>
+                            const array1 = [1, 4, 9, 16];
+
+                            // Pass a function to map
+                            const map1 = array1.map(x => x * 2);
+
+                            console.log(map1);
+                            // Expected output: Array [2, 8, 18, 32]
+                        </code></pre>
+                <p>More simply, <strong>map</strong> creates a new array with the results of calling a
+                    <strong>callback</strong> on every element in the array
+                </p>
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a>
+                </h2>
+
+
+
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">find</a>
+                </h2>
+
+
+
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">reduce</a>
+                </h2>
+
+
+
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">some</a>
+                </h2>
+
+
+
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">every</a>
+                </h2>
             </main>
         </div>
         <div class="container">
