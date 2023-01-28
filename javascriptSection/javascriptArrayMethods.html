@@ -165,6 +165,138 @@
                     <strong>callback</strong> on every element in the array
                 </p>
                 <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow
+                        function</a>Arrow Functions</h2>
+                <p>A really key part of modern JavaScript: shorthand syntax that <strong>defines a function</strong>.
+                </p>
+                <p>Consists of a <strong>fat arrow (=>)</strong>, which defines the function, rather than the
+                    <strong>function</strong> keyword.
+                </p>
+                <p>One rudimentary example is this, which takes in a string and converts it to upper case:
+                <pre>
+                        <code>
+                            const result = (str) => str.toUpperCase();
+                            const result = str => str.toUpperCase();  
+                            (If we only take 1 parameter, we can choose to keep or omit the parentheses)
+                        </code></pre>
+                </p>
+                <p>A more advanced example is this, which takes in an array of numbers, returning the largest:
+                <pre>
+                        <code>
+                            const maxNumber = (number) => Math.max(...numbers);
+                            //First introduction to the .max function
+                        </code></pre>
+                </p>
+                <p>Finally, the hardest example is this, which flips around the key and value of an object:
+                <pre>
+                    <code>
+                        const flipped = (object1) => {
+                            let newObject = {};
+                            for(let key in object1){
+                                newObject[object1[key]] = key;
+                            }
+                        }
+                    </code></pre>
+                </p>
+                <p>Another example, and attempting to link <strong>.map</strong> as well, is going to re-use some old
+                    code
+                <pre>
+                    <code>
+                const players = [
+                    {
+                    name:'Lionel Messi',
+                    rating: 95
+                    },
+                    {
+                    name:'Bukayo Saka',
+                    rating: 92
+                    },
+                    {
+                    name:'Pedri',
+                    rating: 90
+                    }
+                ]
+                const newPESRating = players.map(function(player){
+                    return `${player.name}-${player.rating/10}`
+                })</code></pre>
+                <strong>const newPesRating = players.map((player) =>{
+                    `${player.name}-${player.rating/10}`
+                    })</strong> Implicitly returns Lionel Messi-9.5 Bukayo Saka-9.2 etc...
+                </p>
+                <h2>setTimeout and setInterval</h2>
+                <p>In other programming languages like C++, it's possible to use the <strong><a
+                            href="https://favtutor.com/blogs/sleep-cpp">sleep</a>(time_period in seconds)</strong>
+                    function. In JavaScript, we have a function called <strong><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/API/setTimeout">setTimeout</a></strong>
+                </p>
+                <p><strong>setTimeout()</strong> allows you to execute a piece of code after a specified amount of time
+                    has passed. It's a method of the window object and is commonly used in conjunction with other
+                    JavaScript methods and functions to create timed events or delayed actions in web pages.</p>
+                <p>The basic syntax is:
+                <pre>
+                        <code>
+                            <strong><em>setTimeout(function, delay);</em></strong>
+                            <strong>function</strong> is the JavaScript function you want to execute after the delay.
+                            <strong>delay</strong> is the time in milliseconds before the function is executed.
+                        </code></pre>
+                </p>
+                <p>As an example of the above, you could use the following code to display an alert after 2 seconds:
+                <pre>
+                        <code>
+                            setTimeout(() => {
+                                alert("I hate to interrupt, but...");
+                            }, 2000);
+                        </code></pre>
+                </p>
+                <p>It's also important to know that setTimeout returns a timeout ID that can be used to clear the
+                    timeout
+                    with <strong>clearTimeout()</strong> function, which prevents the alert message from being
+                    displayed!</p>
+                <p>It's common to use <strong>setTimeout</strong> in conjunction with other JavaScript methods and
+                    functions, such as <strong>setInterval()</strong> to create timed events or delayed actions in web
+                    pages.</p>
+                <p><strong>setInterval()</strong> is very similar to setTimeout(), but it repeats execution of the
+                    function INDEFINITELY, at a fixed time interval specified in milliseconds.</p>
+                <p>The basic syntax of this one is:
+                <pre>
+                        <code>
+                            setInterval(function,delay);
+                            <strong>function</strong> is the JavaScript function you want to execute <strong>repeatedly</strong>.
+                            <strong>delay</strong> is the time in milliseconds between each execution of the function.
+                        </code></pre>
+                </p>
+                <p>For example, you could use the following code to display an alert message every 2 seconds:</p>
+                <pre>
+                    <code>
+                        setInterval(() => {
+                            alert("I know a line that will get on your nerves...");
+                        }, 2000);
+                        Executes the above line every 2 seconds... :/
+                    </code></pre>
+                <p>As with <strong>setTimeout</strong>, <strong>setInterval</strong> returns a interval ID that can be
+                    used to clear the interval with the <strong>clearInterval()</strong> function:
+                <pre>
+                        <code>
+                            let intervalId = setInterval(() => {
+                                alert("Hello, World!");
+                            }, 2000);
+                            
+                            clearInterval(intervalId);
+                        </code></pre>
+                <p>It's important to keep in mind that setInterval() is a powerful tool and should be used with care, as
+                    it <strong>can cause performance issues</strong> if not used properly. For example, if you have a
+                    function that takes
+                    a long time to execute and is set to run every few milliseconds, it can cause the browser to slow
+                    down or crash.
+
+                    You should also be careful when using <strong>setInterval() with setTimeout() together</strong>,
+                    since it can cause
+                    unexpected behavior if not used properly.
+
+                    Also, be aware that the actual interval may vary <strong>depending on the JavaScript engine, system
+                        load and
+                        other factors</strong>.</p>
+                <h2><a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a>
                 </h2>
 
