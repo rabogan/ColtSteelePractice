@@ -65,6 +65,9 @@
         <div class="container">
             <main>
                 <h2>An outline of what you'll learn!</h2>
+                <p>First of all, you just need to remember how the keyword <strong>this</strong> reacts with
+                    <strong>arrow functions!</strong>
+                </p>
                 <p>In brief, this section will help you to understand the <a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">arrow
                         function</a> syntax, as well as the following methods:
@@ -91,6 +94,16 @@
                             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">every</a>
                     </li>
                 </ul>
+                </p>
+                <h2>Arrows and this</h2>
+                <p>
+                <p>How does <strong>this</strong> react with
+                    <strong>arrow functions</strong>?
+                </p>
+                <p>Not particularly well, then within objects! Essentially, when used with an arrow function, the
+                    <strong>this</strong> keyword will REFER TO the scope it was created in! When we use a non-arrow
+                    function, the keyword <strong>this</strong> pay attention to where the function is executed
+                </p>
                 </p>
                 <h2><a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a>
@@ -299,12 +312,13 @@
                         other factors</strong>.</p>
                 <h2><a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">filter</a>
-                    <p>The filter() method creates a <strong>shallow copy</strong> (i.e. a copy that shares references
-                        pointing to the same underlying values as in the original array)
-                        of a portion of a given array, filtered down to just the
-                        elements from the given array that pass the test implemented by the provided function.</p>
-                    <p>As an example, I'll show how to get only the best (well, 7.0+) shows from this array:</p>
-                    <pre>
+                </h2>
+                <p>The filter() method creates a <strong>shallow copy</strong> (i.e. a copy that shares references
+                    pointing to the same underlying values as in the original array)
+                    of a portion of a given array, filtered down to just the
+                    elements from the given array that pass the test implemented by the provided function.</p>
+                <p>As an example, I'll show how to get only the best (well, 7.0+) shows from this array:</p>
+                <pre>
                             <code>
                                 const retroShows = [
                                 {
@@ -320,23 +334,69 @@
                                 ];
                                 const bestOnes = retroShows.filter(show => show.score >= 7.0);
                             </code></pre>
-                    <p>My apologies to <strong>Sister Sister!</strong></p>
-                </h2>
-
-
+                <p>My apologies to <strong>Sister Sister!</strong></p>
 
                 <h2><a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">find</a>
                 </h2>
-
-
+                <p>The find() method returns the first element in the provided array that satisfies the provided testing
+                    function. If no values satisfy the testing function, undefined is returned.</p>
 
                 <h2><a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">reduce</a>
                 </h2>
+                <p>This is the toughest of all the functions! It allows us to reduce all elements in an array to a
+                    single value.</p>
+                <p>This can be used to find the total sum of an array, or a min/max value, and so on!</p>
+                <p>As an example, look at this code:
+                <pre>
+                        <code>
+                            const prices = [9.99,5.99,6.99];
+                            const total = prices.reduce((total,price) => {
+                                return total+price;
+                            })
+                        </code></pre>
+                </p>
+                <p>The <strong>syntax</strong> is fairly easy. Essentially, in this function,
+                    prices.reduce(<strong>(total,price)</strong>, the part in parentheses (and bold) is called the
+                    <strong>reducer function.</strong> The first parameter is some type of accumulator (labelled 'total'
+                    here), and the second parameter represents EACH individual element in the array.
+                </p>
+                <p>So, using <strong>const total = nums.reduce((accumulator, element)=>{return
+                        accumulator+total});</strong> should give you a nice alternative to using a for-loop to get a
+                    total from an array!</p>
+                <p>Another example uses players again:
+                <pre>
+                        <code>
+                            const players = [
+                        {
+                            name:'Lionel Messi',
+                            rating: 95
+                            },
+                            {
+                            name:'Bukayo Saka',
+                            rating: 92
+                            },
+                            {
+                            name:'Pedri',
+                            rating: 90
+                            }
+                        ]
 
-
-
+                        let highestRatedPlayer = players.reduce((bestPlayer,curPlayer) => {
+                            if(curPlayer.rating > bestPlayer.score)
+                                return curPlayer;
+                            return bestPlayer;
+                        }
+                        </code></pre>
+                </p>
+                <p>We can also set an initial starting point for things:
+                <pre>
+                        <code>
+                            const evens = [2,4,6,8];
+                            evens.reduce((sum,num)=>sum+num, 100)
+                        </code></pre>
+                </p>
                 <h2><a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">some</a>
                     <p>Like <strong>every()</strong>, this returns a boolean value. This function will return true is
@@ -367,6 +427,15 @@
                         in the
                         class higher than 70?</p>
                 </h2>
+                <h2>Newer Aspects of JavaScript</h2>
+                <ul>
+                    <li>Default parameters are fairly easy to understand! You've used things like void dfs(...int
+                        parentRow = -1, int parentCol = -1) in C++. In JavaScript, <strong>default parameters</strong>
+                        just involved assigning some parameter with a specific value/number/string. That way, we can
+                        avoid unwanted problems, such as a value being undefined, or no argument being sent to a
+                        parameter that is begging for one! As in C++, the default parameters should be further to the
+                        right of any signature!</li>
+                </ul>
             </main>
         </div>
         <div class="container">
