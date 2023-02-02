@@ -170,8 +170,7 @@
                             const die2 = Math.floor(Math.random() * 6) + 1; //random number from 1-6
 
                             <strong>let roll = `You rolled a ${die1} and ${die2}.  They sum to ${die1+die2}`;</strong>
-                        </code>
-                    </pre>
+                        </code></pre>
                 </p>
                 <h2>Equality in JavaScript</h2>
                 <ul><strong>==</strong> and <strong>!=</strong>:
@@ -182,6 +181,83 @@
                 <ul><strong>===</strong> and <strong>!==</strong>:
                     <li>Checks for both equality of value and <strong>TYPE!</strong></li>
                 </ul>
+                <h2>Spread Syntax</h2>
+                <p>The <strong>spread</strong> syntax <strong>(...)</strong> allows an iterable, like an array or
+                    string, to be <strong>expanded</strong> in places where zero or more arguments (for function calls)
+                    or elements (for
+                    array literals) are expected.</p>
+                <p>In an object literal (think of a <em>player</em> with a name and FIFA rating), the spread syntax
+                    enumerates the properties of an object, and adds the key-value pairs to the object being created.
+                </p>
+                <h4>Spread in function calls</h4>
+                <p>To find the maximum value of an element in an array, you might think that we can simply call it using
+                    the function <strong>Math.max(nums);</strong> However, that's <strong>mistaken!</strong> .max
+                    expects separate arguments, which is where the <strong>spread</strong> syntax helps! It spreads the
+                    array into <strong>separate arguments</strong>. You can think of it as removing the brackets away
+                    from the array
+                <pre>
+                        <code>
+                            let nums = [13,6,4,7,2,1,92,3,52,51,56,63];
+                            <strong>Math.max(...nums)</strong>
+                        </code></pre>
+                </p>
+                <p>Another great example of the above is to use <strong>console.log</strong> with it. When we use the
+                    <strong>spread syntax</strong>, each element is passed as a separate argument. What's more, if we
+                    pass a <strong>string</strong> into console.log using spread syntax, then we'll get a <em>very</em>
+                    spaced-out Hello World!
+                <pre>
+                        <code>
+                            let nums = [13,6,4,7,2,1,92,3,52,51,56,63];
+                            console.log(nums);  //Prints out the array, along with square brackets in the console
+                            <strong>console.log(...nums);</strong>  //Prints out EACH element.
+
+                            string standard = 'Hello World!';
+                            console.log(standard);  //Prints out the string
+                            console.log(...standard);   
+                            //Each character is processed individually, and printed out separated by a space
+                        </code></pre>
+                </p>
+                <h4>Spread with Array Literals</h4>
+                <p>Spread allows us to spread an iterable array (such as <em>cats</em> <em>dogs</em> below) into a new
+                    array. The <strong>spread operator</strong> is a great way to quickly and easily combine these.
+                    <code>
+                        const dogs = ['Eric','Molly','Ceilidh'];
+                        const cats = ['Clint','Baby'];
+                        <strong>const allPets = [...dogs, ...cats];</strong>
+                    </code></pre>
+                </p>
+                <h4>Spread with Object Literals</h4>
+                <p>In objects literals, <strong>spread</strong> allows us to copy properties from one object into
+                    another object literal!</p>
+                <p>So, we can <strong>spread properties from an object into a new object!</strong></p>
+                <p>
+                <pre>
+                        <code>
+                            const feline = {legs:4, family: 'Felidae'};
+                            const canine = {isFurry:true, family:'Caninae'};
+                        </code></pre>
+                </p>
+                <p>To make a new object using one of the above, we can make use of spread! e.g. {...feline,
+                    color:'black'};</p>
+                <p>It's also possible to combine the properties above into a new object: const catdog = {...feline,
+                    ...canine}; However, in the event of any <strong>conflicts</strong>, the LAST property added will
+                    take precedence. The canine family will take precedence in the catdog object</p>
+                <p>Finally, if we spread an array into an object, {...[2,4,6,8]}, the indices will be used as the keys,
+                    while the element itself will be the value</p>
+                <p>Why spread into objects? We do it often when <strong>creating copies of an object</strong> - rather
+                    than mutating them. For example, let's say we have this:
+                <pre>
+                        <code>
+                            const dataFromForm = {
+                                email:'hjsimpson@gmail.com',
+                                password:'marge',
+                                username:'maxPower'
+                            }
+                            const newUser = {...dataFromForm, id:2345, isAdmin:false}
+                        </code></pre>
+                </p>
+                <p>As you can see from above, we can take the object above, and manipulate the copy slightly to add our
+                    own information to it. This is often done using things like React</p>
             </main>
         </div>
         <div class="container">
