@@ -399,9 +399,10 @@
                 </p>
                 <h2><a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some">some</a>
-                    <p>Like <strong>every()</strong>, this returns a boolean value. This function will return true is
-                        ANY of the array elements pass the test function.</p>
-                    <pre>
+                </h2>
+                <p>Like <strong>every()</strong>, this returns a boolean value. This function will return true is
+                    ANY of the array elements pass the test function.</p>
+                <pre>
                             <code>
                                 function containsStinker(element, index, array) {  //index and array can be omitted!
                                     return element <= 5.0;
@@ -409,13 +410,12 @@
                                   [9.2, 8.3, 6.4, 1.3, 9.1].some(containsStinker); // true
                                   [7.0, 8.5, 9.0, 8.9, 7.9].some(containsStinker); // false
                             </code></pre>
-                </h2>
-
                 <h2><a
                         href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every">every</a>
-                    <p>Like <strong>some()</strong>, this returns a boolean value. The every() method tests whether ALL
-                        elements in the array pass the test implemented by the provided function.</p>
-                    <pre>
+                </h2>
+                <p>Like <strong>some()</strong>, this returns a boolean value. The every() method tests whether ALL
+                    elements in the array pass the test implemented by the provided function.</p>
+                <pre>
                             <code>
                                 function isBigEnough(element, index, array) {  //again, index and array can be omitted!
                                     return element >= 10;
@@ -423,10 +423,10 @@
                                   [12, 5, 8, 130, 44].every(isBigEnough); // false
                                   [12, 54, 18, 130, 44].every(isBigEnough); // true
                             </code></pre>
-                    <p>So, for example, is EVERY movie in your list ranked 8.0+ on IMDB. Are ALL (every ;)) test scores
-                        in the
-                        class higher than 70?</p>
-                </h2>
+                <p>So, for example, is EVERY movie in your list ranked 8.0+ on IMDB. Are ALL (every ;)) test scores
+                    in the
+                    class higher than 70?</p>
+
                 <h2>Newer Aspects of JavaScript</h2>
                 <ul>
                     <li>Default parameters are fairly easy to understand! You've used things like void dfs(...int
