@@ -258,6 +258,117 @@
                 </p>
                 <p>As you can see from above, we can take the object above, and manipulate the copy slightly to add our
                     own information to it. This is often done using things like React</p>
+                <h2>Rest Parameters and The Arguments Object</h2>
+                <p>The rest operator (also <strong>...</strong>) is used to help collect the <em>rest of the
+                        parameters</em> in some list of arguments, collecting them all into one array.</p>
+                <p>It works differently to the spread syntax, except rather than <strong>spreading</strong> arguments,
+                    it automatically holds all arguments held in a function.</p>
+                <pre>
+                        <code>
+                            function print(...nums){
+                                console.log(nums);
+                            }
+                            print(13,5,3,6,225,31,565);
+                            //This will print out each element
+
+                            function sum(...nums){
+                                return nums.reduce((total,el) => total+el);
+                            }
+                            sum(13,5,3,6,225,31,565);
+                        </code></pre>
+                <p><strong>arguments</strong> is available inside (almost) every function. It's not available inside
+                    arrow functions! It's an array-like object with a length property, but no methods like
+                    (push/shift/pop). It contains ALL arguments passed to the function</p>
+                <pre>
+                        <code>
+                            function sumAll(){
+                                let total = 0;
+                                for(let i = 0; i < arguments.length; i++){
+                                    total+=arguments[i];
+                                }
+                                return total;
+                            }
+                            sumAll(8,4,2,5) //19
+                            sumAll(2,3) //5
+                        </code></pre>
+                <h2>Destructuring</h2>
+                <p>This is simply a short, clean syntax used to 'unpack' arrays, objects or parameters. It can extract
+                    values from arrays, properties from objects...and convert them into distinct variables.</p>
+                <p>For example, given a set of names, in order of 1-8, we can place these names into specific variables!
+                    In the example below, you probably already know how to do const gold = sprinters[0] etc...
+                </p>
+                <p>However, look at the use of <strong>const[gold,silver,bronze,...everyoneElse] = sprinters;</strong>
+                </p>
+                <pre>
+                    <code>
+                        let sprinters = ['Usain Bolt', 'Jesse Owens', 'Maurice Greene', 
+                        'Old Yelloweyes Ben Johnson', 'Carl Lewis The Cheat', 
+                        'Justin Juicer Gatlin', 'Trevor the Tortoise', 'Asafa Chokejob Powell'];
+                        const[gold,silver,bronze,...everyoneElse] = sprinters;
+                    </code></pre>
+                <p>Objects are commonly destructured in JavaScript.</p>
+                <p>For example, let's say we want to get the first and last names from this object:</p>
+                <pre>
+                    <code>
+                        const youZer = {
+                            email: 'harvey@gmail.com',
+                            password: 'sCoTt1948sMiTh',
+                            firstName: 'Harvey',
+                            lastName: 'Milk',
+                            born: 1930,
+                            died: 1978,
+                            bio: 'Harvey Bernard Milk was an American politician',
+                            city: 'San Francisco',
+                            state: 'California'
+                        }
+                    </code></pre>
+                <p>Singling out specific variables using const firstName = user.firstName; gets
+                    <strong>annoying!</strong>
+                </p>
+                <p>Essentially, we can use this: <strong>const{firstName} = youZer</strong></p>
+                <p>That gives us the firstName!</p>
+                <p>Here's 5 separate variables that are COPIED from the object without changing the object youZer</p>
+                <pre>
+                    <code>
+                        const { email, firstName, lastName, city, bio } = user;
+                    </code></pre>
+                <h4>Renaming Destructured Object Properties</h4>
+                <p>In the example above, we might prefer to use the variable name 'birthYear' to 'born'</p>
+                <p>To do so, this will work: <strong>const{born:birthYear} = user;</strong>
+                </p>
+                <p>The above gets the <strong>born</strong> property out of the object (copying it), and renames it as
+                    birthYear, using <em>born:birthYear</em></p>
+                <p>Let's look at these player objects again: here's how to use destructuring to output a player name,
+                    their team, and a rating. We want the format: <strong>Riyah Mahrez (Man City) has a rating of
+                        83</strong></p>
+                <pre>
+                        <code>
+                    const players = [
+                        {
+                        name:'Lionel Messi',
+                        team:'PSG',
+                        rating: 95
+                        },
+                        {
+                        name:'Bukayo Saka',
+                        team: 'Arsenal',
+                        rating: 92
+                        },
+                        {
+                        name:'Pedri',
+                        team: 'Barcelona',
+                        rating: 90
+                        }
+                    ]
+                    const newPES = players.map(({name,team,rating}) =>{
+                        return `${name} (${team}) has a rating of ${rating}`;
+                    });
+
+                    Originally, this was done like so:
+                    const oldPESRating = players.map(function(player){
+                        return `${player.name} ($player.team}) has a rating of ${player.rating/10}`;
+                    })
+                </code></pre>
             </main>
         </div>
         <div class="container">
@@ -273,6 +384,7 @@
                         <li><a href="./javascriptToDoList.html">JavaScript To-Do List</a></li>
                         <li><a href="./javascriptFunctions.html">JavaScript Functions</a></li>
                         <li><a href="./javascriptArrayMethods.html">JavaScript Callbacks and Array Methods</a></li>
+                        <li><a href="./javascriptDOMIntro.html">Introduction to the DOM</a></li>
                     </ul>
                 </nav>
                 <a href="../index.html">Home</a>

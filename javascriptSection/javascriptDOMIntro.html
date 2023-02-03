@@ -18,14 +18,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../resources/defaultStyle.css">
-    <title>JavaScript Background I</title>
+    <title>Introducing the DOM</title>
 </head>
 
 <body>
     <div class="container">
         <div class="container">
             <header>
-                <h1>JavaScript Fundamentals</h1>
+                <h1>Introducing the DOM</h1>
                 <nav class="navbar navbar-expand-md navbar-light header-navbar-color">
                     <div class="container">
                         <div class="navbar-header">
@@ -64,74 +64,6 @@
         </div>
         <div class="container">
             <main>
-                <h2>Starting Out</h2>
-                <ul>
-                    <li>In a Windows machine, use CTRL+SHIFT+J to open up the console. This is where we'll practice
-                        applying JavaScript</li>
-                    <li>There are 7 primitive types in total: <strong>number</strong>, <strong>string</strong>,
-                        <strong>boolean</strong>, <strong>undefined</strong>, <strong>null</strong>,
-                        <strong>symbol</strong>, and <strong>bigint</strong>.
-                    </li>
-                    <li>Using the term <strong>**</strong> is used for exponentiation: so 2^4 can be expressed as 2**4
-                        in JS. So, 9**2 = 81, 9**3 = 729 etc...</li>
-                    <li><strong>NaN</strong> means 'Not a Number'. However, if we run the <strong>typeof</strong>
-                        operator on it, it will still be recognized as a number</li>
-                    <li>To elaborate on the previous point, something like "200 +(0/0)" will evaluate to NaN.</li>
-                </ul>
-                <h2>Variables and <em>let</em></h2>
-                <h3>let</h3>
-                <li>In JavaScript, we use:
-                    <pre>
-                        <code>
-                            <strong>let</strong> <em>variableName</em> = <strong>value</strong>;
-                            <strong>let</strong> <em>numHens</em> = <strong>5</strong>;
-                            (i.e. so, the number of hens = 5!)
-                        </code>
-                    </pre>
-                </li>
-                <li>As you can see, using <strong>let variableName = value;</strong> is how we declare our variables in
-                    JavaScript!</li>
-                <li>Just as in C++, we can use <strong>+=</strong>, <strong>-=</strong>, <strong>*=</strong>, and
-                    <strong>/=</strong>, <strong>++</strong>, and <strong>--</strong> for variables in JavaScript.
-                </li>
-                <h3>const</h3>
-                <li>The const keyword is similar to using const in C++!</li>
-                <pre>
-                    <code>
-                        <strong>const</strong> <em>variableName</em> = <strong>value</strong>;
-                        <strong>const</strong> <em>daysInWeek</em> = 7;
-                    </code>
-                </pre>
-                <li>We set variables as constant and don't change them when we use the const keyword!</li>
-                <h3>var</h3>
-                <li>var is the old way of making variables in JavaScript.</li>
-                <li>It works similarly to <strong>let</strong> and <strong>const</strong>, but is considered deprecated.
-                </li>
-                <h2><em>boolean</em></h2>
-                <li>As with C++, we can set variables to true/false. Unlike C++, we don't have to name the type of our
-                    variable!</li>
-                <li><strong>let</strong> isActive = <strong>true;</strong> creates a boolean variable, <em>isActive</em>
-                </li>
-                <li>Interestingly, it is possible to change varaible names in JavaScript.</li>
-                <li>Name variables well, and use Camel Case to do so...</li>
-                <h2><em>string</em></h2>
-                <h3>string</h3>
-                <p>This variable follows many of the same rules as those we see in C++!</p>
-                <ul>
-                    <li>One way to find all the functions that you can call upon a string variable is to use the dot
-                        operator. Something new is the .trim() function:
-                        <pre>
-                        <code>
-                            let bobbyNoSentence = "   Hey, I'm ready to do it!";
-                            bobbyNoSentence.trim();
-                            //Gives us "Hey, I'm ready to do it!"
-                            bobbyNoSentence.trim().toUpperCase();
-                            //Gives us "HEY, I'M READY TO DO IT!";
-                        </code>
-                    </pre>
-                        Not the chaining of functions in the above :)
-                    </li>
-                </ul>
             </main>
         </div>
         <div class="container">
@@ -139,17 +71,16 @@
                 <nav>
                     <h2>JavaScript Links</h2>
                     <ul>
-                        <li><a href="./javascriptIntro.html">Javascript Introduction</a></li>
-                        <li><a href="./javascriptBackground2.html">Javascript Fundamentals II</a></li>
+                        <li><a href="./javascriptIntro.html">JavaScript Introduction</a></li>
+                        <li><a href="./javascriptBackground1.html">JavaScript Fundamentals I</a></li>
+                        <li><a href="./javascriptBackground2.html">JavaScript Fundamentals II</li>
                         <li><a href="./runningJavascript.html">Running JavaScript I</a></li>
                         <li><a href="./runningJavascript2.html">Running JavaScript II</a></li>
                         <li><a href="./javascriptGuessingGame.html">JavaScript Guessing Game</a></li>
                         <li><a href="./javascriptToDoList.html">JavaScript To-Do List</a></li>
                         <li><a href="./javascriptFunctions.html">JavaScript Functions</a></li>
-                        <li><a href="./javascriptArrayMethods.html">JavaScript Callbacks and Array Methods</a></li>
-                        <li><a href="./javascriptDOMIntro.html">Introduction to the DOM</a></li>
+                        <li><a href="./javascriptArrayMethods.html">JavaScript Array Methods</a></li>
                     </ul>
-
                 </nav>
                 <a href="../index.html">Home</a>
             </footer>
@@ -161,6 +92,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+    <script src="../javascriptVessels/domPractice.js"></script>
 </body>
 
 </html>
