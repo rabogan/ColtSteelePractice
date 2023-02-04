@@ -64,6 +64,120 @@
         </div>
         <div class="container">
             <main>
+                <h2>Overview</h2>
+                <ul>
+                    <li><strong><a href="https://developer.mozilla.org/en-US/docs/Glossary/DOM">Introduction to the
+                                DOM</a></strong>: an API that repesents and interacts with any HTML or XML document</li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById()</a></strong>
+                        <ul>
+                            <li><strong>What?</strong> It's a Document method which <strong>returns an Element
+                                    object</strong>
+                                representing the element whose id property matches the specified string.</li>
+                            <li><strong>Why?</strong> Since element IDs are required to be
+                                unique if specified, they're a useful way to get access to a specific element quickly.
+                            </li>
+                            <li><strong>Anything else?</strong> If you need to get access to an element which doesn't
+                                have an ID, you can use
+                                <strong>querySelector()</strong> to find the element using any selector.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName">getElementsByTagName()</a></strong>:
+                        The Element.getElementsByTagName() method returns a live HTMLCollection of elements with the
+                        given tag name.
+
+                        All descendants of the specified element are searched, but not the element itself. The returned
+                        list is live, which means it updates itself with the DOM tree automatically. Therefore, there is
+                        no need to call Element.getElementsByTagName() with the same element and arguments repeatedly if
+                        the DOM changes in between calls.
+
+                        When called on an HTML element in an HTML document, getElementsByTagName lower-cases the
+                        argument before searching for it. This is undesirable when trying to match camel-cased SVG
+                        elements (such as <linearGradient>) in an HTML document. Instead, use
+                            Element.getElementsByTagNameNS(), which preserves the capitalization of the tag name.
+
+                            Element.getElementsByTagName is similar to Document.getElementsByTagName(), except that it
+                            only searches for elements that are descendants of the specified element.
+                    </li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName">getElementsByClassName()</a></strong>:
+                        The getElementsByClassName method of Document interface returns an array-like object of all
+                        child elements which have all of the given class name(s).
+
+                        When called on the document object, the complete document is searched, including the root node.
+                        You may also call getElementsByClassName() on any element; it will return only elements which
+                        are descendants of the specified root element with the given class name(s).
+                    </li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector()</a></strong>:
+                        The Document method querySelector() returns the first Element within the document that matches
+                        the specified selector, or group of selectors. If no matches are found, null is returned.
+                    </li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">querySelectorAll()</a></strong>:
+                        The Document method querySelectorAll() returns a static (not live) NodeList representing a list
+                        of the document's elements that match the specified group of selectors.
+                    </li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a></strong>:
+                        an Element property that gets or sets the HTML or XML markup contained within the element.</li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent">textContent</a></strong>:
+                        a property of the Node interface: represents the text content of the node and its descendants
+                    </li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">innerText</a></strong>:
+                        The innerText property of the HTMLElement interface represents the rendered text content of a
+                        node and its descendants.
+
+                        As a getter, it approximates the text the user would get if they highlighted the contents of the
+                        element with the cursor and then copied it to the clipboard. As a setter this will replace the
+                        element's children with the given value, converting any line breaks into <br> elements.</li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Element/append">append()</a></strong>:The
+                        Element.append() method inserts a set of Node objects or string objects after the last child of
+                        the Element. String objects are inserted as equivalent Text nodes.
+
+                        Differences from Node.appendChild():
+
+                        Element.append() allows you to also append string objects, whereas Node.appendChild() only
+                        accepts Node objects.
+                        Element.append() has no return value, whereas Node.appendChild() returns the appended Node
+                        object.
+                        Element.append() can append several nodes and strings, whereas Node.appendChild() can only
+                        append one node.</li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">appendChild()</a></strong>:
+                        The appendChild() method of the Node interface adds a node to the end of the list of children of
+                        a specified parent node. If the given child is a reference to an existing node in the document,
+                        appendChild() moves it from its current position to the new position.
+
+                        If the given child is a DocumentFragment, the entire contents of the DocumentFragment are moved
+                        into the child list of the specified parent node.
+
+                        appendChild() returns the newly appended node, or if the child is a DocumentFragment, the
+                        emptied fragment.</li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Element/remove">remove()</a></strong>:
+                        the Element.remove() method removes the elements from the DOM</li>
+                    <li><strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild">removeChild()</a></strong>:
+                        The removeChild() method of the Node interface removes a child node from the DOM and returns the
+                        removed node.</li>
+                </ul>
+                <h2>What is the <strong><a
+                            href="https://developer.mozilla.org/en-US/docs/Glossary/DOM">DOM</a></strong>?
+                </h2>
+                <p>The DOM stands for Document Object Model. In the console of your webpage, type in
+                    <em>console.dir(document)</em> or document. It will show you how the HTML and CSS are converted into
+                    JS - there are thousands of objects!
+                </p>
+                <p>It can best be thought of as a tree of nodes/elements created by the browser. JavaScript can be used
+                    to read/write/manipulate to the DOM. It is an OO representation.</p>
+                <a href="https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events">Further Reading
+                    from the Odin Project</a>
             </main>
         </div>
         <div class="container">
