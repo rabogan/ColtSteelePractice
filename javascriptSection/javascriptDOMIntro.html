@@ -64,12 +64,14 @@
         </div>
         <div class="container">
             <main>
-                <h2>Overview</h2>
+                <h2>Overview: DOM, Selecting and Manipulation</h2>
                 <ul>
                     <li><strong><a href="https://developer.mozilla.org/en-US/docs/Glossary/DOM">Introduction to the
-                                DOM</a></strong>: an API that repesents and interacts with any HTML or XML document</li>
-                    <li><strong><a
-                                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById()</a></strong>
+                                DOM</a></strong>: an API that represents and interacts with any HTML or XML document
+                    </li>
+                    <li>SELECTING BEGINS! <strong><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById()</a>
+                            (OLD)</strong>
                         <ul>
                             <li><strong>What?</strong> It's a Document method which <strong>returns an Element
                                     object</strong>
@@ -84,7 +86,8 @@
                         </ul>
                     </li>
                     <li><strong><a
-                                href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName">getElementsByTagName()</a></strong>:
+                                href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName">getElementsByTagName()</a>
+                            (OLD)</strong>:
                         The Element.getElementsByTagName() method returns a live HTMLCollection of elements with the
                         given tag name.
 
@@ -120,7 +123,7 @@
                         The Document method querySelectorAll() returns a static (not live) NodeList representing a list
                         of the document's elements that match the specified group of selectors.
                     </li>
-                    <li><strong><a
+                    <li>MANIPULATION BEGINS! <strong><a
                                 href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a></strong>:
                         an Element property that gets or sets the HTML or XML markup contained within the element.</li>
                     <li><strong><a
@@ -178,6 +181,87 @@
                     to read/write/manipulate to the DOM. It is an OO representation.</p>
                 <a href="https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events">Further Reading
                     from the Odin Project</a>
+                <h2><strong><a
+                            href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">getElementById()</a></strong>
+                </h2>
+                <p>Inside the <strong>document</strong> objects, <strong>getElementById()</strong> is one method that
+                    allows us to select and manipulate specific properties.</p>
+                <p>Just as we can selectively apply CSS to specific elements, we can also select
+                    <strong>specific</strong> things, and target elements using JavaScript.
+                </p>
+                <p><strong>selecting</strong> involves target specific elements we want to be dynamic</p>
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName">getElementsByTagName()</a>
+                    and <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName">getElementsByClassName()</a>
+                </h2>
+                <p>These, and exmaples like <strong>document.getElementsByTagName('p')</strong> or
+                    <strong>document.getElementsByTagName('div')</strong> are quite easy to access and manipulate.
+                </p>
+                <p>However, what is returned by this HTML collection? It's an <strong>Element!</strong> An Element is
+                    the most general base class from which all element objects (i.e. objects that REPRESENT elements) in
+                    a Document inherit. These ONLY have methods and properties common to all kinds of elements.</p>
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector()</a>
+                    and <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">querySelectorAll()</a>
+                </h2>
+                <p><strong>querySelector()</strong> is a newer, all-in-one method to select a single element:
+                <pre>
+                    <code>
+                        //FIND THE FIRST h1 Element
+                        document.querySelector('h1');
+
+                        //FIND THE FIRST Element with the 'red' id
+                        document.querySelector('#red');
+
+                        //FIND THE FIRST Element with class 'big'
+                        document.querySelector('.big');
+                </code></pre>
+                </p>
+                <p>Notice how, unlike with selectElementById (and their brethren), we use <strong>.</strong>big and
+                    <strong>#</strong>red in these calls!
+                </p>
+                <p>As you can imagine, the <strong>querySelectorAll()</strong> call will grab ALL of the associated
+                    elements. We returning a COLLECTION of those matching elements</p>
+                <p>However, some review of CSS is important. We can use <strong>document.querySelectorAll('p
+                        a')</strong> to create new calls (remember the DESCENDANTS!)</p>
+                <pre>
+                        <code>
+                            //FIND ALL a elements that are DESCENDANTS of p elements
+                            document.querySelectorAll('p a');
+                    </code></pre>
+                <h2><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">innerHTML</a>, <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent">textContent</a>, and <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">innerText</a></h2>
+                <p>The previous document methods simply involved SELECTING! This is about MANIPULATION!</p>
+                <p>If we took an example where we grab the &lt;p&gt; element using
+                    <strong>document.querySelector('p')</strong>, we can choose to look at the
+                    <strong>innerHTML</strong>, <strong>innerText</strong>, and <strong>textContent.</strong>
+                </p>
+                <p>As an example, you could choose to create a prank where the word 'REDACTED' appears in place of every
+                    link on the CIA Wikipedia page - for whatever reason. The .innerText method is perfect for that!</p>
+                <figure>
+                    <img src="../images/DOMImages/redacted.png" alt="redacted">
+                    <figcaption>Showing how to manipulate the DOM to ensure secrecy</figcaption>
+                </figure>
+                <pre>
+                    <code>
+                        const anchors = document.querySelectorAll('a');
+                        for(let anc of anchors)
+                            anc.innerText = 'REDACTED';
+                    </code></pre>
+                <p>To mess around with the HTML of the element, we can use the <strong>.innerHTML</strong> tag:
+                <pre>
+                    <code>
+                        for(let link of anchors){
+                            link.innerHTML = ('<i>REDACTED</i>');
+                        }
+                        '<i>REDACTED</i>'
+                    </code></pre>
+                </p>
+                <p>Don't forget, if we're changing this inside the JS file, we're going to have some significant
+                    dynamism made possible :)</p>
             </main>
         </div>
         <div class="container">
