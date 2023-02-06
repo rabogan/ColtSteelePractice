@@ -262,6 +262,192 @@
                 </p>
                 <p>Don't forget, if we're changing this inside the JS file, we're going to have some significant
                     dynamism made possible :)</p>
+                <h2>Manipulating Attributes using <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute">getAttribute()</a>
+                    and <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">setAttribute()</a>
+                </h2>
+                <p><strong>getAttribute()</strong> is a method of the Element interface. It returns the value of a
+                    specified attribute on the element.</p>
+                <p>Unlike <strong>querySelector</strong>, the <strong>getAttribute</strong> method will take the value
+                    <strong>directly from the HTML itself.</strong> Accessing an attribute using object.href (see
+                    example) will grab the value from a
+                    JavaScript object, which can give us a different value.
+                </p>
+                <p><strong>setAttribute(name,value)</strong> is a method that sets the value of an attribute on a
+                    specified element. It can update an existing value of an element, OR add a new attribute with the
+                    specified name and value.</p>
+                <pre>
+                        <code>
+                            const firstLink = document.querySelector('a');
+                            
+                            //This will return the value from the JS object!
+                           firstLink.href; 
+
+                            //This is getting the value DIRECTLY from the HTML itself!
+                            firstLink.getAttribute('href');
+
+                            //If NO such attribute has been set, null is returned
+                            firstLink.getAttribute('nonce-sense');
+
+                            //This sets the website link back to a city I'd love to return to :)
+                            firstLink.setAttribute('href', 'https://discover-fujisawa.jp/')
+                        </code></pre>
+                <h2>Styles in the DOM</h2>
+                <p>Quite a lot of work is needed to do this, so it isn't always recommended! The changing of style of
+                    specific elements by JavaScript is possible. First, we need a line, such as <strong>const example =
+                        document.querySelectorAll('a'); to get all anchor tags.</strong></p>
+                <p>Once we have that, notice how (as long as NO INLINE styling is present on the elements), each element
+                    within the .style of your chosen object is empty!</p>
+                <p><strong>Using camelCase</strong> (i.e. <s>background-color</s> <strong>backgroundColor</strong>, we
+                    can style our elements using JavaScript!</p>
+                <p>For example, <strong>example.style.backgroundColor = 'red'</strong> or example.style.textDecoration =
+                    'wavy' or example.style.fontSize = '3em';</p>
+                <p>One special way we can check out the style <strong>after the browser has processed it</strong> is to
+                    use a special method called <strong>getComputedStyle(example);</strong></p>
+                <p>We can access specific properties using <strong>window.getComputedStyle(h1).fontSize;</strong> If
+                    there's a property that exists for it, we'll be able to find it!</p>
+                <p>It's also possible manipulate these things: although the methods to do so are a little involved. For
+                    example, to change the fontSize from 32px to 64px, you might need to parseInt the integer 32, then
+                    double it (or somehow change it to 64), and then add px when you convert it back into a string.</p>
+                <h2>Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">classList</a>
+                </h2>
+                <p>We can use <strong>classList</strong>, which allows us to access and manipulate an element's list of
+                    classes.</p>
+                <h4>.add()</h4>
+                <p>Using <strong>example.classList.add('classNameHere')</strong>, it's possible to add classes onto what
+                    attribute or property we have selected.</p>
+                <p>Another popular usage is <strong>.remove()</strong>, which...well, allows us to remove specific
+                    classes!</p>
+                <p>One more (less common) is <strong>.contains('eg')</strong>, which simply returns true/false</p>
+                <p>Extremely useful is the ability to <strong>TOGGLE!</strong> <strong>.toggle()</strong> allows us to
+                    switch a class on or off! When we click on the accordion (drop-down) on a Google list, .toggle() is
+                    highly likely to be the piece of underlying JavaScript that allows the answer to the question to
+                    display.</p>
+                <h2><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement">parentElement</a> and
+                    using <a href="">children</a> to get a child element</h2>
+                <p>Knowing how to traverse/access a <strong>parent element</strong> can come in very handy! To do so, we
+                    need to be able to use something like:
+                <pre>
+                        <code>
+                            const firstBold = document.querySelector('b');
+
+                            //This will give us what the parentElement of b is
+                            firstBold.parentElement;
+                            //It could be li, p, etc...
+
+                            //We can go deeper!
+                            firstBold.parentElement.parentElement
+                        </code></pre>
+                </p>
+                <p>Using <strong>.children</strong> on an element brings up a list of child elements. It will bring up a
+                    list of all child elements (not an array), which can be accessed or manipulated.</p>
+                <h4>Keeping it in the family with <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling">nextSibling</a>, <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/nextElementSibling">nextElementSibling</a>,
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling">previousSibling</a>,
+                    and <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/previousElementSibling">previousElementSibling</a>
+                </h4>
+                <p>We can navigate through <strong>siblings</strong> of elements.</p>
+                <p>However, <strong>nextSibling</strong> and <strong>previousSibling</strong> refer to the node.</p>
+                <p>We can easily navigate to 'same level' siblings using <strong>.nextElementSibling</strong> and
+                    <strong>.previousElementSibling</strong>
+                </p>
+                <h2>Creating new elements from scratch with <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement">createElement</a>
+                    and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">appendChild()</a>
+                </h2>
+                <p>This should be fairly intuitive too! Let's look at a way to create an image.</p>
+                <p>
+                <pre>
+                        <code>
+                            //Gives us a new element &lt;img&gt;
+                            const newImage = document.createElement('img');
+
+                            //Adding a random source
+                            newImage.src = 'https://unsplash.com/photos/oFi1nkOSXY0'
+                        </code></pre>
+                </p>
+                <p>We have created the new image, but now need to try and include it somewhere in our document! We can
+                    use something like
+                    <strong>document.body.appendChild(newImage);</strong>, which will <strong>append</strong> this as
+                    the last <strong>child</strong> of the <strong>&lt;body&gt;</strong> part of the HTML.
+                </p>
+                <p>Another example:
+                <pre>
+                        <code>
+                            //Gives us a new element &lt;h3&gt;
+                            const newH3 = document.createElement('h3');
+
+                            //This modifies the text of the new element.
+                            newH3.innerText = 'Revenge!'
+
+                            //Note the lack of ' '
+                            document.body.appendChild(newH3)
+                        </code></pre>
+                </p>
+                <h2>Adding things simply using <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/append">append</a> or <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend">prepend</a></h2>
+                <p>A newer method that is a somewhat easier way to append something into a document.</p>
+                <p>For example, let's say we want to add 'And that's the end of the first chapter' to the opening
+                    paragraph:
+                <pre>
+                        <code>
+                            //Finds the first paragraph
+                            const p = document.querySelector('p');
+                            
+                            //Adds in the redundant final line :)
+                            p.append('And that is the end of the first chapter');
+                        </code></pre>
+                </p>
+                <p>To make this even more Simpson-esque - do it to ALL p elements!
+                <pre>
+                    <code>
+                        //Finds all paragraphs
+                        const p = document.querySelectorAll('p');
+                        
+                        //Adds in our reference :)
+                        p.append('And that is the end of that chapter');
+                    </code></pre>
+                </p>
+                <p>NB: it's possible to append MULTIPLE at the same time:
+                    <strong>p.append('Do not touch', 'Willie.');</strong>
+                </p>
+                <p>A similar thing is <strong>prepend</strong>, which can be used (Red Dwarf reference) biblically:
+                <pre>
+                        <code>
+                            //Finds the first paragraph
+                            const p = document.querySelector('p');
+                            
+                            //Adds in a Red Dwarf reference:)
+                            p.append('To my darling Candy. 
+                            All characters portrayed within 
+                            this book are fictitious 
+                            and any resemblance to persons 
+                            living or dead is purely coincidental.');
+                        </code></pre>
+                </p>
+                <h2><a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement">insertAdjacentElement</a>
+                </h2>
+                <p>Let's say we want something to go BETWEEN two elements, such as a new h2 between the
+                    <strong>&lt;h1&gt;</strong> and <strong>&lt;p&gt;</strong>. That's where
+                    <strong>insertAdjacentElement()</strong> can come in!
+                </p>
+                <p>First, create your h2! <strong>const h2 = document.createElement('h2');</strong></p>
+                <p>Next, use some way of adding text, like <strong>append</strong> or <strong>innerText</strong>:
+                    <strong>h2.append('Revenge is futile...');</strong>
+                </p>
+                <p>We can use the syntax
+                    <strong><em>targetElement</em>.insertAdjacentElement(<em>position</em>,<em>element</em>);</strong>
+                    to help us! The <strong>position</strong> can be beforebegin (before the target element), afterbegin
+                    (inside the target element, before the first child), beforeend (just inside the targetElement, after
+                    its last child), or afterend (after the targetElement itself). Read the documentation!
+                </p>
+                <p>I used: <strong>h1.insertAdjacentElement('afterend',h2)</strong>, which will squeeze it in after h1.
+                    It's inserted as a sibling!</p>
             </main>
         </div>
         <div class="container">
