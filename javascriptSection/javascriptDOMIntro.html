@@ -448,6 +448,32 @@
                 </p>
                 <p>I used: <strong>h1.insertAdjacentElement('afterend',h2)</strong>, which will squeeze it in after h1.
                     It's inserted as a sibling!</p>
+                <h2><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild">removeChild()</a> and <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/remove">remove</a></h2>
+                <p><strong>removeChild()</strong> is a method we <strong>call on the parent of the element we want to
+                        remove!</strong></p>
+                <p>For example, it is possible to remove the first &lt;li&gt; element from the document like so:
+                <pre>
+                        <code>
+                            //Finds the first paragraph
+                            const firstLi = document.querySelector('li');
+
+                            const par = firstLi.parentElement();
+                            par.removeChild(firstLi);
+                            //The above line is KEY to the removal!
+                        </code></pre>
+                </p>
+                <p>A newer method that is more popular is <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/remove">remove</a>. This isn't
+                    good if IE support is required, but is much more convenient to use:
+                <pre>
+                        <code>
+                            //Finds the first paragraph
+                            const firstLi = document.querySelector('li');
+
+                            firstLi.remove();
+                        </code></pre>
+                </p>
             </main>
         </div>
         <div class="container">
